@@ -1,0 +1,21 @@
+{
+  "name": "basicAuth",
+  "version": "0.0.1",
+  "authors": [
+    "Sahand Shokouhi <sahand.shok@gmail.com>"
+  ],
+  "description": "basic authentication system",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./public/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "fontawesome": "~4.3.0"
+  }
+}

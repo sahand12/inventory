@@ -11,6 +11,13 @@ var isAuthenticated = require('../../helpers').isAuthenticated;
 
 module.exports = function (passport) {
 
+    router.get('/', function (req, res, next) {
+        if (req.user) {
+            return res.redirect('/sim/profile');
+        }
+        res.redirect('/sim/login');
+    });
+
     router.get('/login', function (req, res, next) {
         if (req.user) {
             return res.redirect('/sim/profile');
