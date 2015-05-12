@@ -1,0 +1,22 @@
+<h1>Login page</h1>
+
+<form method="post">
+    <div>
+        <label for="username">Username: </label>
+        <input type="text" name="username" value="{{input.username}}" required/>
+    </div>
+    <div>
+        <label for="password">Password: </label>
+        <input type="password" name="password" required/>
+    </div>
+    <div>
+        <label for="verify">Verify password: </label>
+        <input type="text" name="verify" required/>
+    </div>
+    <div>
+        <button type="submit" value="Login">Login</button>
+    </div>
+</form>
+{{#if message}}
+    <p><strong>{{message}}</strong></p>
+{{/if}}
