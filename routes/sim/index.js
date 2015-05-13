@@ -18,6 +18,11 @@ module.exports = function (passport) {
         res.redirect('/sim/login');
     });
 
+    router.get('/signin', function (req, res, next) {
+        if (req.user) { return res.redirect('/sim/profile'); }
+        res.redirect('/sim/login');
+    });
+
     router.get('/login', function (req, res, next) {
         if (req.user) {
             return res.redirect('/sim/profile');

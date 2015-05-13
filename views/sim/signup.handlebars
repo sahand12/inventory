@@ -1,29 +1,69 @@
-<h1>Signup Page</h1>
+<div class="container" id="signupPage">
+    <div class="signupContainer">
 
-<form method="post">
-    <div>
-        <label for="username">Username: </label>
-        <input name="username" type="text" value="{{input.username}}" required/></div>
-    <div>
-        <label for="password">Password: </label>
-        <input name="password" type="password" required/>
+        <div class="logo">
+            <img src="/images/logo-512.png" alt="Climax Well Services"/>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <hgroup>
+                    <h1 class="h1 text-center">Sign up now</h1>
+                    <h3 class="h2 text-center"><small>You'll be up and running in less than a minute</small></h3>
+                </hgroup>
+            </div>
+        </div>
+
+        <form method="post" class="signupForm">
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control flatInput" name="firstName" placeholder="First name" required/>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control flatInput" name="lastName" placeholder="Last name" required/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <input type="email" class="form-control flatInput" name="email" placeholder="Email" required/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control flatInput" placeholder="Password" required/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="termsAccept" /> I agree to the <a href="/legel/terms">Terms of Service</a>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="signupButton">
+                        <input type="submit" value="SIGN UP">
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center signinDesc">Already have an account? <a href="/sim/signin">Sign in here</a></p>
+        </form>
     </div>
-    <div>
-        <label for="email">Email: </label>
-        <input type="email" name="email" value="{{input.email}}" required/>
-    </div>
-    <div>
-        <label for="firstName">First Name: </label>
-        <input type="text" name="firstName" value="{{input.firstName}}" required/>
-    </div>
-    <div>
-        <label for="lastName">LastName: </label>
-        <input type="text" name="lastName" value="{{input.lastName}}" required/>
-    </div>
-    <div>
-        <button type="submit" value="submit">Sign in</button>
-    </div>
-</form>
-{{#if message}}
-    <p><b>{{message}}</b></p>
-{{/if}}
+</div>
