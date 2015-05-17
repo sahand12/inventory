@@ -1,3 +1,5 @@
+@anchorColor: rgb(51, 122, 183);
+
 html {
   height: 100%;
 }
@@ -87,12 +89,17 @@ body {
     width: 400px;
     height: 58px;
     font-size: 16px;
+    line-height: 16px;
     outline: none;
     text-align: center;
 
     &:hover {
       background-color: rgb(37, 128, 231);
     }
+  }
+
+  input[type=password] {
+    font-size: 3em;
   }
 }
 
@@ -101,4 +108,12 @@ body {
   font-size: 14px;
   line-heigth: 16px;
   margin-top: 15px;
+
+  a {
+
+    &:hover {
+      text-decoration: none;
+      color: @anchorColor;
+    }
+  }
 }

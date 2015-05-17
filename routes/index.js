@@ -1,17 +1,16 @@
 // routes/index.js
 
-var express = require('express');
-var router = express.Router();
+var express = require('express'),
+    router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+var ContentHandler = require('../controllers/contentHandler');
 
-/*router.get('/login', function (req, res, next) {
-  if (req.user) {
-    return res.redirect('/')
-  }
-});*/
+var contentHandler = new ContentHandler();
+
+router.get('/', contentHandler.displayHomePage);
+router.get('/products', contentHandler.displayProductsPage);
+router.get('/domains', contentHandler.displayDomainsPage);
+router.get('/about', contentHandler.displayAboutPage);
+router.get('/challenges', contentHandler.displayChallengesPage);
 
 module.exports = router;

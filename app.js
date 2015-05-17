@@ -36,7 +36,16 @@ connection.once('open', console.info.bind(console, "Mongoose: Connected to the `
  * -----------------------------------------
  */
 app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', expressHandlebars({ defaultLayout: 'main' }));
+
+// Create 'ExpressHandlebars' instance with a default layout
+var hbs = expressHandlebars.create({
+    defaultLayout: 'main',
+
+    partialDir: 'views/partials'
+});
+
+// Register 'hbs' as our view engine using its bound 'engine()' function
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 
