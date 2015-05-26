@@ -1,0 +1,21 @@
+@import "xs.less";
+
+.diamond {
+  width: 0;
+  height: 0;
+  border: 100px solid transparent;
+  border-bottom-color: @orange;
+  position: relative;
+  top: -100px;
+}
+
+.diamond:after {
+  content: '';
+  position: absolute;
+  left: -100px;
+  top: 100px;
+  width: 0;
+  height: 0;
+  border: 100px solid transparent;
+  border-top-color: @orange;
+}

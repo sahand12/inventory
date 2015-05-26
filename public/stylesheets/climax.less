@@ -1,39 +1,111 @@
-/* colors */
-@orange: #f26101;
-@redOrange: #f2441d;
-@lightOrange: #f27405;
-@lighterBlue: #d9e8f5;
-@lightBlue: #91bed4;
-@blue: #003354;
-@flatBlue: rgb(20, 176, 191);
-@corporateBlue: #304269;
-@darkGreen: #284040;
+@import "xs.less";
+@import 'helpers.less';
+@import "tab.less";
+@import "domains.less";
+@import "p2.less";
+@import "products.less";
 
-@toggleColor: @lightOrange;
-@toggleBgColor: @corporateBlue;
-@brandColor: @corporateBlue;
-@menuHeadingColor: white;
-@mainNavBgColor: @orange;
+.btn-black {
+  background-color: @black1;
+  color: white;
+  text-decoration: none;
+  transition: 0.2s;
+  border: 1px solid white;
+
+  &:hover {
+    color: @black1;
+    text-decoration: none;
+    background-color: white;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.btn-orange {
+  background-color: @lightOrange;
+  color: white;
+  text-decoration: none;
+  transition: 0.2s;
+  border: 1px solid white;
+
+  &:hover {
+    color: @redOrange;
+    text-decoration: none;
+    background-color: white;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.btn-jumbo {
+  background-color: @orange;
+  color: white;
+  text-decoration: none;
+  transition: 0.2s;
+  border: 1px solid white;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+    //border-bottom: 2px solid @blue4;
+    background: @redOrange;
+  }
+}
+
+.top, .bottom {
+  width: 100%;
+  height: 25%;
+  margin: 0;
+  padding: 0;
+}
+.middle {
+  width: 100%;
+  height: 50%;
+  background-color: white;
+  //opacity: 0.8;
+  overflow: hidden;
+  padding-left: 20px;
+
+  p {
+    font-family: "Source Sans Pro", monospace;
+  }
+}
 
 .mainNav {
-  height: 85px;
-  padding-top: 30px;
-  padding-bottom: 4px;
-  background-color: @mainNavBgColor;
-  font-family: "Montserrat", sans-serif;
-  border-bottom: 4px solid @blue;
+  height: 80px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: @black1;
+  font-family: "Source Sans Pro", monospace, sans-serif;
+  //border-bottom: 4px solid @corporateBlue;
+  //box-shadow: 2px;
   margin-bottom: 0;
+  color: white;
   //background: transparent;
 
   .navbar-brand {
     font-weight: 700;
     font-size: 1.8em;
     margin-right: 30px;
-    font-family: "Oswald", sans-serif;
-    color: @brandColor;
+    font-family: "Merriweather", sans-serif;
+    color: @orange;
 
     &:hover {
-      color: white;
+      color: @redOrange;
     }
   }
 
@@ -54,19 +126,27 @@
   }
 }
 
+.navLogin {
+  margin-top: 9px;
+}
+
 
 #menuItems {
 
   .menuListItem {
-    color: @menuHeadingColor;
-    font-family: "Oswald", sans-serif;
+    font-family: "Source Sans Pro", monospace, sans-serif;
     font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0;
+    padding-bottom: 25px;
+    color: white;
+    //background: white;
   }
 }
 
 nav .dropdown-menu {
   padding: 0;
-  background-color: @toggleBgColor;
+  background-color: @black1;
   opacity: 0.9;
 
   li {
@@ -91,15 +171,16 @@ nav .dropdown-menu {
 
 #navSearchInput {
   width: 150px;
-  height: 30px;
-  font-size: 10px;
+  height: 35px;
+  font-size: 12px;
+  //border: 1px solid @orange;
 }
 
 body {
   //background-image: url('/images/bg-large.jpg');
   h2 {
-    font-family: Oswald, sans-serif;
-    color: @corporateBlue;
+    font-family: "Merriweather", sans-serif;
+    color: white;
   }
 }
 
@@ -109,162 +190,98 @@ body {
   //padding-bottom: 50px;
   //padding-top: 40px;
   margin-bottom: 0;
+  background-image: url('/images/blackrig.png');
+  background-repeat: no-repeat;
+  height: 400px;
+  margin-top: 0;
+  padding: 0;
+  //padding-top: 80px;
 
-  p {
-    font-family: Montserrat, sans-serif;
-    font-size: 15px;
-  }
+  //p {
+    //font-family: "Source Sans Pro", sans-serif;
+    //font-size: 15px;
+ // }
 
 }
 
 .brandName {
-  color: @corporateBlue;
+  color: @redOrange;
+}
+
+.jumboSec {
+  height: 200px;
+  background-color: white;
+  color: @lightGray;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 2px 4px 5px rgb(200, 200, 200);
+  //border: 1px solid rgb(230, 230, 230);
+  //padding-top: 10px;.
+
+  h2 {
+    font-size: 30px;
+    //height: 100%;
+    //width: 100%;
+    padding-top: 70px;
+    padding-bottom: 15px;
+    margin: 0 auto;
+    //line-height: 100;
+    color: @navColor;
+  }
+}
+
+.jumboSec .jumboDescription {
+  color: @lightGray;
+  font-family: "Source Sans Pro", monospace;
+  font-weight: normal;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.jumboHeading {
+  //display: none;
+}
+
+.jumboSec .descHidden {
+  display: none;
+  background-color: @blue2;
+  border: none;
+  color: ghostwhite;
+  height: 100%;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Source Sans Pro", monospace;
 }
 
 .branding {
-  font-family: Oswald, sans-serif;
+  font-family: Merriweather, sans-serif;
+  color: @black1;
+  margin-bottom: 30px;
 }
 
-.brandHeader {
-  border-left: 4px solid @corporateBlue;
-  padding:20px 10px 10px 20px;
-  background-color: #dddddd;
-}
+#homeFirstRow .brandHeader {
+  //border-left: 4px solid white;
+  //padding: 20px 10px 10px 20px;
+  //background-color: white;
+  color: floralwhite;
+  height: 400px;
+  color: black;
+  font-size: 14px;
+  font-family: monospace;
 
-#productPartial {
-  //background: url("/images/abi.jpg");
-  //background-size: 100%;
-  background-color: @lighterBlue;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  color: rgb(51, 51, 51);
-  font-family: "montserrat", sans-serif;
-
-  h2 {
-    color: @corporateBlue;
+  p {
+    font-family: "Source Sans Pro", monospace;
+    font-weight: 400;
+    font-size: 16px;
   }
+  //opacity: 0.9;
 }
 
-.coilTubing {
-  background-image: url('/images/well.jpg');
-  -webkit-background-size: 100%;
-  background-size: 100%;
-  height: 1000px;
-}
 
-.wellStimulation {
-  background-image: url("/images/");
-  -webkit-background-size: 100%;
-  background-size: 100%;
-}
-
-.surfaceTesting {
-  background-image: url('/images/');
-  -webkit-background-size: 100%;
-  background-size: 100%;
-}
-
-.slickline {
-  background-image: url('/images/');
-  -webkit-background-size: 100%;
-  background-size: 100%;
-}
-
-.oilServices {
-  background-image: url("/images/");
-  -webkit-background-size: 100%;
-  background-size: 100%;
-}
-
-.aligner {
-  height: 70px;
-}
-
-.productRow {
-  //border-right: 4px solid  @orange;
-  //background-color: #eeeeee;
-  margin: 30px;
-
-  a {
-
-    display: block;
-    transition: 0.3s;
-    color: antiquewhite;
-
-    &:hover, &:focus, &:active {
-      text-decoration: none;
-      //background-color: white;
-      color: @corporateBlue;
-      font-weight: bold;
-    }
+@media (max-width: 1000px) {
+  #homeFirstRow {
+    background: none;
   }
-
-  h2 {
-    margin-bottom: 30px;
-  }
-}
-
-.productsHeader {
-  background-color: @redOrange;
-  color: ghostwhite;
-  font-size: 1.1em;
-  line-height: 100px;
-  height: 100px;
-
-  //margin-bottom: 20px;
-  //border-radius: 5px;
-}
-
-.productCoil {
-  border-right: 5px solid white;
-  border-bottom: 5px solid white;
-}
-
-.productSurface {
-  border-right: 5px solid white;
-  //border-bottom: 5px solid white;
-}
-
-.productWell {
-  border-bottom: 5px solid white;
-}
-
-.productSlickline {
-  //border-bottom: 5px solid white;
-}
-
-.productOil {
-  border-top: 5px solid white;
-}
-
-#hexagon {
-  width: 200px;
-  height: 110px;
-  background: @redOrange;
-  position: relative;
-  color: white;
-  font-size: 1.5em;
-  line-height: 1.7em;
-}
-#hexagon:before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-left: 100px solid transparent;
-  border-right: 100px solid transparent;
-  border-bottom: 50px solid @redOrange;
-}
-#hexagon:after {
-  content: "";
-  position: absolute;
-  bottom: -50px;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-left: 100px solid transparent;
-  border-right: 100px solid transparent;
-  border-top: 50px solid @redOrange;
 }

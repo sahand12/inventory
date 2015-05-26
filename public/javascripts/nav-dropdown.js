@@ -2,12 +2,14 @@ $(function() {
 
     var $dropdown = $('.dropdown'),
         $dropdownMenu = $('.dropdown-menu'),
+        hoverColor = "#f26101",
+        normalColor = "white",
         $navbarToggle = $('.navbar-toggle');
 
     $dropdown.hover(
         function(event) {
             var flag = $navbarToggle.is(':hidden');
-            $(this).find('a.menuListItem').css({ color: '#003354' });
+            $(this).find('a.menuListItem').css({ color: hoverColor });
             if (flag) {
                 $(this).find('.dropdown-toggle').addClass('dropdownBorder');
                 $(this).find('.dropdown-menu').css({ padding: 0 }).show().animate({
@@ -18,7 +20,7 @@ $(function() {
         },
         function (event) {
             var flag = $navbarToggle.is(':hidden');
-            $(this).find('a.menuListItem').css({ color: "white" });
+            $(this).find('a.menuListItem').css({ color: normalColor });
             if (flag) {
                 $(this).find('.dropdown-toggle').removeClass('dropdownBorder');
                 $(this).find('.dropdown-menu').hide();
@@ -27,5 +29,5 @@ $(function() {
     );
 
 
-    console.log( $('.navbar-toggle').is(':hidden') );
+    //console.log( $('.navbar-toggle').is(':hidden') );
 });

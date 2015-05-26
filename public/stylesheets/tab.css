@@ -1,0 +1,96 @@
+/* colors */
+.btn-tab {
+  color: white;
+  border-radius: 0;
+}
+.tabHead {
+  height: 60px;
+  position: relative;
+  width: 100%;
+  font-family: monospace;
+  background: white;
+  color: #304269;
+}
+.tabAnchor,
+.tabAnchor:focus,
+.tabAnchor:active,
+.tabAnchor:visited {
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  margin: 0;
+  position: relative;
+  font-size: 20px;
+  font-weight: 100;
+  color: #304269;
+  padding: 0 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tabAnchor:after {
+  content: '';
+  height: 0;
+  position: absolute;
+  width: 0;
+  border: 15px solid rgba(0, 0, 0, 0);
+  border-top-color: white;
+  bottom: -30px;
+  left: 50%;
+  margin-left: -15px;
+}
+.tabHead:hover,
+.tabHead:hover .tabAnchor {
+  background: #dddddd;
+  color: #304269;
+}
+.tabHead:hover .tabAnchor:after {
+  content: '';
+  height: 0;
+  position: absolute;
+  width: 0;
+  border: 15px solid rgba(0, 0, 0, 0);
+  border-top-color: #dddddd;
+  bottom: -30px;
+  left: 50%;
+  margin-left: -15px;
+}
+.tabActive,
+.tabHead:hover .tabActive {
+  background-color: #14b0da;
+  color: white;
+  cursor: default;
+}
+.tabAnchor.tabActive {
+  color: white;
+}
+.tabActive:after,
+.tabHead:hover .tabActive:after {
+  content: '';
+  height: 0;
+  position: absolute;
+  width: 0;
+  border: 15px solid rgba(0, 0, 0, 0);
+  border-top-color: #14b0da;
+  bottom: -30px;
+  left: 50%;
+  margin-left: -15px;
+  color: white;
+}
+@media (max-width: 1000px) {
+  .tabAnchor,
+  .tabActive {
+    font-size: 20px;
+  }
+}
+@media (max-width: 700px) {
+  .tabAnchor,
+  .tabActive {
+    font-size: 14px;
+  }
+}
+@media (max-width: 520px) {
+  .tabAnchor,
+  .tabActive {
+    font-size: 10px;
+  }
+}

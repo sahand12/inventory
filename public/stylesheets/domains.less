@@ -1,0 +1,67 @@
+@import "xs.less";
+
+#domainsSec {
+  background-image: url('/images/orange-ocean-rig.png');
+  background-repeat: no-repeat;
+  padding-top: 60px;
+  width: 100%;
+  height: 500px;
+
+  i {
+    color: rgb(51, 51, 51);
+  }
+}
+
+.domainsHeading {
+  width: 100%;
+  height: 50px;
+  color: white;
+  font-size: 20px;
+  line-height: 50px;
+  margin-bottom: 50px;
+  font-family: Merriweather, monospace;
+  //border-left: 5px solid @redOrange;
+  background-color: rgb(51, 51, 51);
+  border-radius: 2px;
+}
+
+.domainsHead {
+  margin-bottom: 100px;
+}
+
+.domainBody {
+  //border: 1px solid darkgrey;
+  text-align: center;
+  background-color: white;
+}
+
+.domainItem {
+  margin-top: 30px;
+  font-size: 13px;
+  text-align: center;
+  font-family: "Merriweather", monospace, sans-serif;
+  font-weight: 400;
+  color: rgb(51, 51, 51);
+  background-color: white;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 3px;
+  border: 1px solid rgb(51, 51, 51);
+
+  a {
+    color: inherit;
+    display: block;
+
+    &:hover {
+      background-color: rgb(51, 51, 51);
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  #domainsSec {
+    background: none;
+  }
+}
