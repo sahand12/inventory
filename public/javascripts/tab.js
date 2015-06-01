@@ -1,6 +1,6 @@
 (function () {
     $(function () {
-        $tabAnchor = $('.tabAnchor');
+        var $tabAnchor = $('.tabAnchor');
 
         $tabAnchor.on('click', function (e) {
             e.preventDefault();
