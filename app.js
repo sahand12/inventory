@@ -1,21 +1,21 @@
-var express           = require('express'),
-    path              = require('path'),
-    favicon           = require('serve-favicon'),
-    logger            = require('morgan'),
-    cookieParser      = require('cookie-parser'),
-    bodyParser        = require('body-parser'),
+var express = require('express'),
+    path = require('path'),
+    favicon = require('serve-favicon'),
+    logger = require('morgan'),
+    cookieParser = require('cookie-parser'),
+    bodyParser = require('body-parser'),
     expressHandlebars = require('express-handlebars'),
-    expressSession    = require('express-session'),
-    mongoose          = require('mongoose'),
-    flash             = require('connect-flash');
-    passport          = require('passport');
+    expressSession = require('express-session'),
+    MongoStore = require('connect-mongo')(expressSession),
+    mongoose = require('mongoose'),
+    flash = require('connect-flash'),
+    passport = require('passport');
 
-var config       = require('./config'),
+var config = require('./config'),
     initPassport = require('./passport/init');
 
-var routes    = require('./routes/index'),
-    simRoutes = require('./routes/sim')(passport);
-
+var routes = require('./routes/index'),
+    simRoutes = require('./routes/sim/route')(passport);
 
 var app = express();
 
@@ -25,9 +25,9 @@ var app = express();
  * ---------------------------------------
  */
 mongoose.connect(config.mongoUri);
-var connection = mongoose.connection;
-connection.on('error', console.error.bind(console, "Mongoose: Error connecting to the database"));
-connection.once('open', console.info.bind(console, "Mongoose: Connected to the `basicAuth` database."));
+var mongooseConnection = mongoose.connection;
+mongooseConnection.on('error', console.error.bind(console, "Mongoose: Error connecting to the database"));
+mongooseConnection.once('open', console.info.bind(console, "Mongoose: Connected to the `basicAuth` database."));
 
 
 /**
@@ -40,7 +40,6 @@ app.set('views', path.join(__dirname, 'views'));
 // Create 'ExpressHandlebars' instance with a default layout
 var hbs = expressHandlebars.create({
     defaultLayout: 'main',
-
     partialDir: 'views/partials'
 });
 
@@ -57,7 +56,7 @@ app.set('view engine', 'handlebars');
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -69,9 +68,10 @@ app.use(express.static(path.join(__dirname, 'public')));
  * -----------------------------------------
  */
 app.use(expressSession({
-  secret: 'fortune favors the bold',
-  saveUninitialized: false,
-  resave: false
+    secret: 'fortune favors the bold',
+    saveUninitialized: true,
+    resave: true,
+    store: new MongoStore({ url: config.mongoUri })
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -98,10 +98,11 @@ app.use('/sim', simRoutes);
  * -----------------------------------------
  */
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+app.use(function (req, res, next) {
+    var err = new Error('Not Found');
+    err.status =
+        404;
+    next(err);
 });
 
 // error handlers
@@ -109,23 +110,23 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
+    app.use(function (err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
     });
-  });
 }
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
+app.use(function (err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: {}
+    });
 });
 
 

@@ -33,3 +33,7 @@ exports.routeUserByRole = function (user) {
     }
     return redirectUrl;
 };
+
+exports.validateUser = function (userInfo) {
+
+};
