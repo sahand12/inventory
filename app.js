@@ -8,6 +8,7 @@ var express = require('express'),
     expressSession = require('express-session'),
     MongoStore = require('connect-mongo')(expressSession),
     mongoose = require('mongoose'),
+    expressValidator = require('express-validator'),
     flash = require('connect-flash'),
     passport = require('passport');
 
@@ -57,6 +58,7 @@ app.set('view engine', 'handlebars');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(expressValidator());
 app.use(cookieParser());
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));

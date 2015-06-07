@@ -13,7 +13,8 @@ exports = module.exports = function (passport) {
 
     router.get('/login', authHandler.displayLoginPage);
     router.post('/login', authHandler.handleLoginRequest);
-    
+
+    router.get('/logout', authHandler.displayLogoutPage);
 
     router.get('/signup', authHandler.displaySignupPage);
     router.post('/signup', authHandler.handleSignupRequest);

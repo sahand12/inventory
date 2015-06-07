@@ -15,7 +15,7 @@ function AuthHandler () {
         var vm = {
             title: 'Log in'
         };
-        res.render('sim/login');
+        res.render('sim/login', vm);
     };
 
     this.handleLoginRequest = function (req, res, next) {
@@ -24,9 +24,7 @@ function AuthHandler () {
 
         // retrieve a user from the database according to the passed input
         User.findOne(conditions, function (err, user) {
-            if (err) {
-                return next(err);
-            }
+            if (err) { return next(err); }
 
             if (!user) {
                 console.log('invalid user', conditions);
@@ -36,9 +34,8 @@ function AuthHandler () {
 
             // validate the password
             user.verifyPassword(req.body.password, function (err, isEqual) {
-                if (err) {
-                    return next(err);
-                }
+                if (err) { return next(err); }
+
                 if (!isEqual) {
                     console.log('invalid password');
                     // the password is wrong
@@ -48,58 +45,96 @@ function AuthHandler () {
 
                 // user credentials are correct so try to login her
                 req.login(user, function (err) {
-                    if (err) {
-                        return next(err);
-                    }
+                    if (err) { return next(err); }
                     return res.redirect('/sim/dashboard');
                 });
             });
         });
-
     };
 
     this.displaySignupPage = function (req, res, next) {
-        res.render('sim/signup');
+        var errors = req.session.errors || "";
+        delete req.session.errors;
+        console.log(errors);
+        res.render('sim/signup', { errors: errors });
     };
 
     this.handleSignupRequest = function (req, res, next) {
-        var userInfo = {
-            email: req.body.email,
-            password: req.body.password,
-            'name.first': req.body.firstName,
-            'name.last': req.body.lastName,
-            role: 'engineer'
-            },
-            errors = {};
+        var workflow = require('../utility/workflow')(req, res);
 
-        // validate input
-        helpers.validateUser(userInfo, errors);
-        if ( Object.keys(errors).length !== 0) {
-            res.render('sim/signup', errors);
-        }
+        workflow.on('validate', function () {
+            req.assert('firstName', 'please enter your first name').notEmpty();
+            req.assert('lastName', 'please enter your last name').notEmpty();
+            req.assert('email', 'please provide an email address').notEmpty();
+            req.assert('email', 'Please enter a valid email address').isEmail();
+            req.assert('password', 'your password msut be between 8 and 20 characters long').len(8, 20);
 
-        // hash the password
-        userInfo.password = User.hashPassword(userInfo.password);
-
-        // inputs are valid so lets create a user model using mongoose
-        var newUser = new User(userInfo);
-        newUser.save(function (err, savedUser) {
-            if (err) {
-                console.log(err);
+            var errors = req.validationErrors(true);
+            if (errors) {
+                req.session.errors = errors;
+                return res.redirect('/sim/signup');
             }
-            else {
-                console.log(savedUser);
-                res.json(savedUser);
-            }
+
+            workflow.emit('duplicateEmailCheck');
         });
 
-        // insert it to the database
+        workflow.on('duplicateEmailCheck', function () {
+            User.findOne({ email: req.body.email }, function (err, user) {
+                if (err) { return next(err); };
 
-        // loging it to the system
+                if (user) {
+                    req.session.errors = { email: "Email: <b>" + req.body.email + "</b> is already registered." };
+                    res.redirect('/sim/signup');
+                }
+
+                workflow.emit('createUser');
+            });
+        });
+
+        workflow.on('createUser', function () {
+            var fieldsToSet = {
+                email: req.body.email.toLowerCase(),
+                password: req.body.password,
+                'name.first': req.body.firstName,
+                'name.last': req.body.lastName,
+                role: 'engineer'
+            };
+
+            User.create(fieldsToSet, function (err, newUser) {
+                if (err) { return next(err); }
+
+                workflow.emit('logUserIn');
+            });
+        });
+
+        workflow.on('logUserIn', function () {
+            req._passport.instance.authenticate('login', function (err, user, info) {
+                if (err) { return next(err); }
+
+                if (!user) {
+                    // this is strange
+                    req.session.errors = { 'login': 'An error occurred during the login process, please try again.' };
+                    return res.redirect('/sim/login');
+                }
+                else {
+                    req.login(user, function (err) {
+                        if (err) { return next(err); }
+                        return res.redirect('/sim/dashboard');
+                    });
+                }
+            })(req, res);
+        });
+
+        workflow.emit('validate');
+    };
+
+    this.displayDashboardPage = function (req, res, next) {
+        res.json(req.user);
     };
 
 
-    this.displayDashboardPage = function (req, res, next) {
+    this.displayLogoutPage = function (req, res, next) {
+        req.logout();
         res.json(req.user);
     };
 }
