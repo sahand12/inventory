@@ -2,134 +2,113 @@ var express = require('express'),
     path = require('path'),
     favicon = require('serve-favicon'),
     logger = require('morgan'),
+    compression = require('compression'),
+    methodOverride = require('method-override'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
     expressHandlebars = require('express-handlebars'),
-    expressSession = require('express-session'),
-    MongoStore = require('connect-mongo')(expressSession),
+    session = require('express-session'),
+    MongoStore = require('connect-mongo')(session),
     mongoose = require('mongoose'),
     expressValidator = require('express-validator'),
     flash = require('connect-flash'),
+    http = require('http'),
+    csurf = require('csurf'),
+    helmet = require('helmet'),
     passport = require('passport');
 
+// my own modules
 var config = require('./config'),
-    initPassport = require('./passport/init');
+    ErrorHandler = require('./controllers/errorHandler'),
+    errorHandler = new ErrorHandler();
 
-var routes = require('./routes/index'),
-    simRoutes = require('./routes/sim/route')(passport);
-
+// create express app
 var app = express();
 
-/*
- * ---------------------------------------
- *            MONGOOSE
- * ---------------------------------------
- */
-mongoose.connect(config.mongoUri);
-var mongooseConnection = mongoose.connection;
-mongooseConnection.on('error', console.error.bind(console, "Mongoose: Error connecting to the database"));
-mongooseConnection.once('open', console.info.bind(console, "Mongoose: Connected to the `basicAuth` database."));
+// keep reference to config
+app.config = config;
 
+// setup the server
+app.server = http.createServer(app);
 
-/**
- * -----------------------------------------
- *           VIEW ENGINE SETUP
- * -----------------------------------------
- */
-app.set('views', path.join(__dirname, 'views'));
+// setup mongoose
+app.db = mongoose.createConnection(config.mongodb.uri);
+app.db.on('error', console.error.bind(console, "mongoose connection error"));
+app.db.once('open', function () {
+    // and... we have a data store
+});
 
-// Create 'ExpressHandlebars' instance with a default layout
+// config data models
+require('./models')(app, mongoose);
+
+// create 'ExpressHandlebars' instance with a default layout and a partial directory
 var hbs = expressHandlebars.create({
     defaultLayout: 'main',
     partialDir: 'views/partials'
 });
 
-// Register 'hbs' as our view engine using its bound 'engine()' function
+// register 'hbs' as our view engine using its bound 'engine' function
 app.engine('handlebars', hbs.engine);
+
+// settings
+app.disable('x-powered-by');
+app.set('port', config.port);
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'handlebars');
 
-
-/**
- * -----------------------------------------
- *           DEFAULT MIDDLEWARES
- * -----------------------------------------
- */
-//app.use(favicon(__dirname + '/public/favicon.ico'));
+// middleware
 app.use(logger('dev'));
+app.use(compression());
+app.use(express.static( path.join(__dirname, 'public') ));
+app.use(methodOverride());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressValidator());
-app.use(cookieParser());
+app.use(cookieParser(config.cryptoKey));
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'public')));
-
-
-/**
- * -----------------------------------------
- *        CONFIGURE PASSPORT
- * -----------------------------------------
- */
-app.use(expressSession({
-    secret: 'fortune favors the bold',
-    saveUninitialized: true,
+app.use(session({
     resave: true,
-    store: new MongoStore({ url: config.mongoUri })
+    saveUninitialized: true,
+    secret: config.cryptoKey,
+    store: new MongoStore({ url: config.mongodb.uri })
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(csurf({ cookie: { signed: true } }));
+helmet(app);
 
-// Using the flash middleware provided by connect-flash to store
-// messages in the session and displaying in templates
-app.use(flash());
-
-// Initialize passport
-initPassport(passport);
-
-/**
- * -----------------------------------------
- *                   ROUTES
- * -----------------------------------------
- */
-app.use('/', routes);
-app.use('/sim', simRoutes);
-
-
-/**
- * -----------------------------------------
- *             ERROR HANDLING
- * -----------------------------------------
- */
-// catch 404 and forward to error handler
+// response locals
 app.use(function (req, res, next) {
-    var err = new Error('Not Found');
-    err.status =
-        404;
-    next(err);
+    res.cookie('_csrfToken', req.csrfToken());
+    res.locals.user = {};
+    res.locals.user.defaultReturnUrl = req.user && req.user.defautlReturnUrl();
+    res.locals.user.username = req.user && req.user.username;
+    next();
 });
 
-// error handlers
+// global locals
+app.locals.projectName = app.config.projectName;
+app.locals.copyrightYear = new Date().getFullYear();
+app.locals.copyrightName = app.config.companyName;
+app.locals.cacheBreaker = 'br34k-01';
 
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-    app.use(function (err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
-    });
-}
+// setup passport
+require('./passport')(app, passport);
 
-// production error handler
-// no stacktraces leaked to user
-app.use(function (err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
+// setup routes
+require('./routes')(app, passport);
+
+// custom friendly error handler
+app.use(errorHandler.http500);
+
+// setup utilities
+app.utility = {};
+app.utility.sendMail = require('./util/sendmail');
+app.utility.slugify = require('./util/slugify');
+app.utility.workflow = require('./util/workflow');
+
+// listen up
+app.server.listen(config.port, function () {
+    // and... we're live
+    console.log('Server is running on port ' + config.port);
 });
-
-
-module.exports = app;

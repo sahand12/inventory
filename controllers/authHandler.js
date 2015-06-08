@@ -3,7 +3,7 @@
  */
 
 var helpers = require('../helpers'),
-    User = require('../models/user');
+    User = require('../schema/user');
 
 function AuthHandler () {
 
@@ -133,10 +133,30 @@ function AuthHandler () {
     };
 
 
-    this.displayLogoutPage = function (req, res, next) {
-        req.logout();
-        res.json(req.user);
+    this.handleLogoutRequest = function (req, res, next) {
+
     };
+
+    this.displayForgotPage = function (req, res, next) {
+
+    };
+
+    this.handleForgotRequest = function (req, res, next) {
+
+    };
+
+    this.displayResetPage = function (req, res, next) {
+
+    };
+
+    this.handleResetRequest = function (req, res, next) {
+
+    };
+
+    this.handleResetUpdateRequest = function (req, res, next) {
+
+    };
+
 }
 
 module.exports = AuthHandler;
