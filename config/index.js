@@ -11,7 +11,7 @@ exports.systemEmail = "climaxws@gmail.com";
 exports.cryptoKey = "k3yb0ardc4t";
 exports.loginAttempts = {
     forIp: 50,
-    forUser: 7,
+    forIpAndUser: 7,
     logExpiration: '20m'
 };
 exports.requireAccountVerfication = false;

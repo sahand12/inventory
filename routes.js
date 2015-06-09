@@ -9,7 +9,7 @@ function ensureAuthenticated (req, res, next) {
     }
     res.set('X-Auth-Required', 'true');
     req.session.returnUrl = req.originalUrl;
-    res.redirect('/login/');
+    return res.redirect('sim/login/');
 }
 
 function ensureEngineer (req, res, next) {
@@ -20,7 +20,7 @@ function ensureEngineer (req, res, next) {
         authorization: req.app.config.authorization.errors.message,
         requestedUrl: req.originalUrl
     };
-    res.redirect('/sim/authError/');
+    return res.redirect('/sim/authError/');
 }
 
 function ensureManager (req, res, next) {
@@ -31,7 +31,7 @@ function ensureManager (req, res, next) {
         authorization: req.app.config.authorization.errors.message,
         requestedUrl: req.originalUrl
     };
-    res.redirect('/sim/authError');
+    return res.redirect('/sim/authError');
 }
 
 function ensureSupervisor (req, res, next) {
@@ -42,7 +42,7 @@ function ensureSupervisor (req, res, next) {
         authorization: req.app.config.authorization.errors.message,
         requestedUrl: req.originalUrl
     };
-    res.redirect('/sim/authError');
+    return res.redirect('/sim/authError');
 }
 
 function ensureOwner (req, res, next) {
@@ -53,7 +53,7 @@ function ensureOwner (req, res, next) {
         authorization: req.app.config.authorization.errors.message,
         requestedUrl: req.originalUrl
     };
-    res.redirect('/sim/authError/');
+    return res.redirect('/sim/authError/');
 }
 
 exports = module.exports = function (app, passport) {
@@ -66,56 +66,28 @@ exports = module.exports = function (app, passport) {
     app.get('/about/', frontEndHandler.displayAboutPage);
     app.get('/challenges/', frontEndHandler.displayChallengesPage);
 
-    // user authentication
-    var authHandler = new (require('./controllers/authHandler'))();
-
     // sign up
-    app.get('/sim/signup/', authHandler.displaySignupPage);
-    app.post('/sim/signup/', authHandler.handleSignupRequest);
+    var signupHandler = require('./controllers/signupHandler');
+    app.get('/sim/signup/', signupHandler.init);
+    app.post('/sim/signup/', signupHandler.signup);
 
     // login/out
-    app.get('/sim/login/', authHandler.displayLoginPage);
-    app.post('/sim/login/', authHandler.handleLoginRequest);
-    app.get('/sim/login/forgot/', authHandler.displayForgotPage);
-    app.post('/sim/login/forgot/', authHandler.handleForgotRequest);
-    app.get('/sim/login/reset/', authHandler.displayResetPage);
-    app.get('/sim/login/reset/:email/:token', authHandler.handleResetRequest);
-    app.put('/sim/login/reset/:email/:token', authHandler.handleResetUpdateRequest);
-    app.get('/sim/logout/', authHandler.handleLogoutRequest);
+    var loginHandler = require('./controllers/loginHandler');
+    app.get('/sim/login/', loginHandler.init);
+    app.post('/sim/login/', loginHandler.login);
+    //app.get('/sim/login/forgot/', loginHandler.displayForgotPage);
+    //app.post('/sim/login/forgot/', loginHandler.handleForgotRequest);
+    //app.get('/sim/login/reset/', loginHandler.displayResetPage);
+    //app.get('/sim/login/reset/:email/:token', loginHandler.handleResetRequest);
+    //app.put('/sim/login/reset/:email/:token', loginHandler.handleResetUpdateRequest);
+
+    // log out handler
+    var logoutHandler = require('./controllers/logoutHandler');
+    app.get('/sim/logout/', logoutHandler.init);
+
+    // dashboard
+    var dashboardHandler = require('./controllers/dashboardHandler');
+    app.all('/sim/dashboard', ensureAuthenticated);
+    app.get('/sim/dashboard/', dashboardHandler.init);
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

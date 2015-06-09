@@ -15,5 +15,6 @@ exports = module.exports = function (app, mongoose) {
     attemptSchema.index({ user: 1 });
     attemptSchema.set('autoIndex', (app.get('env') === 'development'));
 
-    app.db.model('AttemptLogin', attemptSchema);
+    app.db.model('LoginAttempt', attemptSchema);
+    return mongoose.model('LoginAttempt', attemptSchema);
 };

@@ -3,6 +3,7 @@
 exports = module.exports = function (app, mongoose) {
 
     // regular docs
-    require('./schema/user')(app, mongoose);
+    require('./schema/User')(app, mongoose);
+    require('./schema/LoginAttempt')(app, mongoose);
 
 };

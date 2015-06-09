@@ -22,7 +22,7 @@ exports = module.exports = function () {
         }
     };
 
-    this.http400 = function (req, res, next) {
+    this.http404 = function (req, res, next) {
         res.status(404);
         if (req.xhr) {
             res.json({ error: 'Resource not found.' });

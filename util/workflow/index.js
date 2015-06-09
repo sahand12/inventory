@@ -16,6 +16,10 @@ exports = module.exports = function (req, res) {
         return workflow.outcome.errors.length !== 0 || Object.keys(workflow.outcome).length !== 0;
     };
 
+    workflow.on('redirect', function (url) {
+       return res.redirect(url);
+    });
+
     workflow.on('exception', function (err) {
         workflow.outcome.errors.push('exception: ' + err);
         workflow.emit('response');
@@ -25,4 +29,6 @@ exports = module.exports = function (req, res) {
         workflow.success = !workflow.hasErrors();
         res.json(workflow.outcome);
     });
+
+    return workflow;
 };

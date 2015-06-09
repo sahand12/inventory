@@ -36,8 +36,8 @@ exports = module.exports = function (app, mongoose) {
                 tel: { type: String, default: '' }
             }
         },
-        timeCreated: { type: Date, default: Date.now },
-        timeUpdated: { type: Date, default: Date.now },
+        timeCreated: { type: Date, default: Date.now() },
+        timeUpdated: { type: Date, default: Date.now() },
         search: [String]
     });
 
@@ -52,7 +52,7 @@ exports = module.exports = function (app, mongoose) {
         var user = this;
 
         // set the timeUpdated
-        user.timeUpdated = new Date().now();
+        user.timeUpdated = Date.now();
 
         // only hash the password if it has been modified ( or is new )
         if (!user.isModified('password')) return next();
@@ -76,10 +76,20 @@ exports = module.exports = function (app, mongoose) {
         return this.role === role;
     };
 
+    userSchema.methods.defaultReturnUrl = function () {
+        var returnUrl = '/sim/';
+        if (this.canPlayRoleOf('engineer')) returnUrl = "/sim/engineer/";
+        if (this.canPlayRoleOf('manager')) returnUrl = "/sim/manager/";
+        if (this.canPlayRoleOf('supervisor')) returnUrl = "/sim/supervisor/";
+        if (this.canPlayRoleOf('owner')) returnUrl = "/sim/owner/";
+        return '/sim/dashboard/';
+    };
+
     userSchema.index({ email: 1 }, { unique: true });
     userSchema.index({ search: 1 });
     userSchema.index({ timeCreated: 1 });
     userSchema.set('autoIndex', (app.get('env') === "development"));
 
     app.db.model('User', userSchema);
+    return mongoose.model('User', userSchema);
 };

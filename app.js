@@ -74,14 +74,15 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(csurf({ cookie: { signed: true } }));
+//app.use(csurf({ cookie: { signed: true } }));
 helmet(app);
 
 // response locals
 app.use(function (req, res, next) {
-    res.cookie('_csrfToken', req.csrfToken());
+    //res.cookie('_csrf', req.csrfToken());
+    //res.locals.csrfToken = req.csrfToken();
     res.locals.user = {};
-    res.locals.user.defaultReturnUrl = req.user && req.user.defautlReturnUrl();
+    res.locals.user.defaultReturnUrl = req.user && req.user.defaultReturnUrl();
     res.locals.user.username = req.user && req.user.username;
     next();
 });
