@@ -9,7 +9,7 @@ function ensureAuthenticated (req, res, next) {
     }
     res.set('X-Auth-Required', 'true');
     req.session.returnUrl = req.originalUrl;
-    return res.redirect('sim/login/');
+    return res.redirect('/sim/login');
 }
 
 function ensureEngineer (req, res, next) {
@@ -87,7 +87,6 @@ exports = module.exports = function (app, passport) {
 
     // dashboard
     var dashboardHandler = require('./controllers/dashboardHandler');
-    app.all('/sim/dashboard', ensureAuthenticated);
-    app.get('/sim/dashboard/', dashboardHandler.init);
+    app.get('/sim/dashboard/', ensureAuthenticated, dashboardHandler.init);
 
 };

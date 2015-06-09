@@ -2,5 +2,5 @@
 
 exports.init = function (req, res, next) {
     req.logout();
-    return res.redirect('/sim/login');
+    return res.render('logout/index');
 };
