@@ -38,8 +38,22 @@ exports = module.exports = function (app, mongoose) {
         },
         timeCreated: { type: Date, default: Date.now() },
         timeUpdated: { type: Date, default: Date.now() },
-        search: [String]
+        search: [String],
+
+        resetPasswordToken: String,
+        resetPasswordExpires: Date
     });
+
+    userSchema.statics.encryptPassword = function (password, done) {
+        bcrypt.genSalt(10, function (err, salt) {
+            if (err) {
+                return done(err);
+            }
+            bcrypt.hash(password, salt, function (err, hash) {
+                done(err, hash);
+            });
+        });
+    };
 
     userSchema.statics.validatePassword = function(password, hash, done) {
         return bcrypt.compare(password, hash, function (err, isValid) {

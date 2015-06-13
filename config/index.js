@@ -22,7 +22,7 @@ exports.smtp = {
     },
     credentials: {
         user: process.env.SMTP_USERNAME || 'climaxws@gmail.com',
-        password: process.env.SMTP_PASSWORD || '8424028',
+        password: process.env.SMTP_PASSWORD || '004917631177805',
         host: process.env.SMTP_HOST || 'smtp.gmail.com',
         ssl: true
     }

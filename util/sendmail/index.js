@@ -71,7 +71,7 @@ exports = module.exports = function (req, res, options) {
                 'reply-to': options.replyTo || options.from,
                 cc: options.cc,
                 bcc: options.bcc,
-                subject: options.sujbect,
+                subject: options.subject,
                 text: options.text,
                 attachments: attachments
             }, function (err, message) {
@@ -87,33 +87,3 @@ exports = module.exports = function (req, res, options) {
         }
     );
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

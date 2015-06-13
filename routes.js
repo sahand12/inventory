@@ -75,11 +75,11 @@ exports = module.exports = function (app, passport) {
     var loginHandler = require('./controllers/loginHandler');
     app.get('/sim/login/', loginHandler.init);
     app.post('/sim/login/', loginHandler.login);
-    //app.get('/sim/login/forgot/', loginHandler.displayForgotPage);
-    //app.post('/sim/login/forgot/', loginHandler.handleForgotRequest);
-    //app.get('/sim/login/reset/', loginHandler.displayResetPage);
-    //app.get('/sim/login/reset/:email/:token', loginHandler.handleResetRequest);
-    //app.put('/sim/login/reset/:email/:token', loginHandler.handleResetUpdateRequest);
+    app.get('/sim/login/forgot/', loginHandler.showForgot);
+    app.post('/sim/login/forgot/', loginHandler.sendForgot);
+    app.get('/sim/login/reset/', loginHandler.showReset);
+    app.get('/sim/login/reset/:email/:token', loginHandler.showReset);
+    app.put('/sim/login/reset/:email/:token', loginHandler.setReset);
 
     // log out handler
     var logoutHandler = require('./controllers/logoutHandler');

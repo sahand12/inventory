@@ -1,0 +1,36 @@
+{{!--
+    name of the fields that will be posted to the server:
+    password, confirm
+--}}
+<div class="container" id="resetPage">
+    <div class="row">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>Reset your password</h1>
+            </div>
+        </div>
+        <div class="row">
+            <form method="post">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="password">New Password: </label>
+                        <input type="password" class="form-control" value="" name="password" placeholder="********"/>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="confirm">Confirm Password: </label>
+                        <input type="password" class="form-control" value="" name="confirm" placeholder="*******"/>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <input type="submit" value="Set Password" class="btn btn-primary"/>
+                </div>
+                <div class="col-xs-12">
+                    <em><a href="/sim/login">Go back to the login screen</a></em>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
