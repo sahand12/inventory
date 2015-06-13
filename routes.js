@@ -89,4 +89,10 @@ exports = module.exports = function (app, passport) {
     var dashboardHandler = require('./controllers/dashboardHandler');
     app.get('/sim/dashboard/', ensureAuthenticated, dashboardHandler.init);
 
+
+    // goods inventory
+    var goodHandler = require('./controllers/goodHandler');
+    app.get('/sim/goods/insert', goodHandler.showInsertNewGood);
+    app.post('/sim/goods/insert', goodHandler.handleInsertNewGood);
+
 };
