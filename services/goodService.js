@@ -18,7 +18,7 @@ exports = module.exports = function (app, mongoose) {
             .limit(options.limit)
             .exec(function (err, goods){
                 if (err) {
-                    return next(err);
+                    return done(err);
                 }
                 return done(null, goods);
             });

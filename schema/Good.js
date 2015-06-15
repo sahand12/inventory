@@ -27,5 +27,27 @@ exports = module.exports = function (app, mongoose) {
         shelf: { type: String }
     });
 
+    goodSchema.statics.listAll = function (data, done) {
+        if (typeof done === 'undefined' && typeof options === 'function') {
+            done = data;
+            data = {};
+        }
+        var options = {};
+        options.limit = data.limit || 10;
+        options.sortBy = data.sortBy || 'timeUpdated';
+        options.skip = data.skip || 0;
+
+        this.find()
+            .sort(options.sortBy)
+            .skip(options.skip)
+            .limit(options.limit)
+            .exec(function (err, goods) {
+                if (err) {
+                    return done(err);
+                }
+                return done(null, goods);
+            });
+    };
+
     app.db.model('Good', goodSchema);
 };

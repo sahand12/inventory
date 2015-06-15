@@ -91,8 +91,12 @@ exports = module.exports = function (app, passport) {
 
 
     // goods inventory
-    var goodHandler = require('./controllers/goodHandler');
+    var GoodHandler = require('./controllers/goodHandler'),
+        goodHandler = new GoodHandler(app);
     app.get('/sim/goods/insert', goodHandler.showInsertNewGood);
     app.post('/sim/goods/insert', goodHandler.handleInsertNewGood);
+    app.get('/sim/goods/list', goodHandler.showAllGoods);
+
+    app.get('/sim/goods/good/:id', goodHandler.showASingleGood);
 
 };

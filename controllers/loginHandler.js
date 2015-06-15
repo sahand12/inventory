@@ -10,7 +10,7 @@ exports.init = function (req, res, next) {
     };
     delete req.session.validationErrors;
     delete req.session.postErrors;
-    res.render('login/index', data);
+    res.render('login/version2', data);
 };
 
 exports.login = function (req, res, next) {

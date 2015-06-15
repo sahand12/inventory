@@ -28,7 +28,7 @@ exports = module.exports = function () {
             res.json({ error: 'Resource not found.' });
         }
         else {
-            res.render('http/400');
+            res.render('http/404');
         }
     };
 };
