@@ -2,31 +2,28 @@
     name of the fields that will be posted to the server:
     email
 --}}
-<div class="container" id="forgotPage">
-    <div class="row">
+<div class="login-box">
+    <div class="login-logo">
+        <a href="/"><b>GVN</b> Energy</a>
+    </div><!-- /.login-logo -->
+    <div class="login-box-body">
+        <p class="login-box-msg">Enter your email to send you the instructions to reset your password</p>
+        <form method="post">
+            <div class="form-group has-feedback">
+                <input name="email" type="text" class="form-control" placeholder="Email"/>
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Send Instructions</button>
+                </div><!-- /.col -->
+            </div>
+        </form>
+        <br/>
         <div class="row">
             <div class="col-xs-12">
-                <hgroup>
-                    <h1>Forgot your password?</h1>
-                    <h3><small>Enter your email address below and we'll send you password reset instructions</small></h3>
-                </hgroup>
-            </div>
+                <a role="button" href="/sim/login" class="btn btn-default btn-block btn-flat">Back to login</a>
+            </div><!-- /.col -->
         </div>
-        <div class="row">
-            <form method="post">
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <input type="email" class="form-control" value="" name="email" placeholder="Email"/>
-                    </div>
-                </div>
-                <div class="col-xs-12">
-                    <input type="submit" value="Send me reset instructions" class="btn btn-primary"/>
-                </div>
-                <div class="col-xs-12">
-                    <em><a href="/sim/login">Go back to the log-in screen</a></em>
-                </div>
-            </form>
-        </div>
-
-    </div>
-</div>
+    </div><!-- /.login-box-body -->
+</div><!-- /.login-box -->

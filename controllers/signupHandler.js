@@ -6,7 +6,9 @@ exports.init = function (req, res, next) {
     }
     var data = {
         validationErrors: req.session.validationErrors || "",
-        postError: req.session.postErrors || ""
+        postError: req.session.postErrors || "",
+        bodyClass: 'register-page',
+        title: "Sign up"
     };
     delete req.session.validationErrors;
     delete req.session.postErrors;

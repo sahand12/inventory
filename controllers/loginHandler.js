@@ -6,11 +6,13 @@ exports.init = function (req, res, next) {
     }
     var data = {
         validationErrors: req.session.validationErrors || "",
-        postErrors: req.session.postErrors || ""
+        postErrors: req.session.postErrors || "",
+        bodyClass: 'login-page',
+        title: "Login"
     };
     delete req.session.validationErrors;
     delete req.session.postErrors;
-    res.render('login/version2', data);
+    res.render('login/index', data);
 };
 
 exports.login = function (req, res, next) {
@@ -70,8 +72,13 @@ exports.showForgot = function (req, res, next) {
         return res.redirect('/sim/dashboard');
     }
     var data = {
-
+        validationErrors: req.session.validationErrors,
+        postErrors: req.session.postErrors,
+        bodyClass: 'login-page',
+        title: 'Login - Forgot Credentials'
     };
+    delete req.session.validationErrors;
+    delete req.session.postErrors;
     return res.render('login/forgot/index', data);
 };
 

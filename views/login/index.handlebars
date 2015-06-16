@@ -2,49 +2,40 @@
     name of the fields that will be posted to the server:
     email, password
 --}}
-<div class="container" id="signupPage">
-    <div class="signupContainer">
-
+<div class="login-box">
+    <div class="login-logo">
+        <a href="/"><b>GVN</b> Energy</a>
+    </div><!-- /.login-logo -->
+    <div class="login-box-body">
+        <p class="login-box-msg">Sign in to start your session</p>
+        <form method="post">
+            <div class="form-group has-feedback">
+                <input name="username" type="text" class="form-control" placeholder="Username or Email"/>
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input name="password" type="password" class="form-control" placeholder="Password"/>
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                </div><!-- /.col -->
+            </div>
+        </form>
+        <br/>
         <div class="row">
-            <div class="col-xs-12">
-                <hgroup>
-                    <h3 class="h2 text-center"><small>Sign in to access your dashboard</small></h3>
-                </hgroup>
+            <div class="col-xs-6">
+                <a role="button" class="btn btn-block btn-default" href="/sim/login/forgot">I forgot my password</a>
+            </div>
+            <div class="col-xs-6">
+                <a role="button" class="btn btn-block btn-default" href="/sim/signup" >Register</a>
             </div>
         </div>
 
-        <form method="post" class="signupForm" novalidate>
-            <input type="hidden" name="_csrf" value="{{csrfToken}}"/>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        <input type="email" class="form-control flatInput" name="email" placeholder="Email" required/>
-                    </div>
-                </div>
-            </div>
+    </div><!-- /.login-box-body -->
+</div><!-- /.login-box -->
 
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        <input type="password" name="password" class="form-control flatInput" placeholder="********" required/>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="signupButton">
-                        <input type="submit" value="SIGN IN">
-                    </div>
-                </div>
-            </div>
-
-            <p class="text-center signinDesc"><a href="/sim/login/forgot">I can't sign in or I forgot my password</a></p>
-
-            <p class="text-center signinDesc">Haven't yet an account? <a href="/sim/signup">Sign up here</a></p>
-        </form>
-    </div>
-</div>
 {{#if validationErrors}}
     {{#each validationErrors}}
         <p>{{this.msg}}</p>

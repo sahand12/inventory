@@ -1,77 +1,60 @@
 {{!-- name of the fields that will be sent through post request:
      firstName, lastName, email, password, termsAccept
  --}}
-<div class="container" id="signupPage">
-    <div class="signupContainer">
+<div class="register-box">
+    <div class="register-logo">
+        <a href="/"><b>GVN</b> Energy</a>
+    </div>
 
-        <!--<div class="logo">
-            <img src="/images/logo-512.png" alt="Climax Well Services"/>
-        </div>
-        -->
+    <div class="register-box-body">
+        <p class="login-box-msg">Register a new membership</p>
 
-
-        <div class="row">
-            <div class="col-xs-12">
-                <hgroup>
-                    <h1 class="h1 text-center">Sign up now</h1>
-                    <h3 class="h2 text-center"><small>You'll be up and running in less than a minute</small></h3>
-                </hgroup>
-            </div>
-        </div>
-
-        <form method="post" class="signupForm" novalidate>
-
+        <form method="post">
             <div class="row">
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control flatInput" name="firstName" placeholder="First name" value="{{errors.firstName.value}}" required/>
+                <div class="col-xs-6">
+                    <div class="form-group has-feedback">
+                        <input name="firstName" type="text" class="form-control" placeholder="First Name"/>
+                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     </div>
                 </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control flatInput" name="lastName" placeholder="Last name" value="{{errors.lastName.value}}" required/>
+                <div class="col-xs-6">
+                    <div class="form-group has-feedback">
+                        <input name="lastName" type="text" class="form-control" placeholder="Last Name"/>
+                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     </div>
                 </div>
-            </div>
+            </div><!-- /.row -->
 
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        <input type="email" class="form-control flatInput" name="email" placeholder="Email" value="{{errors.email.value}}" required/>
-                    </div>
-                </div>
+            <div class="form-group has-feedback">
+                <input name="email" type="email" class="form-control" placeholder="Email"/>
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
-
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        <input type="password" name="password" class="form-control flatInput" placeholder="Password" required/>
-                    </div>
-                </div>
+            <div class="form-group has-feedback">
+                <input name="password" type="password" class="form-control" placeholder="Password"/>
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
-
+            <div class="form-group has-feedback">
+                <input name="confirm" type="password" class="form-control" placeholder="Retype password"/>
+                <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+            </div>
             <div class="row">
-                <div class="col-sm-12">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" name="termsAccept" /> I agree to the <a href="/legel/terms">Terms of Service</a>
+                <div class="col-xs-7 col-xs-offset-1">
+                    <div class="checkbox icheck">
+                        <label for="">
+                            <input name="acceptTerms" type="checkbox"/>  I agree to the <a href="/terms">terms</a>
                         </label>
                     </div>
-                </div>
+                </div><!-- /.col -->
+                <div class="col-xs-4">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+                </div><!-- /.col -->
             </div>
-
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="signupButton">
-                        <input type="submit" name="signupBtn" value="SIGN UP">
-                    </div>
-                </div>
-            </div>
-
-            <p class="text-center signinDesc">Already have an account? <a href="/sim/login">Sign in here</a></p>
         </form>
+        <br/>
+        <a href="/sim/login" role="button" class="btn btn-block btn-default">I already have a membership</a>
     </div>
 </div>
+
 
 {{#if validationErrors}}
     {{#each validationErrors}}
