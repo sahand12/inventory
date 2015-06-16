@@ -4,7 +4,6 @@
 'use strict';
 
 exports = module.exports = function (app, passport) {
-
     var LocalStrategy = require('passport-local').Strategy;
 
     passport.use('local', new LocalStrategy(

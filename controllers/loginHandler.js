@@ -7,11 +7,15 @@ exports.init = function (req, res, next) {
     var data = {
         validationErrors: req.session.validationErrors || "",
         postErrors: req.session.postErrors || "",
+        values: {
+            email: req.session.loginEmail || ""
+        },
         bodyClass: 'login-page',
         title: "Login"
     };
     delete req.session.validationErrors;
     delete req.session.postErrors;
+    delete req.session.loginEmail;
     res.render('login/index', data);
 };
 
@@ -22,12 +26,13 @@ exports.login = function (req, res, next) {
         req.checkBody('email', 'provide a valid email address').isEmail();
         req.checkBody('password', 'password can not be empty').notEmpty();
 
-        var errors = req.validationErrors();
+        var errors = req.validationErrors(true);
         if (!errors) {
             workflow.emit('abuseFilter');
         }
         else {
             req.session.validationErrors = errors;
+            req.session.loginEmail = req.body.email;
             return res.redirect('/sim/login/');
         }
     });
@@ -49,7 +54,7 @@ exports.login = function (req, res, next) {
                         return next(err);
                     }
 
-                    req.session.postErrors = { error: "Username and password combination not found or your account is inactive." };
+                    req.session.postErrors = { error: "Invalid email or password" };
                     return res.redirect('/sim/login/');
                 });
             }

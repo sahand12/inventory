@@ -1,6 +1,7 @@
+{{!-- views/login/index.handlebars --}}
 {{!--
     name of the fields that will be posted to the server:
-    email
+        * email
 --}}
 <div class="login-box">
     <div class="login-logo">
@@ -8,9 +9,22 @@
     </div><!-- /.login-logo -->
     <div class="login-box-body">
         <p class="login-box-msg">Enter your email to send you the instructions to reset your password</p>
+
+        {{#if validationErrors}}
+            {{#each validationErrors}}
+                <div class="alert vgn-alert-danger">
+                    <b class="text-capitalize">{{this.param}}</b>: {{this.msg}}
+                </div>
+            {{/each}}
+        {{/if}}
+
+        {{#if postErrors}}
+            <div class="alert vgn-alert-danger">{{postErrors.error}}</div>
+        {{/if}}
+
         <form method="post">
             <div class="form-group has-feedback">
-                <input name="email" type="text" class="form-control" placeholder="Email"/>
+                <input name="email" type="text" class="form-control" placeholder="Email" value="{{values.email}}"/>
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="row">

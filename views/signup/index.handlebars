@@ -1,3 +1,4 @@
+{{!-- views/signup/index.handlebars --}}
 {{!-- name of the fields that will be sent through post request:
      firstName, lastName, email, password, termsAccept
  --}}
@@ -9,31 +10,43 @@
     <div class="register-box-body">
         <p class="login-box-msg">Register a new membership</p>
 
+        {{#if validationErrors}}
+            {{#each validationErrors}}
+                <div class="alert vgn-alert-danger">
+                    <b class="text-capitalize">{{this.param}}</b>: {{this.msg}}
+                </div>
+            {{/each}}
+        {{/if}}
+
+        {{#if postErrors}}
+            <div class="alert vgn-alert-danger">{{postErrors.error}}</div>
+        {{/if}}
+
         <form method="post">
             <div class="row">
                 <div class="col-xs-6">
-                    <div class="form-group has-feedback">
-                        <input name="firstName" type="text" class="form-control" placeholder="First Name"/>
+                    <div class="form-group has-feedback {{#if validationErrors.firstName}}has-error{{/if}}">
+                        <input name="firstName" type="text" class="form-control" placeholder="First Name" value="{{values.firstName}}"/>
                         <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     </div>
                 </div>
                 <div class="col-xs-6">
-                    <div class="form-group has-feedback">
-                        <input name="lastName" type="text" class="form-control" placeholder="Last Name"/>
+                    <div class="form-group has-feedback {{#if validationErrors.lastName}}has-error{{/if}}">
+                        <input name="lastName" type="text" class="form-control" placeholder="Last Name" value="{{values.lastName}}"/>
                         <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     </div>
                 </div>
             </div><!-- /.row -->
 
-            <div class="form-group has-feedback">
-                <input name="email" type="email" class="form-control" placeholder="Email"/>
+            <div class="form-group has-feedback {{#if validationErrors.email}}has-error{{/if}}">
+                <input name="email" type="email" class="form-control" placeholder="Email" value="{{values.email}}"/>
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
-            <div class="form-group has-feedback">
+            <div class="form-group has-feedback {{#if validationErrors.password}}has-error{{/if}}">
                 <input name="password" type="password" class="form-control" placeholder="Password"/>
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
-            <div class="form-group has-feedback">
+            <div class="form-group has-feedback {{#if validationErrors.confirm}}has-error{{/if}}">
                 <input name="confirm" type="password" class="form-control" placeholder="Retype password"/>
                 <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
             </div>
@@ -51,16 +64,6 @@
             </div>
         </form>
         <br/>
-        <a href="/sim/login" role="button" class="btn btn-block btn-default">I already have a membership</a>
+        <a href="/sim/login">I already have a membership</a>
     </div>
 </div>
-
-
-{{#if validationErrors}}
-    {{#each validationErrors}}
-        <p>{{this.msg}}</p>
-    {{/each}}
-{{/if}}
-{{#if postErrors}}
-    <p>yes honey: {{this.postErrors.error}}</p>
-{{/if}}

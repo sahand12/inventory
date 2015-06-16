@@ -6,8 +6,9 @@ var bcrypt = require('bcrypt');
 exports = module.exports = function (app, mongoose) {
 
     var userSchema = new mongoose.Schema({
-        email: { type: String, unique: true, lowecase: true },
+        email: { type: String, unique: true, lowercase: true },
         password: String,
+        employeeId: { type: String, unique: true },
         role: String,
         name: {
             first: { type: String, default: '' },
@@ -28,6 +29,7 @@ exports = module.exports = function (app, mongoose) {
             fatherName: { type: String, default: '' }
         },
         work: {
+            hireDate: { type: Date, default: Date.now() },
             title: { type: String, default: '' },
             department: { type: String, default: '' },
             location: {
@@ -100,6 +102,7 @@ exports = module.exports = function (app, mongoose) {
     };
 
     userSchema.index({ email: 1 }, { unique: true });
+    userSchema.index({ employeeId: 1 }, { unique: true });
     userSchema.index({ search: 1 });
     userSchema.index({ timeCreated: 1 });
     userSchema.set('autoIndex', (app.get('env') === "development"));

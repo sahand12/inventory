@@ -8,10 +8,12 @@ exports.init = function (req, res, next) {
         validationErrors: req.session.validationErrors || "",
         postError: req.session.postErrors || "",
         bodyClass: 'register-page',
-        title: "Sign up"
+        title: "Sign up",
+        values: req.session.values
     };
     delete req.session.validationErrors;
     delete req.session.postErrors;
+    delete req.session.values;
     return res.render('signup/index', data);
 };
 
@@ -22,11 +24,17 @@ exports.signup = function (req, res, next) {
         req.checkBody('email', 'provide a valid email address').isEmail();
         req.checkBody('firstName', 'enter your first name').notEmpty();
         req.checkBody('lastName', 'enter your last name').notEmpty();
-        req.checkBody('password', 'password must be between 8 and 20 characters long.').len(8, 20);
+        req.checkBody('password', 'at least 8 characters long').len(8, 20);
+        req.checkBody('confirm', 'passwords don\'t match').notEmpty().equals(req.body.password);
 
-        var errors = req.validationErrors();
+        var errors = req.validationErrors(true);
         if (errors) {
             req.session.validationErrors = errors;
+            req.session.values = {
+                email: req.body.email,
+                firstName: req.body.firstName,
+                lastName: req.body.lastName
+            };
             return res.redirect('/sim/signup');
         }
 

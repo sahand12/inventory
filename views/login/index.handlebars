@@ -1,6 +1,8 @@
+{{!-- views/login/index.handlebars --}}
 {{!--
     name of the fields that will be posted to the server:
-    email, password
+        * email
+        * password
 --}}
 <div class="login-box">
     <div class="login-logo">
@@ -8,12 +10,25 @@
     </div><!-- /.login-logo -->
     <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
+
+        {{#if validationErrors}}
+            {{#each validationErrors}}
+                <div class="alert vgn-alert-danger">
+                    <b class="text-capitalize">{{this.param}}</b>: {{this.msg}}
+                </div>
+            {{/each}}
+        {{/if}}
+
+        {{#if postErrors}}
+            <div class="alert vgn-alert-danger">{{postErrors.error}}</div>
+        {{/if}}
+
         <form method="post">
-            <div class="form-group has-feedback">
-                <input name="username" type="text" class="form-control" placeholder="Username or Email"/>
+            <div class="form-group has-feedback{{#if validationErrors.email}} has-error{{/if}}">
+                <input name="email" type="email" class="form-control" placeholder="Email" value="{{values.email}}"/>
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
-            <div class="form-group has-feedback">
+            <div class="form-group has-feedback{{#if validationErrors.password}} has-error{{/if}}">
                 <input name="password" type="password" class="form-control" placeholder="Password"/>
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
@@ -26,21 +41,12 @@
         <br/>
         <div class="row">
             <div class="col-xs-6">
-                <a role="button" class="btn btn-block btn-default" href="/sim/login/forgot">I forgot my password</a>
+                <a role="button" class="btn btn-block btn-default btn-flat" href="/sim/login/forgot">Forgot password</a>
             </div>
             <div class="col-xs-6">
-                <a role="button" class="btn btn-block btn-default" href="/sim/signup" >Register</a>
+                <a role="button" class="btn btn-block btn-default btn-flat" href="/sim/signup" >Register</a>
             </div>
         </div>
 
     </div><!-- /.login-box-body -->
 </div><!-- /.login-box -->
-
-{{#if validationErrors}}
-    {{#each validationErrors}}
-        <p>{{this.msg}}</p>
-    {{/each}}
-{{/if}}
-{{#if postErrors}}
-    <p>yes honey: {{this.postErrors.error}}</p>
-{{/if}}
