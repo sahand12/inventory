@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GVN Energy | {{title}}</title>
+
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
+
+    {{#if googleFonts}}
+        {{> fonts}}
+    {{/if}}
+
+    <!-- Bootstrap 3.3.4 -->
+    <link rel="stylesheet" href="/stylesheets/vendor/bootstrap/bootstrap.min.css"/>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="/stylesheets/vendor/font-awesome/font-awesome.min.css"/>
+    <!-- Page specific styles -->
+    <link rel="stylesheet" href="/stylesheets/cost.css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body {{#if bodyClass}}class="{{bodyClass}}"{{/if}}>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 cost-sidebar">
+            <div class="cost-sidebar-logo">
+                <p><a href="/"><img src="/images/cost-logo.png" alt="GVN Energy Cost Management Service" width="40" height="40"/>
+                &nbsp;<b>GVN</b> Energy</a></p>
+                <p class="text-center"><small class="text-center">Cost Management</small></p>
+            </div><!-- /.cost-sidebar-logo -->
+            <hr class="cost-sidebar-hr"/>
+            <ul class="nav nav-sidebar">
+                <li><a href="/cost/expenses">Expenses</a></li>
+                <li><a href="/cost/trends">Trends</a></li>
+                <li><a href="/cost/reports">Reports</a></li>
+                <li><a href="/cost/people">People</a></li>
+                <li><a href="/cost/reminders">Reminders</a></li>
+                <li><a href="/cost/notification">Notifications</a></li>
+            </ul>
+            <hr class="cost-sidebar-hr"/>
+            <ul class="nav nav-sidebar">
+                <li><a href="/cost/settings">Settings</a></li>
+                <li><a href="/cost/logout">Log Out</a></li>
+                <li><a href="/cost/faq">FAQ</a></li>
+            </ul>
+            <hr class="cost-sidebar-hr"/>
+        </div>
+
+        <div class="col-sm-9 col-md-10 col-sm-offset-3 col-md-offset-2 cost-main">
+            <div class="cost-top-nav">
+                <span class="glyphicon glyphicon-user"></span>
+                <a href="/cost/profile">
+                    <span class="cost-top-nav-username text-capitalize"> &nbsp;{{user.name.first}} {{user.name.last}}</span>
+                </a>
+                <div class="pull-right">
+                    <a href="/cost/expenses/add" role="button" class="btn btn-expense">Add Expense</a>
+                </div>
+            </div><!-- /.cost-top-nav -->
+
+            <div class="cost-top-notification"></div><!-- /.cost-top-notification -->
+
+            <div class="cost-main-content">
+                {{{body}}}
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

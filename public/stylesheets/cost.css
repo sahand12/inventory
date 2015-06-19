@@ -1,0 +1,109 @@
+/*
+ * Sidebar
+ */
+/* Hide for mobile, show later */
+.cost-sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .cost-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* scrollable contents if viewport is shorter than content. */
+    background-color: #2e2e2e;
+  }
+}
+/*
+ * Sidebar Logo
+ */
+.cost-sidebar-logo {
+  height: 85px;
+  color: white;
+  font-weight: 200;
+}
+.cost-sidebar-logo a,
+.cost-sidebar-logo a:hover,
+.cost-sidebar-logo a:focus,
+.cost-sidebar-logo a:visited {
+  text-decoration: none;
+  color: white;
+}
+/*
+ * Sidebar Navigation
+ */
+.nav-sidebar {
+  margin-right: -20px;
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 30px;
+}
+.nav-sidebar > li > a {
+  color: #3eaf90;
+  letter-spacing: 1px;
+}
+.nav-sidebar > li > a:hover,
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  background-color: #7a7a7a;
+}
+.cost-sidebar-hr {
+  border-color: #5a5a5a;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+/*
+ * Main Top Navigation
+ */
+.cost-top-nav {
+  height: 80px;
+  background-color: #9bd5cb;
+  padding: 20px;
+  margin-left: -15px;
+  margin-right: -15px;
+  line-height: 40px;
+  color: white;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+.cost-top-nav a,
+.cost-top-nav a:hover,
+.cost-top-nav a:focus,
+.cost-top-nav a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+.btn-expense {
+  background-color: #3eb39e;
+}
+.btn-expense:hover,
+.btn-expense:active,
+.btn-expense:focus,
+.btn-expense:visited {
+  background-color: #37a08d;
+  color: white;
+  box-shadow: none;
+  outline: none;
+}
+/*
+ * Main Content
+ */
+.cost-main-content {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .cost-main-content {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}

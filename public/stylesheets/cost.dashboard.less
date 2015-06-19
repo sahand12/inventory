@@ -1,0 +1,120 @@
+@import 'cost.variable.less';
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.cost-sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .cost-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* scrollable contents if viewport is shorter than content. */
+    background-color:@sidebar-background-color;
+  }
+}
+
+/*
+ * Sidebar Logo
+ */
+.cost-sidebar-logo {
+  height: 85px;
+  color: white;
+  font-weight: 200;
+
+  a,
+  a:hover,
+  a:focus,
+  a:visited{
+    text-decoration: none;
+    color: white;
+  }
+}
+
+/*
+ * Sidebar Navigation
+ */
+.nav-sidebar {
+  margin-right: -20px;
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 30px;
+}
+.nav-sidebar > li > a {
+  color: @sidebar-item-color;
+  letter-spacing: 1px;
+}
+.nav-sidebar > li > a:hover,
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  background-color: @sidebar-background-hover;
+}
+.cost-sidebar-hr {
+  border-color: rgb(90, 90, 90);
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+/*
+ * Main Top Navigation
+ */
+.cost-top-nav {
+  height: 80px;
+  background-color: @top-nav-background-color;
+  padding: 20px;
+  margin-left: -15px;
+  margin-right: -15px;
+  line-height: 40px;
+  color: white;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+.cost-top-nav a,
+.cost-top-nav a:hover,
+.cost-top-nav a:focus,
+.cost-top-nav a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+.cost-top-nav-username {
+  //color: darken(@top-nav-button-color-hover, 20%);
+}
+.btn-expense {
+  background-color: @top-nav-button-color;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:visited {
+    background-color: @top-nav-button-color-hover;
+    color: white;
+    box-shadow: none;
+    outline: none;
+  }
+
+}
+
+/*
+ * Main Content
+ */
+.cost-main-content {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .cost-main-content {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}

@@ -14,8 +14,10 @@ exports = module.exports = function (app, mongoose) {
             first: { type: String, default: '' },
             last: { type: String, default: '' }
         },
+
         profile: {
             birthday: { type: Date, default: '' },
+            img: { type: String, default: "" },
             homeAddress: {
                 city: { type: String, default: '' },
                 country: { type: String, default: '' },
@@ -28,6 +30,7 @@ exports = module.exports = function (app, mongoose) {
             birthCertificateNumber: { type: String, default: '' },
             fatherName: { type: String, default: '' }
         },
+
         work: {
             hireDate: { type: Date, default: Date.now() },
             title: { type: String, default: '' },

@@ -96,7 +96,12 @@ exports = module.exports = function (app, passport) {
     app.get('/sim/goods/insert', goodHandler.showInsertNewGood);
     app.post('/sim/goods/insert', goodHandler.handleInsertNewGood);
     app.get('/sim/goods/list', goodHandler.showAllGoods);
-
     app.get('/sim/goods/good/:id', goodHandler.showASingleGood);
+
+
+    var CostHandler = require('./controllers/costHandler'),
+        costHandler = new CostHandler(app);
+    app.all('/costs/*', ensureAuthenticated);
+    app.get('/cost/dashboard', costHandler.showDashboard);
 
 };
