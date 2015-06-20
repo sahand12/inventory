@@ -76,6 +76,9 @@
   font-size: 15px;
   letter-spacing: 1px;
 }
+.cost-top-nav .glyphicon {
+  font-size: 20px;
+}
 .cost-top-nav a,
 .cost-top-nav a:hover,
 .cost-top-nav a:focus,
@@ -96,14 +99,55 @@
   outline: none;
 }
 /*
+ * Cost Top Notification Bar
+ */
+.cost-top-notification {
+  height: 60px;
+  background-color: #ed1f24;
+  margin-left: -15px;
+  margin-right: -15px;
+  color: white;
+  padding-left: 15px;
+  line-height: 60px;
+  font-size: 16px;
+}
+.cost-top-notification .glyphicon {
+  font-size: 20px;
+}
+/*
  * Main Content
  */
-.cost-main-content {
-  padding: 20px;
+/*
+ * Cost Main Charts
+ */
+.cost-main-charts {
+  background-color: #f6f6f6;
 }
-@media (min-width: 768px) {
-  .cost-main-content {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
+.cost-main-charts {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.cost-main-charts-header {
+  font-size: 16px;
+  background-image: url("/images/section-header-bg.png");
+  background-position: center;
+  background-repeat: repeat-x;
+  padding-right: 20px;
+}
+.cost-main-charts-header span {
+  background: #f6f6f6;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.cost-main-last-30-days .pie-chart-canvas {
+  margin: 30px auto;
+}
+.cost-main-last-30-days .pie-chart-canvas canvas {
+  display: block;
+  margin: 0 auto;
+}
+.cost-main-this-year .lineChart {
+  margin: 80px auto;
+  display: block;
+  height: 200px;
 }

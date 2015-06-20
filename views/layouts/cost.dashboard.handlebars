@@ -60,18 +60,63 @@
                     <span class="cost-top-nav-username text-capitalize"> &nbsp;{{user.name.first}} {{user.name.last}}</span>
                 </a>
                 <div class="pull-right">
+                    <a href="/cost/funds/add" role="button" class="btn btn-expense">Request Fund</a>
                     <a href="/cost/expenses/add" role="button" class="btn btn-expense">Add Expense</a>
                 </div>
             </div><!-- /.cost-top-nav -->
 
-            <div class="cost-top-notification"></div><!-- /.cost-top-notification -->
+            <div class="cost-top-notification">
+                <span class="glyphicon glyphicon-bell"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="cost-top-notificatin-text">You have no new notification</span>
+            </div><!-- /.cost-top-notification -->
 
-            <div class="cost-main-content">
+            <div class="row cost-main-content">
                 {{{body}}}
             </div>
         </div>
     </div>
 </div>
+
+<script src="/javascripts/vendor/jquery.min.js"></script>
+<script src="/javascripts/vendor/bootstrap.min.js"></script>
+<script src="/javascripts/vendor/Chart.js"></script>
+
+<script>
+    var costApp = costApp || {};
+    costApp.pieData = [];
+    costApp.lineData = {
+        labels: [],
+        datasets: [{
+            label: "{{lineData.datasets.label}}",
+            fillColor: "{{lineData.datasets.fillColor}}",
+            strokeColor: "{{lineData.datasets.strokeColor}}",
+            pointColor: "{{lineData.datasets.pointColor}}",
+            pointStrokeColor:"{{lineData.datasets.pointStrokeColor}}",
+            pointHighlightFill: "{{lineData.datasets.pointHighlightFill}}",
+            pointHighlightStroke: "{{lineData.datasets.pointHighlightStroke}}",
+            data: []
+        }]
+    };
+
+    {{#each pieData}}
+        costApp.pieData.push({
+            value: {{this.value}}, color: "{{this.color}}", highlight: "{{this.highlight}}", label: "{{this.label}}"
+        });
+    {{/each}}
+
+    // line charts
+    {{#each lineData.labels}}
+        costApp.lineData.labels.push("{{this}}");
+    {{/each}}
+
+    {{#each lineData.datasets.data}}
+        costApp.lineData.datasets[0].data.push({{this}});
+    {{/each}}
+
+    console.log(costApp.pieData);
+    console.log(costApp.lineData);
+</script>
+<script src="/javascripts/cost-dashboard-chart.js"></script>
 
 </body>
 </html>

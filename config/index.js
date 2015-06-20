@@ -32,3 +32,14 @@ exports.authorization = {
         message: "You dont have permission to access this page"
     }
 };
+exports.months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+exports.charts = {
+    line: {
+        fillColor : "rgb(200, 229, 225)",
+        strokeColor : "#fff",
+        pointColor : "rgb(55, 160, 141)",
+        pointStrokeColor : "#fff",
+        pointHighlightFill : "#fff",
+        pointHighlightStroke : "rgba(220,220,220,1)"
+    }
+};

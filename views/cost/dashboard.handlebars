@@ -1,1 +1,38 @@
-{{user.email}}
+<div class="col-sm-8 cost-main-charts">
+    <div class="row">
+        <div class="col-xs-12 cost-main-last-30-days">
+            <h1 class="h1 text-uppercase cost-main-charts-header"><span>last 30 days</span></h1>
+
+            <div class="row">
+                <div class="col-sm-7 pie-chart-canvas">
+                    <canvas id="pieChart" class="pie-chart" width="300" height="300"></canvas>
+                </div>
+                <div class="col-sm-5 pie-chart-data">
+
+                </div>
+            </div>
+        </div><!-- /.cost-main-last-30-days -->
+
+        <div class="col-xs-12 cost-main-this-year">
+            <h1 class="h1 text-uppercase cost-main-charts-header"><span>this year</span></h1>
+
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <canvas class="lineChart" id="lineChart"></canvas>
+                </div>
+            </div>
+
+        </div><!-- /.cost-main-this-year -->
+    </div><!-- /.row -->
+</div><!-- /.cost-main-charts -->
+
+<div class="col-sm-4 cost-main-right-sidebar">
+    <div class="row">
+        <div class="cost-main-right-sidebar-activity">
+
+        </div><!-- /.cost-main-sidebar-activity -->
+        <div class="cost-main-right-sidebar-reminders">
+
+        </div><!-- /.cost-main-right-sidebar-reminders -->
+    </div><!-- /.row -->
+</div><!-- /.cost-main-right-sidebar -->
