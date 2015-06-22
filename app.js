@@ -65,7 +65,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressValidator());
 app.use(cookieParser(config.cryptoKey));
-app.use(require('less-middleware')(path.join(__dirname, 'public')));
+app.use(require('less-middleware')(path.join(__dirname, 'public/stylesheets/')));
 app.use(session({
     resave: true,
     saveUninitialized: true,

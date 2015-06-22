@@ -103,5 +103,11 @@ exports = module.exports = function (app, passport) {
         costHandler = new CostHandler(app);
     app.all('/costs/*', ensureAuthenticated);
     app.get('/cost/dashboard', costHandler.showDashboard);
+    app.post('/cost/expenses', costHandler.handleAddExpenseRequest);
+
+    var CostCategoryHandler = require('./controllers/cost/categoryHandler'),
+        costCategoryHandler = new CostCategoryHandler(app);
+    app.get('/cost/categories', costCategoryHandler.showCategories);
+    app.post('/cost/categories', costCategoryHandler.handleAddCategoryRequest);
 
 };

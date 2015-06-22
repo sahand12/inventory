@@ -139,3 +139,9 @@
   display: block;
   height: 200px;
 }
+/**
+ * Cost Add Expense Modal
+ */
+.cost-expense-modal {
+  background: rgba(61, 61, 61, 0.2);
+}

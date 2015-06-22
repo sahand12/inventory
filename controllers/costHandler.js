@@ -64,6 +64,81 @@ var CostHandler = function CostHandler (app) {
         return res.render('cost/dashboard', data);
     };
 
+
+    /**
+     * POST /cost/expenses
+     */
+    this.handleAddExpenseRequest = function (req, res, next) {
+        var workflow = req.app.utility.workflow(req, res);
+
+        workflow.on('validate', function () {
+            var amount = parseInt(req.body.amount);
+            req.checkBody('title', 'Each expense should have a title').notEmpty();
+            req.checkBody('date', 'provide a valid date').isDate();
+            req.checkBody('amount', 'provide an amount').notEmpty();
+            req.checkBody('category', 'provide a category').notEmpty();
+
+            var errors = req.validationErrors(true);
+            if (isNaN(amount) || amount < 0) {
+                errors = errors || {};
+                errors.amount = { param: 'amount', msg: 'provide a positive number', value: req.body.amount };
+            }
+
+            if (errors) {
+                var data = {
+                    success: false,
+                    validationErrors: errors
+                };
+                res.send(data);
+            }
+
+            workflow.emit('findCategory', req.body.category);
+        });
+
+        workflow.on('findCategory', function (cat) {
+            req.app.db.models.ExpenseCategory.find({name: cat}, function (err, ctg) {
+                if (err) {
+                    return next(err);
+                }
+                if (!ctg) {
+                    var data = {
+                        success: false,
+                        PostErrors: { category: {
+                            param: 'category',
+                            value: req.body.category,
+                            msg: 'Invalid category'
+                        }}
+                    };
+                    res.send(data);
+                }
+                var catId = ctg._id;
+                workflow.emit('createExpense', catId);
+            });
+        });
+
+        workflow.on('createExpense', function (catId) {
+            var fieldsToSet = {
+                user: req.user._id,
+                title: req.body.title,
+                date: req.body.date,
+                description: req.body.description || "",
+                category: catId
+            };
+
+            req.app.db.models.Expense.create(fieldsToSet, function (err, doc) {
+                if (err) {
+                    return next(err);
+                }
+                var data = {
+                    success: true,
+                    expense: doc
+                };
+                res.send(data);
+            });
+        });
+
+        workflow.emit('validate');
+    };
 };
 
 exports = module.exports = CostHandler;

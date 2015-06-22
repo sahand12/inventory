@@ -1,0 +1,8 @@
+{{#each categories}}
+    <li>{{this.name}}</li>
+{{/each}}
+<hr/>
+<form action="/cost/categories" method="post">
+    <input type="text" name="categoryName" placeholder="Name"/>
+    <button type="submit">Create Category</button>
+</form>
