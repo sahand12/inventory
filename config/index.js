@@ -29,13 +29,13 @@ exports.smtp = {
 };
 exports.authorization = {
     errors: {
-        message: "You dont have permission to access this page"
+        message: "You don't have permission to access this page"
     }
 };
 exports.months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 exports.charts = {
     line: {
-        fillColor : "rgb(200, 229, 225)",
+        fillColor : "rgb(180, 209, 205)",
         strokeColor : "#fff",
         pointColor : "rgb(55, 160, 141)",
         pointStrokeColor : "#fff",

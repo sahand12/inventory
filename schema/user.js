@@ -8,7 +8,6 @@ exports = module.exports = function (app, mongoose) {
     var userSchema = new mongoose.Schema({
         email: { type: String, unique: true, lowercase: true },
         password: String,
-        employeeId: { type: String, unique: true },
         role: String,
         name: {
             first: { type: String, default: '' },

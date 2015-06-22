@@ -6,7 +6,7 @@ exports.init = function (req, res, next) {
     }
     var data = {
         validationErrors: req.session.validationErrors || "",
-        postError: req.session.postErrors || "",
+        postErrors: req.session.postErrors || "",
         bodyClass: 'register-page',
         title: "Sign up",
         values: req.session.values
@@ -98,7 +98,7 @@ exports.signup = function (req, res, next) {
                     return res.redirect('/sim/dashboard');
                 });
             }
-        })(req, res);
+        })(req, res, next);
     });
 
     workflow.emit('validate');
