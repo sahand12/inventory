@@ -9,6 +9,7 @@ exports = module.exports = function (app, mongoose) {
         title: { type: String },
         date: { type: Date, default: Date.now },
         description: { type: String, default: "" },
+        amount: { type: Number },
         category: {
             id: { type: mongoose.Schema.Types.ObjectId, ref: 'ExpenseCategory' },
             name: String, default: ""

@@ -24,7 +24,8 @@ $(function () {
             }
         }
         console.log(pieData);
-        return new Chart(pieChartCtx, pieData);
+        var pich = new Chart(pieChartCtx).Pie(pieData);
+        console.log(pich);
     }
 
 });
