@@ -64,6 +64,18 @@ var CostHandler = function CostHandler (app) {
         return res.render('cost/dashboard', data);
     };
 
+    /*
+     * GET /cost/expenses
+     */
+    this.showExpensesPage = function (req, res, next) {
+        req.app.db.models.Expense.find().populate('user', 'name').exec(function (err, docs) {
+            if (err) {
+                return res.send({ success: false, error: "Error in retrieving expenses from database" });
+            }
+            return res.send(docs);
+        });
+    };
+
 
     /**
      * POST /cost/expenses
@@ -89,14 +101,14 @@ var CostHandler = function CostHandler (app) {
                     success: false,
                     validationErrors: errors
                 };
-                res.send(data);
+                return res.send(data);
             }
-
-            workflow.emit('findCategory', req.body.category);
+            console.log(req.body);
+            workflow.emit('findCategory', req.body.category.toLowerCase());
         });
 
         workflow.on('findCategory', function (cat) {
-            req.app.db.models.ExpenseCategory.find({name: cat}, function (err, ctg) {
+            req.app.db.models.ExpenseCategory.findOne({ name: cat }, function (err, ctg) {
                 if (err) {
                     return next(err);
                 }
@@ -109,20 +121,21 @@ var CostHandler = function CostHandler (app) {
                             msg: 'Invalid category'
                         }}
                     };
-                    res.send(data);
+                    return res.send(data);
                 }
-                var catId = ctg._id;
-                workflow.emit('createExpense', catId);
+
+                workflow.emit('createExpense', ctg._id, ctg.name);
             });
         });
 
-        workflow.on('createExpense', function (catId) {
+        workflow.on('createExpense', function (catId, catName) {
             var fieldsToSet = {
                 user: req.user._id,
                 title: req.body.title,
                 date: req.body.date,
+                amount: parseInt(req.body.amount),
                 description: req.body.description || "",
-                category: catId
+                category: { id: catId, name: catName }
             };
 
             req.app.db.models.Expense.create(fieldsToSet, function (err, doc) {
@@ -133,7 +146,7 @@ var CostHandler = function CostHandler (app) {
                     success: true,
                     expense: doc
                 };
-                res.send(data);
+                return res.send(data);
             });
         });
 

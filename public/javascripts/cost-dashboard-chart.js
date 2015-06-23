@@ -1,7 +1,7 @@
 /**
  * Created by hamid on 6/20/15.
  */
-$(function () {
+/*$(function () {
     var ctx = document.getElementById('pieChart').getContext('2d');
     var lineCtx = document.getElementById('lineChart').getContext('2d');
 
@@ -25,4 +25,4 @@ var totalPieValue = function (pieChartData) {
     return total;
 };
 
-
+*/

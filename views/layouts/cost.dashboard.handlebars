@@ -60,14 +60,14 @@
                     <span class="cost-top-nav-username text-capitalize"> &nbsp;{{user.name.first}} {{user.name.last}}</span>
                 </a>
                 <div class="pull-right">
-                    <button type="button" class="btn btn-expense" data-toggle="modal" data-target="#requestFundModal">Request Fund</button>
-                    <button type="button" class="btn btn-expense" data-toggle="modal" data-target="#addExpenseModal">Add Expense</button>
+                    <button type="button" id="requestFundButton" class="btn btn-expense" data-toggle="modal" data-target="#requestFundModal">Request Fund</button>
+                    <button type="button" id="addExpenseButton" class="btn btn-expense" data-toggle="modal" data-target="#addExpenseModal">Add Expense</button>
                 </div>
             </div><!-- /.cost-top-nav -->
 
             <div class="cost-top-notification">
                 <span class="glyphicon glyphicon-bell"></span>&nbsp;&nbsp;&nbsp;&nbsp;
-                <span class="cost-top-notificatin-text">You have no new notification</span>
+                <span class="cost-top-notification-text">You have no new notification</span>
             </div><!-- /.cost-top-notification -->
 
             <div class="row cost-main-content">
@@ -82,7 +82,7 @@
 <script src="/javascripts/vendor/Chart.js"></script>
 
 <script>
-    var costApp = costApp || {};
+    /*var costApp = costApp || {};
     costApp.pieData = [];
     costApp.lineData = {
         labels: [],
@@ -114,10 +114,11 @@
     {{/each}}
 
     console.log(costApp.pieData);
-    console.log(costApp.lineData);
+    console.log(costApp.lineData);*/
 </script>
 <script src="/javascripts/cost-dashboard-chart.js"></script>
 <script src="/javascripts/cost-forms.js"></script>
+<script src="/javascripts/charts/pieChart.js"></script>
 
 </body>
 </html>

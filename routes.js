@@ -101,13 +101,20 @@ exports = module.exports = function (app, passport) {
 
     var CostHandler = require('./controllers/costHandler'),
         costHandler = new CostHandler(app);
-    app.all('/costs/*', ensureAuthenticated);
-    app.get('/cost/dashboard', costHandler.showDashboard);
-    app.post('/cost/expenses', costHandler.handleAddExpenseRequest);
+    app.all('/costs/', ensureAuthenticated);
+    app.get('/cost/dashboard', ensureAuthenticated, costHandler.showDashboard);
+    app.post('/cost/expenses', ensureAuthenticated, costHandler.handleAddExpenseRequest);
+    app.get('/cost/expenses', ensureAuthenticated, costHandler.showExpensesPage);
 
     var CostCategoryHandler = require('./controllers/cost/categoryHandler'),
         costCategoryHandler = new CostCategoryHandler(app);
-    app.get('/cost/categories', costCategoryHandler.showCategories);
-    app.post('/cost/categories', costCategoryHandler.handleAddCategoryRequest);
+    app.get('/cost/categories', ensureAuthenticated, costCategoryHandler.showCategories);
+    app.post('/cost/categories', ensureAuthenticated, costCategoryHandler.handleAddCategoryRequest);
 
+    var CostApiHandler = require('./controllers/cost/api/costApiHandler'),
+        costApiHandler = new CostApiHandler(app);
+    app.get('/cost/api/categories', ensureAuthenticated, costApiHandler.listAllCategories);
+   // app.get('/cost/api/expenses', ensureAuthenticated, costApiHandler.listAllExpenses);
+    app.get('/cost/api/expenses/category/:categoryName', ensureAuthenticated, costApiHandler.listExpensesByCategory);
+    app.get('/cost/api/expenses', ensureAuthenticated, costApiHandler.listExpensesByUser);
 };

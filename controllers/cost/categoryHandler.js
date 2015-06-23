@@ -3,7 +3,7 @@
 
 var CategoryHandler = function CategoryHandler (app){
 
-    /*
+    /**
      * GET cost/categories
      */
     this.showCategories = function (req, res, next) {
@@ -25,10 +25,19 @@ var CategoryHandler = function CategoryHandler (app){
         var workflow = req.app.utility.workflow(req, res);
 
         workflow.on('validate', function () {
-            req.checkBody('categoryName', 'provide a name for the category').notEmpty();
-            req.checkBody('categoryName', 'only alphabet characters and numbers').isAlphanumeric();
+            var categoryPattern = /^[\w\d ]+/g,
+                errors;
 
-            var errors = req.validationErrors();
+            if (!categoryPattern.test(req.body.categoryName)) {
+                errors = {
+                    categoryName: {
+                        param: 'Category name',
+                        value: req.body.categoryName,
+                        msg: "Only English alphabet characters and numbers are allowed"
+                    }
+                };
+            }
+
             if (errors) {
                 var data = {
                     success: false,

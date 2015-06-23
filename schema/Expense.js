@@ -9,7 +9,10 @@ exports = module.exports = function (app, mongoose) {
         title: { type: String },
         date: { type: Date, default: Date.now },
         description: { type: String, default: "" },
-        category: { type: mongoose.Schema.Types.ObjectId, ref: 'ExpenseCategory'}
+        category: {
+            id: { type: mongoose.Schema.Types.ObjectId, ref: 'ExpenseCategory' },
+            name: String, default: ""
+        }
     });
 
     //
@@ -19,9 +22,10 @@ exports = module.exports = function (app, mongoose) {
             date: { $gt: startDate }
         };
         this.find(conditions)
-            .populate('user')
-            .populate('category')
-            .sort('date')
+            .populate('user', 'name')
+            .populate('category', 'name')
+            .sort({ date: -1 })
+            .limit(10)
             .exec(function (err, expenses) {
                 if (err) {
                     return done(err);
@@ -33,9 +37,9 @@ exports = module.exports = function (app, mongoose) {
 
     ExpenseSchema.statics.findLatestByCount = function (count, done) {
         this.find()
-            .populate('user')
-            .populate('category')
-            .sort('date')
+            .populate('user', 'name')
+            .populate('category.id', 'name')
+            .sort({ "date": -1 })
             .limit(count)
             .exec(function (err, docs) {
                 if (err) {
@@ -43,6 +47,29 @@ exports = module.exports = function (app, mongoose) {
                 }
                 return done(null, docs);
             });
+    };
+
+    ExpenseSchema.statics.findByCategory = function (categoryName, userId, done) {
+        var count = 10;
+        this.find({ 'category.name': categoryName, 'user': userId })
+            .populate('user', 'name')
+            .sort({ date: -1 })
+            .limit(count)
+            .exec(function (err, docs) {
+                if (err) {
+                    return done(err);
+                }
+                return done(null, docs);
+            });
+    };
+
+    ExpenseSchema.statics.findByUser = function (userId, done) {
+        this.find({ user: userId }).populate('user', 'name').exec(function (err, docs) {
+            if (err) {
+                return done(err);
+            }
+            return done(null, docs);
+        });
     };
 
 
