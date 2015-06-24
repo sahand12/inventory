@@ -137,7 +137,7 @@ var CostHandler = function CostHandler (app) {
                 description: req.body.description || "",
                 category: { id: catId, name: catName }
             };
-console.log(fieldsToSet);
+
             req.app.db.models.Expense.create(fieldsToSet, function (err, doc) {
                 if (err) {
                     return next(err);

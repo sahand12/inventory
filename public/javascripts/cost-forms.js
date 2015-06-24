@@ -34,6 +34,9 @@ $(function () {
             data: data
         }).done(function (msg) {
             console.log(msg);
+            if (msg.success) {
+                app.emitEvent('expense.form.submit.success');
+            }
             $expenseModal.modal('hide');
         });
     }
@@ -52,7 +55,6 @@ $(function () {
             method: 'get',
             url: '/cost/api/categories'
         }).done(function (response) {
-            console.log(response.data);
             populateSelectCategory(response, $selectCategory);
         }).error(function (err) {
             console.log(err);

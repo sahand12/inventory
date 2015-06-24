@@ -145,6 +145,25 @@
 .cost-expense-modal {
   background: rgba(61, 61, 61, 0.2);
 }
+/**
+ * pie chart stats
+ */
+.pie-chart-stat {
+  padding-top: 40px;
+}
+@media (max-width: 992px) {
+  .pie-chart-stat {
+    margin: 0 auto;
+    width: 60%;
+  }
+}
+.pie-chart-stat-item {
+  clear: both;
+  height: 40px;
+}
+.pie-chart-stat-item span {
+  margin-right: 20px;
+}
 .cost-helper-header {
   font-size: 16px;
   background-image: url("/images/section-header-bg.png");
@@ -183,4 +202,8 @@
 .textarea-block {
   display: block;
   width: 100%;
+}
+.square-block {
+  width: 20px;
+  height: 20px;
 }

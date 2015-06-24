@@ -114,7 +114,9 @@ exports = module.exports = function (app, passport) {
     var CostApiHandler = require('./controllers/cost/api/costApiHandler'),
         costApiHandler = new CostApiHandler(app);
     app.get('/cost/api/categories', ensureAuthenticated, costApiHandler.listAllCategories);
-   // app.get('/cost/api/expenses', ensureAuthenticated, costApiHandler.listAllExpenses);
     app.get('/cost/api/expenses/category/:categoryName', ensureAuthenticated, costApiHandler.listExpensesByCategory);
     app.get('/cost/api/expenses', ensureAuthenticated, costApiHandler.listExpensesByUser);
+    app.get('/cost/api/expenses/total', ensureAuthenticated, costApiHandler.showTotalExpenses);
+    app.get('/cost/api/expenses/categories', ensureAuthenticated, costApiHandler.showTotalExpensesByEachCategory);
+    app.get('/cost/api/expenses/this-year', ensureAuthenticated, costApiHandler.showThisYearExpenses);
 };

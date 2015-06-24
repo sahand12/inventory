@@ -80,45 +80,14 @@
 <script src="/javascripts/vendor/jquery.min.js"></script>
 <script src="/javascripts/vendor/bootstrap.min.js"></script>
 <script src="/javascripts/vendor/Chart.js"></script>
+<script src="/javascripts/vendor/EventEmitter.min.js"></script>
 
 <script>
-    /*var costApp = costApp || {};
-    costApp.pieData = [];
-    costApp.lineData = {
-        labels: [],
-        datasets: [{
-            label: "{{lineData.datasets.label}}",
-            fillColor: "{{lineData.datasets.fillColor}}",
-            strokeColor: "{{lineData.datasets.strokeColor}}",
-            pointColor: "{{lineData.datasets.pointColor}}",
-            pointStrokeColor:"{{lineData.datasets.pointStrokeColor}}",
-            pointHighlightFill: "{{lineData.datasets.pointHighlightFill}}",
-            pointHighlightStroke: "{{lineData.datasets.pointHighlightStroke}}",
-            data: []
-        }]
-    };
-
-    {{#each pieData}}
-        costApp.pieData.push({
-            value: {{this.value}}, color: "{{this.color}}", highlight: "{{this.highlight}}", label: "{{this.label}}"
-        });
-    {{/each}}
-
-    // line charts
-    {{#each lineData.labels}}
-        costApp.lineData.labels.push("{{this}}");
-    {{/each}}
-
-    {{#each lineData.datasets.data}}
-        costApp.lineData.datasets[0].data.push({{this}});
-    {{/each}}
-
-    console.log(costApp.pieData);
-    console.log(costApp.lineData);*/
 </script>
+<script src="/javascripts/app.js"></script>
 <script src="/javascripts/cost-dashboard-chart.js"></script>
 <script src="/javascripts/cost-forms.js"></script>
-<script src="/javascripts/charts/pieChart.js"></script>
+<script src="/javascripts/charts/dashboardCharts.js"></script>
 
 </body>
 </html>

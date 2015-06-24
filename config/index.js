@@ -33,6 +33,7 @@ exports.authorization = {
     }
 };
 exports.months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+//exports.monthsLength = [31, 28 || 29, ]
 exports.charts = {
     line: {
         fillColor : "rgb(180, 209, 205)",
@@ -43,3 +44,18 @@ exports.charts = {
         pointHighlightStroke : "rgba(220,220,220,1)"
     }
 };
+exports.getDaysInMonths = function (year) {
+    var daysInMonth = [31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    var isLeap = isLeapYear(year);
+    if (isLeap) {
+        daysInMonth[1] = 29;
+    }
+    else {
+        daysInMonth[1] = 28;
+    }
+    return daysInMonth;
+};
+
+function isLeapYear (year) {
+    return ( ( (year % 4 === 0) && (!year % 100 === 0)) || (year % 400 === 0) );
+}

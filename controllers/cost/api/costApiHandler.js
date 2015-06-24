@@ -21,24 +21,6 @@ var CostApiHandler = function (app) {
     };
 
     /*
-     * GET /cost/api/expenses
-     */
-    this.listAllExpenses = function (req, res, next) {
-        req.app.db.models.Expense.findLatestByDays(10, function (err, docs) {
-            if (err) {
-                return res.send({
-                    success: false,
-                    error: "Database Error"
-                });
-            }
-            return res.send({
-                success: true,
-                data: docs
-            });
-        });
-    };
-
-    /*
      * GET /cost/api/expenses/category/:categoryName
      */
     this.listExpensesByCategory = function (req, res, next) {
@@ -62,7 +44,8 @@ var CostApiHandler = function (app) {
      * GET /cos/api/expenses/
      */
     this.listExpensesByUser = function (req, res, next) {
-        req.app.db.models.Expense.findByUser(req.user._id, function (err, docs) {
+        var count = req.query.count || 5;
+        req.app.db.models.Expense.findByUser(req.user._id, count, function (err, docs) {
             if (err) {
                 return res.send({
                     success: false,
@@ -75,6 +58,74 @@ var CostApiHandler = function (app) {
             });
         });
     };
+
+    /*
+     * GET /cost/api/expenses/total
+     */
+    this.showTotalExpenses = function (req, res, next) {
+        req.app.db.models.Expense.findTotalExpenseByUser(req.user._id, function (err, totalSum) {
+            if (err) {
+                console.log(err);
+                return res.send({
+                    success: false,
+                    error: "database error"
+                });
+            }
+            return res.send({
+                success: true,
+                total: totalSum
+            });
+        });
+    };
+
+    this.showThisYearExpensesByMonth = function (req, res, next) {
+
+    };
+
+    /*
+     * GET /cost/api/expenses/categories
+     */
+    this.showTotalExpensesByEachCategory = function (req, res, next) {
+        var days = req.query.days || 30;
+        req.app.db.models.Expense.findTotalExpenseByEachCategory(req.user._id, days, function (err, docs) {
+            if (err) {
+                console.log(err);
+                return res.send({
+                    success: false,
+                    error: "database error"
+                });
+            }
+            return res.send({
+                success: true,
+                data: docs
+            });
+        });
+    };
+
+    /**
+     * Get /cost/api/expenses/this-year
+     */
+    this.showThisYearExpenses = function (req, res, next) {
+        req.app.db.models.Expense.findThisYearExpenses(req.user._id, function (err, docs) {
+            if (err) {
+                console.log(err);
+                return res.send({
+                    success: false,
+                    error: "database error"
+                });
+            }
+
+            return res.send({
+                success: true,
+                data: docs
+            });
+        });
+    };
+
+    /**
+     * GET /cost/api/expenses/latest
+     */
+
 };
 
 exports = module.exports = CostApiHandler;
