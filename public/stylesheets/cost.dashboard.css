@@ -1,3 +1,6 @@
+body {
+  font-family: "Didact Gothic", "Quicksand", "Abel", mono-space, sans-serif;
+}
 /*
  * Sidebar
  */
@@ -163,4 +166,35 @@
 }
 .pie-chart-stat-item span {
   margin-right: 20px;
+}
+/**
+ * right sidebar latest activity
+ */
+.cost-main-latest-activity {
+  padding-left: 20px;
+  font-family: "Didact Gothic", "Quicksand", "Abel", mono-space, sans-serif;
+}
+.cost-main-latest-activity h1 {
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.activity-table {
+  color: #2e2e2e;
+}
+.activity-table .activity-row td {
+  padding: 20px 15px;
+  font-size: 15px;
+  vertical-align: middle;
+  border-bottom: 1px solid #f2f2f2;
+  border-top: 1px solid #f2f2f2;
+  margin-bottom: 1px;
+  color: #2e2e2e;
+}
+.activity-table td:first-child {
+  padding: 0;
+  width: 8px;
+  background-color: darkolivegreen;
+}
+.activity-table td:last-child {
+  color: red;
 }

@@ -67,7 +67,7 @@ exports = module.exports = function (app, mongoose) {
     };
 
     ExpenseSchema.statics.findByUser = function (userId, count, done) {
-        this.find({ user: userId })
+        this.find({ user: userId }, { title: 1, date: 1, amount: 1, _id: 0 })
             .sort({ updatedAt: "-1" })
             .limit(count)
             .exec(function (err, docs) {

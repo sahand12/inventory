@@ -87,7 +87,7 @@ $(function () {
 
     function makeRandomColor () {
         var red = Math.floor( Math.random() * 256 ),
-            green = Math.floor( Math.random() * 256),
+            green = Math.floor( Math.random() * 256 ),
             blue = Math.floor( Math.random() * 256 );
 
         var color = "rgb(" + red + ", " + green + ", " + blue + ")",
@@ -169,16 +169,56 @@ $(function () {
      *     LATEST ACTIVITY
      * -----------------------------------------------
      */
+
+    var $activityTable = $('#activityTable'),
+        months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+
     function buildLatestActivity () {
-        console.log('build latest activity');
         // get the data from the server
         $.ajax({
             method: "get",
             url: "/cost/api/expenses?count=5"
         }).done(function (response) {
             console.log(response);
+            populateTable(response.data);
         });
     }
+
+    function formatDate (date) {
+        date = new Date(date);
+        var year = date.getFullYear(),
+            day = date.getDate(),
+            month = date.getMonth();
+
+        return months[month+1] + " " + day + ", " + year;
+    }
+
+    function formatAmount (value) {
+        value = ("" + value).split("");
+        var formatted = [];
+        for (var len = value.length, i = len - 1; i >= 0; i--) {
+            var j = i - len + 2;
+            console.log(j, i, value);
+            formatted.push(value[i]);
+            if (j % 3 === 0 && j !== len) {
+                formatted.push(",");
+            }
+        }
+        return formatted.join();
+    }
+
+    function populateTable (data) {
+        var html = "";
+        for (var i = 0, len = data.length; i < len; i++) {
+            var current = data[i];
+            html += "<tr class='activity-row'><td></td><td>" + current.title + "</td>"
+                + "<td><small>" + formatDate(current.date) + "</small></td>"
+                + "<td>$" + formatAmount(current.amount) + "</td>";
+        }
+        $activityTable.html(html);
+        console.log(html);
+    }
+
 
 
 

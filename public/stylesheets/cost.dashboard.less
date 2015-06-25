@@ -1,4 +1,8 @@
 @import 'cost.variable.less';
+
+body {
+  font-family: "Didact Gothic", "Quicksand", "Abel", mono-space, sans-serif;
+}
 /*
  * Sidebar
  */
@@ -192,4 +196,47 @@
   span {
     margin-right: 20px;
   }
+}
+
+/**
+ * right sidebar latest activity
+ */
+.cost-main-latest-activity {
+  padding-left: 20px;
+  font-family: "Didact Gothic", "Quicksand", "Abel", mono-space, sans-serif;
+
+  h1 {
+    //font-family: "Josefin Sans", "Open Sans Condensed", "Abel", sans-serif;
+    font-weight:  400;
+    margin-bottom: 20px;
+  }
+}
+.activity-table {
+  color: rgb(46, 46, 46);
+
+  .activity-row {
+    //margin-bottom: 1px;
+  }
+
+  .activity-row td {
+    padding: 20px 15px;
+    font-size: 15px;
+    vertical-align: middle;
+    border-bottom: 1px solid #f2f2f2;
+    border-top: 1px solid #f2f2f2;
+    margin-bottom: 1px;
+    color: rgb(46, 46, 46);
+    //font-family: "Josefin Sans", "Open Sans Condensed", "Abel", sans-serif;
+    //font-weight: 600;
+  }
+
+  td:first-child {
+    padding: 0;
+    width: 8px;
+    background-color: darkolivegreen;
+  }
+  td:last-child {
+    color: red;
+  }
+
 }
