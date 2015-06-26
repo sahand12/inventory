@@ -18,11 +18,11 @@ exports.requireAccountVerfication = false;
 exports.smtp = {
     from: {
         name: process.env.SMTP_FROM_NAME || exports.projectName + ' Website',
-        address: process.env.SMTP_FROM_ADDRESS || 'climaxws@gmail.com'
+        address: process.env.SMTP_FROM_ADDRESS
     },
     credentials: {
-        user: process.env.SMTP_USERNAME || 'climaxws@gmail.com',
-        password: process.env.SMTP_PASSWORD || '004917631177805',
+        user: process.env.SMTP_USERNAME,
+        password: process.env.SMTP_PASSWORD,
         host: process.env.SMTP_HOST || 'smtp.gmail.com',
         ssl: true
     }
