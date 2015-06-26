@@ -1,0 +1,43 @@
+<div class="col-md-9 cost-expenses-list">
+    <h1 class="cost-helper-header text-uppercase"><span>expenses</span></h1>
+
+    <form action="/cost/api/expenses/search" class="search-expenses-form" method="get">
+        <div class="input-group">
+            <span class="input-group-btn">
+                <button class="btn btn-cost-search" type="submit"><span class="fa fa-search"></span></button>
+            </span>
+            <input id="expenseSearchInput" class="form-control cost-search-input" type="search" placeholder="Search Expenses"/>
+        </div>
+    </form>
+
+    <table class="table expenses-table" id="expensesTable">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th class="text-uppercase">date <span class="fa fa-chevron-down"></span></th>
+                <th class="text-uppercase">Title</th>
+                <th class="text-uppercase">category</th>
+                <th class="text-uppercase">amount</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="expensesTableBody"></tbody>
+    </table>
+</div>
+
+<div class="col-md-3 cost-total-expenses" id="costTotalExpenses">
+    <h1 class="text-center text-capitalize">total expenses</h1>
+    <div class="row">
+        <div class="col-xs-12 cost-expenses-total-amount">
+            <p class="text-center" id="totalExpensesAmount"></p>
+        </div>
+        <div class="col-xs-12">
+            <canvas id="totalExpensesPieChart"></canvas>
+        </div>
+        <div class="col-xs-12">
+            <div class="total-pie-chart-stats" id="totalPieChartStats"></div>
+        </div>
+    </div>
+    <button type="button" id="createReportBtn" class="btn btn-block">Create Report</button>
+</div>

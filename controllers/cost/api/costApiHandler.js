@@ -41,15 +41,16 @@ var CostApiHandler = function (app) {
     };
 
     /*
-     * GET /cos/api/expenses/
+     * GET /cos/api/expenses?count=number
      */
     this.listExpensesByUser = function (req, res, next) {
         var count = req.query.count || 5;
         req.app.db.models.Expense.findByUser(req.user._id, count, function (err, docs) {
             if (err) {
+                console.log(err);
                 return res.send({
                     success: false,
-                    error: err
+                    error: "database error"
                 });
             }
             return res.send({
@@ -63,7 +64,7 @@ var CostApiHandler = function (app) {
      * GET /cost/api/expenses/total
      */
     this.showTotalExpenses = function (req, res, next) {
-        req.app.db.models.Expense.findTotalExpenseByUser(req.user._id, function (err, totalSum) {
+        req.app.db.models.Expense.findTotalExpensesByCategory(req.user._id, function (err, docs) {
             if (err) {
                 console.log(err);
                 return res.send({
@@ -73,17 +74,13 @@ var CostApiHandler = function (app) {
             }
             return res.send({
                 success: true,
-                total: totalSum
+                data: docs
             });
         });
     };
 
-    this.showThisYearExpensesByMonth = function (req, res, next) {
-
-    };
-
     /*
-     * GET /cost/api/expenses/categories
+     * GET /cost/api/expenses/categories?days=number
      */
     this.showTotalExpensesByEachCategory = function (req, res, next) {
         var days = req.query.days || 30;
@@ -123,8 +120,22 @@ var CostApiHandler = function (app) {
     };
 
     /**
-     * GET /cost/api/expenses/latest
+     * GET /cost/api/expenses/count
      */
+    this.findTotalNumberOfExpenses = function (req, res, next) {
+        req.app.db.models.Expense.count({ user: req.user._id }, function (err, count) {
+            if (err) {
+                return res.send({
+                    success: false,
+                    error: "database error"
+                });
+            }
+            return res.send({
+                success: true,
+                count: count
+            });
+        });
+    };
 
 };
 

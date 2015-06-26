@@ -30,84 +30,11 @@ $(function () {
 
 
     function populateLast30Days(response) {
-        var sortedData = sortRawDataByAmount(response.data);
-        var pieData = formatSortedDataForPieChart(sortedData);
-        drawPieChart(pieData);
-        var statData = formatPieDataForStatistics(pieData);
-        showPieChartStat(statData);
-    }
-
-    function sortRawDataByAmount (data) {
-        var sortedArray = [];
-        for (var categoryName in data) {
-            if (data.hasOwnProperty(categoryName)) {
-                sortedArray.push({ name: categoryName, value: data[categoryName] });
-            }
-        }
-        sortedArray.sort(function (a, b) {
-            return b.value - a.value;
-        });
-        return sortedArray;
-    }
-
-    function formatSortedDataForPieChart (data) {
-        var pieData = [];
-        for (var i = 0, len = data.length; i < len; i++) {
-            var current = data[i],
-                css = makeRandomColor();
-            pieData.push({
-                value: current.value,
-                color: css.color,
-                highlight: css.highLight,
-                label: current.name
-            });
-        }
-        return pieData;
-    }
-
-    function formatPieDataForStatistics (data) {
-        var statData = [],
-            total = 0;
-        for (var i = 0, len = data.length; i < len; i++) {
-            total += data[i].value;
-        }
-        for (i = 0; i < len; i++) {
-            statData.push({
-                name: data[i].label,
-                color: data[i].color,
-                percent: ( 100 * (data[i].value/total) ).toFixed(2)
-            });
-        }
-        return statData;
-    }
-
-    function drawPieChart (data) {
-        return new Chart(pieChartCtx).Pie(data)
-    }
-
-    function makeRandomColor () {
-        var red = Math.floor( Math.random() * 256 ),
-            green = Math.floor( Math.random() * 256 ),
-            blue = Math.floor( Math.random() * 256 );
-
-        var color = "rgb(" + red + ", " + green + ", " + blue + ")",
-            highLight = "rgba(" + red + ", " + green + ", " + blue + ", 0.7)";
-
-        return { color: color, highLight: highLight };
-    }
-
-    function showPieChartStat (data) {
-        // first empty the container
-        $chartStat.empty();
-        var html = "";
-        for (var i = 0, len = data.length; i < len; i++) {
-            var current = data[i];
-            html += "<div class='pie-chart-stat-item'>" +
-                "<span class='square-block pull-left' style='background: " + current.color + "'></span>" +
-                "<p class='pull-left text-capitalize'><strong>" + current.name + "</strong> &nbsp;" + current.percent + "%</p>" +
-                "</div>";
-        }
-        $chartStat.html(html);
+        var sortedData = app.helpers.sortPieChartAjaxResponseByAmount(response.data);
+        var pieData = app.helpers.formatSortedAjaxDataForPieChart(sortedData);
+        app.helpers.drawPieChart(pieChartCtx, pieData);
+        var statData = app.helpers.formatPieDataForStatistics(pieData);
+        app.helpers.showPieChartStats($chartStat,statData);
     }
 
     /**
@@ -194,17 +121,17 @@ $(function () {
     }
 
     function formatAmount (value) {
-        value = ("" + value).split("");
-        var formatted = [];
-        for (var len = value.length, i = len - 1; i >= 0; i--) {
-            var j = i - len + 2;
-            console.log(j, i, value);
-            formatted.push(value[i]);
-            if (j % 3 === 0 && j !== len) {
-                formatted.push(",");
+        value = "" + value;
+        var reverse = value.split("").reverse();
+        var formatted = "";
+        for (var i = 0, len = reverse.length; i < len; i++) {
+            formatted += reverse[i];
+            if (i % 3 === 2 && i !== len - 1) {
+                formatted += ",";
             }
         }
-        return formatted.join();
+        formatted = formatted.split("").reverse().join("");
+        return formatted;
     }
 
     function populateTable (data) {

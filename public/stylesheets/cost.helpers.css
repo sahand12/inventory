@@ -8,7 +8,6 @@
 .cost-helper-header span {
   background: #f6f6f6;
   padding-right: 20px;
-  padding-left: 20px;
 }
 .btn-block {
   display: block;
@@ -32,6 +31,15 @@
   background: white;
   cursor: inherit;
   display: block;
+}
+.btn-cost-search {
+  background-color: white;
+  color: #9bd5cb;
+}
+.btn-cost-search:hover {
+  color: #37a08d;
+  background-color: #9bd5cb;
+  border-radius: 0;
 }
 .textarea-block {
   display: block;

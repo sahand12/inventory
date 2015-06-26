@@ -119,4 +119,15 @@ exports = module.exports = function (app, passport) {
     app.get('/cost/api/expenses/total', ensureAuthenticated, costApiHandler.showTotalExpenses);
     app.get('/cost/api/expenses/categories', ensureAuthenticated, costApiHandler.showTotalExpensesByEachCategory);
     app.get('/cost/api/expenses/this-year', ensureAuthenticated, costApiHandler.showThisYearExpenses);
+    app.get('/cost/api/expenses/count', ensureAuthenticated, costApiHandler.findTotalNumberOfExpenses);
+
+    app.get('/cost/expenses', ensureAuthenticated, costHandler.showExpensesPage);
+    app.get('/cost/trends', ensureAuthenticated, costHandler.showTrendsPage);
+    app.get('/cost/budget', ensureAuthenticated, costHandler.showBudgetPage);
+    app.get('/cost/people', ensureAuthenticated, costHandler.showPeoplePage);
+    app.get('/cost/notifications', ensureAuthenticated, costHandler.showNotificationsPage);
+    app.get('/cost/reminders', ensureAuthenticated, costHandler.showRemindersPage);
+    app.get('/cost/reports', ensureAuthenticated, costHandler.showReportsPage);
+    app.get('/cost/settings', ensureAuthenticated, costHandler.showSettingsPage);
+    app.get('/cost/faq', ensureAuthenticated, costHandler.showFaqPage);
 };

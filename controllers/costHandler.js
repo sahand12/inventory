@@ -12,70 +12,12 @@ var CostHandler = function CostHandler (app) {
         var data = {
             layout: 'cost.dashboard.handlebars',
             user: req.user,
-            title: "Cost Management Dashboard",
-            bodyClass: 'cost-dashboard',
-            pieData: [
-                {
-                    value: 300,
-                    color:"#F7464A",
-                    highlight: "#FF5A5E",
-                    label: "Red"
-                },
-                {
-                    value: 50,
-                    color: "#46BFBD",
-                    highlight: "#5AD3D1",
-                    label: "Green"
-                },
-                {
-                    value: 100,
-                    color: "#FDB45C",
-                    highlight: "#FFC870",
-                    label: "Yellow"
-                },
-                {
-                    value: 40,
-                    color: "#949FB1",
-                    highlight: "#A8B3C5",
-                    label: "Grey"
-                },
-                {
-                    value: 120,
-                    color: "#4D5360",
-                    highlight: "#616774",
-                    label: "Dark Grey"
-                }
-            ],
-            lineData : {
-                labels: req.app.config.months,
-                datasets: {   // dataset should be an array but it will be taken care of in the template
-                    label: "This year activity",
-                    fillColor: req.app.config.charts.line.fillColor,
-                    strokeColor: req.app.config.charts.line.strokeColor,
-                    pointColor: req.app.config.charts.line.pointColor,
-                    pointStrokeColor: req.app.config.charts.line.pointColor,
-                    pointHighlightFill: req.app.config.charts.line.pointHighlightFill,
-                    pointHighlightStroke: req.app.config.charts.line.pointHighlightStroke,
-                    data: [0, 10, 23, 43, 23, 15, 63, 63, 63, 23, 12, 12]
-                }
-            }
+            title: "Dashboard",
+            bodyClass: 'cost-dashboard'
         };
         //console.log(data);
         return res.render('cost/dashboard', data);
     };
-
-    /*
-     * GET /cost/expenses
-     */
-    this.showExpensesPage = function (req, res, next) {
-        req.app.db.models.Expense.find().populate('user', 'name').exec(function (err, docs) {
-            if (err) {
-                return res.send({ success: false, error: "Error in retrieving expenses from database" });
-            }
-            return res.send(docs);
-        });
-    };
-
 
     /**
      * POST /cost/expenses
@@ -152,6 +94,120 @@ var CostHandler = function CostHandler (app) {
 
         workflow.emit('validate');
     };
+
+    /*
+     * GET /cost/expenses?page=pageNumber&&count=itemCount
+     */
+    this.showExpensesPage = function (req, res, next) {
+        var data = {
+            layout: 'cost.dashboard.handlebars',
+            user: req.user,
+            title: "Expenses",
+            expenses: true
+        };
+        return res.render('cost/expenses', data);
+    };
+
+    /**
+     * GET /cost/trends
+     */
+    this.showTrendsPage = function (req, res, next) {
+        var data = {
+            activeNav: "trends"
+        };
+        return this.render('cost/trends', data);
+    };
+
+    /**
+     * GET /cost/budget
+     */
+    this.showBudgetPage = function (req, res, next) {
+        var data = {
+            activeNav: "budget"
+        };
+        return res.render('cost/budget', data);
+    };
+
+    /**
+     * GET /cost/people
+     */
+    this.showPeoplePage = function (req, res, next) {
+        var data = {
+            activeNav: "people"
+        };
+        return res.render('cost/people', data);
+    };
+
+    /**
+     * GET /cost/notifications
+     */
+    this.showNotificationsPage = function (req, res, next) {
+        var data = {
+            activeNav: "notifications"
+        };
+        return res.render("cost/notifications", data);
+    };
+
+    /**
+     * GET /cost/reminders
+     */
+    this.showRemindersPage = function (req, res, next) {
+        var data = {
+            activeNav: "reminders"
+        };
+        return res.render('cost/reminders');
+    };
+
+    /**
+     * GET /cost/reports
+     */
+    this.showReportsPage = function (req, res, next) {
+        var data = {
+            activeNav: "reports"
+        };
+        return res.render('cost/reports');
+    };
+
+    /**
+     * GET /cost/settings
+     */
+    this.showSettingsPage = function (req, res, next) {
+        var data = {
+            activeNav: "settings"
+        };
+        return res.render('cost/settings');
+    };
+
+    /**
+     * GET /cost/faq
+     */
+    this.showFaqPage = function (req, res, next) {
+        var data = {
+            activeNav: "faq"
+        };
+        return res.render('cost/faq');
+    };
 };
 
+
 exports = module.exports = CostHandler;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

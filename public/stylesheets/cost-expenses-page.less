@@ -1,0 +1,151 @@
+@import "cost.variable.less";
+
+.cost-expenses-list {
+  padding-top: 20px;
+
+  h1 span{
+    background-color: white;
+  }
+}
+
+.search-expenses-form {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid @top-nav-background-color;
+}
+
+#expenseSearchInput {
+  border: none;
+  outline: 0;
+  box-shadow: none;
+  letter-spacing: 1px;
+
+  &:focus, &:active {
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+#expensesTable {
+  border: 0;
+
+  td {
+    border-top: none !important;
+    padding: 25px 20px;
+    vertical-align: middle;
+
+    .fa-file-text-o {
+      font-size: 1.8em;
+      color: darkgray;
+    }
+
+    .fa-edit {
+      font-size: 1.5em;
+    }
+  }
+
+  th {
+    border-bottom: none !important;
+    padding: 30px 20px;
+
+    .fa-chevron-down {
+      font-size: 0.9em;
+      padding-left: 8px;
+      vertical-align: top;
+    }
+  }
+
+  thead {
+    color: @top-nav-background-color;
+    border-bottom: 0;
+    box-shadow: none;
+    padding-bottom: 20px;
+
+    th:first-child {
+      padding: 0;
+    }
+  }
+
+  tbody {
+    border: 0;
+    color: rgb(46, 46, 46);
+
+    tr {
+      border-bottom: 1px solid white;
+    }
+    td:first-child {
+      background-color: cornflowerblue;
+      padding: 0;
+      width: 5px;
+    }
+  }
+}
+
+.expense-item-edit {
+  color: @top-nav-background-color;
+}
+
+.expense-table-amount {
+  color: red;
+}
+
+/**
+ * total expenses
+ */
+.cost-total-expenses {
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+  background-color: rgb(246, 246, 246);
+  //color: white;
+
+  h1 {
+    font-size: 16px;
+    color: rgb(46, 46, 46);
+    margin-top: 0;
+  }
+}
+
+#totalExpensesPieChart {
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin: 10px auto;
+  //padding: 0 20px;
+
+}
+
+#totalExpensesAmount {
+  color: red;
+  padding-top: 10px;
+  font-size: 16px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid white;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.total-pie-chart-stats {
+  margin-top: 40px;
+
+  p {
+    font-size: 12px;
+  }
+}
+
+#createReportBtn {
+  margin: 10px 0;
+  background-color: @top-nav-button-color;
+  color: white;
+  letter-spacing: 1px;
+
+  &:hover {
+    background: @top-nav-button-color-hover;
+  }
+  &:active, &:visited, &:focus {
+    //border: 0;
+    outline: 0;
+    box-shadow: none;
+  }
+}
