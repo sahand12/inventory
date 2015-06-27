@@ -59,7 +59,7 @@ var CostHandler = function CostHandler (app) {
                 if (!ctg) {
                     var data = {
                         success: false,
-                        PostErrors: { category: {
+                        postErrors: { category: {
                             param: 'category',
                             value: req.body.category,
                             msg: 'Invalid category'
@@ -106,7 +106,7 @@ var CostHandler = function CostHandler (app) {
             user: req.user,
             title: "Expenses",
             expensesPage: true,
-            googleFonts: true
+            googleFonts: false
         };
         return res.render('cost/expenses', data);
     };

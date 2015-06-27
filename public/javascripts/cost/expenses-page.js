@@ -4,6 +4,8 @@ $(function () {
     app.addListener('page.load', buildTotalExpensesPieChart);
     app.addListener('expense.form.submit.success', buildExpenseTable);
     app.addListener('expense.form.submit.success', buildTotalExpensesPieChart);
+    app.addListener('update.expense.success', buildExpenseTable);
+    app.addListener('update.expense.success', buildTotalExpensesPieChart);
 
     app.emitEvent('page.load');
 
@@ -90,11 +92,11 @@ $(function () {
      *     UPDATE / DELETE MODAL
      * ------------------------------------------------
      */
-    var $expensesTable = $('#expensesTable'),
-        $editExpenseModal = $('#editExpenseModal'),
+    var $editExpenseModal = $('#editExpenseModal'),
         $editExpenseForm = $('#editExpenseForm');
 
     $editExpenseModal.on('shown.bs.modal', function (e){
+        // e.relatedTarget points to the <a> which triggered showing the modal
         populateEditExpenseForm(e.relatedTarget);
     });
 
@@ -103,13 +105,131 @@ $(function () {
         var docId = $(relatedTarget).closest('tr').find('.docId').val(),
             activeDoc = app.expensesPageData.table[docId];
 
-        console.log(activeDoc);
+        $editExpenseForm.find('#editInputId').val(docId);
         $editExpenseForm.find("#editInputTitle").val(activeDoc.title);
         $editExpenseForm.find('#editInputAmount').val(activeDoc.amount);
         $editExpenseForm.find('#editInputCategory').val(activeDoc.category.name);
         $editExpenseForm.find('#editInputDate').val(app.helpers.formatDateForInput(activeDoc.date));
         $editExpenseForm.find('#editInputDescription').html(activeDoc.description);
     }
+
+    /**
+     * ------------------------------------------------
+     *     UPDATE BUTTON ON EDIT EXPENSE FORM
+     * ------------------------------------------------
+     */
+    var $updateBtn = $('#editExpenseUpdateButton');
+
+    $updateBtn.on('click', function (e) {
+       makePutRequestToServer(e);
+    });
+
+    function makePutRequestToServer (e) {
+        // preventing the default action
+        e.preventDefault();
+
+        // format the data and make it ready for server
+        var data = formatDataForPutRequest($editExpenseForm);
+
+        // send the data to the server
+        editExpenseAjax(data);
+    }
+
+    function editExpenseAjax (data) {
+        $.ajax({
+            method: 'put',
+            url: '/cost/api/expenses',
+            data: data
+        }).done(function (response) {
+            handleEditResponseFromServer(response);
+        });
+    }
+
+    function handleEditResponseFromServer (response) {
+        if (response.success) {
+            return showUpdateErrorsFromServer(response);
+        }
+        app.emit('update.expense.success');
+        $editExpenseModal.modal('hide');
+    }
+
+    function showUpdateErrorsFromServer (response) {
+        console.log(response);
+    }
+
+    function formatDataForPutRequest ($form) {
+        return {
+            _id: $form.find('#editInputId').val(),
+            title: $form.find('#editInputTitle').val(),
+            amount: $form.find('#editInputAmount').val(),
+            date: $form.find('#editInputDate').val(),
+            category: $form.find('#editInputCategory').val(),
+            description: $form.find('#editInputDescription').val()
+        };
+    }
+
+    /**
+     * ------------------------------------------------
+     *     DELETE BUTTON ON EDIT EXPENSE FORM
+     * ------------------------------------------------
+     */
+    var $deleteBtn = $('#editExpenseDeleteButton');
+
+    $deleteBtn.on('click', function (e) {
+        // prevent the default behaviour
+        makeDeleteRequestToServer(e);
+    });
+
+    function makeDeleteRequestToServer (e) {
+        // preventing the default action
+        e.preventDefault();
+
+        // the id of the record to be deleted
+        var expenseId = $editExpenseForm.find("#editInputId").val();
+
+        // send the data to the server
+        deleteExpenseAjax(expenseId);
+    }
+
+    function deleteExpenseAjax (id) {
+        $.ajax({
+            method: 'delete',
+            url: '/cost/api/expenses',
+            data : {
+                _id: id
+            }
+        }).done(function (response) {
+            console.log(response);
+            handleDeleteResponseFromServer(response);
+        });
+    }
+
+    function handleDeleteResponseFromServer (response) {
+        if (!response.success) {
+            showDeleteErrorsFromServer(response);
+        }
+        app.emit('delete.expense.success');
+        $editExpenseModal.modal('hide');
+    }
+
+    function showDeleteErrorsFromServer (response) {
+        console.log(response);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

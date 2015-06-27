@@ -7,6 +7,12 @@ function ensureAuthenticated (req, res, next) {
     if (req.isAuthenticated()) {
         return next();
     }
+    if (req.xhr) {
+        return res.send({
+            success: false,
+            postErrors: "not logged in"
+        });
+    }
     res.set('X-Auth-Required', 'true');
     req.session.returnUrl = req.originalUrl;
     return res.redirect('/sim/login');
@@ -120,6 +126,8 @@ exports = module.exports = function (app, passport) {
     app.get('/cost/api/expenses/categories', ensureAuthenticated, costApiHandler.showTotalExpensesByEachCategory);
     app.get('/cost/api/expenses/this-year', ensureAuthenticated, costApiHandler.showThisYearExpenses);
     app.get('/cost/api/expenses/count', ensureAuthenticated, costApiHandler.findTotalNumberOfExpenses);
+    app.put('/cost/api/expenses', ensureAuthenticated, costApiHandler.handleUpdateExpenseRequest);
+    //app.delete('/cost/api/expenses', ensureAuthenticated, )
 
     app.get('/cost/expenses', ensureAuthenticated, costHandler.showExpensesPage);
     app.get('/cost/trends', ensureAuthenticated, costHandler.showTrendsPage);
@@ -130,4 +138,6 @@ exports = module.exports = function (app, passport) {
     app.get('/cost/reports', ensureAuthenticated, costHandler.showReportsPage);
     app.get('/cost/settings', ensureAuthenticated, costHandler.showSettingsPage);
     app.get('/cost/faq', ensureAuthenticated, costHandler.showFaqPage);
+
+
 };

@@ -97,8 +97,7 @@ $(function () {
      * -----------------------------------------------
      */
 
-    var $activityTable = $('#activityTable'),
-        months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+    var $activityTable = $('#activityTable');
 
     function buildLatestActivity () {
         // get the data from the server
@@ -106,7 +105,6 @@ $(function () {
             method: "get",
             url: "/cost/api/expenses?count=5"
         }).done(function (response) {
-            console.log(response);
             populateTable(response.data);
         });
     }
@@ -117,7 +115,7 @@ $(function () {
             day = date.getDate(),
             month = date.getMonth();
 
-        return months[month+1] + " " + day + ", " + year;
+        return app.helpers.months[month+1] + " " + day + ", " + year;
     }
 
     function formatAmount (value) {
@@ -143,7 +141,6 @@ $(function () {
                 + "<td>$" + formatAmount(current.amount) + "</td>";
         }
         $activityTable.html(html);
-        console.log(html);
     }
 
 

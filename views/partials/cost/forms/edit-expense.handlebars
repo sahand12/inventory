@@ -21,33 +21,33 @@
                 <div class="container-fluid">
                     <div class="row">
                         <form action="/cost/expenses" id="editExpenseForm" class="form-horizontal">
-
+                            <input type="hidden" name="editInputId" id="editInputId"/>
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label for="title" class="col-xs-3 control-label">Title</label>
                                     <div class="col-xs-9">
-                                        <input class="form-control" type="text" id="editInputTitle" name="title" placeholder=""/>
+                                        <input class="form-control" type="text" id="editInputTitle" name="editInputTitle" placeholder=""/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="amount" class="col-xs-3 control-label">Amount</label>
                                     <div class="col-xs-9">
-                                        <input class="form-control" type="number" id="editInputAmount" name="amount" placeholder=""/>
+                                        <input class="form-control" type="number" id="editInputAmount" name="editInputAmount" placeholder=""/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="date" class="col-xs-3 control-label">Date</label>
                                     <div class="col-xs-9">
-                                        <input class="form-control" type="date" id="editInputDate" name="date" placeholder=""/>
+                                        <input class="form-control" type="date" id="editInputDate" name="editInputDate" placeholder=""/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="category" class="col-xs-3 control-label">Category</label>
                                     <div class="col-xs-9">
-                                        <select name="category" id="editInputCategory" class="form-control">
+                                        <select name="editInputCategory" id="editInputCategory" class="form-control">
 
                                         </select>
                                     </div>
@@ -56,7 +56,7 @@
                                 <div class="form-group">
                                     <label for="description" class="col-xs-3 control-label">Description</label>
                                     <div class="col-xs-9">
-                                        <textarea class="textarea-block form-control" name="description" id="editInputDescription"></textarea>
+                                        <textarea class="textarea-block form-control" name="editInputDescription" id="editInputDescription"></textarea>
                                     </div>
                                 </div>
                                 <br/>

@@ -9,6 +9,5 @@
     <orderEntry type="library" name="Node.js v0.12.4 Core Modules" level="application" />
     <orderEntry type="library" name="async-DefinitelyTyped" level="application" />
     <orderEntry type="library" name="less-middleware-DefinitelyTyped" level="application" />
-    <orderEntry type="library" name="mongoose-DefinitelyTyped" level="application" />
   </component>
 </module>

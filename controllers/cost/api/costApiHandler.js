@@ -137,6 +137,85 @@ var CostApiHandler = function (app) {
         });
     };
 
+    /**
+     * PUT /cost/api/expenses
+     */
+    this.handleUpdateExpenseRequest = function (req, res, next) {
+        var workflow = req.app.utility.workflow(req, res);
+
+        // TODO: validate that title has only words, spaces and numbers
+        // TODO: validate description as well
+        workflow.on('validate', function () {
+            var amount = parseInt(req.body.amount);
+            req.checkBody('title', 'each expense should have a title').notEmpty();
+            req.checkBody('amount', 'provide an amount').notEmpty();
+            req.checkBody('category', 'select a category').notEmpty();
+            req.checkBody('date', 'provide a valid date').isDate();
+
+            var errors = req.validationErrors(true);
+            if (isNaN(amount) || amount < 0) {
+                errors = errors || {};
+                errors.amount = { param: "amount", msg: "provide a positive number", value: req.body.amount };
+            }
+
+            if (errors) {
+                var data = {
+                    success: false,
+                    validationErrors: errors
+                };
+                return res.send(data);
+            }
+            workflow.emit('findCategory', req.body.category.toLowerCase());
+        });
+
+        workflow.on('findCategory', function (categoryName) {
+            req.app.db.models.ExpenseCategory.findOne({name: categoryName}, function (err, category) {
+                if (err) {
+                    console.log(err);
+                    return res.send({
+                        success: false,
+                        postErrors: 'Database Error'
+                    });
+                }
+                if (!category) {
+                    return res.send({
+                        success: false,
+                        postErrors: { error: 'Invalid category' }
+                    });
+                }
+                workflow.emit('updateExpense', category._id, category.name);
+            });
+        });
+
+        workflow.on('updateExpense', function (categoryId, categoryName) {
+            var updateQuery = {
+                $set: {
+                    title: req.body.title,
+                    amount: req.body.amount,
+                    date: req.body.date,
+                    description: req.body.description,
+                    'category.name': categoryName,
+                    'category.id': categoryId
+                }
+            };
+            req.app.db.models.Expense.findByIdAndUpdate(req.body._id, updateQuery, function (err, newDoc) {
+                if (err) {
+                    console.log(err);
+                    return res.send({
+                        success: false,
+                        postErrors: { error: 'database error' }
+                    });
+                }
+                return res.send({
+                    success: true,
+                    data: newDoc
+                });
+            });
+        });
+
+        workflow.emit('validate');
+    };
+
 };
 
 exports = module.exports = CostApiHandler;
