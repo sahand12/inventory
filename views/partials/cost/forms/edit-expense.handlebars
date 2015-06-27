@@ -1,0 +1,80 @@
+{{!--
+    POST cost/expense
+    params that will be sent to the server
+        * title
+        * amount
+        * date
+        * category
+        * description
+--}}
+
+<div class="modal cost-expense-modal" id="editExpenseModal" tabindex="-1" role="dialog" arial-labelledby="editExpenseModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content cost-modal-content">
+            <div class="modal-header cost-modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title text-uppercase" id="editExpenseModalLabel"><span>edit expense</span></h4>
+            </div>
+            <div class="modal-body cost-modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <form action="/cost/expenses" id="editExpenseForm" class="form-horizontal">
+
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="title" class="col-xs-3 control-label">Title</label>
+                                    <div class="col-xs-9">
+                                        <input class="form-control" type="text" id="editInputTitle" name="title" placeholder=""/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="amount" class="col-xs-3 control-label">Amount</label>
+                                    <div class="col-xs-9">
+                                        <input class="form-control" type="number" id="editInputAmount" name="amount" placeholder=""/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="date" class="col-xs-3 control-label">Date</label>
+                                    <div class="col-xs-9">
+                                        <input class="form-control" type="date" id="editInputDate" name="date" placeholder=""/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="category" class="col-xs-3 control-label">Category</label>
+                                    <div class="col-xs-9">
+                                        <select name="category" id="editInputCategory" class="form-control">
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="description" class="col-xs-3 control-label">Description</label>
+                                    <div class="col-xs-9">
+                                        <textarea class="textarea-block form-control" name="description" id="editInputDescription"></textarea>
+                                    </div>
+                                </div>
+                                <br/>
+
+                                <div class="row">
+                                    <div class="col-xs-3 col-xs-offset-4">
+                                        <button id="editExpenseDeleteButton" class="btn btn-block btn-danger text-capitalize" type="button">delete</button>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <button class="btn btn-block btn-success" id="editExpenseUpdateButton" type="submit">Update</button>
+                                    </div>
+                                </div>
+
+                            </div><!-- /.div.col-xs-8 -->
+                        </form>
+                    </div><!-- /.div.row -->
+                </div><!-- /.div.container-fluid -->
+            </div><!-- /.modal-body -->
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

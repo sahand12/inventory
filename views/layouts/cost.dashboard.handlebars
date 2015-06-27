@@ -8,13 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
 
     {{#if googleFonts}}
-        {{> fonts}}
+
+        <link href='http://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
     {{/if}}
     <!--<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,600,400italic' rel='stylesheet' type='text/css'>-->
     <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic' rel='stylesheet' type='text/css'>-->
     <!--<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>-->
     <!--<link href='http://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>-->
-    <!--<link href='http://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>-->
+
 
     <!-- Bootstrap 3.3.4 -->
     <link rel="stylesheet" href="/stylesheets/vendor/bootstrap/bootstrap.min.css"/>
@@ -42,12 +43,13 @@
             </div><!-- /.cost-sidebar-logo -->
             <hr class="cost-sidebar-hr"/>
             <ul class="nav nav-sidebar">
-                <li class="{{#if expenses}}active{{/if}}"><a href="/cost/expenses">Expenses</a></li>
-                <li class="{{#if trends}}active{{/if}}"><a href="/cost/trends">Trends</a></li>
-                <li class="{{#if reports}}active{{/if}}"><a href="/cost/reports">Reports</a></li>
-                <li class="{{#if people}}active{{/if}}"><a href="/cost/people">People</a></li>
-                <li class="{{#if reminders}}active{{/if}}"><a href="/cost/reminders">Reminders</a></li>
-                <li class="{{#if notifications}}active{{/if}}"><a href="/cost/notification">Notifications</a></li>
+                <li class="{{#if dashboardPage}}active{{/if}}"><a href="/cost/dashboard">Dashboard</a></li>
+                <li class="{{#if expensesPage}}active{{/if}}"><a href="/cost/expenses">Expenses</a></li>
+                <li class="{{#if trendsPage}}active{{/if}}"><a href="/cost/trends">Trends</a></li>
+                <li class="{{#if reportsPage}}active{{/if}}"><a href="/cost/reports">Reports</a></li>
+                <li class="{{#if peoplePage}}active{{/if}}"><a href="/cost/people">People</a></li>
+                <li class="{{#if remindersPage}}active{{/if}}"><a href="/cost/reminders">Reminders</a></li>
+                <li class="{{#if notificationsPage}}active{{/if}}"><a href="/cost/notification">Notifications</a></li>
             </ul>
             <hr class="cost-sidebar-hr"/>
             <ul class="nav nav-sidebar">
@@ -92,10 +94,18 @@
 <script>
 </script>
 <script src="/javascripts/app.js"></script>
-<!--<script src="/javascripts/cost-dashboard-chart.js"></script>-->
 <script src="/javascripts/cost-forms.js"></script>
-<!--<script src="/javascripts/charts/dashboard.js"></script>-->
-<script src="/javascripts/cost/expense-page.js"></script>
+
+
+{{#if dashboardPage}}
+    <script src="/javascripts/cost/dashboard.js"></script>
+{{/if}}
+{{#if expensesPage}}
+    <script src="/javascripts/cost/expenses-page.js"></script>
+{{/if}}
+{{#if trendsPage}}
+    <script src="/javascripts/cost/trendsPage"></script>
+{{/if}}
 
 </body>
 </html>

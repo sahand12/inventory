@@ -32,7 +32,8 @@ exports.authorization = {
         message: "You don't have permission to access this page"
     }
 };
-exports.months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+exports.months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
 //exports.monthsLength = [31, 28 || 29, ]
 exports.charts = {
     line: {

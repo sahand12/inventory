@@ -197,6 +197,9 @@ body {
 .activity-table td:last-child {
   color: red;
 }
+.cost-main-upcoming-reminders {
+  padding-left: 20px;
+}
 .cost-helper-header {
   font-size: 16px;
   background-image: url("/images/section-header-bg.png");

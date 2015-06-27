@@ -197,3 +197,6 @@ body {
 .activity-table td:last-child {
   color: red;
 }
+.cost-main-upcoming-reminders {
+  padding-left: 20px;
+}

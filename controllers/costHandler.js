@@ -13,7 +13,9 @@ var CostHandler = function CostHandler (app) {
             layout: 'cost.dashboard.handlebars',
             user: req.user,
             title: "Dashboard",
-            bodyClass: 'cost-dashboard'
+            bodyClass: 'cost-dashboard',
+            dashboardPage: true,
+            googleFonts: false
         };
         //console.log(data);
         return res.render('cost/dashboard', data);
@@ -103,7 +105,8 @@ var CostHandler = function CostHandler (app) {
             layout: 'cost.dashboard.handlebars',
             user: req.user,
             title: "Expenses",
-            expenses: true
+            expensesPage: true,
+            googleFonts: true
         };
         return res.render('cost/expenses', data);
     };

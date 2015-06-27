@@ -92,7 +92,10 @@ app.helpers.formatPieDataForStatistics = function (data) {
 };
 
 app.helpers.drawPieChart = function drawPieChart (context, data) {
-    return new Chart(context).Pie(data)
+    return new Chart(context).Pie(data, {
+        segmentShowStroke: false,
+        segmentStrokeWidth: 1
+    })
 };
 
 app.helpers.showPieChartStats = function ($statContainer, data) {
@@ -108,3 +111,25 @@ app.helpers.showPieChartStats = function ($statContainer, data) {
     }
     $statContainer.html(html);
 };
+
+app.helpers.formatDateForInput = function (date) {
+    return new Date().toISOString().substring(0, 10);
+};
+
+app.helpers.populateSelectCategory = function (data, $select) {
+    var html = "";
+    for (var i = 0, len = data.length; i < len; i++) {
+        html += "<option class='text-capitalize' value='" + data[i].toLowerCase() + "'>" + data[i] + "</option>";
+    }
+    $select.html(html);
+};
+
+/**
+ * Chartjs default options
+ */
+Chart.defaults.global.scaleLabel = "$<%=app.helpers.formatAmount(value)%>";
+Chart.defaults.global.scaleFontSize = 12;
+Chart.defaults.global.tooltipFontSize = 12;
+Chart.defaults.global.tooltipTemplate = "<%if (label){%><%=label%>: <%}%><%= app.helpers.formatAmount(value) %>";
+Chart.defaults.global.tooltipTitleFontFamily = "courier, 'Helvetica Neue', Helvetica, Arial, sans-serif";
+Chart.defaults.global.segmentStrokeWidth = 1;

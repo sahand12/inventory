@@ -67,7 +67,7 @@ exports = module.exports = function (app, mongoose) {
     };
 
     ExpenseSchema.statics.findByUser = function (userId, count, done) {
-        this.find({ user: userId }, { title: 1, date: 1, amount: 1, "category.name": 1, _id: 0 })
+        this.find({ user: userId }, { title: 1, date: 1, amount: 1, "category.name": 1, description: 1 })
             .sort({ date: "-1" })
             .limit(count)
             .exec(function (err, docs) {
@@ -132,12 +132,13 @@ exports = module.exports = function (app, mongoose) {
             startDate = new Date(currentYear, 0, 0),
             endDate = new Date(currentYear + 1, 0, 0);
 
-        this.find({ user: userId, date: { $gt: startDate, $lt: endDate }}, {date: 1, amount: 1, _id: 0}).exec(function (err, docs) {
-            if (err) {
-                return done(err);
-            }
-            return done(null, docs);
-        });
+        this.find({ user: userId, date: { $gt: startDate, $lt: endDate }}, {date: 1, amount: 1, _id: 0})
+            .exec(function (err, docs) {
+                if (err) {
+                    return done(err);
+                }
+                return done(null, docs);
+            });
     };
 
     // returns an array of docs including all the expenses by a specific person

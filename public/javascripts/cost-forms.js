@@ -68,7 +68,7 @@ $(function () {
                 //console.log(response.data[i]);
                 html += "<option class='text-capitalize' value='" + response.data[i].name.toLowerCase() + "'>" + response.data[i].name + "</option>";
             }
-            console.log(html);
+            //console.log(html);
             $select.html(html);
         }
     }
