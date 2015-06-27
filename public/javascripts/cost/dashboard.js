@@ -57,7 +57,7 @@ $(function () {
     function populateThisYear (response) {
         // first group data by each month
         var groupedData = groupDataByMonth(response.data);
-        var labels = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+        var labels = app.helpers.months;
         drawLineChart(labels, groupedData);
     }
 
