@@ -103,7 +103,7 @@ exports = module.exports = function (app, mongoose) {
     ExpenseSchema.statics.findTotalExpenseByEachCategory = function (userId, days, done) {
         var startDate = Date.now() - days * 1000 * 60 * 60 * 24,
             endDate = Date.now();
-        this.find({ user: userId, date: { $gt: startDate, $lt: endDate } }, { amount: 1, "category.name": 1, _id: 0 })
+        this.find({ user: userId, date: { $gt: startDate } }, { amount: 1, "category.name": 1, _id: 0 })
             .exec(function (err, docs) {
                 if (err) {
                     return done(err);

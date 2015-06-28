@@ -150,7 +150,7 @@ var CostApiHandler = function (app) {
             req.checkBody('title', 'each expense should have a title').notEmpty();
             req.checkBody('amount', 'provide an amount').notEmpty();
             req.checkBody('category', 'select a category').notEmpty();
-            req.checkBody('date', 'provide a valid date').isDate();
+            req.checkBody('date', 'provide a valid date (mm/dd/yyyy)').isDate();
 
             var errors = req.validationErrors(true);
             if (isNaN(amount) || amount < 0) {
@@ -215,6 +215,46 @@ var CostApiHandler = function (app) {
 
         workflow.emit('validate');
     };
+
+    /**
+     * DELETE  /cost/api/expense
+     */
+    this.handleDeleteExpenseRequest = function (req, res, next) {
+        var workflow = req.app.utility.workflow(req, res);
+
+        workflow.on('validate', function () {
+            req.checkBody('_id', 'invalid expense item').notEmpty();
+
+            var errors = req.validationErrors();
+
+            if (errors) {
+                return res.send({
+                    success: false,
+                    validationErrors: { _id: { param: "id", msg: "no item is selected", value: req.body._id } }
+                });
+            }
+
+            workflow.emit('findExpense', req.body._id);
+        });
+
+        workflow.on('findExpense', function (id) {
+            req.app.db.models.Expense.findById(id).remove(function (err, doc) {
+                if (err) {
+                    return res.send({
+                        success: false,
+                        postErrors: { error: "database error" }
+                    });
+                }
+                console.log(doc);
+                return res.send({
+                    success: true,
+                    data: doc
+                });
+            });
+        });
+
+        workflow.emit('validate');
+    }
 
 };
 

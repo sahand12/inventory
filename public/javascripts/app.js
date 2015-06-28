@@ -124,6 +124,31 @@ app.helpers.populateSelectCategory = function (data, $select) {
     $select.html(html);
 };
 
+// returns a html fragment that can be placed on the page showing the errors
+app.helpers.buildErrorHtml = function (data) {
+    var html = "<ul class='alert alert-danger'>";
+    if (data.validationErrors) {
+        var errors = data.validationErrors;
+        for (var err in errors) {
+            if (errors.hasOwnProperty(err)) {
+                html += "<p>Errors:</p>";
+                console.log(err);
+                html += "<li class='cost-forms-error'>" + "<b class='text-capitalize'>" + errors[err].param + "</b>: " + errors[err].msg + "</li>";
+            }
+        }
+        html += "</ul>";
+    }
+    if (data.postErrors) {
+        html += "Errors: <li class='alert vgn-alert-danger'>" + data.postErrors.error + "</li>";
+    }
+    console.log(html);
+    return html;
+};
+
+app.helpers.capitalizeFirstLetter = function (string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
 /**
  * Chartjs default options
  */

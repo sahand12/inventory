@@ -1,0 +1,11 @@
+{{#if validationErrors}}
+    {{#each validationErrors}}
+        <div class="alert vgn-alert-danger">
+            <b class="text-capitalize">{{this.param}}</b>: {{this.msg}}
+        </div>
+    {{/each}}
+{{/if}}
+
+{{#if postErrors}}
+    <div class="alert vgn-alert-danger">{{postErrors.error}}</div>
+{{/if}}

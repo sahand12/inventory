@@ -6,6 +6,8 @@ $(function () {
     app.addListener('expense.form.submit.success', buildTotalExpensesPieChart);
     app.addListener('update.expense.success', buildExpenseTable);
     app.addListener('update.expense.success', buildTotalExpensesPieChart);
+    app.addListener('delete.expense.success', buildExpenseTable);
+    app.addListener('delete.expense.success', buildTotalExpensesPieChart);
 
     app.emitEvent('page.load');
 
@@ -89,16 +91,26 @@ $(function () {
 
     /**
      * ------------------------------------------------
-     *     UPDATE / DELETE MODAL
+     *     UPDATE / DELETE MODAL FORM POPULATION
      * ------------------------------------------------
      */
     var $editExpenseModal = $('#editExpenseModal'),
         $editExpenseForm = $('#editExpenseForm');
 
     $editExpenseModal.on('shown.bs.modal', function (e){
+        // delete any pre populated form errors
+        emptyFormErrors();
+
         // e.relatedTarget points to the <a> which triggered showing the modal
         populateEditExpenseForm(e.relatedTarget);
+
     });
+
+    function emptyFormErrors() {
+        $('.cost-form-error-item').empty();
+        $('.form-group').removeClass('has-error');
+        $('.cost-form-error-head').empty();
+    }
 
     function populateEditExpenseForm (relatedTarget) {
         app.helpers.populateSelectCategory(app.expensesPageData.categories, $editExpenseForm.find('select'));
@@ -146,15 +158,37 @@ $(function () {
     }
 
     function handleEditResponseFromServer (response) {
-        if (response.success) {
+        if (!response.success) {
             return showUpdateErrorsFromServer(response);
         }
-        app.emit('update.expense.success');
+
+        // we had a successful update so lets hide the modal
         $editExpenseModal.modal('hide');
+
+        // updating the page according to new information
+        app.emit('update.expense.success');
     }
 
     function showUpdateErrorsFromServer (response) {
-        console.log(response);
+        var validationErrors = response.validationErrors,
+            postErrors = response.postErrors;
+
+        if (validationErrors) {
+            for (var err in validationErrors) {
+                if (validationErrors.hasOwnProperty(err)) {
+                    var inputId = '#editInput' + app.helpers.capitalizeFirstLetter(err),
+                        $formGroupWithError = $(inputId).closest('.form-group'),
+                        $errorDesc = $formGroupWithError.find('.cost-form-error-item');
+
+                    $formGroupWithError.addClass('has-error');
+                    $errorDesc.html( "&bull; " + validationErrors[err].msg);
+                }
+            }
+        }
+
+        if (postErrors) {
+            $('cost-form-error-head').html('<p class="alert alert-danger">An error happened during form submission. Please try again.</p>');
+        }
     }
 
     function formatDataForPutRequest ($form) {
@@ -208,29 +242,16 @@ $(function () {
         if (!response.success) {
             showDeleteErrorsFromServer(response);
         }
-        app.emit('delete.expense.success');
+
+        // we had a successful delete so lets hide the modal now
         $editExpenseModal.modal('hide');
+
+        // take care of updating the page
+        app.emit('delete.expense.success');
     }
 
     function showDeleteErrorsFromServer (response) {
         console.log(response);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 });

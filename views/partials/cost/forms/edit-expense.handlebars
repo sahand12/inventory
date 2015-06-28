@@ -18,45 +18,58 @@
                 <h4 class="modal-title text-uppercase" id="editExpenseModalLabel"><span>edit expense</span></h4>
             </div>
             <div class="modal-body cost-modal-body">
+
+                <!-- Error container -->
+                <div class="row form-error-container">
+                    <div class="col-xs-8 col-xs-offset-3">
+                        <div class="cost-form-error-head"></div>
+                    </div>
+                </div>
+
                 <div class="container-fluid">
                     <div class="row">
                         <form action="/cost/expenses" id="editExpenseForm" class="form-horizontal">
                             <input type="hidden" name="editInputId" id="editInputId"/>
                             <div class="col-xs-12">
                                 <div class="form-group">
-                                    <label for="title" class="col-xs-3 control-label">Title</label>
+                                    <label for="title" class="col-xs-3 control-label text-capitalize">title <span class="cost-form-required">*</span></label>
                                     <div class="col-xs-9">
                                         <input class="form-control" type="text" id="editInputTitle" name="editInputTitle" placeholder=""/>
+                                        <p class="cost-form-error-item"></p>
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="amount" class="col-xs-3 control-label">Amount</label>
+                                <div class="form-group has-error">
+                                    <label for="amount" class="col-xs-3 control-label text-capitalize">amount <span class="cost-form-required">*</span></label>
                                     <div class="col-xs-9">
                                         <input class="form-control" type="number" id="editInputAmount" name="editInputAmount" placeholder=""/>
+                                        <p class="cost-form-error-item">fuck you amount</p>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="date" class="col-xs-3 control-label">Date</label>
+                                    <label for="date" class="col-xs-3 control-label text-capitalize">date <span class="cost-form-required">*</span></label>
                                     <div class="col-xs-9">
                                         <input class="form-control" type="date" id="editInputDate" name="editInputDate" placeholder=""/>
+                                        <p class="cost-form-error-item"></p>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="category" class="col-xs-3 control-label">Category</label>
+                                    <label for="category" class="col-xs-3 control-label text-capitalize">category <span class="cost-form-required">*</span></label>
                                     <div class="col-xs-9">
                                         <select name="editInputCategory" id="editInputCategory" class="form-control">
 
                                         </select>
+                                        <p class="cost-form-error-item"></p>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="description" class="col-xs-3 control-label">Description</label>
+                                    <label for="description" class="col-xs-3 control-label text-capitalize">description</label>
                                     <div class="col-xs-9">
                                         <textarea class="textarea-block form-control" name="editInputDescription" id="editInputDescription"></textarea>
+                                        <p class="cost-form-error-item"></p>
                                     </div>
                                 </div>
                                 <br/>
