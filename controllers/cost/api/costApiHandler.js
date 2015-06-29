@@ -5,7 +5,7 @@ var CostApiHandler = function (app) {
     /*
      * GET /cost/api/categories
      */
-    this.listAllCategories = function (req, res, next) {
+    /*this.listAllCategories = function (req, res, next) {
         req.app.db.models.ExpenseCategory.find(function (err, docs) {
             if (err) {
                 return res.send({
@@ -18,7 +18,7 @@ var CostApiHandler = function (app) {
                 data: docs
             });
         });
-    };
+    };*/
 
     /*
      * GET /cost/api/expenses/category/:categoryName
@@ -254,8 +254,110 @@ var CostApiHandler = function (app) {
         });
 
         workflow.emit('validate');
-    }
+    };
 
+    /**
+     * GET cost/api/categories
+     */
+    this.findAllCategoriesByUser = function (req, res, next) {
+        req.app.db.models.ExpenseCategory.findCategoriesByUser(req.user._id, function (err, docs) {
+            if (err) {
+                console.log(err);
+                return res.send({
+                    success: false,
+                    postErrors: { error: 'database error'}
+                })
+            }
+            console.log(docs);
+            return res.send({
+                success: true,
+                data: docs
+            });
+        });
+    };
+
+    /**
+     * POST /cost/api/categories
+     */
+    this.handleCreateCategoryRequest = function (req, res, next) {
+        var workflow = req.app.utility.workflow(req, res);
+
+        workflow.on('validate', function () {
+            req.checkBody('categoryName', "Name field is required").notEmpty();
+            req.checkBody('categoryAmount', 'amount should be a positive number').isInt();
+
+            var errors = req.validationErrors(true);
+            if (errors) {
+                return res.send({
+                    success: false,
+                    validationErrors: errors
+                });
+            }
+            workflow.emit('checkDuplicateCategoryName', req.body.categoryName.toLowerCase());
+        });
+
+        workflow.on('checkDuplicateCategoryName', function (name) {
+            req.app.db.models.ExpenseCategory.findOne({ name: name }, function (err, doc) {
+                if (err) {
+                    return res.send({
+                        success: false,
+                        postErrors: { error: 'database error'}
+                    });
+                }
+                console.log(doc);
+                if (doc) {
+                    return res.send({
+                        success: false,
+                        postErrors: { error: "category: '" + name + "' already exists." }
+                    });
+                }
+                workflow.emit('createNewCategory');
+            });
+        });
+
+        workflow.on('createNewCategory', function () {
+            var fieldsToSet = {
+                name: req.body.categoryName,
+                user: req.user._id,
+                amount: req.body.categoryAmount
+            };
+            req.app.db.models.ExpenseCategory.create(fieldsToSet, function (err, doc) {
+                if (err) {
+                    return res.send({
+                        success: false,
+                        postErrors: { error: "database error" }
+                    });
+                }
+                return res.send({
+                    success: true,
+                    data: doc
+                });
+            });
+        });
+
+        workflow.emit('validate');
+    };
+
+
+    /**
+     * GET /cost/api/categories/lates?count=number
+     */
+    this.findLatestAddedCategories = function (req, res, next) {
+        var count = req.query.count || 5;
+        req.app.db.models.ExpenseCategory.findLatestAddedCategories(req.user._id, count, function (err, docs) {
+            if (err) {
+                console.log(err);
+                return res.send({
+                    success: false,
+                    postErrors: { error: "database error" }
+                });
+            }
+            return res.send({
+                success: true,
+                data: docs
+            });
+        });
+    };
 };
 
 exports = module.exports = CostApiHandler;

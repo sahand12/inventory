@@ -1,0 +1,61 @@
+@import 'cost.variable.less';
+.cost-form-category {
+  padding-top: 15px;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+}
+
+#createCategoryForm {
+  border: 1px solid #eee;
+  padding: 30px 20px 10px 20px;
+  border-radius: 2px;
+
+  input {
+    border: 2px solid @top-nav-background-color;
+  }
+}
+
+#createCategoryBtn {
+  display: block;
+  width: 100%;
+  background-color: @top-nav-button-color;
+  color: white;
+  margin-top: 30px;
+
+  span {
+    line-height: 20px;
+    vertical-align: middle;
+  }
+}
+
+#costLatestBalanceTable {
+  font-size: 14px;
+
+  td, th, tr {
+    border-color: #eee;
+
+  }
+
+  td:nth-child(n+2) {
+    padding: 15px 20px;
+  }
+  td:nth-child(2) {
+    width: 68%;
+  }
+  td:nth-child(3) {
+    width: 30%;
+  }
+
+  .table-left-color {
+    width: 2%;
+    padding: 0;
+    background: salmon;
+  }
+}
+
+#costTableBudget {
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}

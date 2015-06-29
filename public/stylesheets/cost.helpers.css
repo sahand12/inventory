@@ -68,3 +68,11 @@
 .cost-form-required {
   color: red;
 }
+.table-latest-balance {
+  color: #2e2e2e;
+  border-bottom: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+.cost-table-amount {
+  color: red;
+}

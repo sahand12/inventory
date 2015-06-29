@@ -99,18 +99,12 @@ $(function () {
 
     $editExpenseModal.on('shown.bs.modal', function (e){
         // delete any pre populated form errors
-        emptyFormErrors();
+        app.helpers.emptyFormErrors($('.form-group'), $('.cost-form-error-item'), $('.cost-form-error-head'));
 
         // e.relatedTarget points to the <a> which triggered showing the modal
         populateEditExpenseForm(e.relatedTarget);
 
     });
-
-    function emptyFormErrors() {
-        $('.cost-form-error-item').empty();
-        $('.form-group').removeClass('has-error');
-        $('.cost-form-error-head').empty();
-    }
 
     function populateEditExpenseForm (relatedTarget) {
         app.helpers.populateSelectCategory(app.expensesPageData.categories, $editExpenseForm.find('select'));
@@ -159,6 +153,10 @@ $(function () {
 
     function handleEditResponseFromServer (response) {
         if (!response.success) {
+            // first clear the last errors
+            app.helpers.emptyFormErrors($('.form-group'), $('.cost-form-error-item'), $('.cost-form-error-head'));
+
+            // show the new errors
             return showUpdateErrorsFromServer(response);
         }
 

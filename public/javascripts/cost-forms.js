@@ -1,13 +1,34 @@
 $(function () {
 
     var $expenseForm = $('#addExpenseForm'),
-        $expenseModal = $('#addExpenseModal'),
+        $AddExpenseModal = $('#addExpenseModal'),
         $addExpenseCloseButton = $('#addExpenseCloseButton');
 
-    $addExpenseCloseButton.on('click', function (e) {
-        $expenseModal.modal('hide');
+    /**
+     * -----------------------------------------
+     *     MODAL SHOWING HANDLING
+     * -----------------------------------------
+     */
+    $AddExpenseModal.on('shown.bs.modal', function (e){
+        // delete any pre populated form errors
+        app.helpers.emptyFormErrors($('.form-group'), $('.cost-form-error-item'), $('.cost-form-error-head'));
     });
 
+
+    /**
+     * -----------------------------------------
+     *     ADD EXPENSE CLOSE BUTTON HANDLING
+     * -----------------------------------------
+     */
+    $addExpenseCloseButton.on('click', function (e) {
+        $AddExpenseModal.modal('hide');
+    });
+
+    /**
+     * -----------------------------------------
+     *     ADD EXPENSE FORM SUBMIT
+     * -----------------------------------------
+     */
     $expenseForm.on('submit', function (e) {
         e.preventDefault();
         var self = this;
@@ -33,22 +54,54 @@ $(function () {
             url: $(self).attr('action'),
             data: data
         }).done(function (msg) {
-            console.log(msg);
             if (msg.success) {
                 app.emitEvent('expense.form.submit.success');
+                $AddExpenseModal.modal('hide');
             }
-            $expenseModal.modal('hide');
+            else {
+                // First clear any errors if any from the form
+                app.helpers.emptyFormErrors($('.form-group'), $('.cost-form-error-item'), $('.cost-form-error-head'));
+
+                // show new errors now
+                showAddExpenseFormErrors(msg);
+            }
         });
     }
 
+    function showAddExpenseFormErrors (response) {
+        var validationErrors = response.validationErrors,
+            postErrors = response.postErrors;
+
+        if (validationErrors) {
+            for (var err in validationErrors) {
+                if (validationErrors.hasOwnProperty(err)) {
+                    var inputId = "#" + err.toLowerCase(),
+                        $formGroupWithError = $(inputId).closest('.form-group'),
+                        $errorDesc = $formGroupWithError.find('.cost-form-error-item');
+
+                    $formGroupWithError.addClass('has-error');
+                    $errorDesc.html( "&bull; " + validationErrors[err].msg);
+                }
+            }
+        }
+
+        if (postErrors) {
+            $('cost-form-error-head').html('<p class="alert alert-danger">An error happened during form submission. Please try again.</p>');
+        }
+    }
+
+
+    /**
+     * -----------------------------------------------
+     *      ADD EXPENSE CLICK HANDLING
+     * -----------------------------------------------
+     */
     $('#addExpenseButton').on('click', onClickAddExpenseButton);
 
     function onClickAddExpenseButton (e) {
         // populate the category field in the add expense modal form
         var $selectCategory = $('#category');
         $selectCategory.empty();
-
-        console.log('called');
 
         // get the list of category from the server
         $.ajax({

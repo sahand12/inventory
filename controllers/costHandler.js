@@ -116,9 +116,13 @@ var CostHandler = function CostHandler (app) {
      */
     this.showTrendsPage = function (req, res, next) {
         var data = {
-            activeNav: "trends"
+            layout: "cost.dashboard.handlebars",
+            user: req.user,
+            title: "Trends",
+            trendsPage: true,
+            googleFont: false
         };
-        return this.render('cost/trends', data);
+        return res.render('cost/trends', data);
     };
 
     /**
@@ -126,7 +130,11 @@ var CostHandler = function CostHandler (app) {
      */
     this.showBudgetPage = function (req, res, next) {
         var data = {
-            activeNav: "budget"
+            layout: "cost.dashboard.handlebars",
+            user: req.user,
+            title: "Budget",
+            budgetPage: true,
+            googleFont: true
         };
         return res.render('cost/budget', data);
     };

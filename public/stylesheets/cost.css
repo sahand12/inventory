@@ -270,6 +270,14 @@ body {
 .cost-form-required {
   color: red;
 }
+.table-latest-balance {
+  color: #2e2e2e;
+  border-bottom: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+.cost-table-amount {
+  color: red;
+}
 .cost-expenses-list {
   padding-top: 20px;
 }
@@ -393,4 +401,55 @@ body {
 #createReportBtn:focus {
   outline: 0;
   box-shadow: none;
+}
+.cost-form-category {
+  padding-top: 15px;
+}
+.cost-form-category h1 {
+  margin-bottom: 20px;
+}
+#createCategoryForm {
+  border: 1px solid #eee;
+  padding: 30px 20px 10px 20px;
+  border-radius: 2px;
+}
+#createCategoryForm input {
+  border: 2px solid #9bd5cb;
+}
+#createCategoryBtn {
+  display: block;
+  width: 100%;
+  background-color: #3eb39e;
+  color: white;
+  margin-top: 30px;
+}
+#createCategoryBtn span {
+  line-height: 20px;
+  vertical-align: middle;
+}
+#costLatestBalanceTable {
+  font-size: 14px;
+}
+#costLatestBalanceTable td,
+#costLatestBalanceTable th,
+#costLatestBalanceTable tr {
+  border-color: #eee;
+}
+#costLatestBalanceTable td:nth-child(n+2) {
+  padding: 15px 20px;
+}
+#costLatestBalanceTable td:nth-child(2) {
+  width: 68%;
+}
+#costLatestBalanceTable td:nth-child(3) {
+  width: 30%;
+}
+#costLatestBalanceTable .table-left-color {
+  width: 2%;
+  padding: 0;
+  background: salmon;
+}
+#costTableBudget {
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 }

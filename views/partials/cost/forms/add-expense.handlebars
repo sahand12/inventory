@@ -19,39 +19,48 @@
 			</div>
 			<div class="modal-body cost-modal-body">
 				<div class="container-fluid">
+                    <!-- Error container -->
+                    <div class="row form-error-container">
+                        <div class="col-xs-8 col-xs-offset-3">
+                            <div class="cost-form-error-head"></div>
+                        </div>
+                    </div>
+
+
 					<div class="row">
 						<form action="/cost/expenses" id="addExpenseForm" class="form-horizontal" method="post" enctype="multipart/form-data">
 							
 							<div class="col-xs-12">
 								<div class="form-group">
-                                    <label for="title" class="col-xs-3 control-label">Title</label>
+                                    <label for="title" class="col-xs-3 control-label">Title <span class="cost-form-required">*</span></label>
 									<div class="col-xs-9">
                                         <input class="form-control" type="text" id="title" name="title" placeholder=""/>
+                                        <p class="cost-form-error-item"></p>
 									</div>
 								</div>
 
                                 <div class="form-group">
-                                    <label for="amount" class="col-xs-3 control-label">Amount</label>
+                                    <label for="amount" class="col-xs-3 control-label">Amount <span class="cost-form-required">*</span></label>
                                     <div class="col-xs-9">
                                         <input class="form-control" type="number" id="amount" name="amount" placeholder=""/>
+                                        <p class="cost-form-error-item"></p>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="date" class="col-xs-3 control-label">Date</label>
+                                    <label for="date" class="col-xs-3 control-label">Date <span class="cost-form-required">*</span></label>
                                     <div class="col-xs-9">
                                         <input class="form-control" type="date" id="date" name="date" placeholder=""/>
+                                        <p class="cost-form-error-item"></p>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="category" class="col-xs-3 control-label">Category</label>
+                                    <label for="category" class="col-xs-3 control-label">Category <span class="cost-form-required">*</span></label>
                                     <div class="col-xs-9">
                                         <select name="category" id="category" class="form-control">
-                                            <option value="business">Business</option>
-                                            <option value="pleasure">Pleasure</option>
-                                            <option value="education">Education</option>
 										</select>
+                                        <p class="cost-form-error-item"></p>
                                     </div>
                                 </div>
 
