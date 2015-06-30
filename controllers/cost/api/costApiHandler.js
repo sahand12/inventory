@@ -3,24 +3,6 @@
 var CostApiHandler = function (app) {
 
     /*
-     * GET /cost/api/categories
-     */
-    /*this.listAllCategories = function (req, res, next) {
-        req.app.db.models.ExpenseCategory.find(function (err, docs) {
-            if (err) {
-                return res.send({
-                    success: false,
-                    error: "Database Error"
-                });
-            }
-            return res.send({
-                success: true,
-                data: docs
-            });
-        });
-    };*/
-
-    /*
      * GET /cost/api/expenses/category/:categoryName
      */
     this.listExpensesByCategory = function (req, res, next) {
@@ -340,7 +322,7 @@ var CostApiHandler = function (app) {
 
 
     /**
-     * GET /cost/api/categories/lates?count=number
+     * GET /cost/api/categories/latest?count=number
      */
     this.findLatestAddedCategories = function (req, res, next) {
         var count = req.query.count || 5;

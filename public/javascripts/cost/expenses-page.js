@@ -9,6 +9,8 @@ $(function () {
     app.addListener('delete.expense.success', buildExpenseTable);
     app.addListener('delete.expense.success', buildTotalExpensesPieChart);
 
+    var categoryColors = {};
+
     app.emitEvent('page.load');
 
     app.expensesPageData = {};
@@ -73,13 +75,13 @@ $(function () {
             method: "get",
             url: "/cost/api/expenses/categories?days=10000"
         }).done(function (response) {
-            populateTotalExpensesPieChart(response);
+            populateTotalExpensesPieChart(response, categoryColors);
         });
     }
 
-    function populateTotalExpensesPieChart (response) {
+    function populateTotalExpensesPieChart (response, categoryColors) {
         app.expensesPageData.categories = Object.keys(response.data);
-        var sortedData = app.helpers.sortPieChartAjaxResponseByAmount(response.data);
+        var sortedData = app.helpers.sortPieChartAjaxResponseByAmount(response.data, categoryColors);
         var totalExpensesAmount = app.helpers.calculateTotalExpensesAmount(sortedData);
         $totalExpensesAmount.html("$" + app.helpers.formatAmount(totalExpensesAmount));
         var pieData = app.helpers.formatSortedAjaxDataForPieChart(sortedData);

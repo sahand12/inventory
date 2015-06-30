@@ -36,15 +36,19 @@ app.helpers.calculateTotalExpensesAmount = function (data) {
     return total;
 };
 
+app.helpers.generateRandomInt = function (range) {
+    return Math.floor(Math.random() * range);
+};
+
 app.helpers.makeRandomColor = function makeRandomColor () {
     var red = Math.floor( Math.random() * 256 ),
-        green = Math.floor( Math.random() * 256 ),
+        green = Math.floor( Math.random() * 256),
         blue = Math.floor( Math.random() * 256 );
 
     var color = "rgb(" + red + ", " + green + ", " + blue + ")",
-        highLight = "rgba(" + red + ", " + green + ", " + blue + ", 0.7)";
+        highlight = "rgba(" + red + ", " + green + ", " + blue + ", 0.7)";
 
-    return { color: color, highLight: highLight };
+    return { color: color, highlight: highlight };
 };
 
 app.helpers.sortPieChartAjaxResponseByAmount = function (data) {
@@ -60,15 +64,21 @@ app.helpers.sortPieChartAjaxResponseByAmount = function (data) {
     return sortedArray;
 };
 
-app.helpers.formatSortedAjaxDataForPieChart = function (data) {
+app.helpers.formatSortedAjaxDataForPieChart = function (data, categoryColors) {
     var pieData = [];
     for (var i = 0, len = data.length; i < len; i++) {
         var current = data[i],
             css = app.helpers.makeRandomColor();
+
+        if (typeof categoryColors[current.name] === "undefined") {
+            console.log(current.name, 'not defined');
+            categoryColors[current.name] = { color: css.color, highlight: css.highlight };
+        }
+console.log('pie chart', categoryColors);
         pieData.push({
             value: current.value,
-            color: css.color,
-            highlight: css.highLight,
+            color: categoryColors[current.name].color,
+            highlight: categoryColors[current.name].highlight,
             label: current.name
         });
     }
@@ -135,10 +145,6 @@ app.helpers.emptyFormErrors = function (group) {
 
 app.helpers.capitalizeFirstLetter = function (string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
-};
-
-app.helpers.populateFormErrors = function (serverRes) {
-    
 };
 
 /**

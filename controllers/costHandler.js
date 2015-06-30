@@ -106,7 +106,7 @@ var CostHandler = function CostHandler (app) {
             user: req.user,
             title: "Expenses",
             expensesPage: true,
-            googleFonts: false
+            googleFonts: true
         };
         return res.render('cost/expenses', data);
     };

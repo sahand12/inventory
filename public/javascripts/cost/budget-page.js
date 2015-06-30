@@ -1,17 +1,28 @@
 $(function () {
 
     app.addListener('page.load', buildLatestBalanceTable);
+    app.addListener('page.load', buildBudgetTable);
     app.addListener('form.create.category.success', buildLatestBalanceTable);
-
-    app.emitEvent('page.load');
+    app.addListener('form.create.category.success', buildBudgetTable);
+    app.addListener('expense.form.submit.success', buildLatestBalanceTable);
 
     /**
      * ---------------------------------------
      *     GLOBALS
      * ---------------------------------------
      */
-    var $latestBalanceTBody = $('#latestBalanceTable'),
+    var $latestBalanceTBody = $('#latestBalanceTable').find('tbody'),
         $createCategoryForm = $('#createCategoryForm');
+
+    var categoryColors = {};
+
+
+    /**
+     * ---------------------------------------
+     *     PAGE LOAD EVENT
+     * ---------------------------------------
+     */
+    app.emit('page.load');
 
      /**
      * ---------------------------------------
@@ -38,6 +49,8 @@ $(function () {
         }).done(function (response) {
             if (response.success) {
                 app.emit('form.create.category.success');
+                $('#categoryName').val("");
+                $('#categoryAmount').val("");
             }
             console.log(response);
         });
@@ -59,19 +72,102 @@ $(function () {
     function latestTableAjax () {
         $.ajax({
             method: "get",
-            url: "/cost/api/categories?count=5"
+            url: "/cost/api/expenses?count=5"
         }).done(function (response) {
-            var html = makeTableHtml(response.data);
-            $latestTableBody.append(html);
+            console.log(response);
+            if (response.success) {
+                var html = makeTableHtml(response.data);
+                $latestBalanceTBody.append(html);
+            }
         });
     }
 
     function makeTableHtml (data) {
-        var html = "";
+        var html = "",
+            current;
         for (var i = 0, len = data.length; i < len; i++) {
-            html += "<tr class='row'><td class='table-left-color'></td><td class=''>" +
-                    data[i].name + "</td><td class='cost-table-amount'>$" + app.helpers.formatAmount(data[i].amount) + "</td></tr>";
+             current = data[i];
+
+            // make the category color
+            if (typeof categoryColors[current.category.name] === 'undefined') {
+                categoryColors[current.category.name] = app.helpers.makeRandomColor()['color'];
+            }
+
+            html += "<tr class='row'><td style='background-color:" + categoryColors[current.category.name] + ";'></td><td class='text-capitalize'>" +
+                    current.category.name + "</td><td class='cost-table-amount'>$" + app.helpers.formatAmount(current.amount) + "</td></tr>";
         }
         return html;
     }
+
+    /**
+     * ----------------------------------------
+     *     BUILD THE BUDGET TABLE
+     * ----------------------------------------
+     */
+    function buildBudgetTable () {
+        // get the data from the server
+        $.ajax({
+            method: "get",
+            url: "/cost/api/categories/latest?count=100"   // we assume that nobody's gonna have more that 100 category
+        }).done(function (response){
+            if (response.success) {
+                populateBudgetTable(response.data, addBudgetTableToDom);
+            }
+        });
+    }
+
+    function populateBudgetTable (data, done) {
+        var html = "",
+            current;
+        for (var i = 0, len = data.length; i < len; i++) {
+            current = data[i];
+
+            // make the category color
+            if (typeof categoryColors[current.name] === 'undefined') {
+                categoryColors[current.name] = app.helpers.makeRandomColor()['color'];
+            }
+
+            html += "<tr><td style='background-color:" + categoryColors[current.name] + ";'></td><td class='text-capitalize'>"
+            + current.name + "</td><td>$" + app.helpers.formatAmount(current.amount) + "</td>"
+            + "<td><span class=\"fa fa-edit\"></span></td></tr>";
+        }
+        return done(html);
+    }
+
+    function addBudgetTableToDom (html) {
+        $('#categoryBudgetTable').find('tbody').html(html);
+    }
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

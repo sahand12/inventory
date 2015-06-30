@@ -7,7 +7,23 @@ $(function () {
     app.addListener('expense.form.submit.success', buildLineChart);
     app.addListener('expense.form.submit.success', buildLatestActivity);
 
-    app.emitEvent('page.load');
+
+     /**
+     * -------------------------------------------------
+     *     GLOBALS
+     * -------------------------------------------------
+     */
+     var pieChartCtx = document.getElementById('pieChart').getContext('2d'),
+         $chartStat = $('#pieChartStat');
+
+    var categoryColors = {};
+
+     /**
+     * -------------------------------------------------
+     *     PAGE LOAD EVENT
+     * -------------------------------------------------
+     */
+    app.emit('page.load');
 
     /**
      * -------------------------------------------------
@@ -15,23 +31,20 @@ $(function () {
      * -------------------------------------------------
      */
 
-    var pieChartCtx = document.getElementById('pieChart').getContext('2d'),
-        $chartStat = $('#pieChartStat');
-
     function buildPieChart () {
         // get the data from the server for pie-chart
         $.ajax({
             method: "get",
             url: "/cost/api/expenses/categories?days=30"
         }).done(function (response) {
-            populateLast30Days(response);
+            populateLast30Days(response, categoryColors);
         });
     }
 
 
-    function populateLast30Days(response) {
+    function populateLast30Days(response, categoryColors) {
         var sortedData = app.helpers.sortPieChartAjaxResponseByAmount(response.data);
-        var pieData = app.helpers.formatSortedAjaxDataForPieChart(sortedData);
+        var pieData = app.helpers.formatSortedAjaxDataForPieChart(sortedData, categoryColors);
         app.helpers.drawPieChart(pieChartCtx, pieData);
         var statData = app.helpers.formatPieDataForStatistics(pieData);
         app.helpers.showPieChartStats($chartStat,statData);
@@ -105,7 +118,7 @@ $(function () {
             method: "get",
             url: "/cost/api/expenses?count=5"
         }).done(function (response) {
-            populateTable(response.data);
+            populateTable(response.data, categoryColors);
         });
     }
 
@@ -132,11 +145,18 @@ $(function () {
         return formatted;
     }
 
-    function populateTable (data) {
+    function populateTable (data, categoryColors) {
         var html = "";
         for (var i = 0, len = data.length; i < len; i++) {
             var current = data[i];
-            html += "<tr class='activity-row'><td></td><td>" + current.title + "</td>"
+
+            if (typeof categoryColors[current.category.name]) {
+                var css = app.helpers.makeRandomColor();
+                categoryColors[current.category.name] = { color: css.color, highlight: css.highlight };
+            }
+console.log(categoryColors);
+            html += "<tr class='activity-row'><td style='background-color:" + categoryColors[current.category.name].color
+                + ";'></td><td>" + current.title + " (<strong>"+  current.category.name + "</strong>)" + "</td>"
                 + "<td><small>" + formatDate(current.date) + "</small></td>"
                 + "<td>$" + formatAmount(current.amount) + "</td>";
         }
