@@ -2,14 +2,14 @@
  * Created by MH on 5/13/2015.
  */
 
-// The contentHandler must be constructed with a connected db
 function ContentHandler() {
 
     this.displayHomePage = function (req, res, next) {
         var vm = {
-            title: "home page"
+            title: "Well Service Company",
+            googleFonts: false
         };
-        res.render('content/home', vm);
+        return res.render('website/home', vm);
     };
 
     this.displayProductsPage = function (req, res, next) {

@@ -1,0 +1,63 @@
+.btn-login {
+  margin-top: 9px;
+  border: 1px solid #a93926;
+  background-color: #e1563f;
+  color: white;
+  height: 32px;
+  line-height: 20px;
+  padding: 5px 20px;
+  font-family: "maven pro", sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+}
+.btn-login:hover,
+.btn-login:active {
+  background-color: #f86c55;
+  color: white;
+}
+.dropdown-list {
+  background-color: #444444;
+  opacity: 0.1;
+  color: black;
+}
+.dropdown-border {
+  color: #e6e6e6;
+}
+.main-nav {
+  height: 60px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 50px;
+  font-size: 13px;
+  margin-bottom: 0;
+  color: #faf2ee;
+  background: #e1563f top center;
+  background-image: url('/images/navigation_background.png');
+  background-repeat: repeat-x;
+}
+.main-nav .gvn-logo {
+  margin-right: 40px;
+  color: white;
+}
+#menuList {
+  margin-left: 60px;
+  color: #faf2ee;
+}
+#menuList li.dropdown {
+  margin-left: 5px;
+  height: 44px;
+}
+#menuList .nav {
+  margin-top: 9px;
+}
+#menuList .menu-list-item {
+  color: #faf2ee;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 5px 15px;
+}
+#menuList .active-nav-item > a {
+  color: #686e76;
+  border-radius: 4px;
+  background-color: #f4dbbb;
+}

@@ -1,0 +1,25 @@
+.btn-login {
+  margin-top: 9px;
+  border: 1px solid #a93926;
+  background-color: #e1563f;
+  color: white;
+  height: 32px;
+  line-height: 20px;
+  padding: 5px 20px;
+  font-family: "maven pro", sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+}
+.btn-login:hover,
+.btn-login:active {
+  background-color: #f86c55;
+  color: white;
+}
+.dropdown-list {
+  background-color: #444444;
+  opacity: 0.1;
+  color: black;
+}
+.dropdown-border {
+  color: #e6e6e6;
+}

@@ -1,0 +1,38 @@
+.main-nav {
+  height: 60px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 50px;
+  font-size: 13px;
+  margin-bottom: 0;
+  color: #faf2ee;
+  background: #e1563f top center;
+  background-image: url('/images/navigation_background.png');
+  background-repeat: repeat-x;
+}
+.main-nav .gvn-logo {
+  margin-right: 40px;
+  color: white;
+}
+#menuList {
+  margin-left: 60px;
+  color: #faf2ee;
+}
+#menuList li.dropdown {
+  margin-left: 5px;
+  height: 44px;
+}
+#menuList .nav {
+  margin-top: 9px;
+}
+#menuList .menu-list-item {
+  color: #faf2ee;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 5px 15px;
+}
+#menuList .active-nav-item > a {
+  color: #686e76;
+  border-radius: 4px;
+  background-color: #f4dbbb;
+}

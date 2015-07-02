@@ -43,7 +43,7 @@ require('./models')(app, mongoose);
 
 // create 'ExpressHandlebars' instance with a default layout and a partial directory
 var hbs = expressHandlebars.create({
-    defaultLayout: 'main',
+    defaultLayout: 'website',
     partialDir: 'views/partials'
 });
 

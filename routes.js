@@ -65,7 +65,7 @@ function ensureOwner (req, res, next) {
 exports = module.exports = function (app, passport) {
 
     // front end
-    var frontEndHandler = new (require('./controllers/frontEndHandler'))();
+    var frontEndHandler = new (require('./controllers/website/frontEndHandler'))();
     app.get('/', frontEndHandler.displayHomePage);
     app.get('/products/', frontEndHandler.displayProductsPage);
     app.get('/domains/', frontEndHandler.displayDomainsPage);

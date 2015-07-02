@@ -1,0 +1,57 @@
+@import "vars.less";
+
+.main-nav {
+  height: 60px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 50px;
+  font-size: 13px;
+  margin-bottom: 0;
+  color: @nav-item-color;
+  background: @nav-background top center;
+  background-image: url('/images/navigation_background.png');
+  background-repeat: repeat-x;
+
+  .gvn-logo {
+    margin-right: 40px;
+    color: white;
+    //border: 1px solid white;
+    //border-radius: 2px;
+  }
+}
+
+#menuList {
+  margin-left: 60px;
+  color: @nav-item-color;
+
+  li.dropdown {
+    margin-left: 5px;
+    height: 44px;
+  }
+
+  .nav {
+    margin-top: 9px;
+  }
+
+  .menu-list-item {
+    color: @darkWhite;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5px 15px;
+
+    a {
+
+    }
+  }
+
+  .active-nav-item {
+    
+
+    &>a {
+      color: @lightGray;
+      border-radius: 4px;
+      background-color: @lightYellow;
+    }
+  }
+}
+
