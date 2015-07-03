@@ -1,0 +1,33 @@
+.intro {
+  background-image: url('/images/newleftrig.png');
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 100%;
+}
+@media (min-width: 1050px) {
+  .intro {
+    background-image: url('/images/gvnrig.png');
+    background-position: bottom left;
+    background-repeat: no-repeat;
+  }
+}
+@media (max-width: 768px) {
+  .intro-body {
+    margin-top: 50px;
+  }
+}
+.intro-body {
+  margin-top: 75px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background: #2c3e58;
+  color: white;
+  opacity: 0.9;
+  font-family: "Maven pro", "Source Sans Pro", "menlo", sans-serif;
+  padding-bottom: 20px;
+}
+.intro-body h1 {
+  color: white;
+  font-size: 20px;
+}

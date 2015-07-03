@@ -16,10 +16,20 @@
   color: white;
 }
 .dropdown-list {
-  background-color: #444444;
-  opacity: 0.1;
-  color: black;
+  background-color: #2c3e58;
+  font-size: 13px;
+  border: none;
 }
-.dropdown-border {
-  color: #e6e6e6;
+.dropdown-list li {
+  color: white;
+}
+.dropdown-list li:hover {
+  color: #e1563f;
+}
+.dropdown-list li a {
+  color: white;
+}
+.dropdown-list li a:hover {
+  color: #e1563f;
+  background: #2c3e58;
 }

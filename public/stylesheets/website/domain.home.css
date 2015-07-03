@@ -1,0 +1,59 @@
+.domain-section {
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+.domain-item {
+  height: 150px;
+  color: #444444;
+}
+.domain-item span.fa {
+  font-size: 50px;
+  line-height: 50px;
+}
+.domain-item p {
+  margin-top: 12%;
+  font-size: 16px;
+  font-weight: bold;
+}
+.domain-top-section {
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 50%;
+}
+.nav-arrow {
+  padding-top: 42px;
+}
+.domain-deepwater {
+  background-color: #55a5d9;
+  color: white;
+}
+.domain-deepwater .domain-top-section {
+  color: #ecf0f1;
+  background-color: #2980b9;
+}
+.domain-deepwater .fa {
+  color: #ecf0f1;
+}
+.domain-aging {
+  background-color: #ed7669;
+  color: white;
+}
+.domain-aging .domain-top-section {
+  color: #ecf0f1;
+  background-color: #e74c3c;
+}
+.domain-aging .fa {
+  color: #ecf0f1;
+}
+.domain-unconventional {
+  background-color: #3d567a;
+  color: white;
+}
+.domain-unconventional .domain-top-section {
+  color: #ecf0f1;
+  background-color: #2c3e58;
+}
+.domain-unconventional .fa {
+  color: #ecf0f1;
+}

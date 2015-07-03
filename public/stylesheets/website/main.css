@@ -16,12 +16,22 @@
   color: white;
 }
 .dropdown-list {
-  background-color: #444444;
-  opacity: 0.1;
-  color: black;
+  background-color: #2c3e58;
+  font-size: 13px;
+  border: none;
 }
-.dropdown-border {
-  color: #e6e6e6;
+.dropdown-list li {
+  color: white;
+}
+.dropdown-list li:hover {
+  color: #e1563f;
+}
+.dropdown-list li a {
+  color: white;
+}
+.dropdown-list li a:hover {
+  color: #e1563f;
+  background: #2c3e58;
 }
 .main-nav {
   height: 60px;
@@ -60,4 +70,194 @@
   color: #686e76;
   border-radius: 4px;
   background-color: #f4dbbb;
+}
+.intro {
+  background-image: url('/images/newleftrig.png');
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 100%;
+}
+@media (min-width: 1050px) {
+  .intro {
+    background-image: url('/images/gvnrig.png');
+    background-position: bottom left;
+    background-repeat: no-repeat;
+  }
+}
+@media (max-width: 768px) {
+  .intro-body {
+    margin-top: 50px;
+  }
+}
+.intro-body {
+  margin-top: 75px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background: #2c3e58;
+  color: white;
+  opacity: 0.9;
+  font-family: "Maven pro", "Source Sans Pro", "menlo", sans-serif;
+  padding-bottom: 20px;
+}
+.intro-body h1 {
+  color: white;
+  font-size: 20px;
+}
+.product-section {
+  margin-top: 100px;
+}
+.product-heading {
+  margin-bottom: 40px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 24px;
+}
+.product-heading span {
+  background-color: #d0d1d4;
+  padding: 20px;
+  color: #2e2e2e;
+}
+.product-list {
+  height: 560px;
+}
+.product-item {
+  padding: 20px;
+  color: #ecf0f1;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.product-item h3 {
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+.product-item h3 span {
+  border-bottom: 1px solid #ecf0f1;
+}
+.fluid-drilling {
+  height: 275px;
+  background-color: #3498db;
+  margin-top: 10px;
+  margin-left: -15px;
+}
+.fluid-drilling a.btn {
+  border-right: 1px solid #3498db;
+  border-bottom: 1px solid #3498db;
+  background-color: white;
+  color: #3498db;
+  position: absolute;
+  bottom: 0;
+  right: 15px;
+  display: none;
+}
+.coiled-tubing {
+  height: 275px;
+  background-color: #2c3e58;
+  margin-left: -10px;
+}
+.coiled-tubing h3 {
+  margin-top: 100px;
+}
+.coiled-tubing a.btn {
+  border-right: 1px solid #2c3e58;
+  border-bottom: 1px solid #2c3e58;
+  background-color: white;
+  color: #2c3e58;
+  position: absolute;
+  bottom: 0;
+  right: 15px;
+  display: none;
+}
+.well-testing {
+  height: 560px;
+  margin-bottom: 30px;
+  background-color: #e74c3c;
+  margin-right: -10px;
+  position: relative;
+}
+.well-testing a.btn {
+  border-right: 1px solid #e74c3c;
+  border-bottom: 1px solid #e74c3c;
+  background-color: white;
+  color: #e74c3c;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: none;
+}
+.well-stimulation {
+  height: 275px;
+  background-color: #2980b9;
+  margin-top: 10px;
+  margin-left: -10px;
+  margin-right: -5px;
+}
+.well-stimulation a.btn {
+  border-right: 1px solid #2980b9;
+  border-bottom: 1px solid #2980b9;
+  background-color: white;
+  color: #2980b9;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  display: none;
+}
+.domain-section {
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+.domain-item {
+  height: 150px;
+  color: #444444;
+}
+.domain-item span.fa {
+  font-size: 50px;
+  line-height: 50px;
+}
+.domain-item p {
+  margin-top: 12%;
+  font-size: 16px;
+  font-weight: bold;
+}
+.domain-top-section {
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 50%;
+}
+.nav-arrow {
+  padding-top: 42px;
+}
+.domain-deepwater {
+  background-color: #55a5d9;
+  color: white;
+}
+.domain-deepwater .domain-top-section {
+  color: #ecf0f1;
+  background-color: #2980b9;
+}
+.domain-deepwater .fa {
+  color: #ecf0f1;
+}
+.domain-aging {
+  background-color: #ed7669;
+  color: white;
+}
+.domain-aging .domain-top-section {
+  color: #ecf0f1;
+  background-color: #e74c3c;
+}
+.domain-aging .fa {
+  color: #ecf0f1;
+}
+.domain-unconventional {
+  background-color: #3d567a;
+  color: white;
+}
+.domain-unconventional .domain-top-section {
+  color: #ecf0f1;
+  background-color: #2c3e58;
+}
+.domain-unconventional .fa {
+  color: #ecf0f1;
 }

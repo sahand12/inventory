@@ -20,11 +20,29 @@
 }
 
 .dropdown-list {
-  background-color: @midBlack;
-  opacity: 0.1;
-  color: black;
+  background-color: @flat-navy;
+  //opacity: 0.9;
+  font-size: 13px;
+  border: none;
+
+  li {
+    color: white;
+
+    &:hover {
+      color: @orange;
+    }
+
+    a {
+      color: white;
+
+      &:hover {
+        color: @orange;
+        background: @flat-navy;
+      }
+    }
+  }
 }
 
 .dropdown-border {
-  color: darken(white, 10%);
+  //background-color: @darkOrange;
 }
