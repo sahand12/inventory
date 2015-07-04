@@ -1,0 +1,14 @@
+.challenge-section {
+  margin-bottom: 300px;
+}
+.challenge-section .panel {
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 20px;
+}
+.challenge-section .panel-heading {
+  font-size: 20px;
+}
+.challenge-section .tab-content {
+  margin-top: 20px;
+}
