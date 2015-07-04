@@ -1,6 +1,19 @@
+body {
+  background-image: url('/images/confectionary.png');
+}
+body .intro {
+  background-color: white;
+  background-image: url('/images/newleftrig.png');
+}
 .domain-section {
-  margin-top: 100px;
-  margin-bottom: 200px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.domain-section .container {
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 2px 2px #ccc;
 }
 .domain-item {
   height: 150px;
@@ -56,4 +69,25 @@
 }
 .domain-unconventional .fa {
   color: #ecf0f1;
+}
+.domain-abandonment {
+  background-color: #a0b03b;
+  color: white;
+}
+.domain-abandonment .domain-top-section {
+  color: #ecf0f1;
+  background-color: #7d8a2e;
+}
+.domain-abandonment .fa {
+  color: #ecf0f1;
+}
+.domain-slider {
+  height: 190px;
+  background-color: #eee;
+  padding-top: 20px;
+  border-radius: 4px;
+}
+.slick-prev-btn,
+.slick-next-btn {
+  margin-top: 42px;
 }

@@ -1,20 +1,24 @@
 @import "vars.less";
 
 body {
-  //background: url('/images/geometry2.png');
+  background-image: url('/images/confectionary.png');
 
-  .container {
-    //background: white;
-
-    .row {
-      //background: white;
-    }
+  .intro {
+    background-color: white;
+    background-image: url('/images/newleftrig.png');
   }
 }
 
 .domain-section {
-  margin-top: 100px;
-  margin-bottom: 200px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  .container {
+    background-color: #eee;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 2px 2px #ccc;
+  }
 }
 
 .domain-item {
@@ -87,4 +91,30 @@ body {
   .fa {
     color: @flat-white;
   }
+}
+
+.domain-abandonment {
+  background-color: lighten(@flat-green, 10%);
+  color: white;
+
+  .domain-top-section {
+    color: @flat-white;
+    background-color: @flat-green;
+  }
+
+  .fa {
+    color: @flat-white;
+  }
+}
+
+.domain-slider {
+  height: 190px;
+  background-color: #eee;
+  padding-top: 20px;
+  border-radius: 4px;
+}
+
+.slick-prev-btn,
+.slick-next-btn {
+  margin-top: 42px;
 }

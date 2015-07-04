@@ -1,5 +1,9 @@
-.product-section {
-  margin-top: 100px;
+.product-section .container {
+  margin-top: 20px;
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px #ccc;
 }
 .product-heading {
   margin-bottom: 40px;
@@ -12,8 +16,8 @@
   padding: 20px;
   color: #2e2e2e;
 }
-.product-list {
-  height: 560px;
+.products-list {
+  height: 590px;
 }
 .product-item {
   padding: 20px;
