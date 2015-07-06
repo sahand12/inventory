@@ -104,7 +104,6 @@ exports = module.exports = function (app, mongoose) {
     };
 
     userSchema.index({ email: 1 }, { unique: true });
-    userSchema.index({ employeeId: 1 }, { unique: true });
     userSchema.index({ search: 1 });
     userSchema.index({ timeCreated: 1 });
     userSchema.set('autoIndex', (app.get('env') === "development"));
