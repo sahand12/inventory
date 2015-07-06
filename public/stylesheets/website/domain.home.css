@@ -1,19 +1,12 @@
-body {
-  background-image: url('/images/confectionary.png');
-}
-body .intro {
-  background-color: white;
-  background-image: url('/images/newleftrig.png');
-}
 .domain-section {
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 .domain-section .container {
-  background-color: #eee;
-  padding: 20px;
+  background-color: #fff;
+  padding-top: 30px;
   border-radius: 4px;
-  box-shadow: 2px 2px #ccc;
+  border: 1px solid #ddd;
 }
 .domain-item {
   height: 150px;
@@ -82,9 +75,9 @@ body .intro {
   color: #ecf0f1;
 }
 .domain-slider {
-  height: 190px;
-  background-color: #eee;
-  padding-top: 20px;
+  height: 150px;
+  background-color: #fff;
+  padding-top: 0;
   border-radius: 4px;
 }
 .slick-prev-btn,
