@@ -1,0 +1,12 @@
+.about-page {
+  margin-top: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.about-page p,
+.about-page li {
+  font-size: 15px;
+}
+.about-page .main-content-wrapper {
+  background-color: white;
+}

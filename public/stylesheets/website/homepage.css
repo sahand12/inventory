@@ -314,6 +314,70 @@
 .footer a:hover {
   text-decoration: underline;
 }
+.products-page {
+  margin-top: 60px;
+}
+.products-page h1 {
+  margin-bottom: 30px;
+  color: #2c3e58;
+  font-weight: bold;
+}
+.products-page .products-wrapper {
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  padding-bottom: 20px;
+}
+.products-page .products-wrapper .media-body {
+  padding-left: 20px;
+}
+.products-page .products-wrapper .media-left img {
+  border: 1px solid #aaa;
+}
+.products-page .products-wrapper .media-heading {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2980b9;
+}
+#productsPage-sidebar {
+  padding-top: 30px;
+  border-left: 1px solid #eee;
+}
+#productsPage-sidebar h4 {
+  font-size: 18px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+#productsPage-sidebar .sidebar-p {
+  margin-bottom: 40px;
+}
+#productsPage-sidebar ul {
+  margin-bottom: 40px;
+}
+#productsPage-sidebar li {
+  margin-bottom: 10px;
+}
+#productsPage-sidebar .btn-login {
+  font-size: 12px;
+}
+.product-application {
+  color: #2980b9;
+}
+.about-page {
+  margin-top: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.about-page p,
+.about-page li {
+  font-size: 15px;
+}
+.about-page .main-content-wrapper {
+  background-color: white;
+}
 body {
   background-image: url('/images/confectionary.png');
 }

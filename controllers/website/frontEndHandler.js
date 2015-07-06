@@ -4,6 +4,7 @@
 
 function ContentHandler() {
 
+    // GET     /
     this.displayHomePage = function (req, res, next) {
         var vm = {
             title: "Well Service Company",
@@ -12,11 +13,49 @@ function ContentHandler() {
         return res.render('website/home', vm);
     };
 
+    // GET    /products
     this.displayProductsPage = function (req, res, next) {
         var vm = {
-            title: "products page"
+            title: "Products",
+            productsPage: true
         };
-        res.render('content/products', vm);
+        res.render('website/products', vm);
+    };
+
+    // GET    /products/coiled-tubing
+    this.displayCoiledPage = function (req, res, next) {
+        var vm = {
+            title: "Coiled Tubing",
+            productsPage: true
+        };
+        return res.render('website/coiledPage', vm);
+    };
+
+    // GET    /products/well-test
+    this.displayWellTestPage = function (req, res, next) {
+        var vm = {
+            title: "Well Testing",
+            productsPage: true
+        };
+        return res.render('website/wellTestPage', vm);
+    };
+
+    // GET     /products/well-stimulation
+    this.displayWellStimulationPage = function (req, res, next) {
+        var vm = {
+            title: "Well Stimulation",
+            productsPage: true
+        };
+        return res.render('website/wellStimulationPage', vm);
+    };
+
+    // GET    /products/drilling-fluid
+    this.displayDrillingFluidPage = function (req, res, next) {
+        var vm = {
+            title: "Drilling Fluid Solutions",
+            productsPage: true
+        };
+        return res.render('website/drillingFluidPage');
     };
 
     this.displayDomainsPage = function (req, res, next) {
@@ -36,9 +75,10 @@ function ContentHandler() {
 
     this.displayAboutPage = function (req, res, next) {
         var vm = {
-            title: 'about us'
+            title: 'About Us',
+            aboutPage: true
         };
-        res.render('content/about', vm);
+        res.render('website/about', vm);
     };
 }
 

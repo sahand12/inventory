@@ -14,6 +14,7 @@ $(function () {
      */
     $productItem.hover(function(e){
         $(this).find('a.btn').show();
+        //$(this).parent().siblings().find('.product-item').css({ opacity: 0.8 });
     }, function (e){
         $(this).find('a.btn').hide();
     });

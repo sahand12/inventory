@@ -67,9 +67,18 @@ exports = module.exports = function (app, passport) {
     // front end
     var frontEndHandler = new (require('./controllers/website/frontEndHandler'))();
     app.get('/', frontEndHandler.displayHomePage);
+
     app.get('/products/', frontEndHandler.displayProductsPage);
+    app.get('/products/coiled-tubing', frontEndHandler.displayCoiledPage);
+    app.get('/products/well-test', frontEndHandler.displayWellTestPage);
+    app.get('/products/well-stimulation', frontEndHandler.displayWellStimulationPage);
+    app.get('/products/drilling-fluid', frontEndHandler.displayDrillingFluidPage);
+
     app.get('/domains/', frontEndHandler.displayDomainsPage);
-    app.get('/about/', frontEndHandler.displayAboutPage);
+
+    app.get('/about-us/', frontEndHandler.displayAboutPage);
+
+
     app.get('/challenges/', frontEndHandler.displayChallengesPage);
 
     // sign up
