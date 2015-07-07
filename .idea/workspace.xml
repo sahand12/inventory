@@ -2,8 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f15174e-ed4e-4874-b2fe-4736a9113461" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/schema/user.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/views/website/about.handlebars" afterPath="$PROJECT_DIR$/views/website/about/about.handlebars" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/about-page.css" afterPath="$PROJECT_DIR$/public/stylesheets/website/about-page.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/about-page.less" afterPath="$PROJECT_DIR$/public/stylesheets/website/about-page.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/cost/budget-page.js" afterPath="$PROJECT_DIR$/public/javascripts/cost/budget-page.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/cost/budget.handlebars" afterPath="$PROJECT_DIR$/views/cost/budget.handlebars" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost-budget-page.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost-budget-page.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost-budget-page.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost-budget-page.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/cost/cost-forms.js" afterPath="$PROJECT_DIR$/public/javascripts/cost/cost-forms.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/cost/api/costApiHandler.js" afterPath="$PROJECT_DIR$/controllers/cost/api/costApiHandler.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/cost/forms/create-category.handlebars" afterPath="$PROJECT_DIR$/views/partials/cost/forms/create-category.handlebars" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/website/frontEndHandler.js" afterPath="$PROJECT_DIR$/controllers/website/frontEndHandler.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/homepage.css" afterPath="$PROJECT_DIR$/public/stylesheets/website/homepage.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/homepage.less" afterPath="$PROJECT_DIR$/public/stylesheets/website/homepage.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/website/nav.handlebars" afterPath="$PROJECT_DIR$/views/partials/website/nav.handlebars" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/website/products-page/product-section.handlebars" afterPath="$PROJECT_DIR$/views/partials/website/products-page/product-section.handlebars" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.js" afterPath="$PROJECT_DIR$/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/website/products-page/sidebar.handlebars" afterPath="$PROJECT_DIR$/views/partials/website/products-page/sidebar.handlebars" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/vars.less" afterPath="$PROJECT_DIR$/public/stylesheets/website/vars.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="basicAuth.iws" />
@@ -25,21 +42,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="User.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/schema/User.js">
+      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3480851">
-              <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="137" column="63" selection-start-line="137" selection-start-column="63" selection-end-line="137" selection-end-column="63" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vendor.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/schema/vendor.js">
+      <file leaf-file-name="costApiHandler.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/cost/api/costApiHandler.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="302" column="27" selection-start-line="302" selection-start-column="27" selection-end-line="302" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create-category.handlebars" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/partials/cost/forms/create-category.handlebars">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.413794">
+              <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cost-budget-page.less" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/stylesheets/cost-budget-page.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.11845493">
+              <caret line="95" column="14" selection-start-line="95" selection-start-column="14" selection-end-line="95" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -61,23 +98,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/javascripts/helpers/random-color.js" />
-        <option value="$PROJECT_DIR$/controllers/cost/api/costApiHandler.js" />
-        <option value="$PROJECT_DIR$/public/stylesheets/cost-budget-page.less" />
-        <option value="$PROJECT_DIR$/public/javascripts/cost/budget-page.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/app.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/cost/expenses-page.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/cost/dashboard.js" />
-        <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/website/nav-dropdown.js" />
-        <option value="$PROJECT_DIR$/public/stylesheets/website/nav.less" />
-        <option value="$PROJECT_DIR$/public/stylesheets/website/jumbo.less" />
-        <option value="$PROJECT_DIR$/public/stylesheets/website/helpers.less" />
-        <option value="$PROJECT_DIR$/views/partials/website/nav2.handlebars" />
-        <option value="$PROJECT_DIR$/public/stylesheets/website/vars.less" />
-        <option value="$PROJECT_DIR$/views/partials/website/challlenges.home.handlebars" />
-        <option value="$PROJECT_DIR$/public/stylesheets/website/intro.less" />
-        <option value="$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars" />
         <option value="$PROJECT_DIR$/views/partials/website/jumbo.home.handlebars" />
         <option value="$PROJECT_DIR$/views/website/home.handlebars" />
         <option value="$PROJECT_DIR$/public/stylesheets/website/footer.less" />
@@ -92,8 +112,6 @@
         <option value="$PROJECT_DIR$/views/layouts/website.handlebars" />
         <option value="$PROJECT_DIR$/views/website/products.handlebars" />
         <option value="$PROJECT_DIR$/public/stylesheets/website/product-page.less" />
-        <option value="$PROJECT_DIR$/views/partials/website/products-page/product-section.handlebars" />
-        <option value="$PROJECT_DIR$/views/partials/website/products-page/sidebar.handlebars" />
         <option value="$PROJECT_DIR$/views/partials/website/products-page/coiledPage.handlebars" />
         <option value="$PROJECT_DIR$/views/partials/website/products-page/wellTest.handlebars" />
         <option value="$PROJECT_DIR$/views/partials/website/products-page/wellStimulation.handlebars" />
@@ -104,14 +122,33 @@
         <option value="$PROJECT_DIR$/views/website/wellStimulationPage.handlebars" />
         <option value="$PROJECT_DIR$/views/website/drillingFluidPage.handlebars" />
         <option value="$PROJECT_DIR$/views/partials/website/products.home.handlebars" />
-        <option value="$PROJECT_DIR$/routes.js" />
-        <option value="$PROJECT_DIR$/controllers/website/frontEndHandler.js" />
-        <option value="$PROJECT_DIR$/views/partials/website/nav.handlebars" />
-        <option value="$PROJECT_DIR$/public/stylesheets/website/homepage.less" />
-        <option value="$PROJECT_DIR$/public/stylesheets/website/about-page.less" />
         <option value="$PROJECT_DIR$/views/website/about.handlebars" />
         <option value="$PROJECT_DIR$/schema/user.js" />
         <option value="$PROJECT_DIR$/schema/User.js" />
+        <option value="$PROJECT_DIR$/views/website/about/corporate-respolsibility.handlebars" />
+        <option value="$PROJECT_DIR$/public/stylesheets/website/about-page.less" />
+        <option value="$PROJECT_DIR$/views/website/about/safety.handlebars" />
+        <option value="$PROJECT_DIR$/views/website/about/about.handlebars" />
+        <option value="$PROJECT_DIR$/views/website/about/ethics.handlebars" />
+        <option value="$PROJECT_DIR$/views/website/about/careers.handlebars" />
+        <option value="$PROJECT_DIR$/views/partials/website/nav.handlebars" />
+        <option value="$PROJECT_DIR$/public/stylesheets/website/homepage.less" />
+        <option value="$PROJECT_DIR$/views/website/domains/domains.handlebars" />
+        <option value="$PROJECT_DIR$/public/stylesheets/website/vars.less" />
+        <option value="$PROJECT_DIR$/public/stylesheets/website/domains-page.less" />
+        <option value="$PROJECT_DIR$/views/website/domains/deepWater.handlebars" />
+        <option value="$PROJECT_DIR$/views/partials/website/products-page/sidebar.handlebars" />
+        <option value="$PROJECT_DIR$/controllers/website/frontEndHandler.js" />
+        <option value="$PROJECT_DIR$/views/website/domains/unconventional.handlebars" />
+        <option value="$PROJECT_DIR$/views/website/domains/aging.handlebars" />
+        <option value="$PROJECT_DIR$/views/partials/website/products-page/product-section.handlebars" />
+        <option value="$PROJECT_DIR$/routes.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/cost/cost-forms.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/cost/budget-page.js" />
+        <option value="$PROJECT_DIR$/controllers/cost/api/costApiHandler.js" />
+        <option value="$PROJECT_DIR$/views/cost/budget.handlebars" />
+        <option value="$PROJECT_DIR$/views/partials/cost/forms/create-category.handlebars" />
+        <option value="$PROJECT_DIR$/public/stylesheets/cost-budget-page.less" />
       </list>
     </option>
   </component>
@@ -130,7 +167,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1366" />
-    <option name="height" value="1295" />
+    <option name="height" value="1314" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -207,7 +244,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="schema" />
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -225,6 +280,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cost" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cost" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -237,7 +332,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="soft&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;use sof&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;sof&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;use soft&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;local histor&#9;ACTION&#9;LocalHistory&#10;soft w&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;soft wrap&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;tab size&#9;null&#9;null&#10;plugin&#9;ACTION&#9;null&#10;less &#9;null&#9;null&#10;wrap&#9;ACTION&#9;EditorToggleUseSoftWraps" />
+    <property name="SearchEverywhereHistoryKey" value="use so&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;use &#9;ACTION&#9;EditorToggleUseSoftWraps&#10;use sof&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;use soft&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;soft wrap&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;soft&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;sof&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;local histor&#9;ACTION&#9;LocalHistory&#10;soft w&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;tab size&#9;null&#9;null&#10;plugin&#9;ACTION&#9;null&#10;less &#9;null&#9;null&#10;wrap&#9;ACTION&#9;EditorToggleUseSoftWraps" />
     <property name="list.type.of.created.stylesheet" value="Less" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="jsx.switch.disabled" value="true" />
@@ -251,11 +346,11 @@
       <recent name="J:\sandbox\basicAuth\public\javascripts\vendor" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/views/website/about" />
       <recent name="$PROJECT_DIR$/views/website" />
       <recent name="$PROJECT_DIR$/public/javascripts/cost" />
       <recent name="$PROJECT_DIR$/public/javascripts/website" />
       <recent name="$PROJECT_DIR$/views/partials/website" />
-      <recent name="$PROJECT_DIR$/controllers/website" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.bin\www">
@@ -324,8 +419,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1366" height="1295" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1366" height="1314" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6043956" sideWeight="0.49765572" order="7" side_tool="false" content_ui="tabs" />
@@ -333,6 +428,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2133829" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35162094" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5253533" sideWeight="0.50234425" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38557994" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -340,11 +437,9 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32863072" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35235733" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -385,146 +480,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43741766">
-          <caret line="158" column="61" selection-start-line="158" selection-start-column="61" selection-end-line="158" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/expenses-page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="90" column="5" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/cost-budget-page.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/cost/tables/budget.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.038356163">
-          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/cost/api/costApiHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schema/Expense.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="106" column="40" selection-start-line="106" selection-start-column="40" selection-end-line="106" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="27" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/alerts.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/background-variant.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/vendor/bootstrap/less/mixins.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.7937915">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/vendor/bootstrap/less/buttons.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.4833703">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/vendor/bootstrap/less/button-groups.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/vendor/bootstrap/less/bootstrap.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/website/nav-dropdown.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44385734">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.bowerrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/website/intro.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26923078">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/website/jumbo.home.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1923077">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/website/home.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.7586207">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/website/footer.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.655172">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/website/challenge.home.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.724138">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/website/products.home.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.620689">
@@ -532,17 +487,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/website/domains.home.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/partials/website/challenges.home.handlebars">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -574,13 +523,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/website/vars.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.37931">
-          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.048780486">
@@ -599,20 +541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.63414633">
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/website/products-page/sidebar.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6319444">
-          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/website/products-page/product-section.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.121527776">
-          <caret line="5" column="44" selection-start-line="0" selection-start-column="0" selection-end-line="80" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -651,52 +579,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/website/products.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.024305556">
-          <caret line="1" column="11" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="78" column="22" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/website/frontEndHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="80" column="27" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/website/nav.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4375">
-          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/website/homepage.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21875">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/website/drillingFluidPage.handlebars">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/website/about-page.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -721,10 +608,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/website/about.handlebars">
+    <entry file="file://$PROJECT_DIR$/schema/User.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.9676596">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -736,10 +624,255 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schema/User.js">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/website/about-page.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3480851">
-          <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
+        <state vertical-scroll-proportion="-12.551724">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/website/about/about.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.02443281">
+          <caret line="1" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="38" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/website/about/safety.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.92844677">
+          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/website/about/ethics.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58638746">
+          <caret line="18" column="126" selection-start-line="18" selection-start-column="126" selection-end-line="18" selection-end-column="126" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/website/products.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.02443281">
+          <caret line="1" column="11" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/website/homepage.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2443281">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/website/domains.home.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.02443281">
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/website/home.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17102967">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/website/vars.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.448276">
+          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/website/domains-page.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.137932">
+          <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/website/domains/domains.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34205934">
+          <caret line="14" column="80" selection-start-line="14" selection-start-column="80" selection-end-line="14" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/website/about/careers.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36649215">
+          <caret line="15" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/website/nav.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-39.58621">
+          <caret line="41" column="51" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/website/frontEndHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/website/domains/unconventional.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.68237346">
+          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/website/domains/deepWater.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36649215">
+          <caret line="12" column="392" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/website/products-page/product-section.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12216405">
+          <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/website/domains/aging.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6352531">
+          <caret line="16" column="499" selection-start-line="16" selection-start-column="499" selection-end-line="16" selection-end-column="499" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/website/products-page/sidebar.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17102967">
+          <caret line="7" column="107" selection-start-line="7" selection-start-column="107" selection-end-line="7" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1435987573000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/cost-forms.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="118" column="34" selection-start-line="118" selection-start-column="34" selection-end-line="118" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="137" column="63" selection-start-line="137" selection-start-column="63" selection-end-line="137" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schema/ExpenseCategory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/budget-page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="57" selection-start-line="36" selection-start-column="57" selection-end-line="36" selection-end-column="57" />
+          <folding>
+            <marker date="1436268137000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436268137000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/cost/api/costApiHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="302" column="27" selection-start-line="302" selection-start-column="27" selection-end-line="302" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/cost/categoryHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/costHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/cost/budget.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.9655172">
+          <caret line="1" column="74" selection-start-line="1" selection-start-column="74" selection-end-line="1" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/cost/forms/create-category.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.413794">
+          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/cost-budget-page.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11845493">
+          <caret line="95" column="14" selection-start-line="95" selection-start-column="14" selection-end-line="95" selection-end-column="14" />
           <folding />
         </state>
       </provider>

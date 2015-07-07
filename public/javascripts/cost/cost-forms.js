@@ -116,6 +116,7 @@ $(function () {
 
     function populateSelectCategory (response, $select) {
         if (response.success) {
+            console.log(response);
             var html = "";
             for (var i = 0, len = response.data.length; i < len; i++) {
                 //console.log(response.data[i]);

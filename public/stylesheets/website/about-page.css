@@ -7,6 +7,10 @@
 .about-page li {
   font-size: 15px;
 }
+.about-page h3.product-application {
+  padding-top: 40px;
+}
 .about-page .main-content-wrapper {
   background-color: white;
+  padding-bottom: 40px;
 }

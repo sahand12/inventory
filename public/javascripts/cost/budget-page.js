@@ -34,7 +34,7 @@ $(function () {
         e.preventDefault();
 
         var data = {
-            categoryName: $('#categoryName').val(),
+            categoryName: $('#categoryName').val().trim(),
             categoryAmount: $('#categoryAmount').val()
         };
         console.log(data);
@@ -52,6 +52,9 @@ $(function () {
                 $('#categoryName').val("");
                 $('#categoryAmount').val("");
             }
+
+            // TODO
+            // handle the response that got back from the server
             console.log(response);
         });
     }

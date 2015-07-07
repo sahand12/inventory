@@ -241,8 +241,8 @@ var CostApiHandler = function (app) {
     /**
      * GET cost/api/categories
      */
-    this.findAllCategoriesByUser = function (req, res, next) {
-        req.app.db.models.ExpenseCategory.findCategoriesByUser(req.user._id, function (err, docs) {
+    this.findAllCategories = function (req, res, next) {
+        req.app.db.models.ExpenseCategory.find({}, {amount: 1, name: 1, _id: 1}, function (err, docs) {
             if (err) {
                 console.log(err);
                 return res.send({
@@ -275,33 +275,34 @@ var CostApiHandler = function (app) {
                     validationErrors: errors
                 });
             }
-            workflow.emit('checkDuplicateCategoryName', req.body.categoryName.toLowerCase());
+            workflow.emit('checkDuplicateCategoryName', req.body.categoryName.toLowerCase().trim());
         });
 
         workflow.on('checkDuplicateCategoryName', function (name) {
             req.app.db.models.ExpenseCategory.findOne({ name: name }, function (err, doc) {
                 if (err) {
+                    console.log(err);
                     return res.send({
                         success: false,
                         postErrors: { error: 'database error'}
                     });
                 }
-                console.log(doc);
                 if (doc) {
+                    console.log(doc);
                     return res.send({
                         success: false,
                         postErrors: { error: "category: '" + name + "' already exists." }
                     });
                 }
-                workflow.emit('createNewCategory');
+                workflow.emit('createNewCategory', name);
             });
         });
 
-        workflow.on('createNewCategory', function () {
+        workflow.on('createNewCategory', function (name) {
             var fieldsToSet = {
-                name: req.body.categoryName,
+                name: name,
                 user: req.user._id,
-                amount: req.body.categoryAmount
+                amount: parseInt(req.body.categoryAmount)
             };
             req.app.db.models.ExpenseCategory.create(fieldsToSet, function (err, doc) {
                 if (err) {
@@ -310,6 +311,7 @@ var CostApiHandler = function (app) {
                         postErrors: { error: "database error" }
                     });
                 }
+                console.log('create', doc);
                 return res.send({
                     success: true,
                     data: doc

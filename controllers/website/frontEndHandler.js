@@ -58,13 +58,55 @@ function ContentHandler() {
         return res.render('website/drillingFluidPage');
     };
 
-    this.displayDomainsPage = function (req, res, next) {
+
+    /**
+     * -------------------------------------
+     *     DOMAINS PAGE AND SUB-PAGES
+     * -------------------------------------
+     */
+
+    // GET     /domains
+    this.showDomainsPage = function (req, res, next) {
         var vm = {
             title: "domains page",
-            googleFonts: true
+            googleFonts: true,
+            domainsPage: true
         };
-        res.render('content/domains', vm);
+        res.render('website/domains/domains', vm);
     };
+
+    // GET /domains/aging-reservoirs
+    this.showAgingPage = function (req, res, next) {
+        var vm = {
+            title: 'Aging Reservoirs',
+            domainsPage: true
+        };
+        return res.render('website/domains/aging', vm);
+    };
+
+    // GET     /domains/unconventional
+    this.showUnconventionalPage = function (req, res, next) {
+        var vm = {
+            title: "Unconventional",
+            domainsPage: true
+        };
+        return res.render('website/domains/unconventional', vm);
+    };
+
+    // GET     /domains/deep-water
+    this.showDeepWaterPage = function (req, res, next) {
+        var vm = {
+            title: "Deep Water",
+            domainsPage: true
+        };
+        return res.render('website/domains/deepWater', vm);
+    };
+
+    /**
+     * -----------------------------------------
+     *      CHALLENGES PAGE AND SUB-PAGES
+     * -----------------------------------------
+     */
 
     this.displayChallengesPage = function (req, res, next) {
         var vm = {
@@ -73,13 +115,60 @@ function ContentHandler() {
         res.render('content/challenges', vm);
     };
 
+
+    /**
+     * -----------------------------------------
+     *      ABOUT PAGES AND SUB-PAGES
+     * -----------------------------------------
+     */
+
+    // GET     /about-us
     this.displayAboutPage = function (req, res, next) {
         var vm = {
             title: 'About Us',
             aboutPage: true
         };
-        res.render('website/about', vm);
+        res.render('website/about/about', vm);
     };
+
+
+    // GET     /about/safety
+    this.displaySafetyPage = function (req, res, next) {
+        var vm = {
+            title: "Safety",
+            aboutPage: true
+        };
+        return res.render('website/about/safety', vm);
+    };
+
+    // GET     /about/careers
+    this.displayCareersPage =function (req, res, next) {
+        var vm = {
+            title: "Careers",
+            aboutPage: true
+        };
+        return res.render('website/about/careers', vm);
+    };
+
+    // GET     /about/ethics
+    this.displayEthicsPage = function (req, res, next) {
+        var vm = {
+            title: "Ethics and Compliance",
+            aboutPage: true
+        };
+        return res.render('website/about/ethics', vm);
+    };
+
+    // GET     /about/corporate-responsibility
+    this.displayResponsibilityPage = function (req, res, next) {
+        var vm = {
+            title: "Corporate Responsibility",
+            aboutPage: true
+        };
+        return res.render('website/about/responsibility', vm);
+    };
+
+
 }
 
 

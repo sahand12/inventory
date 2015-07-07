@@ -375,8 +375,49 @@
 .about-page li {
   font-size: 15px;
 }
+.about-page h3.product-application {
+  padding-top: 40px;
+}
 .about-page .main-content-wrapper {
   background-color: white;
+  padding-bottom: 40px;
+}
+.domains-box {
+  width: 300px;
+  height: 200px;
+  color: #ecf0f1;
+}
+.domains-box .domains-box-top {
+  font-size: 50px;
+  height: 90px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  line-height: 50px;
+}
+.domains-box .domains-box-bottom {
+  font-size: 30px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  line-height: 30px;
+  text-align: center;
+}
+.domains-deepwater .domains-box-top {
+  background-color: #2980b9;
+}
+.domains-deepwater .domains-box-bottom {
+  background-color: #3498db;
+}
+.domains-unconventional .domains-box-top {
+  background-color: #2c3e58;
+}
+.domains-unconventional .domains-box-bottom {
+  background-color: rgba(44, 62, 88, 0.9);
+}
+.domains-aging .domains-box-top {
+  background-color: #e74c3c;
+}
+.domains-aging .domains-box-bottom {
+  background-color: rgba(231, 76, 60, 0.9);
 }
 body {
   background-image: url('/images/confectionary.png');

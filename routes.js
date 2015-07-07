@@ -74,10 +74,16 @@ exports = module.exports = function (app, passport) {
     app.get('/products/well-stimulation', frontEndHandler.displayWellStimulationPage);
     app.get('/products/drilling-fluid', frontEndHandler.displayDrillingFluidPage);
 
-    app.get('/domains/', frontEndHandler.displayDomainsPage);
-
     app.get('/about-us/', frontEndHandler.displayAboutPage);
+    app.get('/about/safety', frontEndHandler.displaySafetyPage);
+    app.get('/about/careers', frontEndHandler.displayCareersPage);
+    app.get('/about/ethics', frontEndHandler.displayEthicsPage);
+    app.get('/about/corporate-responsibility', frontEndHandler.displayResponsibilityPage);
 
+    app.get('/domains', frontEndHandler.showDomainsPage);
+    app.get('/domains/deep-water', frontEndHandler.showDeepWaterPage);
+    app.get('/domains/aging-reservoirs', frontEndHandler.showAgingPage);
+    app.get('/domains/unconventional', frontEndHandler.showUnconventionalPage);
 
     app.get('/challenges/', frontEndHandler.displayChallengesPage);
 
@@ -128,9 +134,10 @@ exports = module.exports = function (app, passport) {
 
     var CostApiHandler = require('./controllers/cost/api/costApiHandler'),
         costApiHandler = new CostApiHandler(app);
-    app.get('/cost/api/categories', ensureAuthenticated, costApiHandler.findAllCategoriesByUser);
+    app.get('/cost/api/categories', ensureAuthenticated, costApiHandler.findAllCategories);
     app.post('/cost/api/categories', ensureAuthenticated, costApiHandler.handleCreateCategoryRequest);
     app.get('/cost/api/categories/latest', ensureAuthenticated, costApiHandler.findLatestAddedCategories);
+
     app.get('/cost/api/expenses/category/:categoryName', ensureAuthenticated, costApiHandler.listExpensesByCategory);
     app.get('/cost/api/expenses', ensureAuthenticated, costApiHandler.listExpensesByUser);
     app.get('/cost/api/expenses/total', ensureAuthenticated, costApiHandler.showTotalExpenses);
