@@ -1,7 +1,7 @@
 // config/index.js
 'use strict';
 
-exports.port = process.env.port || 3000;
+exports.port = process.env.port || 80;
 exports.mongodb = {
     uri: process.env.MONGOLAB_URI || process.env.MONGOHQ_URI || 'mongodb://localhost:27017/basicAuth'
 };
