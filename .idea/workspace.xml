@@ -2,7 +2,186 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f15174e-ed4e-4874-b2fe-4736a9113461" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/intro-lg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/intro-md.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/intro-md1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/intro-xs.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/vgn-rig.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/alerts.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/background-variant.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/css/bootstrap-theme.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/css/bootstrap-theme.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/css/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/js/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/js/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/border-radius.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/buttons.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/center-block.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/clearfix.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/config.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/forms.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/gradients.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/grid-framework.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/grid.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/hide-text.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/image.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/labels.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/list-group.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/media.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/nav-divider.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/nav-vertical-align.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/normalize.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/opacity.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/pagination.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/panels.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/print.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/progress-bar.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/reset-filter.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/resize.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/responsive-embed.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/responsive-visibility.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/size.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/tab-focus.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/table-row.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/text-emphasis.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/text-overflow.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/theme.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/variables.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/vendor-prefixes.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/.bower.json" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/.bower.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/Gruntfile.js" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/Gruntfile.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/LICENSE" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/LICENSE" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/README.md" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/README.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/bower.json" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/bower.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/dist/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/dist/css/bootstrap-theme.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/dist/css/bootstrap-theme.css.map" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/dist/css/bootstrap-theme.css.map" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/dist/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/dist/css/bootstrap-theme.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/dist/css/bootstrap.css" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/dist/css/bootstrap.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/dist/css/bootstrap.css.map" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/dist/css/bootstrap.css.map" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/dist/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/dist/css/bootstrap.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/dist/fonts/glyphicons-halflings-regular.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/dist/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/dist/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/dist/fonts/glyphicons-halflings-regular.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/dist/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/dist/js/bootstrap.js" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/dist/js/bootstrap.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/dist/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/dist/js/bootstrap.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/dist/js/npm.js" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/dist/js/npm.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/grunt/.jshintrc" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/grunt/.jshintrc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/grunt/bs-commonjs-generator.js" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/grunt/bs-commonjs-generator.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/grunt/bs-glyphicons-data-generator.js" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/grunt/bs-glyphicons-data-generator.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/grunt/bs-lessdoc-parser.js" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/grunt/bs-lessdoc-parser.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/grunt/bs-raw-files-generator.js" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/grunt/bs-raw-files-generator.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/grunt/configBridge.json" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/grunt/configBridge.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/grunt/sauce_browsers.yml" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/grunt/sauce_browsers.yml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/js/.jscsrc" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/js/.jscsrc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/js/.jshintrc" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/js/.jshintrc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/js/affix.js" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/js/affix.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/js/alert.js" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/js/alert.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/js/button.js" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/js/button.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/js/carousel.js" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/js/carousel.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/js/collapse.js" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/js/collapse.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/js/dropdown.js" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/js/dropdown.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/js/modal.js" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/js/modal.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/js/popover.js" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/js/popover.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/js/scrollspy.js" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/js/scrollspy.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/js/tab.js" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/js/tab.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/js/tooltip.js" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/js/tooltip.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/js/transition.js" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/js/transition.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/.csscomb.json" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/.csscomb.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/.csslintrc" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/.csslintrc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/alerts.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/alerts.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/badges.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/badges.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/bootstrap.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/bootstrap.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/breadcrumbs.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/breadcrumbs.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/button-groups.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/button-groups.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/buttons.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/buttons.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/carousel.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/carousel.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/close.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/close.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/code.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/code.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/component-animations.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/component-animations.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/dropdowns.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/dropdowns.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/forms.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/forms.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/glyphicons.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/glyphicons.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/grid.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/grid.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/input-groups.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/input-groups.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/jumbotron.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/jumbotron.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/labels.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/labels.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/list-group.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/list-group.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/media.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/media.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/alerts.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/alerts.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/background-variant.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/background-variant.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/border-radius.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/border-radius.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/buttons.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/buttons.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/center-block.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/center-block.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/clearfix.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/clearfix.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/forms.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/forms.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/gradients.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/gradients.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/grid-framework.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/grid-framework.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/grid.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/grid.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/hide-text.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/hide-text.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/image.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/image.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/labels.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/labels.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/list-group.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/list-group.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/nav-divider.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/nav-divider.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/nav-vertical-align.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/nav-vertical-align.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/opacity.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/opacity.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/pagination.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/pagination.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/panels.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/panels.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/progress-bar.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/progress-bar.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/reset-filter.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/reset-filter.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/resize.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/resize.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/responsive-visibility.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/responsive-visibility.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/size.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/size.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/tab-focus.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/tab-focus.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/table-row.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/table-row.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/text-emphasis.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/text-emphasis.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/text-overflow.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/text-overflow.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/mixins/vendor-prefixes.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/mixins/vendor-prefixes.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/modals.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/modals.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/navbar.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/navbar.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/navs.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/navs.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/normalize.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/normalize.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/pager.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/pager.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/pagination.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/pagination.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/panels.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/panels.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/popovers.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/popovers.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/print.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/print.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/progress-bars.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/progress-bars.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/responsive-embed.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/responsive-embed.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/responsive-utilities.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/responsive-utilities.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/scaffolding.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/scaffolding.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/tables.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/tables.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/theme.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/theme.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/thumbnails.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/thumbnails.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/tooltip.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/tooltip.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/type.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/type.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/utilities.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/utilities.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/variables.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/variables.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/less/wells.less" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/less/wells.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/package.js" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/package.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/package.json" afterPath="$PROJECT_DIR$/public/vendor/bootstrap-original/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/homepage.css" afterPath="$PROJECT_DIR$/public/stylesheets/website/homepage.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/homepage.less" afterPath="$PROJECT_DIR$/public/stylesheets/website/homepage.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/intro.css" afterPath="$PROJECT_DIR$/public/stylesheets/website/intro.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/intro.less" afterPath="$PROJECT_DIR$/public/stylesheets/website/intro.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layouts/website.handlebars" afterPath="$PROJECT_DIR$/views/layouts/website.handlebars" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="basicAuth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,71 +202,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes.js">
+      <file leaf-file-name="homepage.less" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/stylesheets/website/homepage.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="152" column="63" selection-start-line="152" selection-start-column="63" selection-end-line="152" selection-end-column="63" />
+            <state vertical-scroll-proportion="0.6630137">
+              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="costApiHandler.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/cost/api/costApiHandler.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="304" column="27" selection-start-line="304" selection-start-column="27" selection-end-line="304" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="website.handlebars" pinned="false" current-in-tab="true">
+      <file leaf-file-name="website.handlebars" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/layouts/website.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23076923">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create-category.handlebars" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/partials/cost/forms/create-category.handlebars">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.310345">
-              <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cost-budget-page.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/stylesheets/cost-budget-page.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.586206">
-              <caret line="101" column="3" selection-start-line="101" selection-start-column="3" selection-end-line="101" selection-end-column="3" />
+            <state vertical-scroll-proportion="-15.448276">
+              <caret line="45" column="37" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -109,8 +238,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/views/website/home.handlebars" />
-        <option value="$PROJECT_DIR$/public/stylesheets/website/footer.less" />
         <option value="$PROJECT_DIR$/public/stylesheets/website/challenge.home.less" />
         <option value="$PROJECT_DIR$/views/partials/website/challenges.home.handlebars" />
         <option value="$PROJECT_DIR$/views/partials/website/domains.home.handlebars" />
@@ -141,7 +268,6 @@
         <option value="$PROJECT_DIR$/views/website/about/ethics.handlebars" />
         <option value="$PROJECT_DIR$/views/website/about/careers.handlebars" />
         <option value="$PROJECT_DIR$/views/partials/website/nav.handlebars" />
-        <option value="$PROJECT_DIR$/public/stylesheets/website/homepage.less" />
         <option value="$PROJECT_DIR$/views/website/domains/domains.handlebars" />
         <option value="$PROJECT_DIR$/public/stylesheets/website/vars.less" />
         <option value="$PROJECT_DIR$/public/stylesheets/website/domains-page.less" />
@@ -159,7 +285,10 @@
         <option value="$PROJECT_DIR$/views/partials/cost/forms/create-category.handlebars" />
         <option value="$PROJECT_DIR$/public/stylesheets/cost-budget-page.less" />
         <option value="$PROJECT_DIR$/config/index.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/public/stylesheets/website/intro.less" />
         <option value="$PROJECT_DIR$/views/layouts/website.handlebars" />
+        <option value="$PROJECT_DIR$/public/stylesheets/website/homepage.less" />
       </list>
     </option>
   </component>
@@ -288,7 +417,139 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="inventory" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="inventory" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="inventory" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="inventory" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="inventory" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="inventory" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -392,7 +653,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="23" width="1317" height="877" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6043956" sideWeight="0.49765572" order="7" side_tool="false" content_ui="tabs" />
@@ -400,18 +661,18 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21296297" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35159236" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5253533" sideWeight="0.50234425" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38557994" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32863072" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35162094" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -429,9 +690,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2133829" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35235733" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35235733" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -452,19 +713,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="152" column="63" selection-start-line="152" selection-start-column="63" selection-end-line="152" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/cost/api/costApiHandler.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="304" column="27" selection-start-line="304" selection-start-column="27" selection-end-line="304" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -472,7 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -488,7 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="137" column="63" selection-start-line="137" selection-start-column="63" selection-end-line="137" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -496,7 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="302" column="27" selection-start-line="302" selection-start-column="27" selection-end-line="302" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -504,7 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -649,13 +897,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/website/homepage.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2443281">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/partials/website/domains.home.handlebars">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.02443281">
@@ -733,14 +974,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="152" column="63" selection-start-line="152" selection-start-column="63" selection-end-line="152" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/schema/ExpenseCategory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -776,50 +1009,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/cost-budget-page.less">
+    <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.586206">
-          <caret line="101" column="3" selection-start-line="101" selection-start-column="3" selection-end-line="101" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/cost/forms/create-category.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.310345">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-          <folding />
+        <state vertical-scroll-proportion="2.034346">
+          <caret line="111" column="26" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/cost/api/costApiHandler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="1.4795245">
           <caret line="304" column="27" selection-start-line="304" selection-start-column="27" selection-end-line="304" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.48216644">
+          <caret line="152" column="63" selection-start-line="152" selection-start-column="63" selection-end-line="152" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.07397622">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/cost/forms/create-category.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7692308">
+          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/cost-budget-page.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46153846">
+          <caret line="101" column="3" selection-start-line="101" selection-start-column="3" selection-end-line="101" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/website/intro.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/layouts/website.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23076923">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state vertical-scroll-proportion="-15.448276">
+          <caret line="45" column="37" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/website/homepage.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6630137">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
           <folding />
         </state>
       </provider>

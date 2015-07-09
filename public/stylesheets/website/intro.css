@@ -1,14 +1,14 @@
 .intro {
-  background-image: url('/images/newleftrig.png');
+  background-image: url('/images/intro-md.png');
   background-position: bottom left;
   background-repeat: no-repeat;
   height: 400px;
   width: 100%;
   margin-top: 60px;
 }
-@media (min-width: 1050px) {
-  .intro {
-    background-image: url('/images/gvnrig.png');
+@media (min-width: 1200px) {
+  body .intro {
+    background-image: url('/images/intro-lg.png');
     background-position: bottom left;
     background-repeat: no-repeat;
   }

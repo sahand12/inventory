@@ -109,7 +109,7 @@ app.utility.slugify = require('./util/slugify');
 app.utility.workflow = require('./util/workflow');
 
 // listen up
-app.server.listen(config.port, function () {
+app.server.listen(3000 || config.port, function () {
     // and... we're live
-    console.log('Server is running on port ' + config.port);
+    console.log('Server is running on port ' + 3000 || config.port);
 });
