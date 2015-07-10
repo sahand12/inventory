@@ -44,6 +44,7 @@
   background: #e1563f top center;
   background-image: url('/images/navigation_background.png');
   background-repeat: repeat-x;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .main-nav .gvn-logo {
   margin-right: 40px;
@@ -78,6 +79,7 @@
   height: 400px;
   width: 100%;
   margin-top: 60px;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 @media (min-width: 1200px) {
   body .intro {
@@ -98,7 +100,7 @@
   background: #2c3e58;
   color: white;
   opacity: 0.9;
-  font-family: "Maven pro", "Source Sans Pro", "menlo", sans-serif;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding-bottom: 20px;
 }
 .intro-body h1 {
@@ -107,6 +109,7 @@
 }
 .product-section {
   margin-top: 20px;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .product-section .panel {
   margin-left: -15px;
@@ -202,6 +205,7 @@
 .domain-section {
   margin-top: 20px;
   margin-bottom: 40px;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .domain-section .container {
   background-color: #fff;
@@ -216,6 +220,12 @@
 .domain-item span.fa {
   font-size: 50px;
   line-height: 50px;
+}
+.domain-item a,
+.domain-item a.visited,
+.domain-item a.hover {
+  color: white;
+  text-decoration: none;
 }
 .domain-item p {
   margin-top: 12%;
@@ -287,6 +297,7 @@
 }
 .challenge-section {
   margin-bottom: 20px;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .challenge-section .panel {
   margin-left: -15px;
@@ -305,6 +316,7 @@
   background-color: #2c3e58;
   color: #ecf0f1;
   margin-bottom: 0;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .footer a,
 .footer a:active a:visited {
@@ -316,6 +328,7 @@
 }
 .products-page {
   margin-top: 60px;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .products-page h1 {
   margin-bottom: 30px;
@@ -370,6 +383,7 @@
   margin-top: 60px;
   padding-top: 20px;
   padding-bottom: 20px;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .about-page p,
 .about-page li {
@@ -419,8 +433,55 @@
 .domains-aging .domains-box-bottom {
   background-color: rgba(231, 76, 60, 0.9);
 }
+.challenges-page {
+  margin-top: 60px;
+  padding: 20px;
+}
+.challenges-page .container {
+  background-color: white;
+}
+.challenges-page h1 {
+  color: #2c3e58;
+}
+.challenges-sidebar {
+  border-left: 1px solid #ddd;
+}
+.item-box {
+  margin-bottom: 30px;
+}
+.item-box .item-box-heading {
+  margin-bottom: 20px;
+  padding: 5px 20px;
+  font-size: 18px;
+}
+.item-box .item-box-body {
+  padding: 0 20px;
+}
+.item-box-optimization .item-box-heading {
+  background-color: #7d8a2e;
+  color: white;
+}
+.item-box-integrity .item-box-heading {
+  background-color: #e74c3c;
+  color: white;
+}
+.item-box-placement .item-box-heading {
+  background-color: #3498db;
+  color: white;
+}
+.optimization-heading {
+  color: #7d8a2e;
+  font-size: 24px;
+  margin-top: 30px;
+}
+.integrity-heading {
+  color: #e74c3c;
+  font-size: 24px;
+  margin-top: 30px;
+}
 body {
   background-image: url('/images/confectionary.png');
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 body .intro {
   background-color: white;

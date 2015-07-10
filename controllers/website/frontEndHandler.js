@@ -107,12 +107,40 @@ function ContentHandler() {
      *      CHALLENGES PAGE AND SUB-PAGES
      * -----------------------------------------
      */
-
+    // GET     /challenges
     this.displayChallengesPage = function (req, res, next) {
         var vm = {
-            title: 'challenges'
+            title: 'challenges',
+            challengesPage: true
         };
-        res.render('content/challenges', vm);
+        res.render('website/challenges/challenges', vm);
+    };
+
+    // GET     /challenges/well-placement
+    this.displayWellPlacementPage = function (req, res, next) {
+        var vm = {
+            title: "Well Placement",
+            challengesPage: true
+        };
+        return res.render('website/challenges/well-placement', vm);
+    };
+
+    // GET     /challenges/product-optimization
+    this.displayProductionOptimizationPage = function (req, res, next) {
+        var vm = {
+            title: "Product Optimization",
+            challengesPage: true
+        };
+        return res.render('website/challenges/production-optimization', vm);
+    };
+
+    // GET      /challenges/well-integrity
+    this.displayWellIntegrityPage = function (req, res, next) {
+        var vm = {
+            title: "Well Integrity",
+            challengesPage: true
+        };
+        return res.render('website/challenges/well-integrity', vm);
     };
 
 

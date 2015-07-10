@@ -1,0 +1,46 @@
+.challenges-page {
+  margin-top: 60px;
+  padding: 20px;
+}
+.challenges-page .container {
+  background-color: white;
+}
+.challenges-page h1 {
+  color: #2c3e58;
+}
+.challenges-sidebar {
+  border-left: 1px solid #ddd;
+}
+.item-box {
+  margin-bottom: 30px;
+}
+.item-box .item-box-heading {
+  margin-bottom: 20px;
+  padding: 5px 20px;
+  font-size: 18px;
+}
+.item-box .item-box-body {
+  padding: 0 20px;
+}
+.item-box-optimization .item-box-heading {
+  background-color: #7d8a2e;
+  color: white;
+}
+.item-box-integrity .item-box-heading {
+  background-color: #e74c3c;
+  color: white;
+}
+.item-box-placement .item-box-heading {
+  background-color: #3498db;
+  color: white;
+}
+.optimization-heading {
+  color: #7d8a2e;
+  font-size: 24px;
+  margin-top: 30px;
+}
+.integrity-heading {
+  color: #e74c3c;
+  font-size: 24px;
+  margin-top: 30px;
+}

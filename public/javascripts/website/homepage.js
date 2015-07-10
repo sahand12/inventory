@@ -39,6 +39,6 @@ $(function () {
         $('.slick-container').slickPrev();
     });
 
-    // m
-    //$('.domain-section .container').css({ backgroundColor: "black", opacity: 0.3 });
+    // make the domain items clickable
+
 });

@@ -5,6 +5,7 @@
   height: 400px;
   width: 100%;
   margin-top: 60px;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 @media (min-width: 1200px) {
   body .intro {
@@ -25,7 +26,7 @@
   background: #2c3e58;
   color: white;
   opacity: 0.9;
-  font-family: "Maven pro", "Source Sans Pro", "menlo", sans-serif;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding-bottom: 20px;
 }
 .intro-body h1 {

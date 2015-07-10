@@ -1,6 +1,7 @@
 .domain-section {
   margin-top: 20px;
   margin-bottom: 40px;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .domain-section .container {
   background-color: #fff;
@@ -15,6 +16,12 @@
 .domain-item span.fa {
   font-size: 50px;
   line-height: 50px;
+}
+.domain-item a,
+.domain-item a.visited,
+.domain-item a.hover {
+  color: white;
+  text-decoration: none;
 }
 .domain-item p {
   margin-top: 12%;

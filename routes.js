@@ -86,6 +86,9 @@ exports = module.exports = function (app, passport) {
     app.get('/domains/unconventional', frontEndHandler.showUnconventionalPage);
 
     app.get('/challenges/', frontEndHandler.displayChallengesPage);
+    app.get('/challenges/production-optimization', frontEndHandler.displayProductionOptimizationPage);
+    app.get('/challenges/well-integrity', frontEndHandler.displayWellIntegrityPage);
+    app.get('/challenges/well-placement', frontEndHandler.displayWellPlacementPage);
 
     // sign up
     var signupHandler = require('./controllers/signupHandler');
