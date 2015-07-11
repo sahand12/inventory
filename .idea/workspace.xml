@@ -2,34 +2,73 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f15174e-ed4e-4874-b2fe-4736a9113461" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/vendor/AdminLTE/AdminLTE.min.css" afterPath="$PROJECT_DIR$/public/stylesheets/vendor/AdminLTE/AdminLTE.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/about-page.css" afterPath="$PROJECT_DIR$/public/stylesheets/website/about-page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/about-page.less" afterPath="$PROJECT_DIR$/public/stylesheets/website/about-page.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/challenge.home.css" afterPath="$PROJECT_DIR$/public/stylesheets/website/challenge.home.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/challenge.home.less" afterPath="$PROJECT_DIR$/public/stylesheets/website/challenge.home.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/website/challenges.home.handlebars" afterPath="$PROJECT_DIR$/views/partials/website/challenges.home.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/domain.home.css" afterPath="$PROJECT_DIR$/public/stylesheets/website/domain.home.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/domain.home.less" afterPath="$PROJECT_DIR$/public/stylesheets/website/domain.home.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/website/domains.home.handlebars" afterPath="$PROJECT_DIR$/views/partials/website/domains.home.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/footer.css" afterPath="$PROJECT_DIR$/public/stylesheets/website/footer.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/website/footer.handlebars" afterPath="$PROJECT_DIR$/views/partials/website/footer.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/footer.less" afterPath="$PROJECT_DIR$/public/stylesheets/website/footer.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/website/frontEndHandler.js" afterPath="$PROJECT_DIR$/controllers/website/frontEndHandler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/homepage.css" afterPath="$PROJECT_DIR$/public/stylesheets/website/homepage.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/website/homepage.js" afterPath="$PROJECT_DIR$/public/javascripts/website/homepage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/homepage.less" afterPath="$PROJECT_DIR$/public/stylesheets/website/homepage.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/intro.css" afterPath="$PROJECT_DIR$/public/stylesheets/website/intro.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/intro.less" afterPath="$PROJECT_DIR$/public/stylesheets/website/intro.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/nav.css" afterPath="$PROJECT_DIR$/public/stylesheets/website/nav.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/website/nav.handlebars" afterPath="$PROJECT_DIR$/views/partials/website/nav.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/nav.less" afterPath="$PROJECT_DIR$/public/stylesheets/website/nav.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/products-page.css" afterPath="$PROJECT_DIR$/public/stylesheets/website/products-page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/products-page.less" afterPath="$PROJECT_DIR$/public/stylesheets/website/products-page.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/products.home.css" afterPath="$PROJECT_DIR$/public/stylesheets/website/products.home.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/products.home.less" afterPath="$PROJECT_DIR$/public/stylesheets/website/products.home.less" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/stylesheets/bootstrap.superhero.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routes/sim/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routes/sim/route.js" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/controllers/authHandler.js" afterPath="$PROJECT_DIR$/controllers/authentication/authHandler.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/controllers/costHandler.js" afterPath="$PROJECT_DIR$/controllers/cost/costHandler.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/controllers/loginHandler.js" afterPath="$PROJECT_DIR$/controllers/authentication/loginHandler.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/controllers/logoutHandler.js" afterPath="$PROJECT_DIR$/controllers/authentication/logoutHandler.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/controllers/signupHandler.js" afterPath="$PROJECT_DIR$/controllers/authentication/signupHandler.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/climax.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/climax.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/climax.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/climax.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost-budget-page.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost-budget-page.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost-budget-page.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost-budget-page.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost-expenses-page.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost-expenses-page.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost-expenses-page.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost-expenses-page.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.dashboard.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.dashboard.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.dashboard.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.dashboard.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.helpers.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.helpers.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.helpers.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.helpers.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.main.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.main.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.main.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.main.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.sidebar.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.sidebar.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.sidebar.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.sidebar.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.variable.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.variable.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.variable.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.variable.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/domains.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/domains.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/domains.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/domains.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/general-classes.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/general-classes.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/general-classes.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/general-classes.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/helpers.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/helpers.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/helpers.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/helpers.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/login-forgot.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/login-forgot.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/login-forgot.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/login-forgot.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/login-version2.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/login-version2.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/login-version2.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/login-version2.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/main.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/main.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/main.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/main.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/p2.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/p2.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/p2.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/p2.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/products.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/products.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/products.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/products.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/sticky-footer.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/sticky-footer.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/style.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/style.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/style.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/tab.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/tab.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/tab.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/tab.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/vgn.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/vgn.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/vgn.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/vgn.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/xs.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/xs.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/xs.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/xs.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/views/login/forgot/email-html.handlebars" afterPath="$PROJECT_DIR$/views/authentication/login/forgot/email-html.handlebars" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/views/login/forgot/email-text.handlebars" afterPath="$PROJECT_DIR$/views/authentication/login/forgot/email-text.handlebars" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/views/login/forgot/index.handlebars" afterPath="$PROJECT_DIR$/views/authentication/login/forgot/index.handlebars" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/views/login/index.handlebars" afterPath="$PROJECT_DIR$/views/authentication/login/index.handlebars" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/views/login/reset/index.handlebars" afterPath="$PROJECT_DIR$/views/authentication/login/reset/index.handlebars" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/views/logout/index.handlebars" afterPath="$PROJECT_DIR$/views/authentication/logout/index.handlebars" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/views/signup/index.handlebars" afterPath="$PROJECT_DIR$/views/authentication/signup/index.handlebars" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schema/Expense.js" afterPath="$PROJECT_DIR$/schema/Expense.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/cost/app.js" afterPath="$PROJECT_DIR$/public/javascripts/cost/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars" afterPath="$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/cost/api/costApiHandler.js" afterPath="$PROJECT_DIR$/controllers/cost/api/costApiHandler.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/cost/dashboard.handlebars" afterPath="$PROJECT_DIR$/views/cost/dashboard.handlebars" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/cost/dashboard.js" afterPath="$PROJECT_DIR$/public/javascripts/cost/dashboard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/cost/tables/latest-activity.handlebars" afterPath="$PROJECT_DIR$/views/partials/cost/tables/latest-activity.handlebars" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.js" afterPath="$PROJECT_DIR$/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/website/vars.less" afterPath="$PROJECT_DIR$/public/stylesheets/website/vars.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layouts/website.handlebars" afterPath="$PROJECT_DIR$/views/layouts/website.handlebars" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="basicAuth.iws" />
@@ -51,11 +90,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="well-integrity.handlebars" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/website/challenges/well-integrity.handlebars">
+      <file leaf-file-name="dashboard.handlebars" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/cost/dashboard.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.07692308">
-              <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.7569444">
+              <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -77,27 +116,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/views/website/coiledPage.handlebars" />
-        <option value="$PROJECT_DIR$/views/website/wellStimulationPage.handlebars" />
-        <option value="$PROJECT_DIR$/views/website/drillingFluidPage.handlebars" />
-        <option value="$PROJECT_DIR$/views/partials/website/products.home.handlebars" />
-        <option value="$PROJECT_DIR$/views/website/about.handlebars" />
-        <option value="$PROJECT_DIR$/schema/user.js" />
-        <option value="$PROJECT_DIR$/schema/User.js" />
-        <option value="$PROJECT_DIR$/views/website/about/corporate-respolsibility.handlebars" />
-        <option value="$PROJECT_DIR$/views/website/about/safety.handlebars" />
-        <option value="$PROJECT_DIR$/views/website/about/about.handlebars" />
-        <option value="$PROJECT_DIR$/views/website/about/ethics.handlebars" />
-        <option value="$PROJECT_DIR$/views/website/about/careers.handlebars" />
-        <option value="$PROJECT_DIR$/public/stylesheets/website/domains-page.less" />
-        <option value="$PROJECT_DIR$/views/website/domains/deepWater.handlebars" />
-        <option value="$PROJECT_DIR$/views/partials/website/products-page/sidebar.handlebars" />
-        <option value="$PROJECT_DIR$/views/website/domains/unconventional.handlebars" />
         <option value="$PROJECT_DIR$/views/website/domains/aging.handlebars" />
         <option value="$PROJECT_DIR$/views/partials/website/products-page/product-section.handlebars" />
         <option value="$PROJECT_DIR$/public/javascripts/cost/cost-forms.js" />
         <option value="$PROJECT_DIR$/public/javascripts/cost/budget-page.js" />
-        <option value="$PROJECT_DIR$/controllers/cost/api/costApiHandler.js" />
         <option value="$PROJECT_DIR$/views/cost/budget.handlebars" />
         <option value="$PROJECT_DIR$/views/partials/cost/forms/create-category.handlebars" />
         <option value="$PROJECT_DIR$/public/stylesheets/cost-budget-page.less" />
@@ -120,7 +142,6 @@
         <option value="$PROJECT_DIR$/public/stylesheets/website/homepage.less" />
         <option value="$PROJECT_DIR$/views/partials/website/nav.handlebars" />
         <option value="$PROJECT_DIR$/views/partials/website/challenges.home.handlebars" />
-        <option value="$PROJECT_DIR$/routes.js" />
         <option value="$PROJECT_DIR$/controllers/website/frontEndHandler.js" />
         <option value="$PROJECT_DIR$/views/website/domains/domains.handlebars" />
         <option value="$PROJECT_DIR$/views/website/challenges/challenges.handlebars" />
@@ -128,6 +149,24 @@
         <option value="$PROJECT_DIR$/views/website/challenges/production-optimization.handlebars" />
         <option value="$PROJECT_DIR$/views/website/challenges/well-integrity.handlebars" />
         <option value="$PROJECT_DIR$/public/stylesheets/website/challenges-page.less" />
+        <option value="$PROJECT_DIR$/routes.js" />
+        <option value="$PROJECT_DIR$/views/layouts/auth.handlebars" />
+        <option value="$PROJECT_DIR$/public/stylesheets/auth/auth.less" />
+        <option value="$PROJECT_DIR$/views/authentication/signup/index.handlebars" />
+        <option value="$PROJECT_DIR$/controllers/authentication/loginHandler.js" />
+        <option value="$PROJECT_DIR$/controllers/authentication/signupHandler.js" />
+        <option value="$PROJECT_DIR$/public/stylesheets/cost/cost.helpers.less" />
+        <option value="$PROJECT_DIR$/views/partials/cost/tables/latest-activity.handlebars" />
+        <option value="$PROJECT_DIR$/public/stylesheets/cost/cost.dashboard.less" />
+        <option value="$PROJECT_DIR$/controllers/cost/api/costApiHandler.js" />
+        <option value="$PROJECT_DIR$/schema/Expense.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/cost/app.js" />
+        <option value="$PROJECT_DIR$/controllers/authentication/logoutHandler.js" />
+        <option value="$PROJECT_DIR$/views/authentication/logout/index.handlebars" />
+        <option value="$PROJECT_DIR$/views/authentication/login/index.handlebars" />
+        <option value="$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars" />
+        <option value="$PROJECT_DIR$/public/javascripts/cost/dashboard.js" />
+        <option value="$PROJECT_DIR$/views/cost/dashboard.handlebars" />
       </list>
     </option>
   </component>
@@ -144,10 +183,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
     <option name="y" value="23" />
-    <option name="width" value="1293" />
-    <option name="height" value="877" />
+    <option name="width" value="1343" />
+    <option name="height" value="1299" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -194,7 +232,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -209,7 +246,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="inventory" />
+              <option name="myItemId" value="basicAuth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -219,7 +256,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="inventory" />
+              <option name="myItemId" value="basicAuth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -233,69 +270,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="inventory" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
               <option name="myItemId" value="basicAuth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="inventory" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domains" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="basicAuth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="inventory" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="challenges" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="basicAuth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="inventory" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -313,7 +288,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="inventory" />
+              <option name="myItemId" value="basicAuth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -325,7 +300,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
+              <option name="myItemId" value="cost" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -335,7 +310,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="inventory" />
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cost" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tables" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -353,7 +354,101 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="inventory" />
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cost" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="authentication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="authentication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="authentication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="login" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="schema" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -367,7 +462,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="inventory" />
+              <option name="myItemId" value="basicAuth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -385,29 +480,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="inventory" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
               <option name="myItemId" value="basicAuth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="inventory" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -425,7 +498,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="inventory" />
+              <option name="myItemId" value="basicAuth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -437,7 +510,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
+              <option name="myItemId" value="cost" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -447,7 +520,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="inventory" />
+              <option name="myItemId" value="basicAuth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -461,7 +534,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="inventory" />
+              <option name="myItemId" value="basicAuth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -469,7 +542,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
+              <option name="myItemId" value="cost" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -479,17 +552,44 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="inventory" />
+              <option name="myItemId" value="basicAuth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cost" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basicAuth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="authentication" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -514,11 +614,11 @@
       <recent name="J:\sandbox\basicAuth\public\javascripts\vendor" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/views/website/about" />
-      <recent name="$PROJECT_DIR$/views/website" />
-      <recent name="$PROJECT_DIR$/public/javascripts/cost" />
-      <recent name="$PROJECT_DIR$/public/javascripts/website" />
-      <recent name="$PROJECT_DIR$/views/partials/website" />
+      <recent name="$PROJECT_DIR$/controllers/cost" />
+      <recent name="$PROJECT_DIR$/public/stylesheets/cost" />
+      <recent name="$PROJECT_DIR$/public/stylesheets/unused" />
+      <recent name="$PROJECT_DIR$/views/authentication" />
+      <recent name="$PROJECT_DIR$/controllers/authentication" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.bin\www">
@@ -587,7 +687,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="23" width="1293" height="877" extended-state="0" />
+    <frame x="0" y="23" width="1343" height="1299" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -595,9 +695,9 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32863072" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21698113" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21633889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35159236" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3515302" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5253533" sideWeight="0.50234425" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38557994" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -625,9 +725,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2133829" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35235733" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35235733" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -648,181 +748,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/models.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schema/User.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9676596">
-          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schema/vendor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/website/about/about.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02443281">
-          <caret line="1" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="38" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/website/about/safety.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.92844677">
-          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/website/about/ethics.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58638746">
-          <caret line="18" column="126" selection-start-line="18" selection-start-column="126" selection-end-line="18" selection-end-column="126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/website/products.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02443281">
-          <caret line="1" column="11" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/website/home.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17102967">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/website/about/careers.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36649215">
-          <caret line="15" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/website/products-page/product-section.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12216405">
-          <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/website/products-page/sidebar.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17102967">
-          <caret line="7" column="107" selection-start-line="7" selection-start-column="107" selection-end-line="7" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/cost-forms.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="118" column="34" selection-start-line="118" selection-start-column="34" selection-end-line="118" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schema/ExpenseCategory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/budget-page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="57" selection-start-line="36" selection-start-column="57" selection-end-line="36" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/cost/categoryHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/costHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/cost/budget.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.9655172">
-          <caret line="1" column="74" selection-start-line="1" selection-start-column="74" selection-end-line="1" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/cost/api/costApiHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4795245">
-          <caret line="304" column="27" selection-start-line="304" selection-start-column="27" selection-end-line="304" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/cost/forms/create-category.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7692308">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/cost-budget-page.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46153846">
-          <caret line="101" column="3" selection-start-line="101" selection-start-column="3" selection-end-line="101" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/website/footer.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3846154">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="95" column="17" selection-start-line="95" selection-start-column="17" selection-end-line="95" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/website/homepage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -914,14 +843,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/layouts/website.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.115384616">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.110964336">
@@ -966,7 +887,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="128" column="26" selection-start-line="128" selection-start-column="26" selection-end-line="128" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -974,14 +894,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.03846154">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="77" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40819022">
-          <caret line="88" column="84" selection-start-line="88" selection-start-column="84" selection-end-line="88" selection-end-column="84" />
           <folding />
         </state>
       </provider>
@@ -1028,8 +940,218 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/website/challenges/well-integrity.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07692308">
+        <state vertical-scroll-proportion="0.0">
           <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/authentication/authHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layouts/website.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.072916664">
+          <caret line="3" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="53" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/cost/categoryHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.0152413">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/authentication/login/reset/index.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layouts/auth.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.172413">
+          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/auth/auth.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.586206">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/authentication/signup/index.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-31.034483">
+          <caret line="66" column="18" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/authentication/loginHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1617273">
+          <caret line="176" column="34" selection-start-line="176" selection-start-column="34" selection-end-line="176" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/unused/climax.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/unused/xs.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/cost/cost.variable.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14583333">
+          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/cost/cost.dashboard.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-25.068966">
+          <caret line="221" column="0" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/cost/cost.helpers.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-32.96552">
+          <caret line="126" column="18" selection-start-line="126" selection-start-column="18" selection-end-line="126" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/cost/api/costApiHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="55" selection-start-line="66" selection-start-column="55" selection-end-line="66" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schema/Expense.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/cost/costHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.3903472">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/authentication/logout/index.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.048611112">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.06944445">
+          <caret line="58" column="30" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/cost/tables/latest-activity.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.097222224">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6875529">
+          <caret line="98" column="31" selection-start-line="98" selection-start-column="31" selection-end-line="98" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/authentication/login/index.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2717014">
+          <caret line="27" column="124" selection-start-line="27" selection-start-column="124" selection-end-line="27" selection-end-column="124" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/authentication/logoutHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09483489">
+          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/authentication/signupHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.122777306">
+          <caret line="74" column="12" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5453006">
+          <caret line="92" column="20" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="20" />
+          <folding>
+            <marker date="1436610011000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.13801862">
+          <caret line="136" column="57" selection-start-line="136" selection-start-column="57" selection-end-line="136" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/cost/dashboard.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7569444">
+          <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
           <folding />
         </state>
       </provider>

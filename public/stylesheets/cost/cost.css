@@ -150,6 +150,9 @@ body {
 /**
  * pie chart stats
  */
+.pie-chart-container {
+  display: none;
+}
 .pie-chart-stat {
   padding-top: 40px;
 }
@@ -177,6 +180,9 @@ body {
   font-weight: 400;
   margin-bottom: 20px;
 }
+.activity-table-container {
+  display: none;
+}
 .activity-table {
   color: #2e2e2e;
 }
@@ -199,6 +205,12 @@ body {
 }
 .cost-main-upcoming-reminders {
   padding-left: 20px;
+}
+/**
+  line chart
+*/
+.line-chart-container {
+  display: none;
 }
 .cost-helper-header {
   font-size: 16px;
@@ -277,6 +289,35 @@ body {
 }
 .cost-table-amount {
   color: red;
+}
+.pie-ajax-spinner {
+  display: none;
+  margin-top: 20px;
+}
+.line-ajax-spinner {
+  display: none;
+  margin-top: 20px;
+}
+.activity-ajax-spinner {
+  display: none;
+  margin-top: 20px;
+}
+.pie-no-data {
+  display: none;
+  padding-top: 30px;
+  padding-bottom: 200px;
+  padding-left: 20px;
+  font-size: 16px;
+}
+.line-no-data {
+  display: none;
+  padding: 30px 20px 200px 20px;
+  font-size: 16px;
+}
+.activity-no-data {
+  display: none;
+  padding: 30px 20px 200px 20px;
+  font-size: 14px;
 }
 .cost-expenses-list {
   padding-top: 20px;

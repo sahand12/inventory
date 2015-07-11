@@ -1,12 +1,9 @@
-@import 'cost.variable.less';
-
 body {
   font-family: "Didact Gothic", "Quicksand", "Abel", mono-space, sans-serif;
 }
 /*
  * Sidebar
  */
-
 /* Hide for mobile, show later */
 .cost-sidebar {
   display: none;
@@ -21,11 +18,11 @@ body {
     display: block;
     padding: 20px;
     overflow-x: hidden;
-    overflow-y: auto; /* scrollable contents if viewport is shorter than content. */
-    background-color:@sidebar-background-color;
+    overflow-y: auto;
+    /* scrollable contents if viewport is shorter than content. */
+    background-color: #2e2e2e;
   }
 }
-
 /*
  * Sidebar Logo
  */
@@ -33,16 +30,14 @@ body {
   height: 85px;
   color: white;
   font-weight: 200;
-
-  a,
-  a:hover,
-  a:focus,
-  a:visited{
-    text-decoration: none;
-    color: white;
-  }
 }
-
+.cost-sidebar-logo a,
+.cost-sidebar-logo a:hover,
+.cost-sidebar-logo a:focus,
+.cost-sidebar-logo a:visited {
+  text-decoration: none;
+  color: white;
+}
 /*
  * Sidebar Navigation
  */
@@ -56,27 +51,26 @@ body {
   padding-left: 30px;
 }
 .nav-sidebar > li > a {
-  color: @sidebar-item-color;
+  color: #3eaf90;
   letter-spacing: 1px;
 }
 .nav-sidebar > li > a:hover,
 .nav-sidebar > .active > a,
 .nav-sidebar > .active > a:hover,
 .nav-sidebar > .active > a:focus {
-  background-color: @sidebar-background-hover;
+  background-color: #7a7a7a;
 }
 .cost-sidebar-hr {
-  border-color: rgb(90, 90, 90);
+  border-color: #5a5a5a;
   margin-left: -20px;
   margin-right: -20px;
 }
-
 /*
  * Main Top Navigation
  */
 .cost-top-nav {
   height: 80px;
-  background-color: @top-nav-background-color;
+  background-color: #9bd5cb;
   padding: 20px;
   margin-left: -15px;
   margin-right: -15px;
@@ -84,10 +78,9 @@ body {
   color: white;
   font-size: 15px;
   letter-spacing: 1px;
-
-  .glyphicon {
-    font-size: 20px;
-  }
+}
+.cost-top-nav .glyphicon {
+  font-size: 20px;
 }
 .cost-top-nav a,
 .cost-top-nav a:hover,
@@ -96,95 +89,75 @@ body {
   text-decoration: none;
   color: inherit;
 }
-.cost-top-nav-username {
-  //color: darken(@top-nav-button-color-hover, 20%);
-
-}
 .btn-expense {
-  background-color: @top-nav-button-color;
-
-  &:hover,
-  &:active,
-  &:focus,
-  &:visited {
-    background-color: @top-nav-button-color-hover;
-    color: white;
-    box-shadow: none;
-    outline: none;
-  }
-
+  background-color: #3eb39e;
 }
-
+.btn-expense:hover,
+.btn-expense:active,
+.btn-expense:focus,
+.btn-expense:visited {
+  background-color: #37a08d;
+  color: white;
+  box-shadow: none;
+  outline: none;
+}
 /*
  * Cost Top Notification Bar
  */
 .cost-top-notification {
   height: 60px;
-  background-color: @top-notification-background;
+  background-color: #ed1f24;
   margin-left: -15px;
   margin-right: -15px;
   color: white;
   padding-left: 15px;
   line-height: 60px;
   font-size: 16px;
-
-  .glyphicon {
-    font-size: 20px;
-  }
 }
-
+.cost-top-notification .glyphicon {
+  font-size: 20px;
+}
 /*
  * Main Content
  */
-
 /*
  * Cost Main Charts
  */
 .cost-main-charts {
-  background-color: @main-charts-background;
+  background-color: #f6f6f6;
 }
 .cost-main-charts {
   padding-left: 20px;
   padding-right: 20px;
 }
-.cost-main-last-30-days {
-
-  .pie-chart-canvas {
-    margin: 30px auto;
-
-    canvas {
-      display: block;
-      margin: 0 auto;
-    }
-  }
+.cost-main-last-30-days .pie-chart-canvas {
+  margin: 30px auto;
 }
-
-.cost-main-this-year {
-
-  .lineChart {
-    margin: 40px auto;
-    display: block;
-  }
+.cost-main-last-30-days .pie-chart-canvas canvas {
+  display: block;
+  margin: 0 auto;
 }
-
-
+.cost-main-this-year .lineChart {
+  margin: 40px auto;
+  display: block;
+}
 /**
  * Cost Add Expense Modal
  */
 .cost-expense-modal {
   background: rgba(61, 61, 61, 0.2);
-
 }
-
-
 /**
  * pie chart stats
  */
+.pie-chart-container {
+  display: none;
+}
 .pie-chart-stat {
   padding-top: 40px;
-
-
-  @media (max-width: 992px) {
+}
+@media (max-width: 992px) {
+  .pie-chart-stat {
     margin: 0 auto;
     width: 60%;
   }
@@ -192,55 +165,50 @@ body {
 .pie-chart-stat-item {
   clear: both;
   height: 40px;
-
-  span {
-    margin-right: 20px;
-  }
 }
-
+.pie-chart-stat-item span {
+  margin-right: 20px;
+}
 /**
  * right sidebar latest activity
  */
 .cost-main-latest-activity {
   padding-left: 20px;
   font-family: "Didact Gothic", "Quicksand", "Abel", mono-space, sans-serif;
-
-  h1 {
-    //font-family: "Josefin Sans", "Open Sans Condensed", "Abel", sans-serif;
-    font-weight:  400;
-    margin-bottom: 20px;
-  }
+}
+.cost-main-latest-activity h1 {
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.activity-table-container {
+  display: none;
 }
 .activity-table {
-  color: rgb(46, 46, 46);
-
-  .activity-row {
-    //margin-bottom: 1px;
-  }
-
-  .activity-row td {
-    padding: 20px 15px;
-    font-size: 15px;
-    vertical-align: middle;
-    border-bottom: 1px solid #f2f2f2;
-    border-top: 1px solid #f2f2f2;
-    margin-bottom: 1px;
-    color: rgb(46, 46, 46);
-    //font-family: "Josefin Sans", "Open Sans Condensed", "Abel", sans-serif;
-    //font-weight: 600;
-  }
-
-  td:first-child {
-    padding: 0;
-    width: 8px;
-    background-color: darkolivegreen;
-  }
-  td:last-child {
-    color: red;
-  }
-
+  color: #2e2e2e;
 }
-
+.activity-table .activity-row td {
+  padding: 20px 15px;
+  font-size: 15px;
+  vertical-align: middle;
+  border-bottom: 1px solid #f2f2f2;
+  border-top: 1px solid #f2f2f2;
+  margin-bottom: 1px;
+  color: #2e2e2e;
+}
+.activity-table td:first-child {
+  padding: 0;
+  width: 8px;
+  background-color: darkolivegreen;
+}
+.activity-table td:last-child {
+  color: red;
+}
 .cost-main-upcoming-reminders {
   padding-left: 20px;
+}
+/**
+  line chart
+*/
+.line-chart-container {
+  display: none;
 }

@@ -1,5 +1,15 @@
 <h1 class="secondary-heading text-capitalize">latest activity</h1>
 
-<table id="activityTable" class="table activity-table">
+<div class="col-xs-12 activity-ajax-spinner">
+    <p class="text-center">
+        <img src="/images/spinner.gif" alt=""/><br/>
+        <!--loading-->
+    </p>
+</div>
+<div class="activity-no-data">
+    <p>You haven't added any expense yet.</p>
+</div>
 
-</table>
+<div class="activity-table-container">
+    <table id="activityTable" class="table activity-table"></table>
+</div>

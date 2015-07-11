@@ -2,9 +2,10 @@
 
 exports.init = function (req, res, next) {
     if (req.isAuthenticated()) {
-        return res.redirect('/sim/dashboard/');
+        return res.redirect('/cost/dashboard/');
     }
     var data = {
+        layout: "auth.handlebars",
         validationErrors: req.session.validationErrors || "",
         postErrors: req.session.postErrors || "",
         values: {
@@ -16,7 +17,7 @@ exports.init = function (req, res, next) {
     delete req.session.validationErrors;
     delete req.session.postErrors;
     delete req.session.loginEmail;
-    res.render('login/index', data);
+    res.render('authentication/login/index', data);
 };
 
 exports.login = function (req, res, next) {
@@ -33,7 +34,7 @@ exports.login = function (req, res, next) {
         else {
             req.session.validationErrors = errors;
             req.session.loginEmail = req.body.email;
-            return res.redirect('/sim/login/');
+            return res.redirect('/login/');
         }
     });
 
@@ -55,7 +56,7 @@ exports.login = function (req, res, next) {
                     }
 
                     req.session.postErrors = { error: "Invalid email or password" };
-                    return res.redirect('/sim/login/');
+                    return res.redirect('/login/');
                 });
             }
             else {
@@ -63,7 +64,7 @@ exports.login = function (req, res, next) {
                     if (err) {
                         return next(err);
                     }
-                    return res.redirect('/sim/dashboard/');
+                    return res.redirect('/cost/dashboard/');
                 });
             }
         })(req, res);
@@ -74,9 +75,10 @@ exports.login = function (req, res, next) {
 
 exports.showForgot = function (req, res, next) {
     if (req.isAuthenticated()) {
-        return res.redirect('/sim/dashboard');
+        return res.redirect('/cost/dashboard');
     }
     var data = {
+        layout: "auth.handlebars",
         validationErrors: req.session.validationErrors,
         postErrors: req.session.postErrors,
         bodyClass: 'login-page',
@@ -84,7 +86,7 @@ exports.showForgot = function (req, res, next) {
     };
     delete req.session.validationErrors;
     delete req.session.postErrors;
-    return res.render('login/forgot/index', data);
+    return res.render('authentication/login/forgot/index', data);
 };
 
 exports.sendForgot = function (req, res, next) {
@@ -97,7 +99,7 @@ exports.sendForgot = function (req, res, next) {
         if (errors) {
             req.session.validationErrors = errors;
             console.log('validation error');
-            return res.redirect('/sim/login/forgot');
+            return res.redirect('/login/forgot');
         }
         console.log('no validation error: emit generateToken');
         workflow.emit('generateToken');
@@ -134,7 +136,7 @@ exports.sendForgot = function (req, res, next) {
             if (!user) {
                 req.session.postErrors = { error: "We couldn't find you using the information you entered. Please try again." };
                 console.log('patch user failed. no such user in the db');
-                return res.redirect('/sim/login/forgot');
+                return res.redirect('/login/forgot');
             }
             console.log('patched the user: emit sendEmail');
             workflow.emit('sendEmail', token, user);
@@ -146,8 +148,8 @@ exports.sendForgot = function (req, res, next) {
             from: req.app.config.smtp.from.name + ' <' + req.app.config.smtp.from.address + ">",
             to: user.email,
             subject: "Reset your " + req.app.config.projectName + " password",
-            textPath: 'login/forgot/email-text',
-            htmlPath: 'login/forgot/email-html',
+            textPath: 'authentication/login/forgot/email-text',
+            htmlPath: 'authentication/login/forgot/email-html',
             locals: {
                 email: user.email,
                 resetLink: req.protocol + "://" + req.headers.host + "/login/reset/" + user.email + "/" + token + "/",
@@ -172,9 +174,13 @@ exports.sendForgot = function (req, res, next) {
 
 exports.showReset = function (req, res, next) {
     if (req.isAuthenticated()) {
-        return res.redirect('/sim/dashboard');
+        return res.redirect('/cost/dashboard');
     }
-    return res.render('login/reset/index');
+    var vm = {
+        title: "Reset Password",
+        layout: "auth.handlebars"
+    };
+    return res.render('authentication/login/reset/index');
 };
 
 exports.setReset = function (req, res, next) {
@@ -191,7 +197,7 @@ exports.setReset = function (req, res, next) {
         if (errors) {
             req.session.validationErrors = errors;
             console.log(errors);
-            return res.redirect('sim/login/reset');
+            return res.redirect('login/reset');
         }
 
         console.log('no validation errors: emit findUser');
@@ -211,7 +217,7 @@ exports.setReset = function (req, res, next) {
             if (!user) {
                 console.log('no such user with the email: ', req.params.email);
                 req.session.postErrors = { error: "invalid request" };
-                return res.redirect('/sim/login/reset');
+                return res.redirect('/login/reset');
             }
 
             req.app.db.models.User.validatePassword(req.params.token, user.resetPasswordToken, function (err, isValid) {
@@ -222,7 +228,7 @@ exports.setReset = function (req, res, next) {
                 if (!isValid) {
                     console.log('the token is not right.');
                     req.session.postErrors = { error: "Invalid request" };
-                    return res.redirect('/sim/login/reset');
+                    return res.redirect('/login/reset');
                 }
 
                 console.log('the token was right: emit patchUser');
@@ -242,7 +248,7 @@ exports.setReset = function (req, res, next) {
             }
             console.log('updated the user');
             req.session.resetMessage = { msg: "Your password has been reset." };
-            return res.redirect('/sim/login');
+            return res.redirect('/login');
         });
     });
 

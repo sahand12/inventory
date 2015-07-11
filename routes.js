@@ -64,8 +64,13 @@ function ensureOwner (req, res, next) {
 
 exports = module.exports = function (app, passport) {
 
-    // front end
+    /**
+     * ------------------------------------
+     *      ROUTES FOR THE WEBSITE
+     * ------------------------------------
+     */
     var frontEndHandler = new (require('./controllers/website/frontEndHandler'))();
+
     app.get('/', frontEndHandler.displayHomePage);
 
     app.get('/products/', frontEndHandler.displayProductsPage);
@@ -90,25 +95,35 @@ exports = module.exports = function (app, passport) {
     app.get('/challenges/well-integrity', frontEndHandler.displayWellIntegrityPage);
     app.get('/challenges/well-placement', frontEndHandler.displayWellPlacementPage);
 
-    // sign up
-    var signupHandler = require('./controllers/signupHandler');
-    app.get('/sim/signup/', signupHandler.init);
-    app.post('/sim/signup/', signupHandler.signup);
+    /**
+     * -------------------------------------
+     *      AUTHENTICATION ROUTES
+     * -------------------------------------
+     */
+    var signupHandler = require('./controllers/authentication/signupHandler');
+    app.get('/signup/', signupHandler.init);
+    app.post('/signup/', signupHandler.signup);
 
     // login/out
-    var loginHandler = require('./controllers/loginHandler');
-    app.get('/sim/login/', loginHandler.init);
-    app.post('/sim/login/', loginHandler.login);
-    app.get('/sim/login/forgot/', loginHandler.showForgot);
-    app.post('/sim/login/forgot/', loginHandler.sendForgot);
-    app.get('/sim/login/reset/', loginHandler.showReset);
-    app.get('/sim/login/reset/:email/:token', loginHandler.showReset);
-    app.put('/sim/login/reset/:email/:token', loginHandler.setReset);
+    var loginHandler = require('./controllers/authentication/loginHandler');
+    app.get('/login/', loginHandler.init);
+    app.post('/login/', loginHandler.login);
+    app.get('/login/forgot/', loginHandler.showForgot);
+    app.post('/login/forgot/', loginHandler.sendForgot);
+    app.get('/login/reset/', loginHandler.showReset);
+    app.get('/login/reset/:email/:token', loginHandler.showReset);
+    app.put('/login/reset/:email/:token', loginHandler.setReset);
 
     // log out handler
-    var logoutHandler = require('./controllers/logoutHandler');
-    app.get('/sim/logout/', logoutHandler.init);
+    var logoutHandler = require('./controllers/authentication/logoutHandler');
+    app.get('/logout/', logoutHandler.init);
 
+
+    /**
+     * ---------------------------------------
+     *       COST ROUTES
+     * ---------------------------------------
+     */
     // dashboard
     var dashboardHandler = require('./controllers/dashboardHandler');
     app.get('/sim/dashboard/', ensureAuthenticated, dashboardHandler.init);
@@ -123,7 +138,7 @@ exports = module.exports = function (app, passport) {
     app.get('/sim/goods/good/:id', goodHandler.showASingleGood);
 
 
-    var CostHandler = require('./controllers/costHandler'),
+    var CostHandler = require('./controllers/cost/costHandler'),
         costHandler = new CostHandler(app);
     app.all('/costs/', ensureAuthenticated);
     app.get('/cost/dashboard', ensureAuthenticated, costHandler.showDashboard);

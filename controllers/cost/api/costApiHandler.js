@@ -63,6 +63,8 @@ var CostApiHandler = function (app) {
 
     /*
      * GET /cost/api/expenses/categories?days=number
+     *
+     * ajax url for last 30 days pie chart on dashboard
      */
     this.showTotalExpensesByEachCategory = function (req, res, next) {
         var days = req.query.days || 30;

@@ -1,32 +1,24 @@
-@import "cost.variable.less";
-
 .cost-helper-header {
   font-size: 16px;
   background-image: url("/images/section-header-bg.png");
   background-position: center;
   background-repeat: repeat-x;
-  //display: inline-block;
   padding-right: 20px;
-
-  span {
-    background: @main-charts-background;
-    padding-right: 20px;
-    //padding-left: 20px;
-  }
 }
-
+.cost-helper-header span {
+  background: #f6f6f6;
+  padding-right: 20px;
+}
 .btn-block {
   display: block;
   width: 100%;
 }
-
-// changing how input[type=file] looks like on page
 .btn-file {
   position: relative;
   overflow: hidden;
 }
 .btn-file input[type=file] {
-position: absolute;
+  position: absolute;
   top: 0;
   right: 0;
   min-width: 100%;
@@ -42,15 +34,13 @@ position: absolute;
 }
 .btn-cost-search {
   background-color: white;
-  color: @top-nav-background-color;
-
-  &:hover {
-    color: @top-nav-button-color-hover;
-    background-color: @top-nav-background-color;
-    border-radius: 0;
-  }
+  color: #9bd5cb;
 }
-
+.btn-cost-search:hover {
+  color: #37a08d;
+  background-color: #9bd5cb;
+  border-radius: 0;
+}
 .textarea-block {
   display: block;
   width: 100%;
@@ -60,12 +50,10 @@ position: absolute;
   height: 20px;
 }
 .secondary-heading {
-  color: @top-nav-button-color;
-  //font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #3eb39e;
   font-size: 18px;
   letter-spacing: 1px;
 }
-
 .cost-form-error-head {
   color: red;
 }
@@ -80,45 +68,40 @@ position: absolute;
 .cost-form-required {
   color: red;
 }
-
 .table-latest-balance {
-  color: rgb(46, 46, 46);
+  color: #2e2e2e;
   border-bottom: 1px solid #eee;
   border-right: 1px solid #eee;
 }
-
 .cost-table-amount {
   color: red;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.pie-ajax-spinner {
+  display: none;
+  margin-top: 20px;
+}
+.line-ajax-spinner {
+  display: none;
+  margin-top: 20px;
+}
+.activity-ajax-spinner {
+  display: none;
+  margin-top: 20px;
+}
+.pie-no-data {
+  display: none;
+  padding-top: 30px;
+  padding-bottom: 200px;
+  padding-left: 20px;
+  font-size: 16px;
+}
+.line-no-data {
+  display: none;
+  padding: 30px 20px 200px 20px;
+  font-size: 16px;
+}
+.activity-no-data {
+  display: none;
+  padding: 30px 20px 200px 20px;
+  font-size: 14px;
+}

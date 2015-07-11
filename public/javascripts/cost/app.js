@@ -1,7 +1,12 @@
 var app = new EventEmitter();
 
-app.helpers = {};
+/**
+ * -------------------------------
+ *      HELPER FUNCTIONS
+ * -------------------------------
+ */
 
+app.helpers = {};
 app.helpers.months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 app.helpers.formatDate = function formatDate (date) {
@@ -71,10 +76,10 @@ app.helpers.formatSortedAjaxDataForPieChart = function (data, categoryColors) {
             css = app.helpers.makeRandomColor();
 
         if (typeof categoryColors[current.name] === "undefined") {
-            console.log(current.name, 'not defined');
+            console.log('pie: ', current.name, css.color);
             categoryColors[current.name] = { color: css.color, highlight: css.highlight };
         }
-console.log('pie chart', categoryColors);
+
         pieData.push({
             value: current.value,
             color: categoryColors[current.name].color,
@@ -148,7 +153,9 @@ app.helpers.capitalizeFirstLetter = function (string) {
 };
 
 /**
- * Chartjs default options
+ * ----------------------------------------
+ *     CHART.JS DEFAULT OPTIONS
+ * ----------------------------------------
  */
 Chart.defaults.global.scaleLabel = "$<%=app.helpers.formatAmount(value)%>";
 Chart.defaults.global.scaleFontSize = 12;
@@ -156,3 +163,10 @@ Chart.defaults.global.tooltipFontSize = 12;
 Chart.defaults.global.tooltipTemplate = "<%if (label){%><%=label%>: <%}%><%= app.helpers.formatAmount(value) %>";
 Chart.defaults.global.tooltipTitleFontFamily = "courier, 'Helvetica Neue', Helvetica, Arial, sans-serif";
 Chart.defaults.global.segmentStrokeWidth = 1;
+
+
+/**
+ * --------------------------------------
+ *      JQUERY AJAX GLOBAL CONFIGS
+ * --------------------------------------
+*/

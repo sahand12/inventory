@@ -14,6 +14,10 @@ $(function () {
      * -------------------------------------------------
      */
      var pieChartCtx = document.getElementById('pieChart').getContext('2d'),
+         $pieChartDiv = $('.pie-chart-canvas'),
+         $pieChartContainer = $('.pie-chart-container'),
+         $pieAjaxSpinner = $('.pie-ajax-spinner'),
+         $pieNoData = $('.pie-no-data'),
          $chartStat = $('#pieChartStat');
 
     var categoryColors = {};
@@ -35,9 +39,21 @@ $(function () {
         // get the data from the server for pie-chart
         $.ajax({
             method: "get",
-            url: "/cost/api/expenses/categories?days=30"
+            url: "/cost/api/expenses/categories?days=30",
+            beforeSend: function (a, b) {
+                $pieAjaxSpinner.show();
+            }
         }).done(function (response) {
-            populateLast30Days(response, categoryColors);
+            if (Object.keys(response.data).length === 0) {
+                $pieAjaxSpinner.hide();
+                $pieNoData.show();
+            }
+            else {
+                $pieAjaxSpinner.hide();
+                $pieNoData.hide();
+                $pieChartContainer.show();
+                populateLast30Days(response, categoryColors);
+            }
         });
     }
 
@@ -55,15 +71,30 @@ $(function () {
      *     LINE CHART
      * -----------------------------------------------
      */
-    var lineChartCtx = document.getElementById('lineChart').getContext('2d');
+    var lineChartCtx = document.getElementById('lineChart').getContext('2d'),
+        $lineChartContainer = $('.line-chart-container'),
+        $lineAjaxSpinner = $('.line-ajax-spinner');
 
     function buildLineChart () {
         // get the data from the server
         $.ajax({
             method: "get",
-            url: "/cost/api/expenses/this-year"
+            url: "/cost/api/expenses/this-year",
+            beforeSend: function () {
+                $('.line-ajax-spinner').show();
+            }
         }).done(function (response) {
-            populateThisYear(response);
+            if (Object.keys(response.data).length === 0) {
+                    $('.line-ajax-spinner').hide();
+                    $('.line-no-data').show()
+            }
+            else {
+                $('.line-ajax-spinner').hide();
+                $('.line-no-data').hide();
+                $lineChartContainer.show();
+                populateThisYear(response);
+            }
+
         });
     }
 
@@ -110,15 +141,30 @@ $(function () {
      * -----------------------------------------------
      */
 
-    var $activityTable = $('#activityTable');
+    var $activityTable = $('#activityTable'),
+        $activityAjaxSpinner = $('.activity-ajax-spinner'),
+        $activityNoData = $('.activity-no-data'),
+        $activityTableContainer = $('.activity-table-container');
 
     function buildLatestActivity () {
         // get the data from the server
         $.ajax({
             method: "get",
-            url: "/cost/api/expenses?count=5"
+            url: "/cost/api/expenses?count=5",
+            beforeSend: function () {
+                $('.activity-ajax-spinner').show();
+            }
         }).done(function (response) {
-            populateTable(response.data, categoryColors);
+            if (Object.keys(response.data).length === 0) {
+                $('.activity-ajax-spinner').hide();
+                $('.activity-no-data').show();
+            }
+            else {
+                $activityAjaxSpinner.hide();
+                $activityNoData.hide();
+                $activityTableContainer.show();
+                populateTable(response.data, categoryColors);
+            }
         });
     }
 
@@ -150,11 +196,12 @@ $(function () {
         for (var i = 0, len = data.length; i < len; i++) {
             var current = data[i];
 
-            if (typeof categoryColors[current.category.name]) {
+            if (typeof categoryColors[current.category.name] === 'undefined') {
                 var css = app.helpers.makeRandomColor();
                 categoryColors[current.category.name] = { color: css.color, highlight: css.highlight };
+                console.log('activity: ', current.category.name, css.color);
             }
-console.log(categoryColors);
+
             html += "<tr class='activity-row'><td style='background-color:" + categoryColors[current.category.name].color
                 + ";'></td><td>" + current.title + " (<strong>"+  current.category.name + "</strong>)" + "</td>"
                 + "<td><small>" + formatDate(current.date) + "</small></td>"

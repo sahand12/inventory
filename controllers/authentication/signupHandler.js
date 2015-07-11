@@ -2,9 +2,10 @@
 
 exports.init = function (req, res, next) {
     if (req.isAuthenticated()) {
-        return res.redirect('/sim/dashboard/');
+        return res.redirect('/cost/dashboard/');
     }
     var data = {
+        layout: "auth.handlebars",
         validationErrors: req.session.validationErrors || "",
         postErrors: req.session.postErrors || "",
         bodyClass: 'register-page',
@@ -14,7 +15,7 @@ exports.init = function (req, res, next) {
     delete req.session.validationErrors;
     delete req.session.postErrors;
     delete req.session.values;
-    return res.render('signup/index', data);
+    return res.render('authentication/signup/index', data);
 };
 
 exports.signup = function (req, res, next) {
@@ -35,7 +36,7 @@ exports.signup = function (req, res, next) {
                 firstName: req.body.firstName,
                 lastName: req.body.lastName
             };
-            return res.redirect('/sim/signup');
+            return res.redirect('/signup');
         }
 
         workflow.emit('duplicateEmailCheck');
@@ -49,7 +50,7 @@ exports.signup = function (req, res, next) {
 
             if (user) {
                 req.session.postErrors = { error: "email already registered." };
-                return res.redirect('/sim/signup/');
+                return res.redirect('/signup/');
             }
 
             workflow.emit('createUser');
@@ -87,7 +88,7 @@ exports.signup = function (req, res, next) {
 
             if (!user) {
                 req.session.postErrors = { error: 'automatic login failed. please do it manually' };
-                return res.redirect('/sim/login');
+                return res.redirect('/login');
             }
             else {
                 req.login(user, function (err) {
@@ -95,7 +96,7 @@ exports.signup = function (req, res, next) {
                         return next(err);
                     }
 
-                    return res.redirect('/sim/dashboard');
+                    return res.redirect('/cost/dashboard');
                 });
             }
         })(req, res, next);
