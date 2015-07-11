@@ -2,73 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f15174e-ed4e-4874-b2fe-4736a9113461" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/stylesheets/bootstrap.superhero.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/routes/sim/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/routes/sim/route.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controllers/authHandler.js" afterPath="$PROJECT_DIR$/controllers/authentication/authHandler.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controllers/costHandler.js" afterPath="$PROJECT_DIR$/controllers/cost/costHandler.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controllers/loginHandler.js" afterPath="$PROJECT_DIR$/controllers/authentication/loginHandler.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controllers/logoutHandler.js" afterPath="$PROJECT_DIR$/controllers/authentication/logoutHandler.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controllers/signupHandler.js" afterPath="$PROJECT_DIR$/controllers/authentication/signupHandler.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/climax.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/climax.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/climax.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/climax.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost-budget-page.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost-budget-page.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost-budget-page.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost-budget-page.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost-expenses-page.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost-expenses-page.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost-expenses-page.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost-expenses-page.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.dashboard.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.dashboard.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.dashboard.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.dashboard.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.helpers.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.helpers.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.helpers.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.helpers.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.main.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.main.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.main.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.main.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.sidebar.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.sidebar.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.sidebar.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.sidebar.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.variable.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.variable.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/cost.variable.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.variable.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/domains.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/domains.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/domains.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/domains.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/general-classes.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/general-classes.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/general-classes.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/general-classes.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/helpers.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/helpers.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/helpers.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/helpers.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/login-forgot.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/login-forgot.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/login-forgot.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/login-forgot.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/login-version2.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/login-version2.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/login-version2.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/login-version2.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/main.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/main.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/main.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/main.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/p2.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/p2.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/p2.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/p2.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/products.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/products.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/products.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/products.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/sticky-footer.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/sticky-footer.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/style.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/style.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/tab.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/tab.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/tab.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/tab.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/vgn.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/vgn.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/vgn.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/vgn.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/xs.css" afterPath="$PROJECT_DIR$/public/stylesheets/unused/xs.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/xs.less" afterPath="$PROJECT_DIR$/public/stylesheets/unused/xs.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/views/login/forgot/email-html.handlebars" afterPath="$PROJECT_DIR$/views/authentication/login/forgot/email-html.handlebars" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/views/login/forgot/email-text.handlebars" afterPath="$PROJECT_DIR$/views/authentication/login/forgot/email-text.handlebars" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/views/login/forgot/index.handlebars" afterPath="$PROJECT_DIR$/views/authentication/login/forgot/index.handlebars" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/views/login/index.handlebars" afterPath="$PROJECT_DIR$/views/authentication/login/index.handlebars" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/views/login/reset/index.handlebars" afterPath="$PROJECT_DIR$/views/authentication/login/reset/index.handlebars" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/views/logout/index.handlebars" afterPath="$PROJECT_DIR$/views/authentication/logout/index.handlebars" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/views/signup/index.handlebars" afterPath="$PROJECT_DIR$/views/authentication/signup/index.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schema/Expense.js" afterPath="$PROJECT_DIR$/schema/Expense.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/cost/app.js" afterPath="$PROJECT_DIR$/public/javascripts/cost/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars" afterPath="$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/cost/api/costApiHandler.js" afterPath="$PROJECT_DIR$/controllers/cost/api/costApiHandler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/cost/dashboard.handlebars" afterPath="$PROJECT_DIR$/views/cost/dashboard.handlebars" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/cost/dashboard.js" afterPath="$PROJECT_DIR$/public/javascripts/cost/dashboard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/cost/tables/latest-activity.handlebars" afterPath="$PROJECT_DIR$/views/partials/cost/tables/latest-activity.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.js" afterPath="$PROJECT_DIR$/routes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="basicAuth.iws" />
@@ -90,12 +24,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="dashboard.handlebars" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/cost/dashboard.handlebars">
+      <file leaf-file-name="dashboard.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/cost/dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7569444">
-              <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
-              <folding />
+            <state vertical-scroll-proportion="0.64013547">
+              <caret line="157" column="47" selection-start-line="157" selection-start-column="47" selection-end-line="157" selection-end-column="47" />
+              <folding>
+                <marker date="1436615433000" expanded="true" signature="7120:7137" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -165,8 +101,8 @@
         <option value="$PROJECT_DIR$/views/authentication/logout/index.handlebars" />
         <option value="$PROJECT_DIR$/views/authentication/login/index.handlebars" />
         <option value="$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars" />
-        <option value="$PROJECT_DIR$/public/javascripts/cost/dashboard.js" />
         <option value="$PROJECT_DIR$/views/cost/dashboard.handlebars" />
+        <option value="$PROJECT_DIR$/public/javascripts/cost/dashboard.js" />
       </list>
     </option>
   </component>
@@ -1130,16 +1066,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5453006">
-          <caret line="92" column="20" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="20" />
-          <folding>
-            <marker date="1436610011000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.13801862">
@@ -1150,9 +1076,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/cost/dashboard.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7569444">
-          <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
+        <state vertical-scroll-proportion="1.0451388">
+          <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64013547">
+          <caret line="157" column="47" selection-start-line="157" selection-start-column="47" selection-end-line="157" selection-end-column="47" />
+          <folding>
+            <marker date="1436615433000" expanded="true" signature="7120:7137" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
