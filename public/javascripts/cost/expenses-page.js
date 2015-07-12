@@ -124,7 +124,7 @@ $(window).bind('load', function () {
         // get the data from the server for total expenses pie-chart
         $.ajax({
             method: "get",
-            url: "/cost/api/expenses/categories?days=10000",
+            url: "/cost/api/expenses/categories?days=10000&future=true",
             beforeSend: totalExpenseAjaxInProgress
         }).done(function (response) {
             setTimeout(function() {

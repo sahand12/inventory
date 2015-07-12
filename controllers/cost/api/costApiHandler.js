@@ -67,8 +67,9 @@ var CostApiHandler = function (app) {
      * ajax url for last 30 days pie chart on dashboard
      */
     this.showTotalExpensesByEachCategory = function (req, res, next) {
-        var days = req.query.days || 30;
-        req.app.db.models.Expense.findTotalExpenseByEachCategory(req.user._id, days, function (err, docs) {
+        var days = req.query.days || 30,
+            future = req.query.future || false;
+        req.app.db.models.Expense.findTotalExpenseByEachCategory(req.user._id, days, future, function (err, docs) {
             if (err) {
                 console.log(err);
                 return res.send({
@@ -222,17 +223,58 @@ var CostApiHandler = function (app) {
         });
 
         workflow.on('findExpense', function (id) {
-            req.app.db.models.Expense.findById(id).remove(function (err, doc) {
+            req.app.db.models.Expense.findById(id).exec(function (err, doc) {
                 if (err) {
                     return res.send({
                         success: false,
                         postErrors: { error: "database error" }
                     });
                 }
-                console.log(doc);
+                if (!doc) {
+                    return res.send({
+                        success: false,
+                        postErrors: { error: "Invalid request"}
+                    });
+                }
+
+                workflow.emit('createDeletedExpense', doc);
+            });
+        });
+
+        workflow.on('createDeletedExpense', function (doc) {
+            var fieldsToSet = {
+                amount: doc.amount,
+                title: doc.title,
+                user: doc.user,
+                category: doc.category,
+                description: doc.description,
+                createdAt: doc.createdAt,
+                updatedAt: doc.updatedAt
+            };
+            req.app.db.models.DeletedExpense.create(fieldsToSet, function (err, newDoc) {
+                if (err) {
+                    console.log(err);
+                    return res.send({
+                        success: false,
+                        postErrors: { error: 'database error' }
+                    });
+                }
+                console.log(newDoc);
+                workflow.emit('deleteExpense', doc._id);
+            });
+        });
+
+        workflow.on('deleteExpense', function (_id) {
+            req.app.db.models.Expense.find({_id: _id }).remove(function (err) {
+                if (err) {
+                    console.log(err);
+                    return res.send({
+                        success: false,
+                        postErrors: { error: 'database error' }
+                    });
+                }
                 return res.send({
-                    success: true,
-                    data: doc
+                    success: true
                 });
             });
         });

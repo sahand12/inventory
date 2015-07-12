@@ -100,10 +100,20 @@ exports = module.exports = function (app, mongoose) {
      * @param done callback - callback function that will receive an error object and and a group object in
      *                        format of: { category1Name: amount1, category2Name: amount2, ... }
      */
-    ExpenseSchema.statics.findTotalExpenseByEachCategory = function (userId, days, done) {
+    ExpenseSchema.statics.findTotalExpenseByEachCategory = function (userId, days, future, done) {
         var startDate = Date.now() - days * 1000 * 60 * 60 * 24,
             endDate = Date.now();
-        this.find({ user: userId, date: { $gt: startDate, $lt: endDate } }, { amount: 1, "category.name": 1, _id: 0 })
+
+        var query = {
+            user: userId,
+            date: { $gt: startDate }
+        };
+
+        if (!future) {
+            query.date['$lt'] = endDate;
+        }
+
+        this.find(query, { amount: 1, "category.name": 1, _id: 0 })
             .exec(function (err, docs) {
                 if (err) {
                     return done(err);
