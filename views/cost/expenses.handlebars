@@ -22,13 +22,28 @@
                 <th></th>
             </tr>
         </thead>
+
+        <!-- THIS IS WHERE THE AJAX RESULTS WILL BE LOADED INTO -->
         <tbody id="expensesTableBody"></tbody>
+
     </table>
+
+    <!-- Ajax animation spinner -->
+    <div class="col-xs-12 expenses-table-ajax-spinner" style="display: none;">
+        <p class="text-center">
+            <img src="/images/spinner.gif" alt="loading ..."/><br/>
+            <!--loading-->
+        </p>
+    </div>
+    <div class="expenses-table-no-data" style="display: none">
+        <p>You haven't added any expense yet.</p>
+    </div>
+
 </div>
 
 <div class="col-md-3 cost-total-expenses" id="costTotalExpenses">
     <h1 class="text-center text-capitalize">total expenses</h1>
-    <div class="row">
+    <div class="row total-expenses-widget">
         <div class="col-xs-12 cost-expenses-total-amount">
             <p class="text-center" id="totalExpensesAmount"></p>
         </div>
@@ -39,6 +54,18 @@
             <div class="total-pie-chart-stats" id="totalPieChartStats"></div>
         </div>
     </div>
+
+     <!-- Ajax animation spinner -->
+    <div class="col-xs-12 total-expense-ajax-spinner" style="display: none; padding: 20px 0;">
+        <p class="text-center">
+            <img src="/images/spinner-gray.gif" alt="loading ..."/><br/>
+            <!--loading-->
+        </p>
+    </div>
+    <div class="total-expenses-no-data" style="display: none">
+        <p>You haven't added any expense yet.</p>
+    </div>
+
     <button type="button" id="createReportBtn" class="btn btn-block">Create Report</button>
 </div>
 

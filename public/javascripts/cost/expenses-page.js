@@ -1,5 +1,10 @@
-$(function () {
-
+//$(function () {
+$(window).bind('load', function () {
+    /*
+     * -------------------------------
+     *      EVENT LISTENERS
+     * -------------------------------
+     */
     app.addListener('page.load', buildExpenseTable);
     app.addListener('page.load', buildTotalExpensesPieChart);
     app.addListener('expense.form.submit.success', buildExpenseTable);
@@ -9,55 +14,105 @@ $(function () {
     app.addListener('delete.expense.success', buildExpenseTable);
     app.addListener('delete.expense.success', buildTotalExpensesPieChart);
 
+
+    /*
+     * --------------------------------
+     *      GLOBAL VARIABLES
+     * --------------------------------
+     */
+    var $expensesTableBody = $('#expensesTableBody'),
+        $tableAjaxSpinner = $('.expenses-table-ajax-spinner'),
+        $tableNoData = $('.expenses-table-no-data'),
+        totalPieChartCtx = document.getElementById('totalExpensesPieChart').getContext('2d'),
+        $totalExpensesWidget = $('.total-expenses-widget'),
+        $totalPieChartStats = $('#totalPieChartStats'),
+        $totalExpensesAjaxSpinner = $('.total-expense-ajax-spinner'),
+        $totalExpensesAmount = $('#totalExpensesAmount');
+
     var categoryColors = {};
 
+
+    /*
+     * ----------------------------------------------
+     *      GLOBAL SINGLETON
+     * ----------------------------------------------
+     */
+    app.expensesPageData = {};
+
+    /*
+     * -----------------------------------------------
+     *      EMIT PAGE LOAD EVENT
+     * -----------------------------------------------
+     */
     app.emitEvent('page.load');
 
-    app.expensesPageData = {};
 
     /*
      * ---------------------------------------------
      *     EXPENSE TABLE
      * ---------------------------------------------
      */
-    var $expensesTableBody = $('#expensesTableBody');
-
     function buildExpenseTable() {
-        // fetch the info from the server
         $.ajax({
             method: 'get',
-            url: "/cost/api/expenses?count=10"
+            url: "/cost/api/expenses?count=10",
+            beforeSend: tableAjaxInProgress
         }).done(function (response) {
-            app.expensesPageData.table = reformatTableData(response.data);
-            populateExpensesTable(response.data);
+            setTimeout(function () {
+                // hide the spinner
+                tableAjaxEnded();
+
+                app.expensesPageData.table = reformatTableData(response.data, categoryColors);
+                populateExpensesTable(response.data);
+            }, 1000);
         });
     }
 
-    function reformatTableData (data) {
+    function tableAjaxInProgress() {
+        // empty the table <tbody>
+        $expensesTableBody.html("");
+
+        // show the spinner
+        $tableAjaxSpinner.show();
+    }
+
+    function tableAjaxEnded() {
+        // hide the spinner
+        $tableAjaxSpinner.hide();
+    }
+
+    function reformatTableData(data, categoryColors) {
         var formatted = {};
         for (var i = 0, len = data.length; i < len; i++) {
             var current = data[i];
+
+            if (typeof categoryColors[current.category.name]  === 'undefined') {
+                var css = app.helpers.makeRandomColor();
+                categoryColors[current.category.name] = { color: css.color, highlight: css.highlight };
+            }
+
             formatted[current._id] = current;
         }
         return formatted;
     }
 
-    function populateExpensesTable (data) {
+    function populateExpensesTable(data) {
         var html = "";
         for (var i = 0, len = data.length; i < len; i++) {
             var current = data[i];
-            html += "<tr><td class='category-color'><input class='docId' type='hidden' value='" + current._id + "'/></td><td><span class='fa fa-file-text-o pull-right'></span></td>" +
+            html += "<tr><td class='category-color' style='background-color:" + categoryColors[current.category.name].color +
+                ";'><input class='docId' type='hidden' value='" + current._id +
+                "'/></td><td><span class='fa fa-file-text-o pull-right'></span></td>" +
                 "<td>" + app.helpers.formatDate(current.date) + "</td>" +
                 "<td>" + current.title + "</td>" +
                 "<td class='text-capitalize'>" + current.category.name + "</td>" +
                 "<td class='expense-table-amount'>$" + app.helpers.formatAmount(current.amount) + "</td>" +
-                "<td><a data-toggle='modal' class='editTd' data-target='#editExpenseModal' href='#'><span class='fa fa-edit expense-item-edit'></span></a></td>" +
+                "<td><a data-toggle='modal' class='editTd' data-target='#editExpenseModal' href='#'>" +
+                "<span class='fa fa-edit expense-item-edit'></span></a></td>" +
                 "</tr>";
         }
-        //console.log(data);
         $expensesTableBody.html(html);
     }
-
 
 
     /*
@@ -65,26 +120,44 @@ $(function () {
      *     EXPENSE PIE CHART
      * ---------------------------------------------
      */
-    var totalPieChartCtx = document.getElementById('totalExpensesPieChart').getContext('2d'),
-        $totalPieChartStats = $('#totalPieChartStats'),
-        $totalExpensesAmount = $('#totalExpensesAmount');
-
-    function buildTotalExpensesPieChart () {
+    function buildTotalExpensesPieChart() {
         // get the data from the server for total expenses pie-chart
         $.ajax({
             method: "get",
-            url: "/cost/api/expenses/categories?days=10000"
+            url: "/cost/api/expenses/categories?days=10000",
+            beforeSend: totalExpenseAjaxInProgress
         }).done(function (response) {
-            populateTotalExpensesPieChart(response, categoryColors);
+            setTimeout(function() {
+                console.log(response);
+                // hide the spinner
+                totalExpensesAjaxEnded();
+                populateTotalExpensesPieChart(response, categoryColors);
+            }, 1500);
         });
     }
 
-    function populateTotalExpensesPieChart (response, categoryColors) {
+    function totalExpenseAjaxInProgress() {
+        // hide the sidebar contents
+        $totalExpensesWidget.hide();
+
+        // show the spinner
+        $totalExpensesAjaxSpinner.show();
+    }
+
+    function totalExpensesAjaxEnded () {
+        // show the total expenses widget
+        $totalExpensesWidget.show();
+
+        // hide the spinner
+        $totalExpensesAjaxSpinner.hide();
+    }
+
+    function populateTotalExpensesPieChart(response, categoryColors) {
         app.expensesPageData.categories = Object.keys(response.data);
-        var sortedData = app.helpers.sortPieChartAjaxResponseByAmount(response.data, categoryColors);
+        var sortedData = app.helpers.sortPieChartAjaxResponseByAmount(response.data);
         var totalExpensesAmount = app.helpers.calculateTotalExpensesAmount(sortedData);
         $totalExpensesAmount.html("$" + app.helpers.formatAmount(totalExpensesAmount));
-        var pieData = app.helpers.formatSortedAjaxDataForPieChart(sortedData);
+        var pieData = app.helpers.formatSortedAjaxDataForPieChart(sortedData, categoryColors);
         app.helpers.drawPieChart(totalPieChartCtx, pieData);
         var statData = app.helpers.formatPieDataForStatistics(pieData);
         app.helpers.showPieChartStats($totalPieChartStats, statData);
@@ -99,7 +172,7 @@ $(function () {
     var $editExpenseModal = $('#editExpenseModal'),
         $editExpenseForm = $('#editExpenseForm');
 
-    $editExpenseModal.on('shown.bs.modal', function (e){
+    $editExpenseModal.on('shown.bs.modal', function (e) {
         // delete any pre populated form errors
         app.helpers.emptyFormErrors($('.form-group'), $('.cost-form-error-item'), $('.cost-form-error-head'));
 
@@ -108,7 +181,7 @@ $(function () {
 
     });
 
-    function populateEditExpenseForm (relatedTarget) {
+    function populateEditExpenseForm(relatedTarget) {
         app.helpers.populateSelectCategory(app.expensesPageData.categories, $editExpenseForm.find('select'));
         var docId = $(relatedTarget).closest('tr').find('.docId').val(),
             activeDoc = app.expensesPageData.table[docId];
@@ -129,10 +202,10 @@ $(function () {
     var $updateBtn = $('#editExpenseUpdateButton');
 
     $updateBtn.on('click', function (e) {
-       makePutRequestToServer(e);
+        makePutRequestToServer(e);
     });
 
-    function makePutRequestToServer (e) {
+    function makePutRequestToServer(e) {
         // preventing the default action
         e.preventDefault();
 
@@ -143,7 +216,7 @@ $(function () {
         editExpenseAjax(data);
     }
 
-    function editExpenseAjax (data) {
+    function editExpenseAjax(data) {
         $.ajax({
             method: 'put',
             url: '/cost/api/expenses',
@@ -153,7 +226,7 @@ $(function () {
         });
     }
 
-    function handleEditResponseFromServer (response) {
+    function handleEditResponseFromServer(response) {
         if (!response.success) {
             // first clear the last errors
             app.helpers.emptyFormErrors($('.form-group'), $('.cost-form-error-item'), $('.cost-form-error-head'));
@@ -169,7 +242,7 @@ $(function () {
         app.emit('update.expense.success');
     }
 
-    function showUpdateErrorsFromServer (response) {
+    function showUpdateErrorsFromServer(response) {
         var validationErrors = response.validationErrors,
             postErrors = response.postErrors;
 
@@ -181,7 +254,7 @@ $(function () {
                         $errorDesc = $formGroupWithError.find('.cost-form-error-item');
 
                     $formGroupWithError.addClass('has-error');
-                    $errorDesc.html( "&bull; " + validationErrors[err].msg);
+                    $errorDesc.html("&bull; " + validationErrors[err].msg);
                 }
             }
         }
@@ -191,7 +264,7 @@ $(function () {
         }
     }
 
-    function formatDataForPutRequest ($form) {
+    function formatDataForPutRequest($form) {
         return {
             _id: $form.find('#editInputId').val(),
             title: $form.find('#editInputTitle').val(),
@@ -214,7 +287,7 @@ $(function () {
         makeDeleteRequestToServer(e);
     });
 
-    function makeDeleteRequestToServer (e) {
+    function makeDeleteRequestToServer(e) {
         // preventing the default action
         e.preventDefault();
 
@@ -225,11 +298,11 @@ $(function () {
         deleteExpenseAjax(expenseId);
     }
 
-    function deleteExpenseAjax (id) {
+    function deleteExpenseAjax(id) {
         $.ajax({
             method: 'delete',
             url: '/cost/api/expenses',
-            data : {
+            data: {
                 _id: id
             }
         }).done(function (response) {
@@ -238,7 +311,7 @@ $(function () {
         });
     }
 
-    function handleDeleteResponseFromServer (response) {
+    function handleDeleteResponseFromServer(response) {
         if (!response.success) {
             showDeleteErrorsFromServer(response);
         }
@@ -250,8 +323,8 @@ $(function () {
         app.emit('delete.expense.success');
     }
 
-    function showDeleteErrorsFromServer (response) {
+    function showDeleteErrorsFromServer(response) {
         console.log(response);
     }
-
 });
+//});

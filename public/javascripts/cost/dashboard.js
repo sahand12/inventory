@@ -42,7 +42,7 @@ $(function () {
             url: "/cost/api/expenses/categories?days=30",
             beforeSend: function (a, b) {
                 $pieAjaxSpinner.show();
-                $pieChartContainer.hide();
+                //$pieChartContainer.hide();
             }
         }).done(function (response) {
             if (Object.keys(response.data).length === 0) {
@@ -83,7 +83,7 @@ $(function () {
             url: "/cost/api/expenses/this-year",
             beforeSend: function () {
                 $('.line-ajax-spinner').show();
-                $lineChartContainer.hide();
+                //$lineChartContainer.hide();
             }
         }).done(function (response) {
             if (Object.keys(response.data).length === 0) {
@@ -155,7 +155,7 @@ $(function () {
             url: "/cost/api/expenses?count=5",
             beforeSend: function () {
                 $('.activity-ajax-spinner').show();
-                $activityTableContainer.hide();
+                //$('.activity-table-container').hide();
             }
         }).done(function (response) {
             if (Object.keys(response.data).length === 0) {

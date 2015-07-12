@@ -70,6 +70,7 @@ app.helpers.sortPieChartAjaxResponseByAmount = function (data) {
 };
 
 app.helpers.formatSortedAjaxDataForPieChart = function (data, categoryColors) {
+    //console.log('sahand', data);
     var pieData = [];
     for (var i = 0, len = data.length; i < len; i++) {
         var current = data[i],
