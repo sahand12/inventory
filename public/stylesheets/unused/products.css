@@ -13,12 +13,12 @@
   font-size: 22px;
   line-height: 50px;
   margin-bottom: 50px;
-  font-family: monospace;
+  font-family: Merriweather, monospace;
   background-color: #333333;
   border-radius: 2px;
 }
 .productItem {
-  font-family: monospace;
+  font-family: "Source Sans pro", monospace;
   margin-bottom: 30px;
   background-color: #e9e4d1;
   border: 1px solid #333333;
@@ -36,9 +36,12 @@
 }
 .productItem p {
   background-color: white;
+  font-size: 16px;
   padding: 20px;
   margin: 0;
-  min-height: 160px;
+  height: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .productLink {
   border-top: 1px solid darkgrey;

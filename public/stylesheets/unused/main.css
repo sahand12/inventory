@@ -1,1 +1,92 @@
-html{height:100%}body{min-height:100%}.backgroundCover{background:url('/images/background-pattern.png')}.signupContainer{width:380px;margin:0 auto;padding-top:80px}.signupContainer .logo{width:100px;margin:0 auto}.signupContainer .logo img{width:100px;height:100px}.signupContainer h1{color:black;margin-bottom:0;margin-top:30px}.signupContainer h3{margin-top:0;font-size:2em}.signupContainer h3 small{color:#798eab}.signupContainer .col-sm-6,.signupContainer .col-sm-12{padding-right:5px;padding-left:5px}.flatInput{border-radius:0;height:58px;line-height:18px;padding:20px 15px;font-size:16px}.signupForm{margin-top:40px}.signupForm .form-group{margin-bottom:10px}.signupForm .checkbox{color:black;font-size:16px}.signupButton{margin-top:10px}.signupButton input{background-color:#4e92df;display:inline-block;color:white;padding:20px 40px;cursor:pointer;border:none;border-left:8px solid rgba(0,0,0,0.15);transition:0.1s;text-decoration:none;width:400px;height:58px;font-size:16px;line-height:16px;outline:none;text-align:center}.signupButton input:hover{background-color:#2580e7}.signupButton input[type=password]{font-size:3em}.signinDesc{color:black;font-size:14px;line-height:20px;margin-top:15px}.signinDesc a:hover{text-decoration:none;color:#337ab7}
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+}
+.backgroundCover {
+  background: url('/images/background-pattern.png');
+}
+.signupContainer {
+  width: 380px;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+.signupContainer .logo {
+  width: 100px;
+  margin: 0 auto;
+}
+.signupContainer .logo img {
+  width: 100px;
+  height: 100px;
+}
+.signupContainer h1 {
+  color: black;
+  margin-bottom: 0;
+  margin-top: 30px;
+}
+.signupContainer h3 {
+  margin-top: 0;
+  font-size: 2em;
+}
+.signupContainer h3 small {
+  color: #798eab;
+}
+.signupContainer .col-sm-6,
+.signupContainer .col-sm-12 {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.flatInput {
+  border-radius: 0;
+  height: 58px;
+  line-height: 18px;
+  padding: 20px 15px;
+  font-size: 16px;
+}
+.signupForm {
+  margin-top: 40px;
+}
+.signupForm .form-group {
+  margin-bottom: 10px;
+}
+.signupForm .checkbox {
+  color: black;
+  font-size: 16px;
+}
+.signupButton {
+  margin-top: 10px;
+}
+.signupButton input {
+  background-color: #4e92df;
+  display: inline-block;
+  color: white;
+  padding: 20px 40px;
+  cursor: pointer;
+  border: none;
+  border-left: 8px solid rgba(0, 0, 0, 0.15);
+  transition: 0.1s;
+  text-decoration: none;
+  width: 400px;
+  height: 58px;
+  font-size: 16px;
+  line-height: 16px;
+  outline: none;
+  text-align: center;
+}
+.signupButton input:hover {
+  background-color: #2580e7;
+}
+.signupButton input[type=password] {
+  font-size: 3em;
+}
+.signinDesc {
+  color: black;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 15px;
+}
+.signinDesc a:hover {
+  text-decoration: none;
+  color: #337ab7;
+}
