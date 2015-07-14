@@ -165,6 +165,9 @@ exports = module.exports = function (app, passport) {
     app.put('/cost/api/expenses', ensureAuthenticated, costApiHandler.handleUpdateExpenseRequest);
     app.delete('/cost/api/expenses', ensureAuthenticated, costApiHandler.handleDeleteExpenseRequest);
 
+    // use pagination to get list of expenses
+    app.get('/cost/api/expenses/list', ensureAuthenticated, costApiHandler.getPaginatedExpensesByUser);
+
     app.get('/cost/expenses', ensureAuthenticated, costHandler.showExpensesPage);
     app.get('/cost/trends', ensureAuthenticated, costHandler.showTrendsPage);
     app.get('/cost/budget', ensureAuthenticated, costHandler.showBudgetPage);

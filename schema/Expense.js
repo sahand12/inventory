@@ -165,8 +165,10 @@ exports = module.exports = function (app, mongoose) {
     };
 
     // PLUGINS
-    var QueryTimePlugin = require('./plugins/queryTime');
+    var QueryTimePlugin = require('./plugins/queryTime'),
+        PagedFindPlugin = require('./plugins/pagedFind');
     ExpenseSchema.plugin(QueryTimePlugin);
+    ExpenseSchema.plugin(PagedFindPlugin);
 
     app.db.model('Expense', ExpenseSchema);
 };

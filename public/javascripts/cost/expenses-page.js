@@ -14,6 +14,8 @@ $(window).bind('load', function () {
     app.addListener('delete.expense.success', buildExpenseTable);
     app.addListener('delete.expense.success', buildTotalExpensesPieChart);
 
+    app.addListener('expense.pagination', buildExpenseTable);
+
 
     /*
      * --------------------------------
@@ -21,13 +23,15 @@ $(window).bind('load', function () {
      * --------------------------------
      */
     var $expensesTableBody = $('#expensesTableBody'),
+        $expensesTable = $('#expensesTable'),
         $tableAjaxSpinner = $('.expenses-table-ajax-spinner'),
         $tableNoData = $('.expenses-table-no-data'),
         totalPieChartCtx = document.getElementById('totalExpensesPieChart').getContext('2d'),
         $totalExpensesWidget = $('.total-expenses-widget'),
         $totalPieChartStats = $('#totalPieChartStats'),
         $totalExpensesAjaxSpinner = $('.total-expense-ajax-spinner'),
-        $totalExpensesAmount = $('#totalExpensesAmount');
+        $totalExpensesAmount = $('#totalExpensesAmount'),
+        $paginationContainer = $('#paginationContainer');
 
     var categoryColors = {};
 
@@ -53,17 +57,25 @@ $(window).bind('load', function () {
      * ---------------------------------------------
      */
     function buildExpenseTable() {
+        var page = app.pageNumber || 1;
+
+        // reset the app.pageNumber property
+        app.pageNumber = undefined;
         $.ajax({
             method: 'get',
-            url: "/cost/api/expenses?count=10",
+            url: "/cost/api/expenses/list?page=" + page,
             beforeSend: tableAjaxInProgress
         }).done(function (response) {
+            console.log('1', response);
             setTimeout(function () {
                 // hide the spinner
                 tableAjaxEnded();
 
-                app.expensesPageData.table = reformatTableData(response.data, categoryColors);
-                populateExpensesTable(response.data);
+                app.expensesPageData.table = reformatTableData(response.data.data, categoryColors);
+                populateExpensesTable(response.data.data);
+
+                // now build the pagination
+                buildPagination(response.data.pages);
             }, 1000);
         });
     }
@@ -71,6 +83,9 @@ $(window).bind('load', function () {
     function tableAjaxInProgress() {
         // empty the table <tbody>
         $expensesTableBody.html("");
+
+        // remove pagination
+        $paginationContainer.html("");
 
         // show the spinner
         $tableAjaxSpinner.show();
@@ -113,6 +128,48 @@ $(window).bind('load', function () {
         }
         $expensesTableBody.html(html);
     }
+
+    function buildPagination (pagesData) {
+        if (pagesData.total <= 1) return;
+
+        var leftDisabled = (pagesData.hasPrev ? false : true),
+            rightDisabled = (pagesData.hasNext ? false : true);
+
+        var paginationHtml = "<nav class='text-center'><ul class='pagination'>" +
+            "<li data-page='" + pagesData.prev + "' " + (leftDisabled ? "class='disabled'": "") + "><a href='#' aria-label='Previous'><span><span aria-hidden='true'>&laquo;</span></span></a></li>";
+
+        for (var i = 1; i <= pagesData.total; i++) {
+            paginationHtml += "<li data-page='" + i + "' " + ((pagesData.current === i) ? "class='active'" : "") + "><a href='#'>" + i + "</li>";
+        }
+        paginationHtml += "<li data-page='" + pagesData.next + "' " + (rightDisabled ? "class='disabled'": "") + "><a href='#' aria-label='Next'><span><span aria-hidden='true'>&raquo;</span></span></a></li>" + "</ul></nav>";
+
+
+        $paginationContainer.html(paginationHtml);
+
+    }
+
+
+    /*
+     * -----------------------------------------
+     *      PAGINATION CLICK EVENTS
+     * -----------------------------------------
+     */
+    $paginationContainer.on('click', function (e) {
+        e.preventDefault();
+
+        var target = $(e.target.closest('li')),
+            isTargetActive = target.hasClass('active'),
+            isTargetDisabled = target.hasClass('disabled');
+
+        if (!isTargetActive && !isTargetDisabled) {
+            app.pageNumber = target.attr('data-page');
+            app.emit('expense.pagination');
+
+            // remove pagination from dom
+            $('.pagination').remove();
+        }
+
+    });
 
 
     /*

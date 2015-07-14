@@ -122,3 +122,14 @@
   outline: 0;
   box-shadow: none;
 }
+#paginationContainer {
+  margin-bottom: 100px;
+}
+#paginationContainer .pagination a {
+  color: #3eb39e;
+}
+#paginationContainer .pagination .active a {
+  background-color: #3eb39e;
+  border-color: #3eb39e;
+  color: white;
+}

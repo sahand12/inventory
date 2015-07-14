@@ -177,7 +177,7 @@ $(function () {
             day = date.getDate(),
             month = date.getMonth();
 
-        return app.helpers.months[month+1] + " " + day + ", " + year;
+        return app.helpers.months[month] + " " + day + ", " + year;
     }
 
     function formatAmount (value) {

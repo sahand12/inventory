@@ -81,6 +81,12 @@ helmet(app);
 app.use(function (req, res, next) {
     //res.cookie('_csrf', req.csrfToken());
     //res.locals.csrfToken = req.csrfToken();
+    var date = new Date(),
+        year = date.getFullYear(),
+        month = date.getMonth(),
+        day = date.getDate();
+    res.locals.appDate = config.months[month] + " " + day + ", " + year;
+
     res.locals.user = {};
     res.locals.user.defaultReturnUrl = req.user && req.user.defaultReturnUrl();
     res.locals.user.username = req.user && req.user.username;

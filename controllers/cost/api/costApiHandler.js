@@ -386,6 +386,41 @@ var CostApiHandler = function (app) {
             });
         });
     };
+
+
+    this.getPaginatedExpensesByUser = function (req, res, next) {
+        var options = {
+            filters: {
+                user: req.user._id
+            },
+            keys: {
+                amount: 1,
+                'category.name': 1,
+                date: 1,
+                description: 1,
+                title: 1
+            },
+            page: (parseInt(req.query.page) || 1),
+            sort: {
+                "date": -1
+            },
+            limit: req.query.limit || 10
+        };
+
+        req.app.db.models.Expense.pagedFind(options, function (err, docs) {
+            if (err) {
+                console.log(err);
+                return res.send({
+                    success: false,
+                    postErrors: 'database error'
+                });
+            }
+            return res.send({
+                success: true,
+                data: docs
+            });
+        });
+    };
 };
 
 exports = module.exports = CostApiHandler;

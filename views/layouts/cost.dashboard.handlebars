@@ -62,10 +62,17 @@
         </div>
 
         <div class="col-sm-9 col-md-10 col-sm-offset-3 col-md-offset-2 cost-main">
+
+            <div class="cost-date-section">
+                <p>
+                    <span class='glyphicon glyphicon-time'></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Today is : &nbsp;&nbsp;{{appDate}}
+                </p>
+            </div>
+
             <div class="cost-top-nav">
                 <span class="glyphicon glyphicon-user"></span>
                 <a href="/cost/profile">
-                    <span class="cost-top-nav-username text-capitalize"> &nbsp;{{user.name.first}} {{user.name.last}}</span>
+                    <span class="cost-top-nav-username text-capitalize"> &nbsp;&nbsp;{{user.name.first}} {{user.name.last}}</span>
                 </a>
                 <div class="pull-right">
                     <button type="button" id="requestFundButton" class="btn btn-expense" data-toggle="modal" data-target="#requestFundModal">Request Fund</button>
@@ -77,6 +84,10 @@
                 <span class="glyphicon glyphicon-bell"></span>&nbsp;&nbsp;&nbsp;&nbsp;
                 <span class="cost-top-notification-text">You have no new notification</span>
             </div><!-- /.cost-top-notification -->
+
+            <!--<div class="cost-date-section">-->
+                <!--<p><span class='glyphicon glyphicon-time'></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Today is :</p>-->
+            <!--</div>-->
 
             <div class="row cost-main-content">
                 {{{body}}}
@@ -92,7 +103,7 @@
 <script src="/javascripts/vendor/Chart.js"></script>
 <script src="/javascripts/vendor/EventEmitter.min.js"></script>
 
-// user-defined scripts
+
 <script src="/javascripts/cost/app.js"></script>
 <script src="/javascripts/cost/cost-forms.js"></script>
 {{#if dashboardPage}}
