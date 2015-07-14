@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f15174e-ed4e-4874-b2fe-4736a9113461" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/cost/expenses-page.js" afterPath="$PROJECT_DIR$/public/javascripts/cost/expenses-page.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/cost/app.js" afterPath="$PROJECT_DIR$/public/javascripts/cost/app.js" />
     </list>
     <ignored path="basicAuth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,14 +43,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="expenses-page.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="expenses-page.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/cost/expenses-page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16624258">
-              <caret line="164" column="0" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="250" column="0" selection-start-line="250" selection-start-column="0" selection-end-line="250" selection-end-column="0" />
               <folding>
                 <marker date="1436873102000" expanded="true" signature="3902:3919" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/cost/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8312129">
+              <caret line="153" column="2" selection-start-line="153" selection-start-column="2" selection-end-line="153" selection-end-column="2" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -143,7 +152,6 @@
         <option value="$PROJECT_DIR$/views/authentication/logout/index.handlebars" />
         <option value="$PROJECT_DIR$/views/authentication/login/index.handlebars" />
         <option value="$PROJECT_DIR$/views/cost/dashboard.handlebars" />
-        <option value="$PROJECT_DIR$/public/javascripts/cost/app.js" />
         <option value="$PROJECT_DIR$/models.js" />
         <option value="$PROJECT_DIR$/schema/DeletedExpense.js" />
         <option value="$PROJECT_DIR$/public/javascripts/cost/dashboard.js" />
@@ -163,6 +171,7 @@
         <option value="$PROJECT_DIR$/views/partials/cost/forms/edit-expense.handlebars" />
         <option value="$PROJECT_DIR$/public/stylesheets/cost/cost.main.less" />
         <option value="$PROJECT_DIR$/public/javascripts/cost/expenses-page.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/cost/app.js" />
       </list>
     </option>
   </component>
@@ -867,13 +876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="72" column="6" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30821338">
@@ -1054,11 +1056,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/cost/expenses-page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16624258">
-          <caret line="164" column="0" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="250" column="0" selection-start-line="250" selection-start-column="0" selection-end-line="250" selection-end-column="0" />
           <folding>
             <marker date="1436873102000" expanded="true" signature="3902:3919" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8312129">
+          <caret line="153" column="2" selection-start-line="153" selection-start-column="2" selection-end-line="153" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>

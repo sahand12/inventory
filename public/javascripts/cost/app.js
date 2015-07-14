@@ -129,7 +129,7 @@ app.helpers.showPieChartStats = function ($statContainer, data) {
 };
 
 app.helpers.formatDateForInput = function (date) {
-    return new Date().toISOString().substring(0, 10);
+    return new Date(date).toISOString().substring(0, 10);
 };
 
 app.helpers.populateSelectCategory = function (data, $select) {
