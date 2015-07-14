@@ -16,7 +16,7 @@
 					<span aria-hidden="true">&times;</span>
 				</button>
 				<h4 class="modal-title text-uppercase" id="addExpenseModalLabel"><span>add an expense</span></h4>
-			</div>
+			</div><!-- /.modal-header -->
 			<div class="modal-body cost-modal-body">
 				<div class="container-fluid">
                     <!-- Error container -->
@@ -24,7 +24,7 @@
                         <div class="col-xs-8 col-xs-offset-3">
                             <div class="cost-form-error-head"></div>
                         </div>
-                    </div>
+                    </div><!-- /.form-error-container -->
 
 
 					<div class="row">
@@ -36,8 +36,8 @@
 									<div class="col-xs-9">
                                         <input class="form-control" type="text" id="title" name="title" placeholder=""/>
                                         <p class="cost-form-error-item"></p>
-									</div>
-								</div>
+									</div><!-- /.col-xs-9 -->
+								</div><!-- /.col-form-group -->
 
                                 <div class="form-group">
                                     <label for="amount" class="col-xs-3 control-label">Amount <span class="cost-form-required">*</span></label>
@@ -45,7 +45,7 @@
                                         <input class="form-control" type="number" id="amount" name="amount" placeholder=""/>
                                         <p class="cost-form-error-item"></p>
                                     </div>
-                                </div>
+                                </div><!-- /.form-group -->
 
                                 <div class="form-group">
                                     <label for="date" class="col-xs-3 control-label">Date<span class="cost-form-required">*</span>  (mm/dd/yyyy)</label>
@@ -53,7 +53,7 @@
                                         <input class="form-control" type="date" id="date" name="date" placeholder=""/>
                                         <p class="cost-form-error-item"></p>
                                     </div>
-                                </div>
+                                </div><!-- /.form-group -->
 
                                 <div class="form-group">
                                     <label for="category" class="col-xs-3 control-label">Category <span class="cost-form-required">*</span></label>
@@ -62,14 +62,14 @@
 										</select>
                                         <p class="cost-form-error-item"></p>
                                     </div>
-                                </div>
+                                </div><!-- /.form-group -->
 
 								<div class="form-group">
                                     <label for="description" class="col-xs-3 control-label">Description</label>
 									<div class="col-xs-9">
                                         <textarea class="textarea-block form-control" name="description" id="description"></textarea>
 									</div>
-								</div>
+								</div><!-- /.form-group -->
                                 <br/>
 
                                 <div class="row">
@@ -78,11 +78,20 @@
                                     </div>
                                     <div class="col-xs-5">
                                         <button class="btn btn-block btn-success" type="submit">Save Expense</button>
-									</div>
-                                </div>
+									</div><!-- /.col-xs-5 -->
+                                </div><!-- /.row -->
 
 							</div><!-- /.div.col-xs-8 -->
-						</form>
+						</form><!-- /#addExpenseForm -->
+
+                        <!-- Ajax animation spinner -->
+                        <div class="col-xs-12 add-expense-ajax-spinner" style="display: ;">
+                            <p class="text-center">
+                                <img src="/images/spinner.gif" alt="loading ..."/><br/>
+                                <!--loading-->
+                            </p>
+                        </div>
+
 					</div><!-- /.div.row -->
 				</div><!-- /.div.container-fluid -->
 			</div><!-- /.modal-body -->

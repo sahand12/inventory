@@ -2,6 +2,7 @@ $(function () {
 
     var $expenseForm = $('#addExpenseForm'),
         $AddExpenseModal = $('#addExpenseModal'),
+        $addExpenseAjaxSpinner = $('.add-expense-ajax-spinner'),
         $addExpenseCloseButton = $('#addExpenseCloseButton');
 
     /**
@@ -12,6 +13,9 @@ $(function () {
     $AddExpenseModal.on('shown.bs.modal', function (e){
         // delete any pre populated form errors
         app.helpers.emptyFormErrors($('.form-group'), $('.cost-form-error-item'), $('.cost-form-error-head'));
+
+        // hide the ajax spinner
+        $addExpenseAjaxSpinner.hide();
     });
 
 
@@ -52,20 +56,35 @@ $(function () {
         $.ajax({
             method: "post",
             url: $(self).attr('action'),
-            data: data
+            data: data,
+            beforeSend: saveExpenseAjaxInProgress
         }).done(function (msg) {
-            if (msg.success) {
-                app.emitEvent('expense.form.submit.success');
-                $AddExpenseModal.modal('hide');
-            }
-            else {
-                // First clear any errors if any from the form
-                app.helpers.emptyFormErrors($('.form-group'), $('.cost-form-error-item'), $('.cost-form-error-head'));
 
-                // show new errors now
-                showAddExpenseFormErrors(msg);
-            }
+           setTimeout(function () {
+                // hide the spinner
+                saveExpenseAjaxEnded();
+
+                if (msg.success) {
+                    app.emitEvent('expense.form.submit.success');
+                    $AddExpenseModal.modal('hide');
+                }
+                else {
+                    // First clear any errors if any from the form
+                    app.helpers.emptyFormErrors($('.form-group'), $('.cost-form-error-item'), $('.cost-form-error-head'));
+
+                    // show new errors now
+                    showAddExpenseFormErrors(msg);
+                }
+           }, 500);
         });
+    }
+
+    function saveExpenseAjaxInProgress () {
+        $addExpenseAjaxSpinner.show();
+    }
+
+    function saveExpenseAjaxEnded () {
+        $addExpenseAjaxSpinner.hide();
     }
 
     function showAddExpenseFormErrors (response) {
