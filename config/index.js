@@ -34,7 +34,6 @@ exports.authorization = {
 };
 exports.months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-//exports.monthsLength = [31, 28 || 29, ]
 exports.charts = {
     line: {
         fillColor : "rgb(180, 209, 205)",
