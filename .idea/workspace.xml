@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f15174e-ed4e-4874-b2fe-4736a9113461" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/cost.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/cost.main.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/cost.main.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.main.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/cost/forms/edit-expense.handlebars" afterPath="$PROJECT_DIR$/views/partials/cost/forms/edit-expense.handlebars" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/cost/expenses-page.js" afterPath="$PROJECT_DIR$/public/javascripts/cost/expenses-page.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="basicAuth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,10 +47,10 @@
       <file leaf-file-name="expenses-page.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/cost/expenses-page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.90245974">
-              <caret line="389" column="19" selection-start-line="389" selection-start-column="19" selection-end-line="389" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.16624258">
+              <caret line="164" column="0" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
               <folding>
-                <marker date="1436871889000" expanded="true" signature="4025:4042" placeholder="..." />
+                <marker date="1436873102000" expanded="true" signature="3902:3919" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -1057,10 +1054,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/cost/expenses-page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.90245974">
-          <caret line="389" column="19" selection-start-line="389" selection-start-column="19" selection-end-line="389" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.16624258">
+          <caret line="164" column="0" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
           <folding>
-            <marker date="1436871889000" expanded="true" signature="4025:4042" placeholder="..." />
+            <marker date="1436873102000" expanded="true" signature="3902:3919" placeholder="..." />
           </folding>
         </state>
       </provider>

@@ -67,17 +67,14 @@ $(window).bind('load', function () {
             url: "/cost/api/expenses/list?page=" + page,
             beforeSend: tableAjaxInProgress
         }).done(function (response) {
-            console.log('1', response);
-            setTimeout(function () {
-                // hide the spinner
-                tableAjaxEnded();
+            // hide the spinner
+            tableAjaxEnded();
 
-                app.expensesPageData.table = reformatTableData(response.data.data, categoryColors);
-                populateExpensesTable(response.data.data);
+            app.expensesPageData.table = reformatTableData(response.data.data, categoryColors);
+            populateExpensesTable(response.data.data);
 
-                // now build the pagination
-                buildPagination(response.data.pages);
-            }, 1000);
+            // now build the pagination
+            buildPagination(response.data.pages);
         });
     }
 
@@ -182,15 +179,12 @@ $(window).bind('load', function () {
         // get the data from the server for total expenses pie-chart
         $.ajax({
             method: "get",
-            url: "/cost/api/expenses/categories?days=10000&future=true",
+            url: "/cost/api/expenses/categories?days=100000&future=true",
             beforeSend: totalExpenseAjaxInProgress
         }).done(function (response) {
-            setTimeout(function() {
-                console.log(response);
-                // hide the spinner
-                totalExpensesAjaxEnded();
-                populateTotalExpensesPieChart(response, categoryColors);
-            }, 1500);
+            // hide the spinner
+            totalExpensesAjaxEnded();
+            populateTotalExpensesPieChart(response, categoryColors);
         });
     }
 
@@ -284,12 +278,10 @@ $(window).bind('load', function () {
             data: data,
             beforeSend: editExpenseAjaxInProgress
         }).done(function (response) {
-            setTimeout(function () {
-                // hide the spinner
-                editExpenseAjaxEnded();
+            // hide the spinner
+            editExpenseAjaxEnded();
 
-                handleEditResponseFromServer(response);
-            }, 500);
+            handleEditResponseFromServer(response);
         });
     }
 
@@ -382,12 +374,10 @@ $(window).bind('load', function () {
             },
             beforeSend: editExpenseAjaxInProgress
         }).done(function (response) {
-           setTimeout(function () {
-                // hide the spinner
-                editExpenseAjaxEnded();
+            // hide the spinner
+            editExpenseAjaxEnded();
 
-                handleEditResponseFromServer(response);
-           }, 600);
+            handleEditResponseFromServer(response);
         });
     }
 
