@@ -25,6 +25,7 @@ $(window).bind('load', function () {
     var $expensesTableBody = $('#expensesTableBody'),
         $expensesTable = $('#expensesTable'),
         $tableAjaxSpinner = $('.expenses-table-ajax-spinner'),
+        $editExpenseAjaxSpinner = $('.edit-expense-ajax-spinner'),
         $tableNoData = $('.expenses-table-no-data'),
         totalPieChartCtx = document.getElementById('totalExpensesPieChart').getContext('2d'),
         $totalExpensesWidget = $('.total-expenses-widget'),
@@ -233,6 +234,9 @@ $(window).bind('load', function () {
         // delete any pre populated form errors
         app.helpers.emptyFormErrors($('.form-group'), $('.cost-form-error-item'), $('.cost-form-error-head'));
 
+        // hide the ajax spinner
+        $editExpenseAjaxSpinner.hide();
+
         // e.relatedTarget points to the <a> which triggered showing the modal
         populateEditExpenseForm(e.relatedTarget);
 
@@ -277,10 +281,24 @@ $(window).bind('load', function () {
         $.ajax({
             method: 'put',
             url: '/cost/api/expenses',
-            data: data
+            data: data,
+            beforeSend: editExpenseAjaxInProgress
         }).done(function (response) {
-            handleEditResponseFromServer(response);
+            setTimeout(function () {
+                // hide the spinner
+                editExpenseAjaxEnded();
+
+                handleEditResponseFromServer(response);
+            }, 500);
         });
+    }
+
+    function editExpenseAjaxInProgress() {
+        $editExpenseAjaxSpinner.show();
+    }
+
+    function editExpenseAjaxEnded () {
+        $editExpenseAjaxSpinner.hide();
     }
 
     function handleEditResponseFromServer(response) {
@@ -361,10 +379,15 @@ $(window).bind('load', function () {
             url: '/cost/api/expenses',
             data: {
                 _id: id
-            }
+            },
+            beforeSend: editExpenseAjaxInProgress
         }).done(function (response) {
-            console.log(response);
-            handleDeleteResponseFromServer(response);
+           setTimeout(function () {
+                // hide the spinner
+                editExpenseAjaxEnded();
+
+                handleEditResponseFromServer(response);
+           }, 600);
         });
     }
 

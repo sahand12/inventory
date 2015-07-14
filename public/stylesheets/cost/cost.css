@@ -16,7 +16,8 @@
 .cost-date-section .glyphicon {
   font-size: 14px;
 }
-.add-expense-ajax-spinner {
+.add-expense-ajax-spinner,
+.edit-expense-ajax-spinner {
   display: none;
   margin-top: 30px;
 }

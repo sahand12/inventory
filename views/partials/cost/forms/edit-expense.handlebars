@@ -24,7 +24,7 @@
                     <div class="col-xs-8 col-xs-offset-3">
                         <div class="cost-form-error-head"></div>
                     </div>
-                </div>
+                </div><!-- form-error-container -->
 
                 <div class="container-fluid">
                     <div class="row">
@@ -36,24 +36,24 @@
                                     <div class="col-xs-9">
                                         <input class="form-control" type="text" id="editInputTitle" name="editInputTitle" placeholder=""/>
                                         <p class="cost-form-error-item"></p>
-                                    </div>
-                                </div>
+                                    </div><!-- /.col-xs-9 -->
+                                </div><!-- /.form-group -->
 
                                 <div class="form-group has-error">
                                     <label for="amount" class="col-xs-3 control-label text-capitalize">amount <span class="cost-form-required">*</span></label>
                                     <div class="col-xs-9">
                                         <input class="form-control" type="number" id="editInputAmount" name="editInputAmount" placeholder=""/>
                                         <p class="cost-form-error-item"></p>
-                                    </div>
-                                </div>
+                                    </div><!-- /.col-xs-9 -->
+                                </div><!-- /.form-group -->
 
                                 <div class="form-group">
                                     <label for="date" class="col-xs-3 control-label text-capitalize">date <span class="cost-form-required">*</span></label>
                                     <div class="col-xs-9">
                                         <input class="form-control" type="date" id="editInputDate" name="editInputDate" placeholder=""/>
                                         <p class="cost-form-error-item"></p>
-                                    </div>
-                                </div>
+                                    </div><!-- /.col-xs-9 -->
+                                </div><!-- /.form-group -->
 
                                 <div class="form-group">
                                     <label for="category" class="col-xs-3 control-label text-capitalize">category <span class="cost-form-required">*</span></label>
@@ -62,29 +62,38 @@
 
                                         </select>
                                         <p class="cost-form-error-item"></p>
-                                    </div>
-                                </div>
+                                    </div><!-- /.col-xs-9 -->
+                                </div><!-- /.form-group -->
 
                                 <div class="form-group">
                                     <label for="description" class="col-xs-3 control-label text-capitalize">description</label>
                                     <div class="col-xs-9">
                                         <textarea class="textarea-block form-control" name="editInputDescription" id="editInputDescription"></textarea>
                                         <p class="cost-form-error-item"></p>
-                                    </div>
-                                </div>
+                                    </div><!-- /.col-xs-9 -->
+                                </div><!-- /.form-group -->
                                 <br/>
 
                                 <div class="row">
                                     <div class="col-xs-3 col-xs-offset-4">
                                         <button id="editExpenseDeleteButton" class="btn btn-block btn-danger text-capitalize" type="button">delete</button>
-                                    </div>
+                                    </div><!-- /.col-xs-3 -->
                                     <div class="col-xs-5">
                                         <button class="btn btn-block btn-success" id="editExpenseUpdateButton" type="submit">Update</button>
-                                    </div>
-                                </div>
+                                    </div><!-- /.col-xs-5 -->
+                                </div><!-- /.row -->
 
                             </div><!-- /.div.col-xs-8 -->
-                        </form>
+                        </form><!-- /#editExpenseForm -->
+
+                        <!-- Ajax animation spinner -->
+                        <div class="col-xs-12 edit-expense-ajax-spinner">
+                            <p class="text-center">
+                                <img src="/images/spinner.gif" alt="loading ..."/><br/>
+                                <!--loading-->
+                            </p>
+                        </div>
+
                     </div><!-- /.div.row -->
                 </div><!-- /.div.container-fluid -->
             </div><!-- /.modal-body -->
