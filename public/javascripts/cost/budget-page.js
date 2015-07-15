@@ -96,8 +96,11 @@ $(function () {
                 categoryColors[current.category.name] = app.helpers.makeRandomColor()['color'];
             }
 
-            html += "<tr class='row'><td style='background-color:" + categoryColors[current.category.name] + ";'></td><td class='text-capitalize'>" +
-                    current.category.name + "</td><td class='cost-table-amount'>$" + app.helpers.formatAmount(current.amount) + "</td></tr>";
+            html += "<tr class='row'><td style='background-color:" + categoryColors[current.category.name] +
+                ";'></td><td class='text-capitalize'>" +
+                current.category.name + "</td>" +
+                "<td class='cost-table-amount'>$" + app.helpers.formatAmount(current.amount) + "</td>" +
+                "</tr>";
         }
         return html;
     }
@@ -130,9 +133,11 @@ $(function () {
                 categoryColors[current.name] = app.helpers.makeRandomColor()['color'];
             }
 
-            html += "<tr><td style='background-color:" + categoryColors[current.name] + ";'></td><td class='text-capitalize'>"
-            + current.name + "</td><td>$" + app.helpers.formatAmount(current.amount) + "</td>"
-            + "<td><span class=\"fa fa-edit\"></span></td></tr>";
+            html += "<tr><td style='width: 6px;background-color:" + categoryColors[current.name] +
+                ";'></td><td class='text-capitalize'>" +
+                current.name + "</td>" +
+                //"<td>$" + app.helpers.formatAmount(current.amount) + "</td>" +
+                "<td><span class=\"fa fa-edit\"></span></td></tr>";
         }
         return done(html);
     }
