@@ -421,6 +421,15 @@ var CostApiHandler = function (app) {
             });
         });
     };
+
+
+    this.getSearchExpensesResult = function (req, res, next) {
+        req.query.q = (typeof req.query.q !== 'undefined') ? req.query.q : "";
+        var regexQuery = new RegExp('^.*?' + req.query.q + ".*$", 'i');
+        var outcome = {};
+
+        var search
+    };
 };
 
 exports = module.exports = CostApiHandler;

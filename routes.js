@@ -168,6 +168,9 @@ exports = module.exports = function (app, passport) {
     // use pagination to get list of expenses
     app.get('/cost/api/expenses/list', ensureAuthenticated, costApiHandler.getPaginatedExpensesByUser);
 
+    // search the expenses for some query
+    app.get('/cost/api/expenses/search', ensureAuthenticated, costApiHandler.getSearchExpensesResult);
+
     app.get('/cost/expenses', ensureAuthenticated, costHandler.showExpensesPage);
     app.get('/cost/trends', ensureAuthenticated, costHandler.showTrendsPage);
     app.get('/cost/budget', ensureAuthenticated, costHandler.showBudgetPage);

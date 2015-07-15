@@ -14,6 +14,9 @@ $(function () {
         // delete any pre populated form errors
         app.helpers.emptyFormErrors($('.form-group'), $('.cost-form-error-item'), $('.cost-form-error-head'));
 
+        // empty the fields
+        $expenseForm.find('input, textarea').val("");
+
         // hide the ajax spinner
         $addExpenseAjaxSpinner.hide();
     });
