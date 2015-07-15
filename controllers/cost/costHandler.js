@@ -11,6 +11,7 @@ var CostHandler = function CostHandler (app) {
     this.showDashboard = function (req, res, next) {
         var data = {
             layout: 'cost.dashboard.handlebars',
+            costAdmin: (req.user.role === 'costAdmin'),
             user: req.user,
             title: "Dashboard",
             bodyClass: 'cost-dashboard',
@@ -109,6 +110,20 @@ var CostHandler = function CostHandler (app) {
             googleFonts: true
         };
         return res.render('cost/expenses', data);
+    };
+
+    /*
+     * GET     /cost/admin/total-expenses
+     */
+    this.showAllExpensesPage = function (req, res, next) {
+        var data = {
+            adminExpensesPage: true,
+            costAdmin: true,
+            layout: 'cost.dashboard.handlebars',
+            user: req.user,
+            title: "All Expenses"
+        };
+        return res.render('cost/total-expenses', data);
     };
 
     /**

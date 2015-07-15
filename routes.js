@@ -18,6 +18,19 @@ function ensureAuthenticated (req, res, next) {
     return res.redirect('/sim/login');
 }
 
+function ensureCostAdmin (req, res, next) {
+    if (req.user && req.user.canPlayRoleOf('costAdmin')) {
+        return next();
+    }
+    req.session.authorizationError = {
+        message: "You don't have permission to see this page",
+        requestedUrl: req.originalUrl
+    };
+
+    // TODO: make this route and views accordingly
+    return res.redirect('/cost/errors/authorization');
+}
+
 function ensureEngineer (req, res, next) {
     if (req.user && req.user.canPlayRoleOf('engineer')) {
         return next();
@@ -170,6 +183,10 @@ exports = module.exports = function (app, passport) {
 
     // search the expenses for some query
     app.get('/cost/api/expenses/search', ensureAuthenticated, costApiHandler.getSearchExpensesResult);
+
+    // cost admin pages
+    app.get('/cost/admin/total-expenses', ensureAuthenticated, ensureCostAdmin, costHandler.showAllExpensesPage);
+    app.get('/cost/api/expenses/all', ensureAuthenticated, ensureCostAdmin, costApiHandler.getAllExpenses);
 
     app.get('/cost/expenses', ensureAuthenticated, costHandler.showExpensesPage);
     app.get('/cost/trends', ensureAuthenticated, costHandler.showTrendsPage);
