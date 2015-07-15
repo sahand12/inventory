@@ -208,7 +208,7 @@ $(function () {
             html += "<tr class='activity-row'><td style='background-color:" + categoryColors[current.category.name].color
                 + ";'></td><td>" + current.title + " (<strong>"+  current.category.name + "</strong>)" + "</td>"
                 + "<td><small>" + formatDate(current.date) + "</small></td>"
-                + "<td>$" + formatAmount(current.amount) + "</td>";
+                + "<td>" + formatAmount(current.amount) + " &#65020;</td>";
         }
         $activityTable.html(html);
     }

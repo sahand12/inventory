@@ -423,12 +423,24 @@ var CostApiHandler = function (app) {
     };
 
 
+    // GET       /cost/api/expenses/search?q=...
     this.getSearchExpensesResult = function (req, res, next) {
         req.query.q = (typeof req.query.q !== 'undefined') ? req.query.q : "";
         var regexQuery = new RegExp('^.*?' + req.query.q + ".*$", 'i');
-        var outcome = {};
+        var query = { user: req.user._id, $or: [{ title: regexQuery }, { description: regexQuery }]};
 
-        var search
+        req.app.db.models.Expense.find(query).populate('user', 'name').exec(function (err, docs) {
+            if (err) {
+                return res.send({
+                    success: false,
+                    postErrors: { error: 'database error' }
+                });
+            }
+            return res.send({
+                success: true,
+                data: docs
+            });
+        });
     };
 };
 

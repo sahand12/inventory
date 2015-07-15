@@ -158,10 +158,10 @@ app.helpers.capitalizeFirstLetter = function (string) {
  *     CHART.JS DEFAULT OPTIONS
  * ----------------------------------------
  */
-Chart.defaults.global.scaleLabel = "$<%=app.helpers.formatAmount(value)%>";
+Chart.defaults.global.scaleLabel = "<%=app.helpers.formatAmount(value) + ' ﷼'%>";
 Chart.defaults.global.scaleFontSize = 12;
 Chart.defaults.global.tooltipFontSize = 12;
-Chart.defaults.global.tooltipTemplate = "<%if (label){%><%=label%>: <%}%><%= app.helpers.formatAmount(value) %>";
+Chart.defaults.global.tooltipTemplate = "<%if (label){%><%=label%>: <%}%><%= app.helpers.formatAmount(value) + ' ﷼' %>";
 Chart.defaults.global.tooltipTitleFontFamily = "courier, 'Helvetica Neue', Helvetica, Arial, sans-serif";
 Chart.defaults.global.segmentStrokeWidth = 1;
 

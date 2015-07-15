@@ -119,7 +119,7 @@ $(window).bind('load', function () {
                 "<td>" + app.helpers.formatDate(current.date) + "</td>" +
                 "<td>" + current.title + "</td>" +
                 "<td class='text-capitalize'>" + current.category.name + "</td>" +
-                "<td class='expense-table-amount'>$" + app.helpers.formatAmount(current.amount) + "</td>" +
+                "<td class='expense-table-amount'>" + app.helpers.formatAmount(current.amount) + " &#65020;" +  "</td>" +
                 "<td><a data-toggle='modal' class='editTd' data-target='#editExpenseModal' href='#'>" +
                 "<span class='fa fa-edit expense-item-edit'></span></a></td>" +
                 "</tr>";
@@ -208,7 +208,7 @@ $(window).bind('load', function () {
         app.expensesPageData.categories = Object.keys(response.data);
         var sortedData = app.helpers.sortPieChartAjaxResponseByAmount(response.data);
         var totalExpensesAmount = app.helpers.calculateTotalExpensesAmount(sortedData);
-        $totalExpensesAmount.html("$" + app.helpers.formatAmount(totalExpensesAmount));
+        $totalExpensesAmount.html(app.helpers.formatAmount(totalExpensesAmount) + " &#65020;");
         var pieData = app.helpers.formatSortedAjaxDataForPieChart(sortedData, categoryColors);
         app.helpers.drawPieChart(totalPieChartCtx, pieData);
         var statData = app.helpers.formatPieDataForStatistics(pieData);
