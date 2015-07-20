@@ -132,6 +132,16 @@ app.helpers.formatDateForInput = function (date) {
     return new Date(date).toISOString().substring(0, 10);
 };
 
+app.helpers.date = {};
+
+app.helpers.date.dateAsObject = function (date) {
+    return {
+        day: date.getDate(),
+        month: date.getMonth(),
+        year: date.getFullYear()
+    };
+};
+
 app.helpers.populateSelectCategory = function (data, $select) {
     var html = "";
     for (var i = 0, len = data.length; i < len; i++) {

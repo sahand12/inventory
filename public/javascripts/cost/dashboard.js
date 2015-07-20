@@ -39,7 +39,7 @@ $(function () {
         // get the data from the server for pie-chart
         $.ajax({
             method: "get",
-            url: "/cost/api/expenses/categories?days=30",
+            url: "/cost/api/expenses/categories",
             beforeSend: function (a, b) {
                 $pieAjaxSpinner.show();
                 //$pieChartContainer.hide();

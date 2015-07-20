@@ -95,30 +95,34 @@ exports = module.exports = function (app, mongoose) {
 
     /**
      *
-     * @param userId mongoose.Schema.Types.ObjectId
-     * @param days number - number of days from now to past that will look at
      * @param done callback - callback function that will receive an error object and and a group object in
      *                        format of: { category1Name: amount1, category2Name: amount2, ... }
      */
-    ExpenseSchema.statics.findTotalExpenseByEachCategory = function (userId, days, future, done) {
-        var startDate = Date.now() - days * 1000 * 60 * 60 * 24,
-            endDate = Date.now();
+    ExpenseSchema.statics.findTotalExpenseByEachCategory = function (options, done) {
+        var userId = options.userId;
+        var endDate = options.endDate && parseInt(options.endDate) + 1000 * 3600 * 24;
+        endDate = endDate || Date.now() + 1000 * 3600 * 24;
+        var startDate = options.startDate || endDate - 1000 * 3600 * 24 * 31; // by default returns the last 30 days expenses
+
+        if (options.days) {
+            startDate = Date.now() - 1000 * 3600 * 24 * options.days;
+        }
 
         var query = {
             user: userId,
             date: { $gt: startDate }
         };
 
-        if (!future) {
+        if (endDate) {
             query.date['$lt'] = endDate;
         }
-
-        this.find(query, { amount: 1, "category.name": 1, _id: 0 })
+        this.find(query, { amount: 1, "category.name": 1, date: 1, _id: 0 })
             .exec(function (err, docs) {
                 if (err) {
                     return done(err);
                 }
-
+console.log(options, query);
+                 //console.log(docs);
                 // filter through the data to group by category and find the total expense in each category
                 var group = {};
                 for (var i = 0, len = docs.length; i < len; i++) {

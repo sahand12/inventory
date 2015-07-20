@@ -17,6 +17,7 @@
   "dependencies": {
     "bootstrap": "~3.3.4",
     "fontawesome": "~4.3.0",
-    "slick.js": "~1.5.5"
+    "slick.js": "~1.5.5",
+    "moment": "~2.10.3"
   }
 }

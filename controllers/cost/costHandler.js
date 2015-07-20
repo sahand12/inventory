@@ -127,92 +127,23 @@ var CostHandler = function CostHandler (app) {
     };
 
     /**
-     * GET /cost/trends
+     * GET /cost/categories
      */
-    this.showTrendsPage = function (req, res, next) {
+    this.showCategoriesPage = function (req, res, next) {
         var data = {
             layout: "cost.dashboard.handlebars",
             user: req.user,
-            title: "Trends",
-            trendsPage: true,
-            googleFont: false
+            title: "Expense Categories",
+            categoriesPage: true,
+            date: {
+                today: new Date(Date.now() + 1000 * 3600 * 4.5).toISOString().substring(0, 10),
+                lastMonth: new Date( Date.now() - 1000 * 60 * 60 * 24 * 30 ).toISOString().substring(0, 10)
+            }
         };
-        return res.render('cost/trends', data);
+        return res.render('cost/categories', data);
     };
 
-    /**
-     * GET /cost/budget
-     */
-    this.showBudgetPage = function (req, res, next) {
-        var data = {
-            layout: "cost.dashboard.handlebars",
-            user: req.user,
-            title: "Budget",
-            budgetPage: true,
-            googleFont: true
-        };
-        return res.render('cost/budget', data);
-    };
 
-    /**
-     * GET /cost/people
-     */
-    this.showPeoplePage = function (req, res, next) {
-        var data = {
-            activeNav: "people"
-        };
-        return res.render('cost/people', data);
-    };
-
-    /**
-     * GET /cost/notifications
-     */
-    this.showNotificationsPage = function (req, res, next) {
-        var data = {
-            activeNav: "notifications"
-        };
-        return res.render("cost/notifications", data);
-    };
-
-    /**
-     * GET /cost/reminders
-     */
-    this.showRemindersPage = function (req, res, next) {
-        var data = {
-            activeNav: "reminders"
-        };
-        return res.render('cost/reminders');
-    };
-
-    /**
-     * GET /cost/reports
-     */
-    this.showReportsPage = function (req, res, next) {
-        var data = {
-            activeNav: "reports"
-        };
-        return res.render('cost/reports');
-    };
-
-    /**
-     * GET /cost/settings
-     */
-    this.showSettingsPage = function (req, res, next) {
-        var data = {
-            activeNav: "settings"
-        };
-        return res.render('cost/settings');
-    };
-
-    /**
-     * GET /cost/faq
-     */
-    this.showFaqPage = function (req, res, next) {
-        var data = {
-            activeNav: "faq"
-        };
-        return res.render('cost/faq');
-    };
 };
 
 

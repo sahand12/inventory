@@ -1,5 +1,5 @@
-//$(function () {
-$(window).bind('load', function () {
+$(function () {
+
     /*
      * -------------------------------
      *      EVENT LISTENERS
@@ -179,7 +179,7 @@ $(window).bind('load', function () {
         // get the data from the server for total expenses pie-chart
         $.ajax({
             method: "get",
-            url: "/cost/api/expenses/categories?days=100000&future=true",
+            url: "/cost/api/expenses/categories?days=100000",
             beforeSend: totalExpenseAjaxInProgress
         }).done(function (response) {
             // hide the spinner
@@ -397,4 +397,3 @@ $(window).bind('load', function () {
         console.log(response);
     }
 });
-//});

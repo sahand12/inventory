@@ -67,9 +67,41 @@ var CostApiHandler = function (app) {
      * ajax url for last 30 days pie chart on dashboard
      */
     this.showTotalExpensesByEachCategory = function (req, res, next) {
-        var days = req.query.days || 30,
-            future = req.query.future || false;
-        req.app.db.models.Expense.findTotalExpenseByEachCategory(req.user._id, days, future, function (err, docs) {
+        var options = {
+            userId: req.user._id,
+            future: req.query.future || false,
+            startDate: parseInt(req.query.startDate) || false,
+            endDate: parseInt(req.query.endDate) || false,
+            days: parseInt(req.query.days) || false
+        };
+        req.app.db.models.Expense.findTotalExpenseByEachCategory(options, function (err, docs) {
+            if (err) {
+                console.log(err);
+                return res.send({
+                    success: false,
+                    error: "database error"
+                });
+            }
+            return res.send({
+                success: true,
+                data: docs
+            });
+        });
+    };
+
+
+    /*
+     * GET /cost/api/?satrt=...&end=...
+     */
+    this.showTotalExpensesByEachCategory = function (req, res, next) {
+        var options = {
+            userId: req.user._id,
+            future: req.query.future || false,
+            endDate: req.query.endDate || false,
+            startDate: req.query.startDate || false
+        };
+
+        req.app.db.models.Expense.findTotalExpenseByEachCategory(options, function (err, docs) {
             if (err) {
                 console.log(err);
                 return res.send({
@@ -443,6 +475,7 @@ var CostApiHandler = function (app) {
         });
     };
 
+
     this.getAllExpenses = function (req, res, next) {
         var options = {
             keys: {
@@ -472,37 +505,7 @@ var CostApiHandler = function (app) {
                 data: docs
             });
         });
-    }
+    };
 };
 
 exports = module.exports = CostApiHandler;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

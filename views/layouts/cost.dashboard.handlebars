@@ -48,9 +48,9 @@
                 {{#if costAdmin}}
                     <li class="{{#if adminExpensesPage}}active{{/if}}"><a href="/cost/admin/total-expenses">Admin</a></li>
                 {{/if}}
-                <!--<li class="{{#if budgetPage}}active{{/if}}"><a href="/cost/budget">Budget</a></li>-->
+                <li class="{{#if categoriesPage}}active{{/if}}"><a href="/cost/categories">Categories</a></li>
                 <!--<li class="{{#if trendsPage}}active{{/if}}"><a href="/cost/trends">Trends</a></li>-->
-                <!--<li class="{{#if reportsPage}}active{{/if}}"><a href="/cost/reports">Reports</a></li>-->
+                <li class="{{#if reportsPage}}active{{/if}}"><a href="/cost/reports">Reports</a></li>
                 <!--<li class="{{#if peoplePage}}active{{/if}}"><a href="/cost/people">People</a></li>-->
                 <!--<li class="{{#if remindersPage}}active{{/if}}"><a href="/cost/reminders">Reminders</a></li>-->
                 <!--<li class="{{#if notificationsPage}}active{{/if}}"><a href="/cost/notification">Notifications</a></li>-->
@@ -105,6 +105,7 @@
 <script src="/javascripts/vendor/bootstrap.min.js"></script>
 <script src="/javascripts/vendor/Chart.min.js"></script>
 <script src="/javascripts/vendor/EventEmitter.min.js"></script>
+<script src="/javascripts/vendor/moment.min.js"></script>
 
 
 <script src="/javascripts/cost/app.js"></script>
@@ -115,8 +116,8 @@
 {{#if expensesPage}}
     <script src="/javascripts/cost/expenses-page.js"></script>
 {{/if}}
-{{#if trendsPage}}
-    <script src="/javascripts/cost/trendsPage"></script>
+{{#if categoriesPage}}
+    <script src="/javascripts/cost/categories-page.js"></script>
 {{/if}}
 {{#if budgetPage}}
     <script src="/javascripts/cost/budget-page.js"></script>

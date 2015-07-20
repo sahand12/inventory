@@ -138,30 +138,26 @@ exports = module.exports = function (app, passport) {
      * ---------------------------------------
      */
     // dashboard
-    var dashboardHandler = require('./controllers/dashboardHandler');
-    app.get('/sim/dashboard/', ensureAuthenticated, dashboardHandler.init);
+    //var dashboardHandler = require('./controllers/dashboardHandler');
+    //app.get('/sim/dashboard/', ensureAuthenticated, dashboardHandler.init);
 
 
-    // goods inventory
-    var GoodHandler = require('./controllers/goodHandler'),
-        goodHandler = new GoodHandler(app);
-    app.get('/sim/goods/insert', goodHandler.showInsertNewGood);
-    app.post('/sim/goods/insert', goodHandler.handleInsertNewGood);
-    app.get('/sim/goods/list', goodHandler.showAllGoods);
-    app.get('/sim/goods/good/:id', goodHandler.showASingleGood);
+    //// goods inventory
+    //var GoodHandler = require('./controllers/goodHandler'),
+    //    goodHandler = new GoodHandler(app);
+    //app.get('/sim/goods/insert', goodHandler.showInsertNewGood);
+    //app.post('/sim/goods/insert', goodHandler.handleInsertNewGood);
+    //app.get('/sim/goods/list', goodHandler.showAllGoods);
+    //app.get('/sim/goods/good/:id', goodHandler.showASingleGood);
 
 
     var CostHandler = require('./controllers/cost/costHandler'),
         costHandler = new CostHandler(app);
     app.all('/costs/', ensureAuthenticated);
     app.get('/cost/dashboard', ensureAuthenticated, costHandler.showDashboard);
-    app.post('/cost/expenses', ensureAuthenticated, costHandler.handleAddExpenseRequest);
     app.get('/cost/expenses', ensureAuthenticated, costHandler.showExpensesPage);
-
-    var CostCategoryHandler = require('./controllers/cost/categoryHandler'),
-        costCategoryHandler = new CostCategoryHandler(app);
-    app.get('/cost/categories', ensureAuthenticated, costCategoryHandler.showCategories);
-    app.post('/cost/categories', ensureAuthenticated, costCategoryHandler.handleAddCategoryRequest);
+    app.post('/cost/expenses', ensureAuthenticated, costHandler.handleAddExpenseRequest);
+    app.get('/cost/categories', ensureAuthenticated, costHandler.showCategoriesPage);
 
     var CostApiHandler = require('./controllers/cost/api/costApiHandler'),
         costApiHandler = new CostApiHandler(app);
@@ -187,16 +183,5 @@ exports = module.exports = function (app, passport) {
     // cost admin pages
     app.get('/cost/admin/total-expenses', ensureAuthenticated, ensureCostAdmin, costHandler.showAllExpensesPage);
     app.get('/cost/api/expenses/all', ensureAuthenticated, ensureCostAdmin, costApiHandler.getAllExpenses);
-
-    app.get('/cost/expenses', ensureAuthenticated, costHandler.showExpensesPage);
-    app.get('/cost/trends', ensureAuthenticated, costHandler.showTrendsPage);
-    app.get('/cost/budget', ensureAuthenticated, costHandler.showBudgetPage);
-    app.get('/cost/people', ensureAuthenticated, costHandler.showPeoplePage);
-    app.get('/cost/notifications', ensureAuthenticated, costHandler.showNotificationsPage);
-    app.get('/cost/reminders', ensureAuthenticated, costHandler.showRemindersPage);
-    app.get('/cost/reports', ensureAuthenticated, costHandler.showReportsPage);
-    app.get('/cost/settings', ensureAuthenticated, costHandler.showSettingsPage);
-    app.get('/cost/faq', ensureAuthenticated, costHandler.showFaqPage);
-
 
 };
