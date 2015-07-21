@@ -179,9 +179,10 @@ $(function () {
         // get the data from the server for total expenses pie-chart
         $.ajax({
             method: "get",
-            url: "/cost/api/expenses/categories?days=100000",
+            url: "/cost/api/expenses/categories/total",
             beforeSend: totalExpenseAjaxInProgress
         }).done(function (response) {
+            console.log(response);
             // hide the spinner
             totalExpensesAjaxEnded();
             populateTotalExpensesPieChart(response, categoryColors);

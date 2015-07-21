@@ -506,6 +506,34 @@ var CostApiHandler = function (app) {
             });
         });
     };
+
+    this.getTotalExpensesByEachCategory = function (req, res, next) {
+        var query = { user: req.user._id };
+        var filter = { amount: 1, 'category.name': 1, _id: 0 };
+        req.app.db.models.Expense.find(query, filter).exec(function (err, docs) {
+            if (err) {
+                return res.send({
+                    success: false,
+                    postErrors: { error: 'database error' }
+                });
+            }
+            var results = {};
+            for (var i = 0, len = docs.length; i < len; i++) {
+                var current = docs[i];
+                if (typeof results[current.category.name] === 'undefined') {
+                    results[current.category.name] = current.amount;
+                }
+                else {
+                    results[current.category.name] += current.amount;
+                }
+            }
+
+            return res.send({
+                success: true,
+                data: results
+            });
+        });
+    }
 };
 
 exports = module.exports = CostApiHandler;

@@ -169,6 +169,7 @@ exports = module.exports = function (app, passport) {
     app.get('/cost/api/expenses', ensureAuthenticated, costApiHandler.listExpensesByUser);
     app.get('/cost/api/expenses/total', ensureAuthenticated, costApiHandler.showTotalExpenses);
     app.get('/cost/api/expenses/categories', ensureAuthenticated, costApiHandler.showTotalExpensesByEachCategory);
+    app.get('/cost/api/expenses/categories/total', ensureAuthenticated, costApiHandler.getTotalExpensesByEachCategory);
     app.get('/cost/api/expenses/this-year', ensureAuthenticated, costApiHandler.showThisYearExpenses);
     app.get('/cost/api/expenses/count', ensureAuthenticated, costApiHandler.findTotalNumberOfExpenses);
     app.put('/cost/api/expenses', ensureAuthenticated, costApiHandler.handleUpdateExpenseRequest);
