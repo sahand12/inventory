@@ -51,20 +51,17 @@ $(function () {
         var startDate = new Date($startInput.val()).valueOf(),
             endDate = new Date($endInput.val()).valueOf(),
             queryString = "?startDate=" + startDate + "&endDate=" + endDate;
-console.log(startDate, endDate);
+
         $.ajax({
             method: 'get',
             url: '/cost/api/expenses/categories' + queryString,
             beforeSend: tableAjaxInProgress
         }).done(function (response) {
-            setTimeout(function () {
-                console.log(response);
-                // Hide the spinner
-                tableAjaxEnded();
+            // Hide the spinner
+            tableAjaxEnded();
 
-                populateCategoriesTable(response.data);
-                buildCategoriesBarChart(response.data);
-            }, 1000);
+            populateCategoriesTable(response.data);
+            buildCategoriesBarChart(response.data);
         });
     }
 
