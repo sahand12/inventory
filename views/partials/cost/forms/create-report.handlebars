@@ -1,0 +1,24 @@
+<form action="" class="vgn-form-green">
+    <div class="form-group">
+        <input type="text" name="title" class="form-control" placeholder="Title"/>
+    </div>
+    <div class="form-group">
+        <input type="text" onfocus="this.type = 'date';" onblur="this.type = 'text'" name="start-date" class="form-control" placeholder="Start Date"/>
+    </div>
+    <div class="form-group">
+        <input type="text" name="end-date" class="form-control" placeholder="End Date" onfocus="this.type = 'date';" onblur="this.type = 'text'"/>
+    </div>
+    <div class="form-group">
+        <select name="type" name="type" class="form-control">
+            <option value="" disabled selected>Type</option>
+            <option value="pdf">PDF</option>
+            <option value="csv">CSV</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <select name="expenses" class="form-control">
+            <option value="expenses">Expenses</option>
+        </select>
+    </div>
+    <button class="btn btn-block vgn-btn-green">Create Report</button>
+</form>
