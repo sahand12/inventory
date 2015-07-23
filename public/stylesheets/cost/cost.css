@@ -381,6 +381,15 @@ body {
   color: white;
   background-color: #3eb39e;
 }
+.vgn-form-green {
+  padding: 20px 10px;
+}
+.vgn-form-green input,
+.vgn-form-green select,
+.vgn-form-green textarea {
+  border: 2px solid #9bd5cb;
+  margin-top: 20px;
+}
 .cost-expenses-list {
   padding-top: 20px;
 }
@@ -613,4 +622,7 @@ input#end {
 #barChartContainer {
   margin-top: 30px;
   margin-bottom: 100px;
+}
+#reportsPage .cost-helper-header span {
+  background-color: white;
 }

@@ -10,5 +10,6 @@ exports = module.exports = function (app, mongoose) {
     require('./schema/Good')(app, mongoose);
     require('./schema/Expense')(app, mongoose);
     require('./schema/DeletedExpense')(app, mongoose);
+    require('./schema/Report')(app, mongoose);
 
 };

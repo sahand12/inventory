@@ -144,3 +144,12 @@
   color: white;
   background-color: #3eb39e;
 }
+.vgn-form-green {
+  padding: 20px 10px;
+}
+.vgn-form-green input,
+.vgn-form-green select,
+.vgn-form-green textarea {
+  border: 2px solid #9bd5cb;
+  margin-top: 20px;
+}

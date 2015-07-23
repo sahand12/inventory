@@ -144,6 +144,21 @@ var CostHandler = function CostHandler (app) {
     };
 
 
+    /*
+     * GET     /cost/reports
+     */
+    this.showReportsPage = function (req, res, next) {
+        var data = {
+            layout: 'cost.dashboard.handlebars',
+            user: req.user,
+            title: "Reports",
+            reportsPage: true
+        };
+
+        return res.render('cost/reports', data);
+    }
+
+
 };
 
 

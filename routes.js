@@ -158,6 +158,7 @@ exports = module.exports = function (app, passport) {
     app.get('/cost/expenses', ensureAuthenticated, costHandler.showExpensesPage);
     app.post('/cost/expenses', ensureAuthenticated, costHandler.handleAddExpenseRequest);
     app.get('/cost/categories', ensureAuthenticated, costHandler.showCategoriesPage);
+    app.get('/cost/reports', ensureAuthenticated, costHandler.showReportsPage);
 
     var CostApiHandler = require('./controllers/cost/api/costApiHandler'),
         costApiHandler = new CostApiHandler(app);
