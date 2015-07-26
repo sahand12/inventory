@@ -626,3 +626,18 @@ input#end {
 #reportsPage .cost-helper-header span {
   background-color: white;
 }
+.create-report-form {
+  background-color: #f6f6f6;
+}
+.create-report-form input,
+.create-report-form select {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.create-report-form .form-group {
+  margin-bottom: 10px;
+}
+.create-report-form #createReportBtn {
+  margin-top: 30px;
+  margin-bottom: 0;
+}

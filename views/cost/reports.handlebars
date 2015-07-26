@@ -1,9 +1,23 @@
 <div class="col-sm-8" id="reportsPage">
     <h1 class="cost-helper-header text-uppercase"><span>reports</span></h1>
 
-    {{> cost/forms/create-report }}
+
+
+    <!-- Ajax animation spinner -->
+    <div class="col-xs-12 reports-table-ajax-spinner" style="display: none;">
+        <p class="text-center">
+            <img src="/images/spinner.gif" alt="loading ..."/><br/>
+            <!--loading-->
+        </p>
+    </div>
+    <div class="reports-table-no-data" style="display: none">
+        <p>You haven't added any expense yet.</p>
+    </div>
+
 </div><!-- /.col-sm-8 -->
 
-<div class="col-sm-4">
+<div class="col-sm-4 create-report-form">
+     <h1 class="secondary-heading"><span>Create Report</span></h1>
 
+    {{> cost/forms/create-report }}
 </div><!-- /.col-sm-4 -->

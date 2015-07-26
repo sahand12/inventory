@@ -2,13 +2,21 @@
 'use strict';
 
 exports.port = process.env.NODE_PORT || 3000;
+
 exports.mongodb = {
     uri: process.env.MONGOLAB_URI || process.env.MONGOHQ_URI || 'mongodb://localhost:27017/basicAuth'
 };
+
+exports.reportDest = "../files/reports";
+
 exports.companyName = 'Climax Well Services';
+
 exports.projectName = "Inventory Management";
+
 exports.systemEmail = "climaxws@gmail.com";
+
 exports.cryptoKey = "k3yb0ardc4t";
+
 exports.loginAttempts = {
     forIp: 50,
     forIpAndUser: 7,

@@ -533,7 +533,118 @@ var CostApiHandler = function (app) {
                 data: results
             });
         });
-    }
+    };
+
+
+    this.getAllReports = function (req, res, next) {
+        var query = { user: req.user._id };
+        req.app.db.models.Report.find(query).sort({ createdAt: -1 }).exec(function (err, results) {
+            if (err) {
+                console.log(err);
+                return res.json({
+                    success: false,
+                    postError: { error: 'database error' }
+                });
+            }
+            return res.json({
+                success: true,
+                data: results
+            });
+        });
+    };
+
+    // Create a new report
+    this.createNewReport = function (req, res, next) {
+        var workflow = req.app.utility.workflow(req, res);
+        //console.log(req.body);
+
+        workflow.on('validate', function () {
+            req.checkBody('startDate', 'provide a valid start date').isInt();
+            req.checkBody('endDate', 'provide a valid end date').isInt();
+            req.checkBody('title', 'title field can not be empty').notEmpty();
+            req.checkBody('type', 'select a type please').isIn(['csv', 'pdf']);
+
+            var errors = req.validationErrors(true);
+            if (errors) {
+                console.log(errors);
+                return res.send({
+                    success: false,
+                    validationErrors: errors
+                });
+            }
+
+            workflow.emit('findExpenses');
+        });
+
+        workflow.on('findExpenses', function () {
+            var startDate = req.body.startDate;
+            var endDate = req.body.endDate;
+            var query = { user: req.user._id, date: { $gt: startDate, $lt: endDate } };
+            var filter = { title: 1, date: 1, description: 1, amount: 1, 'category.name': 1};
+            req.app.db.models.Expense.find(query, filter).sort({ date: -1 }).exec(function (err, docs) {
+                if (err) {
+                    console.log(err);
+                    return res.json({
+                        success: false,
+                        data: docs
+                    });
+                }
+
+                workflow.emit('createReport', docs);
+            });
+        });
+
+        workflow.on('createReport', function (docs) {
+            var fs = require('fs');
+            var reportFileName = "report-" + Date.now() + '.csv';
+            var path = __dirname + "../../../files/reports/" + reportFileName;
+            console.log(path);
+            var reportStream = fs.createWriteStream(path);
+
+            reportStream.on('finish', function () {
+               workflow.emit('createReportRecord', reportFileName);
+            });
+
+            reportStream.write('"DATE","DESCRIPTION","CATEGORY","AMOUNT"\n');
+
+            for (var i = 0, len = docs.length; i < len; i++) {
+                var current = docs[i];
+                reportStream.write('"' + current.date + '"');
+                reportStream.write('"' + current.description + '"');
+                reportStream.write('"' + current.category.name + '"');
+                reportStream.write('"' + current.amount + '"');
+                reportStream.write('\n');
+            }
+
+            reportStream.end();
+        });
+
+        workflow.on('createReportRecord', function (fileName) {
+            var fieldsToSet = {
+                user: req.user._id,
+                name: req.body.title,
+                startDate: req.body.startDate,
+                endDate: req.body.endDate,
+                type: req.body.type,
+                source: "../../../files/reports/" + fileName
+            };
+
+            req.app.db.models.Report.create(fieldsToSet, function (err, newDoc) {
+                if (err) {
+                    return res.json({
+                        success: false,
+                        postErrors: { error: "database error" }
+                    });
+                }
+                return res.json({
+                    success: true,
+                    data: newDoc
+                });
+            });
+        });
+
+        workflow.emit('validate');
+    };
 };
 
 exports = module.exports = CostApiHandler;

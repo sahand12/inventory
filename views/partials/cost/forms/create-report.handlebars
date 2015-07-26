@@ -1,24 +1,40 @@
-<form action="" class="vgn-form-green">
+<form action="" class="vgn-form-green" id="createReportForm">
     <div class="form-group">
-        <input type="text" name="title" class="form-control" placeholder="Title"/>
+        <input type="text" id="reportTitle" name="reportTitle" class="form-control" placeholder="Title"/>
+        <p class="cost-form-error-item"></p>
     </div>
     <div class="form-group">
-        <input type="text" onfocus="this.type = 'date';" onblur="this.type = 'text'" name="start-date" class="form-control" placeholder="Start Date"/>
+        <input type="text" id="reportStartDate" onfocus="this.type = 'date';" onblur="this.type = 'text'" name="reportStartDate" class="form-control" placeholder="Start Date - mm/dd/yyyy"/>
+        <p class="cost-form-error-item"></p>
     </div>
     <div class="form-group">
-        <input type="text" name="end-date" class="form-control" placeholder="End Date" onfocus="this.type = 'date';" onblur="this.type = 'text'"/>
+        <input type="text" id="reportEndDate" name="reportEndDate" class="form-control" placeholder="End Date - mm/dd/yyyy" onfocus="this.type = 'date';" onblur="this.type = 'text'"/>
+        <p class="cost-form-error-item"></p>
     </div>
     <div class="form-group">
-        <select name="type" name="type" class="form-control">
+        <select id="reportType" name="reportType" class="form-control">
             <option value="" disabled selected>Type</option>
             <option value="pdf">PDF</option>
             <option value="csv">CSV</option>
         </select>
+        <p class="cost-form-error-item"></p>
     </div>
-    <div class="form-group">
-        <select name="expenses" class="form-control">
-            <option value="expenses">Expenses</option>
-        </select>
-    </div>
-    <button class="btn btn-block vgn-btn-green">Create Report</button>
+    <!--<div class="form-group">-->
+        <!--<select name="expenses" class="form-control">-->
+            <!--<option value="expenses">Expenses</option>-->
+        <!--</select>-->
+        <!--<p class="cost-form-error-item"></p>-->
+    <!--</div>-->
+    <button class="btn btn-block vgn-btn-green" id="createReportBtn">Create Report</button>
 </form>
+
+<!-- Ajax animation spinner -->
+<div class="col-xs-12 create-report-ajax-spinner" style="display: none;">
+    <p class="text-center">
+        <img src="/images/spinner-gray.gif" alt="loading ..."/><br/>
+        <!--loading-->
+    </p>
+</div>
+<div class="reports-table-no-data" style="display: none">
+    <p>You haven't added any expense yet.</p>
+</div>
