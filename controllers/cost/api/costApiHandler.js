@@ -596,22 +596,23 @@ var CostApiHandler = function (app) {
 
         workflow.on('createReport', function (docs) {
             var fs = require('fs');
+            var path = require('path');
             var reportFileName = "report-" + Date.now() + '.csv';
-            var path = __dirname + "../../../files/reports/" + reportFileName;
-            console.log(path);
-            var reportStream = fs.createWriteStream(path);
+            var filePath = path.normalize(__dirname + "../../../../files/reports/" + reportFileName);
+            console.log(filePath);
+            var reportStream = fs.createWriteStream(filePath);
 
             reportStream.on('finish', function () {
-               workflow.emit('createReportRecord', reportFileName);
+               workflow.emit('createReportRecord', filePath);
             });
 
             reportStream.write('"DATE","DESCRIPTION","CATEGORY","AMOUNT"\n');
 
             for (var i = 0, len = docs.length; i < len; i++) {
                 var current = docs[i];
-                reportStream.write('"' + current.date + '"');
-                reportStream.write('"' + current.description + '"');
-                reportStream.write('"' + current.category.name + '"');
+                reportStream.write('"' + current.date + '",');
+                reportStream.write('"' + current.description + '",');
+                reportStream.write('"' + current.category.name + '",');
                 reportStream.write('"' + current.amount + '"');
                 reportStream.write('\n');
             }
@@ -619,14 +620,14 @@ var CostApiHandler = function (app) {
             reportStream.end();
         });
 
-        workflow.on('createReportRecord', function (fileName) {
+        workflow.on('createReportRecord', function (filePath) {
             var fieldsToSet = {
                 user: req.user._id,
                 name: req.body.title,
                 startDate: req.body.startDate,
                 endDate: req.body.endDate,
                 type: req.body.type,
-                source: "../../../files/reports/" + fileName
+                source: filePath
             };
 
             req.app.db.models.Report.create(fieldsToSet, function (err, newDoc) {
