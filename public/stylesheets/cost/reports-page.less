@@ -1,3 +1,5 @@
+@import 'cost.variable.less';
+
 #reportsPage {
 
   .cost-helper-header {
@@ -22,5 +24,60 @@
   #createReportBtn {
     margin-top: 30px;
     margin-bottom: 0;
+  }
+}
+
+#reportsTable {
+  border-left: 1px solid #eee;
+
+  td:first-child {
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 30px;
+    color: #aaa;
+
+    span {
+      border: 1px solid #eee;
+      padding: 10px;
+      border-radius: 100px;
+      background-color: #f6f6f6;
+    }
+  }
+
+  .reports-table-name {
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+
+  .reports-table-dates {
+    color: @top-nav-background-color;
+  }
+
+  .reports-table-type {
+
+    span {
+      color: @top-nav-background-color;
+      font-size: 16px;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      cursor: pointer;
+      display: block;
+
+       &:hover {
+        background: @top-nav-button-color;
+        color: white;
+      }
+    }
+  }
+
+  .reports-table-delete-button {
+    color: red;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      //color: red;
+    }
   }
 }

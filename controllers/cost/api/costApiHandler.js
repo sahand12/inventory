@@ -536,7 +536,7 @@ var CostApiHandler = function (app) {
     };
 
 
-    this.getAllReports = function (req, res, next) {
+    this.getAllReportsByUser = function (req, res, next) {
         var query = { user: req.user._id };
         req.app.db.models.Report.find(query).sort({ createdAt: -1 }).exec(function (err, results) {
             if (err) {
@@ -598,18 +598,19 @@ var CostApiHandler = function (app) {
             var fs = require('fs');
             var path = require('path');
             var reportFileName = "report-" + Date.now() + '.csv';
-            var filePath = path.normalize(__dirname + "../../../../files/reports/" + reportFileName);
+            var filePath = path.normalize(__dirname + "../../../../public/files/reports/" + reportFileName);
             console.log(filePath);
             var reportStream = fs.createWriteStream(filePath);
 
             reportStream.on('finish', function () {
-               workflow.emit('createReportRecord', filePath);
+               workflow.emit('createReportRecord', reportFileName);
             });
 
-            reportStream.write('"DATE","DESCRIPTION","CATEGORY","AMOUNT"\n');
+            reportStream.write('"TITLE","DATE","DESCRIPTION","CATEGORY","AMOUNT"\n');
 
             for (var i = 0, len = docs.length; i < len; i++) {
                 var current = docs[i];
+                reportStream.write('"' + current.title + '",');
                 reportStream.write('"' + current.date + '",');
                 reportStream.write('"' + current.description + '",');
                 reportStream.write('"' + current.category.name + '",');
@@ -620,14 +621,14 @@ var CostApiHandler = function (app) {
             reportStream.end();
         });
 
-        workflow.on('createReportRecord', function (filePath) {
+        workflow.on('createReportRecord', function (fileName) {
             var fieldsToSet = {
                 user: req.user._id,
                 name: req.body.title,
                 startDate: req.body.startDate,
                 endDate: req.body.endDate,
                 type: req.body.type,
-                source: filePath
+                fileName: fileName
             };
 
             req.app.db.models.Report.create(fieldsToSet, function (err, newDoc) {
@@ -646,6 +647,26 @@ var CostApiHandler = function (app) {
 
         workflow.emit('validate');
     };
+
+
+    this.sendReport = function (req, res, next) {
+        var fileName = req.query.fn;
+        var fileType = req.query.ft;
+        var fs = require('fs');
+        console.log(fileName);
+        var path = '/files/reports/' + fileName + '.' + fileType;
+        fs.exists(path, function (exists) {
+            if (exists) {
+                return res.download(path);
+            }
+            else {
+                return res.send({
+                    success: false,
+                    postErrors: { error: 'file does not exist' }
+                });
+            }
+        });
+    }
 };
 
 exports = module.exports = CostApiHandler;

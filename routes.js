@@ -175,8 +175,9 @@ exports = module.exports = function (app, passport) {
     app.get('/cost/api/expenses/count', ensureAuthenticated, costApiHandler.findTotalNumberOfExpenses);
     app.put('/cost/api/expenses', ensureAuthenticated, costApiHandler.handleUpdateExpenseRequest);
     app.delete('/cost/api/expenses', ensureAuthenticated, costApiHandler.handleDeleteExpenseRequest);
-    app.get('/cost/api/reports', ensureAuthenticated, costApiHandler.getAllReports);
+    app.get('/cost/api/reports', ensureAuthenticated, costApiHandler.getAllReportsByUser);
     app.post('/cost/api/reports', ensureAuthenticated, costApiHandler.createNewReport);
+    app.get('/cost/api/reports/download', ensureAuthenticated, costApiHandler.sendReport);
 
     // use pagination to get list of expenses
     app.get('/cost/api/expenses/list', ensureAuthenticated, costApiHandler.getPaginatedExpensesByUser);

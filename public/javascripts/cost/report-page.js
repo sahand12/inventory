@@ -7,6 +7,7 @@ $(function () {
      */
     app.addListener('page.load', buildReportsTable);
     app.addListener('create.report.submit', createReportSubmitHandler);
+    app.addListener('create.report.success', buildReportsTable);
 
 
     /*
@@ -18,6 +19,10 @@ $(function () {
     var $formAjaxSpinner = $('.create-report-ajax-spinner');
     var $reportForm = $('#createReportForm');
     var $createReportBtn = $('#createReportBtn');
+    var $reportsTable = $('#reportsTable');
+    var $reportsTableBody = $('#reportsTableBody');
+    var $reportsTableDeleteBtn = $('.reports-table-delete-button');
+    var $reportsTableTypeBtn = $('.reports-table-type');
 
 
     /*
@@ -38,17 +43,39 @@ $(function () {
         $.ajax({
             method: 'get',
             url: '/cost/api/reports',
-            //beforeSend: tableAjaxInProgress,
-            done: tableAjaxHandler
+            beforeSend: tableAjaxInProgress
+        }).done(function (response) {
+            tableAjaxEnded(response);
         });
     }
 
     function tableAjaxInProgress () {
-        $ajaxSpinner.show();
+        // clear the table
+        $reportsTableBody.html("");
+        $tableAjaxSpinner.show();
     }
 
-    function tableAjaxHandler (response) {
-        console.log(response);
+    function tableAjaxEnded (response) {
+        $tableAjaxSpinner.hide();
+
+        // build the table
+        populateReportsTable(response.data);
+    }
+
+    function populateReportsTable (data) {
+        var html = "";
+        console.log(data);
+        for (var i = 0, len = data.length; i < len; i++) {
+            var report = data[i];
+            var type = report.type;
+            var name = report.fileName.slice(0, -4);
+            html += "<tr><td><span class='" + ( (type === 'pdf') ? "fa fa-file-pdf-o" : "fa fa-file-excel-o" ) + "'></span></td>" +
+                "<td><div class='row reports-table-name'>" + report.name + "</div><div class='row reports-table-dates'>" + app.helpers.formatDate(report.startDate) + " - " + app.helpers.formatDate(report.endDate) + "</div></td>" +
+                "<td><div class='reports-table-type text-uppercase text-center' data-report-name='" + name + "' data-report-type=" + type + "><span>" + type + "</span></div></td>" +
+                "<td><div class='reports-table-delete-button text-center'><span class='glyphicon glyphicon-trash'></span></div></td>" +
+                "</tr>";
+        }
+        $reportsTableBody.append(html);
     }
 
     /*
@@ -109,8 +136,7 @@ $(function () {
             data: formData,
             beforeSend: createReportAjaxInProgress
         }).done( function (response) {
-            $formAjaxSpinner.hide();
-            console.log(response);
+            createReportAjaxEnded(response);
         });
     }
 
@@ -119,8 +145,42 @@ $(function () {
     }
 
     function createReportAjaxEnded (response) {
-        console.log(response);
         $formAjaxSpinner.hide();
+        app.emit('create.report.success');
     }
 
+
+    /*
+     * ----------------------------------------------------
+     *      HOVER AND CLICK EVENTS FOR DELETE AND DOWNLOAD BUTTONS
+     * ----------------------------------------------------
+     */
+    $reportsTable.delegate('.reports-table-type', 'mouseover mouseleave click', function (e) {
+        var $this = $(this);
+        if (e.type === 'mouseover') {
+            $this.html('<span class="glyphicon glyphicon-save"></span>');
+        }
+        else if (e.type === 'mouseleave') {
+            $this.html('<span>' + $this.attr('data-report-type') + "</span>");
+        }
+
+        else {
+            // click event
+            var qs = "?fn=" + $this.attr('data-report-name') + "&ft=" + $this.attr('data-report-type');
+
+            $.ajax({
+                method: 'get',
+                url: '/cost/api/reports/download' + qs
+            }).done(function (response) {
+                console.log(response);
+            });
+        }
+
+    });
+
+
+
+    $reportsTable.delegate('.reports-table-delete-button', 'mouseenter', function (e) {
+
+    });
 });

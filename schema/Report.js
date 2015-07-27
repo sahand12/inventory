@@ -10,7 +10,7 @@ exports = module.exports = function (app, mongoose) {
         startDate: { type: Date },
         endDate: { type: Date },
         type: { type: String },
-        source: { type: String }
+        fileName: { type: String }
     });
 
 
