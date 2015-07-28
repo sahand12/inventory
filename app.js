@@ -103,7 +103,7 @@ app.locals.cacheBreaker = 'br34k-01';
 require('./passport')(app, passport);
 
 // setup routes
-require('./routes')(app, passport);
+require('./routes')(express, app, passport);
 
 // custom friendly error handler
 app.use(errorHandler.http500);

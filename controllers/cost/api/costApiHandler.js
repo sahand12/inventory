@@ -598,7 +598,7 @@ var CostApiHandler = function (app) {
             var fs = require('fs');
             var path = require('path');
             var reportFileName = "report-" + Date.now() + '.csv';
-            var filePath = path.normalize(__dirname + "../../../../public/files/reports/" + reportFileName);
+            var filePath = path.normalize(__dirname + "../../../../files/reports/" + reportFileName);
             console.log(filePath);
             var reportStream = fs.createWriteStream(filePath);
 
@@ -653,11 +653,14 @@ var CostApiHandler = function (app) {
         var fileName = req.query.fn;
         var fileType = req.query.ft;
         var fs = require('fs');
-        console.log(fileName);
         var path = '/files/reports/' + fileName + '.' + fileType;
+        var contentType = (fileType === 'csv') ? 'text/csv' : 'application/pdf';
+
         fs.exists(path, function (exists) {
             if (exists) {
-                return res.download(path);
+                res.setHeader('content-disposition', 'attachment; filename=' + fileName);
+                res.setHeader('Content-Type', contentType);
+                return res.send(path);
             }
             else {
                 return res.send({

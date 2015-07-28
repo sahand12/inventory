@@ -15,7 +15,7 @@ function ensureAuthenticated (req, res, next) {
     }
     res.set('X-Auth-Required', 'true');
     req.session.returnUrl = req.originalUrl;
-    return res.redirect('/sim/login');
+    return res.redirect('/login');
 }
 
 function ensureCostAdmin (req, res, next) {
@@ -75,7 +75,7 @@ function ensureOwner (req, res, next) {
     return res.redirect('/sim/authError/');
 }
 
-exports = module.exports = function (app, passport) {
+exports = module.exports = function (express, app, passport) {
 
     /**
      * ------------------------------------
@@ -188,5 +188,11 @@ exports = module.exports = function (app, passport) {
     // cost admin pages
     app.get('/cost/admin/total-expenses', ensureAuthenticated, ensureCostAdmin, costHandler.showAllExpensesPage);
     app.get('/cost/api/expenses/all', ensureAuthenticated, ensureCostAdmin, costApiHandler.getAllExpenses);
+
+
+
+    // Securing static contents
+    app.use('/files/reports', ensureAuthenticated);
+    app.use('/files/reports', express.static( __dirname + "/files/reports" ));
 
 };

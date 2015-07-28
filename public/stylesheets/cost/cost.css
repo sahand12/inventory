@@ -663,16 +663,20 @@ input#end {
 #reportsTable .reports-table-dates {
   color: #9bd5cb;
 }
+#reportsTable .reports-type-anchor {
+  text-decoration: none;
+  text-underline: none;
+}
+#reportsTable .reports-table-type {
+  font-size: 16px;
+}
 #reportsTable .reports-table-type span {
   color: #9bd5cb;
-  font-size: 16px;
-  padding-top: 14px;
-  padding-bottom: 14px;
+  padding: 15px 30px;
   cursor: pointer;
-  display: block;
 }
 #reportsTable .reports-table-type span:hover {
-  background: #3eb39e;
+  background-color: #3eb39e;
   color: white;
 }
 #reportsTable .reports-table-delete-button {

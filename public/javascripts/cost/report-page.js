@@ -67,11 +67,10 @@ $(function () {
         console.log(data);
         for (var i = 0, len = data.length; i < len; i++) {
             var report = data[i];
-            var type = report.type;
-            var name = report.fileName.slice(0, -4);
-            html += "<tr><td><span class='" + ( (type === 'pdf') ? "fa fa-file-pdf-o" : "fa fa-file-excel-o" ) + "'></span></td>" +
+
+            html += "<tr><td><span class='" + ( (report.type === 'pdf') ? "fa fa-file-pdf-o" : "fa fa-file-excel-o" ) + "'></span></td>" +
                 "<td><div class='row reports-table-name'>" + report.name + "</div><div class='row reports-table-dates'>" + app.helpers.formatDate(report.startDate) + " - " + app.helpers.formatDate(report.endDate) + "</div></td>" +
-                "<td><div class='reports-table-type text-uppercase text-center' data-report-name='" + name + "' data-report-type=" + type + "><span>" + type + "</span></div></td>" +
+                "<td><a download class='reports-type-anchor' href='/files/reports/" + report.fileName + "'><div class='reports-table-type text-uppercase text-center' data-report-name='" + name + "' data-report-type=" + report.type + "><span>" + report.type + "</span></div></td>" +
                 "<td><div class='reports-table-delete-button text-center'><span class='glyphicon glyphicon-trash'></span></div></td>" +
                 "</tr>";
         }
@@ -155,32 +154,13 @@ $(function () {
      *      HOVER AND CLICK EVENTS FOR DELETE AND DOWNLOAD BUTTONS
      * ----------------------------------------------------
      */
-    $reportsTable.delegate('.reports-table-type', 'mouseover mouseleave click', function (e) {
+    $reportsTable.delegate('.reports-table-type span', 'mouseover mouseleave', function (e) {
         var $this = $(this);
         if (e.type === 'mouseover') {
-            $this.html('<span class="glyphicon glyphicon-save"></span>');
+            $this.html("").addClass('glyphicon glyphicon-save');
         }
         else if (e.type === 'mouseleave') {
-            $this.html('<span>' + $this.attr('data-report-type') + "</span>");
+            $this.removeClass('glyphicon glyphicon-save').text( $this.parent().attr('data-report-type'));
         }
-
-        else {
-            // click event
-            var qs = "?fn=" + $this.attr('data-report-name') + "&ft=" + $this.attr('data-report-type');
-
-            $.ajax({
-                method: 'get',
-                url: '/cost/api/reports/download' + qs
-            }).done(function (response) {
-                console.log(response);
-            });
-        }
-
-    });
-
-
-
-    $reportsTable.delegate('.reports-table-delete-button', 'mouseenter', function (e) {
-
     });
 });
