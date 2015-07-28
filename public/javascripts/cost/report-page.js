@@ -70,7 +70,7 @@ $(function () {
 
             html += "<tr><td><span class='" + ( (report.type === 'pdf') ? "fa fa-file-pdf-o" : "fa fa-file-excel-o" ) + "'></span></td>" +
                 "<td><div class='row reports-table-name'>" + report.name + "</div><div class='row reports-table-dates'>" + app.helpers.formatDate(report.startDate) + " - " + app.helpers.formatDate(report.endDate) + "</div></td>" +
-                "<td><a download class='reports-type-anchor' href='/files/reports/" + report.fileName + "'><div class='reports-table-type text-uppercase text-center' data-report-name='" + name + "' data-report-type=" + report.type + "><span>" + report.type + "</span></div></td>" +
+                "<td><a download class='reports-type-anchor' href='/files/reports/" + report.fileName + "'><div class='reports-table-type text-uppercase text-center' data-report-type=" + report.type + "><span>" + report.type + "</span></div></td>" +
                 "<td><div class='reports-table-delete-button text-center'><span class='glyphicon glyphicon-trash'></span></div></td>" +
                 "</tr>";
         }
