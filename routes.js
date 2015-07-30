@@ -178,6 +178,7 @@ exports = module.exports = function (express, app, passport) {
     app.get('/cost/api/reports', ensureAuthenticated, costApiHandler.getAllReportsByUser);
     app.post('/cost/api/reports', ensureAuthenticated, costApiHandler.createNewReport);
     app.get('/cost/api/reports/download', ensureAuthenticated, costApiHandler.sendReport);
+    app.delete('/cost/api/reports/:id', ensureAuthenticated, costApiHandler.deleteReport);
 
     // use pagination to get list of expenses
     app.get('/cost/api/expenses/list', ensureAuthenticated, costApiHandler.getPaginatedExpensesByUser);

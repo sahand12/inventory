@@ -9,7 +9,7 @@ var CostApi = function () {
      *               individual user
      */
     this.getAllExpenses = function (req, res, next) {
-        var query = { user: req.user._id};
+        var query = { user: req.user._id };
         var filter = {  };
         req.app.db.models.Expense
             .find(query, filter)

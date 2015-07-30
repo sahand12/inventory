@@ -71,7 +71,7 @@ $(function () {
             html += "<tr><td><span class='" + ( (report.type === 'pdf') ? "fa fa-file-pdf-o" : "fa fa-file-excel-o" ) + "'></span></td>" +
                 "<td><div class='row reports-table-name'>" + report.name + "</div><div class='row reports-table-dates'>" + app.helpers.formatDate(report.startDate) + " - " + app.helpers.formatDate(report.endDate) + "</div></td>" +
                 "<td><a download class='reports-type-anchor' href='/files/reports/" + report.fileName + "'><div class='reports-table-type text-uppercase text-center' data-report-type=" + report.type + "><span>" + report.type + "</span></div></td>" +
-                "<td><div class='reports-table-delete-button text-center'><span class='glyphicon glyphicon-trash'></span></div></td>" +
+                "<td><div class='reports-table-delete-button text-center'><span data-report-id='" + report._id + "' class='glyphicon glyphicon-trash'></span></div></td>" +
                 "</tr>";
         }
         $reportsTableBody.append(html);
@@ -163,4 +163,41 @@ $(function () {
             $this.removeClass('glyphicon glyphicon-save').text( $this.parent().attr('data-report-type'));
         }
     });
+
+
+    /*
+     * -----------------------------------
+     *       DELETE REPORT BUTTON
+     * -----------------------------------
+     */
+    $reportsTable.delegate('.reports-table-delete-button','click', function (e) {
+        e.preventDefault();
+        var $btn = $(this).find('span');
+        var reportId = $btn.attr('data-report-id');
+        var url = '/cost/api/reports/' + reportId;
+
+        var confirmResult = confirm('Are you sure you want to delete this report?');
+        confirmResult ? makeDeleteReportReqToServer(url, $btn) : "";
+    });
+
+    function makeDeleteReportReqToServer (url, $btn) {
+        $.ajax({
+            url: url,
+            method: 'delete',
+            beforeSend: deleteReportAjaxInProgress
+        }).done(function (response) {
+            console.log(this);
+            deleteReportAjaxEnded(response, $btn);
+        });
+    }
+
+    function deleteReportAjaxInProgress() {
+
+    }
+
+    function deleteReportAjaxEnded (response, $btn) {
+        if (response.success) {
+            $btn.closest('tr').remove();
+        }
+    }
 });
