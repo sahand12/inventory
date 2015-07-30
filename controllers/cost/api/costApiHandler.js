@@ -649,8 +649,8 @@ var CostApiHandler = function (app) {
 
             doc.pipe( pdfStream );
 
-            //var fontPath = path.normalize(__dirname + "../../../../public/fonts/josefin-slab/JosefinSlab-Bold.ttf");
-            //doc.registerFont('josefin', fontPath);
+            var fontPath = path.normalize(__dirname + "../../../../public/fonts/Lateef.ttf");
+            doc.registerFont('yekan', fontPath);
             //fontPath = path.normalize(__dirname + "../../../../public/fonts/scheherazade/ScheherazadeRegOT.ttf");
             //doc.registerFont('arabic', fontPath);
 
@@ -676,7 +676,7 @@ var CostApiHandler = function (app) {
             var total = 0;
 
             doc.y = doc.y + 10;
-            //doc.font('Times-Roman');
+
             for (var i = 0, len = data.length; i < len; i++) {
                 var exp = data[i];
                 total += exp.amount;
@@ -689,7 +689,12 @@ var CostApiHandler = function (app) {
                 var y = doc.y + 13;
                 if (i % 2 === 0 ) doc.rect(20, doc.y, 552, doc.currentLineHeight() + 26).fill('#f6f6f6');
                 doc.fillColor('#464646').fontSize(11).text(formatDateForTable(exp.date), 30, y, { width: 80, align: 'left' });
+                var isPersian = checkIfPersian(exp.title);
+                if (isPersian) {
+                    doc.font('yekan');
+                }
                 doc.fillColor('#464646').fontSize(11).text(exp.title.slice(0, 35), 110, y, { width: 186, align: 'left' });
+                doc.font('Helvetica');
                 doc.fillColor('#464646').fontSize(11).text(exp.category.name, 326, y, { width: 114, align: 'left' });
                 doc.fillColor('red').fontSize(11).text(formatAmount(exp.amount), 444, y, { width: 120, align: 'right' }).moveDown();
                 if (i === 12) {
@@ -761,6 +766,15 @@ var CostApiHandler = function (app) {
                 var day = date.getDate();
                 return month + ' ' + day + ', ' + year;
             }
+
+            function checkIfPersian (string) {
+                for (var i = 0, len = string.length; i < len; i++) {
+                    if (string.charCodeAt(i) > 128) {
+                        return true;
+                    }
+                }
+            }
+
 
             function formatDateForTable (d) {
                 var date = new Date(d);
