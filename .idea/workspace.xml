@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f15174e-ed4e-4874-b2fe-4736a9113461" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controllers/cost/api/api.v2.js" afterPath="$PROJECT_DIR$/controllers/cost/api-2.0/api.v2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/basicAuth.iml" afterPath="$PROJECT_DIR$/.idea/basicAuth.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/cost/api/costApiHandler.js" afterPath="$PROJECT_DIR$/controllers/cost/api/costApiHandler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/cost/report-page.js" afterPath="$PROJECT_DIR$/public/javascripts/cost/report-page.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.js" afterPath="$PROJECT_DIR$/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="basicAuth.iws" />
@@ -60,11 +54,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="report-page.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="report-page.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/cost/report-page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29512516">
+            <state vertical-scroll-proportion="0.0">
               <caret line="179" column="68" selection-start-line="179" selection-start-column="68" selection-end-line="179" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.07378129">
+              <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -86,7 +90,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/controllers/website/frontEndHandler.js" />
         <option value="$PROJECT_DIR$/views/website/domains/domains.handlebars" />
         <option value="$PROJECT_DIR$/views/website/challenges/challenges.handlebars" />
         <option value="$PROJECT_DIR$/views/website/challenges/well-placement.handlebars" />
@@ -137,6 +140,7 @@
         <option value="$PROJECT_DIR$/controllers/cost/api-2.0/api.v2.js" />
         <option value="$PROJECT_DIR$/controllers/cost/api/costApiHandler.js" />
         <option value="$PROJECT_DIR$/public/javascripts/cost/report-page.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -774,8 +778,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/cost/report-page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29512516">
+        <state vertical-scroll-proportion="0.0">
           <caret line="179" column="68" selection-start-line="179" selection-start-column="68" selection-end-line="179" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07378129">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
           <folding />
         </state>
       </provider>
