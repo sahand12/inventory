@@ -1,0 +1,51 @@
+@import "cost.variable.less";
+
+.settings-tab {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.settings-tab > .settings-tab-list {
+  padding: 20px;
+  background-color: white;
+  color: @top-nav-button-color;
+  margin-top: 4px;
+  line-height: 16px;
+
+  span {
+    font-size: 16px;
+  }
+
+  &:hover {
+    background-color: @top-nav-background-color;
+    cursor: pointer;
+    color: white;
+  }
+}
+
+.settings-tab-list.settings-tab-active {
+  background-color: @top-nav-button-color;
+  color: white;
+
+  &:hover {
+    background-color: @top-nav-button-color;
+    color: white;
+    cursor: default;
+  }
+}
+
+.settings-tab-destination {
+  //display: none;
+  margin-top: 20px;
+}
+
+.settings-form {
+
+  input {
+    border: 2px solid @top-nav-background-color;
+  }
+
+  button {
+    margin-top: 25px;
+  }
+}

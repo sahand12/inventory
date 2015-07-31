@@ -156,8 +156,22 @@ var CostHandler = function CostHandler (app) {
         };
 
         return res.render('cost/reports', data);
-    }
+    };
 
+
+    /**
+     * GET    /cost/settings
+     */
+    this.showSettingsPage = function (req, res, next) {
+        var data = {
+            layout: 'cost.dashboard.handlebars',
+            user: req.user,
+            title: 'Settings',
+            settingsPage: true
+        };
+
+        return res.render('cost/settings-page', data);
+    };
 
 };
 

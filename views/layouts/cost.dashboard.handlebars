@@ -57,7 +57,7 @@
             </ul>
             <hr class="cost-sidebar-hr"/>
             <ul class="nav nav-sidebar">
-                <!--<li><a href="/cost/settings">Settings</a></li>-->
+                <li class="{{#if settingsPage}}active{{/if}}"><a href="/cost/settings">Settings</a></li>
                 <!--<li><a href="/cost/faq">FAQ</a></li>-->
                 <li><a href="/logout">Log Out</a></li>
             </ul>
@@ -124,6 +124,9 @@
 {{/if}}
 {{#if adminExpensesPage}}
     <script src="/javascripts/cost/total-expenses.js"></script>
+{{/if}}
+{{#if settingsPage}}
+    <script src="/javascripts/cost/api/settings-page.js"></script>
 {{/if}}
 
 </body>
