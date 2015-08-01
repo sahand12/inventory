@@ -144,6 +144,10 @@
   color: white;
   background-color: #3eb39e;
 }
+.vgn-btn-green:hover {
+  background-color: #37a08d;
+  color: white;
+}
 .vgn-form-green {
   padding: 20px 10px;
 }

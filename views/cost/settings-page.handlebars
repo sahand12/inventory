@@ -13,47 +13,60 @@
     <div id="profileSettings" class="settings-tab-destination">
         <form class="settings-form" id="profileSettingsUpdate">
             <div class="form-group">
-                <input type="text" name="profileFirstName" class="form-control" value="{{user.name.first}}"/>
+                <label for="profileFirstName">First Name: </label>
+                <input type="text" name="profileFirstName" id="profileFirstName" class="form-control" value="{{user.name.first}}"/>
             </div>
             <div class="form-group">
-                <input type="text" name="profileLastName" class="form-control" value="{{user.name.last}}"/>
+                <label for="profileLastName">Last Name: </label>
+                <input type="text" name="profileLastName" id="profileLastName" class="form-control" value="{{user.name.last}}"/>
             </div>
             <div class="form-group">
-                <input type="email" class="form-control" name="profileEmail" value="{{user.email}}"/>
+                <label for="profileEmail">Email: </label>
+                <input type="email" id='profileEmail' class="form-control" name="profileEmail" value="{{user.email}}"/>
             </div>
             <button type="button" class="btn btn-block vgn-btn-green">Update</button>
         </form>
     </div>
-    <div id="workSettings" class="settings-tab-destination">
+    <div id="otherSettings" class="settings-tab-destination">
         <form class="settings-form" id="otherSettingsUpdate">
             <div class="form-group">
-                <input type="number" name="profileCellphone" class="form-control" placeholder="Mobile Number" value="{{user.profile.cellphone[0]}}"/>
+                <label for="profileCellphone">Cellphone Number: </label>
+                <input type="text" name="profileCellphone" id="profileCellphone" class="form-control" placeholder="" value="{{user.profile.cellphone}}"/>
             </div>
             <div class="form-group">
-                <input type="text" name="profileHomeAddress" class="form-control" placeholder="Home Address" value="{{user.profile.homeAddress.address}}"/>
+                <label for="profileHomeAddress">Home Address: </label>
+                <input type="text" name="profileHomeAddress" id="profileHomeAddress" class="form-control" placeholder="" value="{{user.profile.homeAddress.address}}"/>
             </div>
             <div class="form-group">
-                <input type="number" name="profileHomeTel" class="form-control" placeholder="Home Tel" value="{{user.profile.homeAddress.tel[0]}}"/>
+                <label for="profileHomeTel">Home Phone Number: </label>
+                <input type="number" name="profileHomeTel" id="profileHomeTel" class="form-control" placeholder="" value="{{user.profile.homeAddress.tel}}"/>
             </div>
             <div class="form-group">
-                <input type="text" name="profileHomeTown" class="form-control" placeholder="Home City" value="{{user.profile.homeAddress.city}}"/>
+                <label for="#profileHomeTown">Home City: </label>
+                <input type="text" id="profileHomeTown" name="profileHomeTown" class="form-control" placeholder="" value="{{user.profile.homeAddress.city}}"/>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control"/></div>
+                <label for="profileHomeCountry">Home Country: </label>
+                <input type="text" name="profileHomeCountry"  class="form-control" placeholder="" value="{{user.profile.homeAddress.country}}"/></div>
+            <button type="button" class="btn btn-block vgn-btn-green">Update</button>
         </form>
     </div>
     
     <div id="passwordSettings" class="settings-tab-destination">
         <form id="passwordUpdate" class="settings-form">
             <div class="form-group">
-                <input class="form-control" name="profileOldPassword" type="password" placeholder="Current Password"/>
+                <label for="profileCurrentPass">Current Password: </label>
+                <input class="form-control" name="profileCurrentPass" id="profileCurrentPass" type="password" placeholder=""/>
             </div>
             <div class="form-group">
-                <input class="form-control" name="profileNewPassword" type="password" placeholder="New Password"/>
+                <label for="profileNewPass">New Password: </label>
+                <input class="form-control" name="profileNewPass" id="profileNewPass" type="password" placeholder=""/>
             </div>
             <div class="form-group">
-                <input class="form-control" name="profileNewConfirm" type="password" placeholder="Repeat New Password"/>
+                <label for="profileNewConfirm">Repeat New Password: </label>
+                <input class="form-control" name="profileNewConfirm" id="profileNewConfirm" type="password" placeholder=""/>
             </div>
+            <button type="button" class="btn btn-block vgn-btn-green settings-form-button">Update</button>
         </form>
     </div>
 </div>

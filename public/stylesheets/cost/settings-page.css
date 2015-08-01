@@ -27,6 +27,7 @@
   cursor: default;
 }
 .settings-tab-destination {
+  display: none;
   margin-top: 20px;
 }
 .settings-form input {
