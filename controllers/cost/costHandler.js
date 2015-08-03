@@ -167,7 +167,8 @@ var CostHandler = function CostHandler (app) {
             layout: 'cost.dashboard.handlebars',
             user: req.user,
             title: 'Settings',
-            settingsPage: true
+            settingsPage: true,
+            userJson: JSON.stringify(req.user)
         };
 
         return res.render('cost/settings-page', data);

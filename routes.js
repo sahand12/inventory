@@ -197,4 +197,14 @@ exports = module.exports = function (express, app, passport) {
     app.use('/files/reports', ensureAuthenticated);
     app.use('/files/reports', express.static( __dirname + "/files/reports" ));
 
+    /*
+     * --------------------------------
+     *     PROFILE SETTINGS ROUTES
+     * --------------------------------
+     */
+    var SettingsApiHandler = require('./controllers/cost/api/settingsApiHandler');
+    var settingsApiHandler = new SettingsApiHandler(app);
+
+    app.put('/cost/api/settings/:id', ensureAuthenticated, settingsApiHandler.updateUserProfile);
+
 };

@@ -43,27 +43,51 @@ $(function () {
      *      UPDATE FORM SUBMIT
      * ----------------------------
      */
-    var validationRules = {
-        
-    }
-    $updateBtn.on('click', function () {
-        var $inputs = $(this).siblings('.form-group').find('input');
-        var formData = {};
-        var errors = {};
-        $inputs.each(function (i, elem) {
-            var name = elem.id;
-            var value = elem.value;
-            var type = elem.type;
-            console.log(name, value, type);
-        });
+    var inputMap = {
+        profileFirstName: "name.first",
+        profileLastName: 'name.last',
+        profileEmail: 'email',
+        profileCurrentPassword: 'password',
+        profileNewPassword: 'newPassword',
+        profileNewConfirm: 'confirmPassword',
+        profileCellphone: 'profile.cellphone',
+        profileHomeAddress: 'profile.homeAddress.address',
+        profileHomeTel: 'profile.homeAddress.tel',
+        profileHomeCity: 'profile.homeAddress.city',
+        profileHomeCountry: 'profile.homeAddress.country'
+    };
 
-        validateUpdateInput(formData);
+
+    $updateBtn.on('click', function (e) {
+        var $this = $(this);
+        var updateType = $this.attr('data-update-type');
+        var $inputs = $this.closest('form').find('input');
+        var formData = {};
+        $inputs.each(function (i, elem) {
+            formData[elem.name] = elem.value;
+        });
+        console.log(formData);
+        updateUserAjax(formData, $this.attr('data-user-id'), updateType);
     });
 
-    function validateUpdateInput (data) {
+    function updateUserAjax (data, userId, updateType) {
+        $.ajax({
+            url: '/cost/api/settings/' + userId + "?type=" + updateType,
+            method: 'put',
+            data: data,
+            beforeSend: updateUserAjaxInProgress
+        }).done(function (response) {
+            updateUserAjaxEnded(response);
+        });
+    }
+
+    function updateUserAjaxInProgress () {
 
     }
 
+    function updateUserAjaxEnded (response) {
+        console.log(response);
+    }
 
 
 });
