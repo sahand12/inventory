@@ -86,9 +86,9 @@ console.log(req.params);
             }
 
             var fieldsToUpdate = {
-                'name.first': req.body['profileFirstName'],
-                'name.last': req.body['profileLastName'],
-                'email': req.body['profileEmail']
+                'name.first': req.body['profileFirstName'].trim(),
+                'name.last': req.body['profileLastName'].trim(),
+                'email': req.body['profileEmail'].trim()
             };
 
             workflow.emit('findUserAndUpdate',fieldsToUpdate);
@@ -204,6 +204,16 @@ console.log(req.params);
                     });
                 });
             });
+        });
+
+        workflow.on('validateOthers', function () {
+            if (req.body['profileCellphone']) {
+                req.checkBody('profileCellphone', req.body['profileCellphone'] + ' is not a valid cellphone number!').len(11, 20);
+            }
+            if (req.body['profileHomeAddress']){
+
+            }
+
         });
 
         workflow.emit('validate');
