@@ -157,3 +157,8 @@
   border: 2px solid #9bd5cb;
   margin-top: 20px;
 }
+.vgn-success-msg,
+.vgn-error-msg {
+  margin-bottom: 10px;
+  display: none;
+}

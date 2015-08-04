@@ -1,94 +1,124 @@
 <div class="col-xs-12">
     <h1 class="text-uppercase cost-helper-header"><span style="background: white;">settings</span></h1>
-</div>
+</div><!-- /.col-xs-12 -->
 
 <div class="col-sm-4">
     <ul class="settings-tab list-unstyled">
         <li class="settings-tab-list settings-tab-active" data-target="#profileSettings">Profile <span class="glyphicon glyphicon-menu-right pull-right" ></span></li>
         <li class="settings-tab-list" data-target="#passwordSettings">Password <span class="glyphicon glyphicon-menu-right pull-right"></span></li>
         <li class="settings-tab-list" data-target="#otherSettings">Other <span class="glyphicon glyphicon-menu-right pull-right"></span></li>
-    </ul>
-</div>
+    </ul><!-- /.settings-tab -->
+</div><!-- /.col-sm-4 -->
 <div class="col-sm-5 col-sm-offset-1">
+
+    <!-- Success Message -->
+    <div class="alert alert-success vgn-success-msg fade in" role="alert">
+        <button type="button" class="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <b>Oh great!</b> You successfully updated your profile.
+    </div>
+
+    <!-- Error Message -->
+    <div class="alert alert-danger vgn-error-msg fade in" role="alert">
+        <button type="button" class="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <b>Oh no!</b> Something went wrong!
+    </div>
+
+
     <div id="profileSettings" class="settings-tab-destination">
         <form class="settings-form" id="profileSettingsUpdate">
             <div class="form-group">
                 <label for="profileFirstName">First Name: </label>
                 <input type="text" name="profileFirstName" id="profileFirstName" class="form-control" value="{{user.name.first}}"/>
-                <p class="cost-form-error-item"></p>
-            </div>
+                <p class="settings-form-error-item"></p>
+            </div><!-- /.form-group -->
             <div class="form-group">
                 <label for="profileLastName">Last Name: </label>
                 <input type="text" name="profileLastName" id="profileLastName" class="form-control" value="{{user.name.last}}"/>
-                <p class="cost-form-error-item"></p>
-            </div>
+                <p class="settings-form-error-item"></p>
+            </div><!-- /.form-group -->
             <div class="form-group">
                 <label for="profileEmail">Email: </label>
                 <input type="email" id='profileEmail' class="form-control" name="profileEmail" value="{{user.email}}"/>
-                <p class="cost-form-error-item"></p>
-            </div>
+                <p class="settings-form-error-item"></p>
+            </div><!-- /.form-group -->
             <button type="button" class="btn btn-block vgn-btn-green" data-update-type="profile" data-user-id="{{user._id}}">Update</button>
-        </form>
-    </div>
+        </form><!-- /.settings-form -->
+    </div><!-- /#profile-settings -->
     <div id="otherSettings" class="settings-tab-destination">
         <form class="settings-form" id="otherSettingsUpdate">
             <div class="form-group">
                 <label for="profileCellphone">Cellphone Number: </label>
                 <input type="text" name="profileCellphone" id="profileCellphone" class="form-control" placeholder="" value="{{user.profile.cellphone}}"/>
-                <p class="cost-form-error-item"></p>
-            </div>
+                <p class="settings-form-error-item"></p>
+            </div><!-- /.form-group -->
             <div class="form-group">
                 <label for="profileHomeAddress">Home Address: </label>
                 <input type="text" name="profileHomeAddress" id="profileHomeAddress" class="form-control" placeholder="" value="{{user.profile.homeAddress.address}}"/>
-                <p class="cost-form-error-item"></p>
-            </div>
+                <p class="settings-form-error-item"></p>
+            </div><!-- /.form-group -->
             <div class="form-group">
                 <label for="profileHomeTel">Home Phone Number: </label>
                 <input type="text" name="profileHomeTel" id="profileHomeTel" class="form-control" placeholder="" value="{{user.profile.homeAddress.tel}}"/>
-                <p class="cost-form-error-item"></p>
-            </div>
+                <p class="settings-form-error-item"></p>
+            </div><!-- /.form-group -->
             <div class="form-group">
                 <label for="#profileHomeCity">Home City: </label>
                 <input type="text" id="profileHomeCity" name="profileHomeCity" class="form-control" placeholder="" value="{{user.profile.homeAddress.city}}"/>
-                <p class="cost-form-error-item"></p>
-            </div>
+                <p class="settings-form-error-item"></p>
+            </div><!-- /.form-group -->
             <div class="form-group">
                 <label for="profileHomeCountry">Home Country: </label>
-                <input type="text" name="profileHomeCountry" id="profileHomeCountry" class="form-control" placeholder="" value="{{user.profile.homeAddress.country}}"/></div>
-            <p class="cost-form-error-item"></p>
+                <input type="text" name="profileHomeCountry" id="profileHomeCountry" class="form-control" placeholder="" value="{{user.profile.homeAddress.country}}"/>
+                <p class="settings-form-error-item"></p>
+            </div><!-- /.form-group -->
             <button type="button" class="btn btn-block vgn-btn-green" data-update-type="others" data-user-id="{{user._id}}">Update</button>
-        </form>
-    </div>
+        </form><!-- /.settings-form -->
+    </div><!-- /#otherSettings -->
     
     <div id="passwordSettings" class="settings-tab-destination">
         <form id="passwordUpdate" class="settings-form">
             <div class="form-group">
                 <label for="profileCurrentPassword">Current Password: </label>
                 <input class="form-control" name="profileCurrentPassword" id="profileCurrentPassword" type="password" placeholder=""/>
-                <p class="cost-form-error-item"></p>
-            </div>
+                <p class="settings-form-error-item"></p>
+            </div><!-- /.form-group -->
             <div class="form-group">
                 <label for="profileNewPassword">New Password: </label>
                 <input class="form-control" name="profileNewPassword" id="profileNewPassword" type="password" placeholder=""/>
-                <p class="cost-form-error-item"></p>
-            </div>
+                <p class="settings-form-error-item"></p>
+            </div><!-- /.form-group -->
             <div class="form-group">
                 <label for="profileNewConfirm">Repeat New Password: </label>
                 <input class="form-control" name="profileNewConfirm" id="profileNewConfirm" type="password" placeholder=""/>
-                <p class="cost-form-error-item"></p>
-            </div>
+                <p class="settings-form-error-item"></p>
+            </div><!-- /.form-group -->
             <button type="button" class="btn btn-block vgn-btn-green settings-form-button" data-update-type="password" data-user-id="{{user._id}}">Update</button>
-        </form>
+        </form><!-- /#passwordUpdate -->
+    </div><!-- /#passwordSettings -->
+
+    <!-- Ajax animation spinner -->
+    <div class="col-xs-12 settings-form-ajax-spinner">
+        <p class="text-center">
+            <img src="/images/spinner-gray.gif" alt="loading ..."/><br/>
+            <!--loading-->
+        </p>
     </div>
-</div>
+
+
+</div><!-- /.col-sm-5 -->
 <script id="userProfileJson">
     var vgnUserProfile = {
-        firstName: "{{user.name.first}}",
-        lastName: "{{user.name.last}}",
-        email: "{{user.email}}",
-        cellphoneNum: "{{user.cellphone}}",
-        homeAddress: "{{user.profile.homeAddress.address}}",
-        homeTell: "{{user.profile.homeAddress.tel}}",
-        country: "{{user.profile.homeAddress.country}}"
+        profileFirstName: "{{user.name.first}}",
+        profileLastName: "{{user.name.last}}",
+        profileEmail: "{{user.email}}",
+        profileCellphone: "{{user.profile.cellphone}}",
+        profileHomeAddress: "{{user.profile.homeAddress.address}}",
+        profileHomeTell: "{{user.profile.homeAddress.tel}}",
+        profileHomeCountry: "{{user.profile.homeAddress.country}}",
+        profileHomeCity: "{{user.profile.homeAddress.city}}"
     };
 </script>
