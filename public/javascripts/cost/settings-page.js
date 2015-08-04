@@ -106,7 +106,6 @@ $(function () {
     var inputMap = {
         profileFirstName: "name.first",
         profileLastName: 'name.last',
-        profileEmail: 'email',
         profileCurrentPassword: 'password',
         profileNewPassword: 'newPassword',
         profileNewConfirm: 'confirmPassword',

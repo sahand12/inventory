@@ -40,11 +40,6 @@
                 <input type="text" name="profileLastName" id="profileLastName" class="form-control" value="{{user.name.last}}"/>
                 <p class="settings-form-error-item"></p>
             </div><!-- /.form-group -->
-            <div class="form-group">
-                <label for="profileEmail">Email: </label>
-                <input type="email" id='profileEmail' class="form-control" name="profileEmail" value="{{user.email}}"/>
-                <p class="settings-form-error-item"></p>
-            </div><!-- /.form-group -->
             <button type="button" class="btn btn-block vgn-btn-green" data-update-type="profile" data-user-id="{{user._id}}">Update</button>
         </form><!-- /.settings-form -->
     </div><!-- /#profile-settings -->
@@ -117,7 +112,7 @@
         profileEmail: "{{user.email}}",
         profileCellphone: "{{user.profile.cellphone}}",
         profileHomeAddress: "{{user.profile.homeAddress.address}}",
-        profileHomeTell: "{{user.profile.homeAddress.tel}}",
+        profileHomeTel: "{{user.profile.homeAddress.tel}}",
         profileHomeCountry: "{{user.profile.homeAddress.country}}",
         profileHomeCity: "{{user.profile.homeAddress.city}}"
     };

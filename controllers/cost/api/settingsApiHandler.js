@@ -74,7 +74,6 @@ console.log(req.params);
         workflow.on('validateProfile', function () {
             req.checkBody('profileFirstName', 'please, provide a first name.').notEmpty();
             req.checkBody('profileLastName', 'please, provide a last name.').notEmpty();
-            req.checkBody('profileEmail', 'please, provide a valid email').isEmail();
 
             var errors = req.validationErrors(true);
 
@@ -87,8 +86,7 @@ console.log(req.params);
 
             var fieldsToUpdate = {
                 'name.first': req.body['profileFirstName'].trim(),
-                'name.last': req.body['profileLastName'].trim(),
-                'email': req.body['profileEmail'].trim()
+                'name.last': req.body['profileLastName'].trim()
             };
 
             workflow.emit('findUserAndUpdate',fieldsToUpdate);
@@ -97,6 +95,7 @@ console.log(req.params);
          workflow.on('findUserAndUpdate', function (fieldsToUpdate) {
             Users.findOne({ _id: req.user._id }, function (err, doc) {
                 if (err) {
+                    console.log(err);
                     return res.send({
                         success: false,
                         postErrors: { error: 'database error' }
@@ -113,10 +112,10 @@ console.log(req.params);
                 // set the new fields
                 doc.name.first = req.body['profileFirstName'];
                 doc.name.last = req.body['profileLastName'];
-                doc.email = req.body['profileEmail'];
 
                 doc.save(function (err, doc) {
                     if (err) {
+                        console.log(err);
                         return res.send({
                             success: false,
                             postErrors: { error: 'database error' }
@@ -145,7 +144,7 @@ console.log(req.params);
                         success: false,
                         validationErrors: {
                             profileCurrentPassword: {
-                                msg: 'The provided password in not correct.',
+                                msg: 'The provided password is not correct.',
                                 param: "profileCurrentPassword",
                                 value: ""
                             }
@@ -213,7 +212,56 @@ console.log(req.params);
             if (req.body['profileHomeAddress']){
 
             }
+            if (req.body['profileHomeTel']) {
+                req.checkBody('profileHomeTel', req.body['profileHomeTel'] + ' is not a valid phone number').len(7);
+            }
 
+            var errors = req.validationErrors(true);
+            if (errors) {
+                return res.send({
+                    success: false,
+                    validationErrors: errors
+                });
+            }
+
+            workflow.emit('updateOtherSettings');
+        });
+
+        workflow.on('updateOtherSettings', function () {
+            Users.findOne({ _id: req.user._id }, function (err, user) {
+                if (err) {
+                    return res.send({
+                        success: false,
+                        postErrors: { error: 'database error' }
+                    });
+                }
+                if (!user) {
+                    console.log('This is weird, how come there is no user?');
+                    return res.send({
+                        success: false,
+                        postErrors: { error: 'invalid request' }
+                    });
+                }
+
+                if (req.body['profileCellphone']) user.profile.cellphone = req.body['profileCellphone'].trim();
+                if (req.body['profileHomeAddress']) user.profile.homeAddress.address = req.body['profileHomeAddress'].trim();
+                if (req.body['profileHomeTel']) user.profile.homeAddress.tell = req.body['profileHomeTel'].trim();
+                if (req.body['profileHomeCity']) user.profile.homeAddress.city = req.body['profileHomeCity'].trim();
+                if (req.body['profileHomeCountry']) user.profile.homeAddress.country = req.body['profileHomeCountry'].trim();
+
+                user.save(function (err) {
+                    if (err) {
+                        console.log(err);
+                        return res.send({
+                            success: false
+                        });
+                    }
+
+                    return res.send({
+                        success: true
+                    });
+                });
+            });
         });
 
         workflow.emit('validate');
