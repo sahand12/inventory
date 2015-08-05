@@ -21,9 +21,9 @@ exports = module.exports = function (app, mongoose) {
                 city: { type: String, default: '' },
                 country: { type: String, default: '' },
                 address: { type: String, default: '' },
-                tel: [{ type: String, default: '' }]
+                tel: { type: String, default: '' }
             },
-            cellphone: [{ type: String, default: '' }],
+            cellphone: { type: String, default: '' },
             maritalStatus: { type: String, default: '' },
             nationalCode: { type: String, default: '' },
             birthCertificateNumber: { type: String, default: '' },
