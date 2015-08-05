@@ -1,0 +1,32 @@
+<script id='individualExpenseTemplate' type="text/vgn-template">
+    <div id="individualExpenseModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        <h4 class="modal-title">Expense Full Description</h4>
+                    </button>
+                </div><!-- /.modal-header -->
+                <div class="modal-body">
+                    <dl class="dl-horizontal">
+                        <dt>Date</dt>
+                        <dd>[[expenseDate]]</dd>
+                        <dt>Title</dt>
+                        <dd>[[expenseTitle]]</dd>
+                        <dt>Category</dt>
+                        <dd>[[expenseCategory]]</dd>
+                        <dt>Amount</dt>
+                        <dd>[[expenseAmount]]</dd>
+                        <dt>Description</dt>
+                        <dd>[[expenseDescription]]</dd>
+                    </dl>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</script>
+

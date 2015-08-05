@@ -32,7 +32,8 @@ $(function () {
         $totalPieChartStats = $('#totalPieChartStats'),
         $totalExpensesAjaxSpinner = $('.total-expense-ajax-spinner'),
         $totalExpensesAmount = $('#totalExpensesAmount'),
-        $paginationContainer = $('#paginationContainer');
+        $paginationContainer = $('#paginationContainer'),
+        $completeExpense = $('.complete-expense').find('span');
 
     var categoryColors = {};
 
@@ -115,7 +116,7 @@ $(function () {
             var current = data[i];
             html += "<tr><td class='category-color' style='background-color:" + categoryColors[current.category.name].color +
                 ";'><input class='docId' type='hidden' value='" + current._id +
-                "'/></td><td><span class='fa fa-file-text-o pull-right'></span></td>" +
+                "'/></td><td class='text-center'><a data-toggle='popover' data-title='Description' data-content=''" + current.description + "' href='#' class=\"complete-expense text-center\" data-expense-id=\"" + current._id  + "\"><span class='fa fa-file-text-o text-center'></span></a></td>" +
                 "<td>" + app.helpers.formatDate(current.date) + "</td>" +
                 "<td>" + current.title + "</td>" +
                 "<td class='text-capitalize'>" + current.category.name + "</td>" +
@@ -397,4 +398,34 @@ $(function () {
     function showDeleteErrorsFromServer(response) {
         console.log(response);
     }
+
+
+    /*
+     * --------------------------
+     *     COMPLETE EXPENSE CLICK HANDLER
+     * -------------------------
+     */
+    $expensesTableBody.delegate('.complete-ex', 'click', function (e) {
+        e.preventDefault();
+        var $this = $(this);
+        var expenseId = $this.attr('data-expense-id');
+        var expenseDoc = app.expensesPageData.table[expenseId];
+        console.log(expenseDoc);
+
+        showIndividualExpenseModal(expenseDoc);
+    });
+
+    function showIndividualExpenseModal (data) {
+        var templateHtml = $('#individualExpenseTemplate').html();
+        templateHtml = templateHtml.replace('[[expenseDate]]', app.helpers.formatDate(data.date))
+            .replace('[[expenseTitle]]', data.title)
+            .replace('[[expenseCategory]]', data.category.name)
+            .replace('[[expenseAmount]]', app.helpers.formatAmount(data.amount))
+            .replace('[[expenseDescription]]', data.description);
+
+        $('body').append(templateHtml);
+        $('#individualExpenseModal').modal('show');
+    }
+
+
 });

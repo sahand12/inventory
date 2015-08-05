@@ -427,11 +427,11 @@ body {
 }
 #expensesTable td {
   border-top: none !important;
-  padding: 25px 20px;
+  padding: 15px 10px;
   vertical-align: middle;
 }
 #expensesTable td .fa-file-text-o {
-  font-size: 1.8em;
+  font-size: 1.3em;
   color: darkgray;
 }
 #expensesTable td .fa-edit {
@@ -463,6 +463,12 @@ body {
   border-bottom: 1px solid #eee;
   border-top: 1px solid #eee;
   border-right: 1px solid #eee;
+}
+#expensesTable tbody tr:hover {
+  background-color: #f6f6f6;
+}
+#expensesTable tbody tr:hover .complete-expense span {
+  background-color: white;
 }
 #expensesTable tbody td:first-child {
   background-color: cornflowerblue;
@@ -535,6 +541,13 @@ body {
   background-color: #3eb39e;
   border-color: #3eb39e;
   color: white;
+}
+.complete-expense span {
+  font-size: 10px;
+  padding: 15px;
+  border-radius: 30px;
+  background-color: #f6f6f6;
+  margin-left: 0;
 }
 .cost-form-category {
   padding-top: 15px;

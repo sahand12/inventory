@@ -32,11 +32,11 @@
 
   td {
     border-top: none !important;
-    padding: 25px 20px;
+    padding: 15px 10px;
     vertical-align: middle;
 
     .fa-file-text-o {
-      font-size: 1.8em;
+      font-size: 1.3em;
       color: darkgray;
     }
 
@@ -76,6 +76,14 @@
       border-bottom: 1px solid #eee;
       border-top: 1px solid #eee;
       border-right: 1px solid #eee;
+
+      &:hover {
+        background-color: #f6f6f6;
+
+        .complete-expense span {
+          background-color: white;
+        }
+      }
     }
     td:first-child {
       background-color: cornflowerblue;
@@ -167,5 +175,17 @@
       border-color: @top-nav-button-color;
       color: white;
     }
+  }
+}
+
+.complete-expense {
+  //display: block;
+
+  span {
+    font-size: 10px;
+    padding: 15px;
+    border-radius: 30px;
+    background-color: #f6f6f6;
+    margin-left: 0;
   }
 }
