@@ -29,10 +29,6 @@
   padding: 15px 10px;
   vertical-align: middle;
 }
-#expensesTable td .fa-file-text-o {
-  font-size: 1.3em;
-  color: darkgray;
-}
 #expensesTable td .fa-edit {
   font-size: 1.5em;
 }
@@ -141,10 +137,21 @@
   border-color: #3eb39e;
   color: white;
 }
-.complete-expense span {
-  font-size: 10px;
-  padding: 15px;
+.description-popover {
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.description-popover:hover,
+.description-popover:focus,
+.description-popover:active {
+  outline: none;
+  border: none;
+}
+.description-popover span {
+  padding: 10px;
   border-radius: 30px;
   background-color: #f6f6f6;
-  margin-left: 0;
+  color: darkgray;
+  font-size: 1.2em;
 }

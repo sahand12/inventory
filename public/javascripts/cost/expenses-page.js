@@ -110,7 +110,34 @@ $(function () {
         return formatted;
     }
 
-    function populateExpensesTable(data) {
+    function populateExpensesTable (data) {
+        var html = [];
+        var rowTemplate = $('#expensesTableTemplate').text();
+        for (var i = 0, len = data.length; i < len; i++) {
+            var current = data[i];
+            var rowHtml = rowTemplate;
+
+            rowHtml = rowHtml.replace('[[color]]', categoryColors[current.category.name].color)
+                .replace('[[id]]', current._id)
+                .replace('[[description]]', current.description)
+                .replace('[[date]]', app.helpers.formatDate(current.date))
+                .replace('[[title]]', current.title)
+                .replace('[[categoryName]]', current.category.name)
+                .replace('[[amount]]', app.helpers.formatAmount(current.amount));
+            html.push(rowHtml);
+        }
+        $expensesTableBody.html(html.join(""));
+
+        $('[data-toggle=popover]').popover({
+            placement: 'auto bottom',
+            template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title" style="letter-spacing: 1px;"></h3><div class="popover-content"></div></div>',
+            title: 'Expense Description',
+            content: 'No description'
+        });
+    }
+
+
+    /*function populateExpensesTable(data) {
         var html = "";
         for (var i = 0, len = data.length; i < len; i++) {
             var current = data[i];
@@ -126,7 +153,7 @@ $(function () {
                 "</tr>";
         }
         $expensesTableBody.html(html);
-    }
+    }*/
 
     function buildPagination (pagesData) {
         if (pagesData.total <= 1) return;
@@ -183,7 +210,6 @@ $(function () {
             url: "/cost/api/expenses/categories/total",
             beforeSend: totalExpenseAjaxInProgress
         }).done(function (response) {
-            console.log(response);
             // hide the spinner
             totalExpensesAjaxEnded();
             populateTotalExpensesPieChart(response, categoryColors);
@@ -396,36 +422,15 @@ $(function () {
     }
 
     function showDeleteErrorsFromServer(response) {
-        console.log(response);
+        //console.log(response);
     }
 
 
     /*
      * --------------------------
-     *     COMPLETE EXPENSE CLICK HANDLER
+     *     SHOW DESCRIPTION ON CLICK USING A POPOVER
      * -------------------------
      */
-    $expensesTableBody.delegate('.complete-ex', 'click', function (e) {
-        e.preventDefault();
-        var $this = $(this);
-        var expenseId = $this.attr('data-expense-id');
-        var expenseDoc = app.expensesPageData.table[expenseId];
-        console.log(expenseDoc);
-
-        showIndividualExpenseModal(expenseDoc);
-    });
-
-    function showIndividualExpenseModal (data) {
-        var templateHtml = $('#individualExpenseTemplate').html();
-        templateHtml = templateHtml.replace('[[expenseDate]]', app.helpers.formatDate(data.date))
-            .replace('[[expenseTitle]]', data.title)
-            .replace('[[expenseCategory]]', data.category.name)
-            .replace('[[expenseAmount]]', app.helpers.formatAmount(data.amount))
-            .replace('[[expenseDescription]]', data.description);
-
-        $('body').append(templateHtml);
-        $('#individualExpenseModal').modal('show');
-    }
 
 
 });

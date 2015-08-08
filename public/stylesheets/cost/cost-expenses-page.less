@@ -35,11 +35,6 @@
     padding: 15px 10px;
     vertical-align: middle;
 
-    .fa-file-text-o {
-      font-size: 1.3em;
-      color: darkgray;
-    }
-
     .fa-edit {
       font-size: 1.5em;
     }
@@ -178,14 +173,21 @@
   }
 }
 
-.complete-expense {
-  //display: block;
+.description-popover {
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  &:hover, &:focus, &:active {
+    outline: none;
+    border: none;
+  }
 
   span {
-    font-size: 10px;
-    padding: 15px;
+    padding: 10px;
     border-radius: 30px;
     background-color: #f6f6f6;
-    margin-left: 0;
+    color: darkgray;
+    font-size: 1.2em;
   }
 }

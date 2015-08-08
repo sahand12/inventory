@@ -77,7 +77,6 @@ app.helpers.formatSortedAjaxDataForPieChart = function (data, categoryColors) {
             css = app.helpers.makeRandomColor();
 
         if (typeof categoryColors[current.name] === "undefined") {
-            console.log('pie: ', current.name, css.color);
             categoryColors[current.name] = { color: css.color, highlight: css.highlight };
         }
 
