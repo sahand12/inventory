@@ -62,7 +62,7 @@
 #expensesTable tbody tr:hover {
   background-color: #f6f6f6;
 }
-#expensesTable tbody tr:hover .complete-expense span {
+#expensesTable tbody tr:hover span.fa-file-text-o {
   background-color: white;
 }
 #expensesTable tbody td:first-child {
