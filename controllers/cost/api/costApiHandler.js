@@ -475,8 +475,22 @@ var CostApiHandler = function (app) {
         });
     };
 
-
     this.getAllExpenses = function (req, res, next) {
+        var query = {};
+        var filters = {};
+        req.app.db.models.Expense.find(query, filters)
+            .populate('user', 'name')
+            .sort({ data: -1 })
+            .exec(function (err, docs) {
+                return res.json({
+                    success: true,
+                    data: docs
+                });
+            }
+        );
+    };
+
+    /*this.getAllExpenses = function (req, res, next) {
         var options = {
             keys: {
                 amount: 1,
@@ -505,7 +519,7 @@ var CostApiHandler = function (app) {
                 data: docs
             });
         });
-    };
+    };*/
 
     this.getTotalExpensesByEachCategory = function (req, res, next) {
         var query = { user: req.user._id };

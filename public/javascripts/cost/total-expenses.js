@@ -68,6 +68,7 @@ $(window).bind('load', function () {
             beforeSend: tableAjaxInProgress
         }).done(function (response) {
             // hide the spinner
+            console.log(response);
             tableAjaxEnded();
 
             app.expensesPageData.table = reformatTableData(response.data.data, categoryColors);

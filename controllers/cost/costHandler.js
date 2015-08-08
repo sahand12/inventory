@@ -104,6 +104,7 @@ var CostHandler = function CostHandler (app) {
     this.showExpensesPage = function (req, res, next) {
         var data = {
             layout: 'cost.dashboard.handlebars',
+            costAdmin: (req.user.role === 'costAdmin'),
             user: req.user,
             title: "Expenses",
             expensesPage: true,
@@ -132,6 +133,7 @@ var CostHandler = function CostHandler (app) {
     this.showCategoriesPage = function (req, res, next) {
         var data = {
             layout: "cost.dashboard.handlebars",
+            costAdmin: (req.user.role === 'costAdmin'),
             user: req.user,
             title: "Expense Categories",
             categoriesPage: true,
@@ -152,7 +154,8 @@ var CostHandler = function CostHandler (app) {
             layout: 'cost.dashboard.handlebars',
             user: req.user,
             title: "Reports",
-            reportsPage: true
+            reportsPage: true,
+            costAdmin: (req.user.role === 'costAdmin')
         };
 
         return res.render('cost/reports', data);
@@ -168,7 +171,8 @@ var CostHandler = function CostHandler (app) {
             user: req.user,
             title: 'Settings',
             settingsPage: true,
-            userJson: JSON.stringify(req.user)
+            userJson: JSON.stringify(req.user),
+            costAdmin: (req.user.role === 'costAdmin')
         };
 
         return res.render('cost/settings-page', data);
@@ -178,23 +182,3 @@ var CostHandler = function CostHandler (app) {
 
 
 exports = module.exports = CostHandler;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

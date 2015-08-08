@@ -137,25 +137,6 @@ $(function () {
         });
     }
 
-
-    /*function populateExpensesTable(data) {
-        var html = "";
-        for (var i = 0, len = data.length; i < len; i++) {
-            var current = data[i];
-            html += "<tr><td class='category-color' style='background-color:" + categoryColors[current.category.name].color +
-                ";'><input class='docId' type='hidden' value='" + current._id +
-                "'/></td><td class='text-center'><a data-toggle='popover' data-title='Description' data-content=''" + current.description + "' href='#' class=\"complete-expense text-center\" data-expense-id=\"" + current._id  + "\"><span class='fa fa-file-text-o text-center'></span></a></td>" +
-                "<td>" + app.helpers.formatDate(current.date) + "</td>" +
-                "<td>" + current.title + "</td>" +
-                "<td class='text-capitalize'>" + current.category.name + "</td>" +
-                "<td class='expense-table-amount'>" + app.helpers.formatAmount(current.amount) + " &#65020;" +  "</td>" +
-                "<td><a data-toggle='modal' class='editTd' data-target='#editExpenseModal' href='#'>" +
-                "<span class='fa fa-edit expense-item-edit'></span></a></td>" +
-                "</tr>";
-        }
-        $expensesTableBody.html(html);
-    }*/
-
     function buildPagination (pagesData) {
         if (pagesData.total <= 1) return;
 

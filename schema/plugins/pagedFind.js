@@ -50,6 +50,7 @@ module.exports = exports = function pagedFindPlugin (schema) {
 
         var getResults = function (callback) {
             var query = thisSchema.find(options.filters, options.keys);
+
             query.skip((options.page - 1) * options.limit);
             query.limit(options.limit);
             query.sort(options.sort);

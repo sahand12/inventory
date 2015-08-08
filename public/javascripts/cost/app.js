@@ -177,6 +177,6 @@ Chart.defaults.global.segmentStrokeWidth = 1;
 
 /**
  * --------------------------------------
- *      JQUERY AJAX GLOBAL CONFIGS
+ *      HANDLEBARS HELPERS
  * --------------------------------------
 */
