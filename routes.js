@@ -207,4 +207,20 @@ exports = module.exports = function (express, app, passport) {
 
     app.put('/cost/api/settings/:id', ensureAuthenticated, settingsApiHandler.updateUserProfile);
 
+    /*
+     * -------------------------------
+     *     ADMIN ROUTES
+     * -------------------------------
+     */
+    var CostAdminApiHandler = require('./controllers/cost/api/costAdminApiHandler');
+    var costAdminApiHandler = new CostAdminApiHandler(app);
+
+    app.get('/cost/api/admin/users', ensureCostAdmin, costAdminApiHandler.getAllUsers);
+    app.get('/cost/api/admin/users/:id', ensureCostAdmin, costAdminApiHandler.getUserById);
+    app.get('/cost/api/admin/expenses', ensureCostAdmin, costAdminApiHandler.getAllExpenses);
+    app.get('/cost/api/admin/expenses/total', ensureCostAdmin, costAdminApiHandler.getTotalExpensesAmount);
+    app.get('/cost/api/admin/expenses/between', ensureCostAdmin, costAdminApiHandler.getAllExpensesBetweenTwoDates);
+    app.get('/cost/api/admin/expenses/categories/:name', ensureAuthenticated, costAdminApiHandler.getAllExpensesForACategory);
+    app.get('/cost/api/admin/expenses/user/:id', ensureAuthenticated, costAdminApiHandler.getAllExpensesForAUser);
+
 };

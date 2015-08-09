@@ -480,7 +480,7 @@ var CostApiHandler = function (app) {
         var filters = {};
         req.app.db.models.Expense.find(query, filters)
             .populate('user', 'name')
-            .sort({ data: -1 })
+            .sort({ date: -1 })
             .exec(function (err, docs) {
                 return res.json({
                     success: true,
