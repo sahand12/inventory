@@ -12,7 +12,7 @@ exports = module.exports = function (app, mongoose) {
         amount: { type: Number },
         category: {
             id: { type: mongoose.Schema.Types.ObjectId, ref: 'ExpenseCategory' },
-            name: String, default: ""
+            name: { type: String }
         },
         createdAt: { type: Date, default: Date.now },
         updatedAt: { type: Date, default: Date.now }

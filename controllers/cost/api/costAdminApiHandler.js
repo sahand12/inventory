@@ -20,6 +20,12 @@ var costAdminApiHandler = function (app) {
     var Expenses = app.db.models.Expense;
 
     /**
+     * @var Object - A reference to the DailyReports collection
+     */
+    var DailyReports = app.db.models.DailyReport;
+
+
+    /**
      *  GET    /cost/api/admin/users
      */
     this.getAllUsers = function (req, res, next) {
@@ -182,9 +188,10 @@ var costAdminApiHandler = function (app) {
         Expenses.aggregate([
             { $group: { _id: '$_id' }, total: { $sum: '$amount'} }
         ], function (err, total) {
-            __sendResponse(req, err, total);
+            __sendResponse(res, err, total);
         });
     };
+
 
     function __sendResponse (res, err, data, msg) {
         if (err) {
