@@ -144,7 +144,9 @@
   color: white;
   background-color: #3eb39e;
 }
-.vgn-btn-green:hover {
+.vgn-btn-green:hover,
+.vgn-btn-green:active,
+.vgn-btn-green:visited {
   background-color: #37a08d;
   color: white;
 }
@@ -161,4 +163,9 @@
 .vgn-error-msg {
   margin-bottom: 10px;
   display: none;
+}
+.vgn-flash-msg {
+  position: absolute;
+  top: 50px;
+  right: 20px;
 }

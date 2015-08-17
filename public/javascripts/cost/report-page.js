@@ -30,7 +30,7 @@ $(function () {
      *      EMIT PAGE LOAD EVENT
      * -----------------------------------------------
      */
-    app.emitEvent('page.load');
+    app.emit('page.load');
 
 
     /*

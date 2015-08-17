@@ -1,0 +1,12 @@
+.vgn-form-green.daily-report-form input,
+.vgn-form-green.daily-report-form select,
+.vgn-form-green.daily-report-form textarea {
+  margin-top: 0;
+}
+.dailyReport-form-ajax-spinner {
+  display: none;
+}
+#dailyReportSuccessMsg,
+#dailyReportFailureMsg {
+  display: none;
+}

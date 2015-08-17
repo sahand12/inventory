@@ -162,6 +162,17 @@ app.helpers.capitalizeFirstLetter = function (string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
+// Escaping input and textarea
+app.helpers.escapeInput = function escapeInput (str) {
+    return (str.replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#x27;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/\//g, '&#x2F;')
+        .replace(/\`/g, '&#96;'));
+};
+
 /**
  * ----------------------------------------
  *     CHART.JS DEFAULT OPTIONS

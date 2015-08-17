@@ -178,6 +178,22 @@ var CostHandler = function CostHandler (app) {
         return res.render('cost/settings-page', data);
     };
 
+
+    /**
+     * GET     /cost/daily-reports
+     */
+    this.showDailyReportPage = function (req, res, next) {
+        var data = {
+            layout: 'cost.dashboard.handlebars',
+            user: req.user,
+            title: 'Daily Reports',
+            dailyReportPage: true,
+            costAdmin: (req.user.role === 'costAdmin')
+        };
+
+        return res.render('cost/dailyReports-page', data);
+    };
+
 };
 
 

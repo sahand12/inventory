@@ -10,6 +10,5 @@
     <orderEntry type="library" name="less-middleware-DefinitelyTyped" level="application" />
     <orderEntry type="library" name="express-validator-DefinitelyTyped" level="application" />
     <orderEntry type="library" name="mongoose-DefinitelyTyped" level="application" />
-    <orderEntry type="library" name="mongodb-DefinitelyTyped" level="application" />
   </component>
 </module>

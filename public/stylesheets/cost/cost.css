@@ -381,7 +381,9 @@ body {
   color: white;
   background-color: #3eb39e;
 }
-.vgn-btn-green:hover {
+.vgn-btn-green:hover,
+.vgn-btn-green:active,
+.vgn-btn-green:visited {
   background-color: #37a08d;
   color: white;
 }
@@ -398,6 +400,11 @@ body {
 .vgn-error-msg {
   margin-bottom: 10px;
   display: none;
+}
+.vgn-flash-msg {
+  position: absolute;
+  top: 50px;
+  right: 20px;
 }
 .cost-expenses-list {
   padding-top: 20px;
@@ -764,4 +771,16 @@ input#end {
   color: red;
   padding-left: 20px;
   padding-top: 5px;
+}
+.vgn-form-green.daily-report-form input,
+.vgn-form-green.daily-report-form select,
+.vgn-form-green.daily-report-form textarea {
+  margin-top: 0;
+}
+.dailyReport-form-ajax-spinner {
+  display: none;
+}
+#dailyReportSuccessMsg,
+#dailyReportFailureMsg {
+  display: none;
 }

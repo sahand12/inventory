@@ -174,7 +174,9 @@ position: absolute;
   color: white;
   background-color: @top-nav-button-color;
 
-  &:hover {
+  &:hover,
+  &:active,
+  &:visited {
     background-color: @top-nav-button-color-hover;
     color: white;
   }
@@ -194,4 +196,10 @@ position: absolute;
 .vgn-error-msg {
   margin-bottom: 10px;
   display: none;
+}
+
+.vgn-flash-msg {
+  position: absolute;
+  top: 50px;
+  right: 20px;
 }

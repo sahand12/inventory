@@ -55,7 +55,14 @@
                 <!--<li class="{{#if remindersPage}}active{{/if}}"><a href="/cost/reminders">Reminders</a></li>-->
                 <!--<li class="{{#if notificationsPage}}active{{/if}}"><a href="/cost/notification">Notifications</a></li>-->
             </ul>
+
             <hr class="cost-sidebar-hr"/>
+            <ul class="nav nav-sidebar">
+                <li class="{{#if dailyReportPage}}active{{/if}}"><a href="/cost/daily-report">Daily Report</a></li>
+            </ul>
+            <hr class="cost-sidebar-hr"/>
+
+
             <ul class="nav nav-sidebar">
                 <li class="{{#if settingsPage}}active{{/if}}"><a href="/cost/settings">Settings</a></li>
                 <!--<li><a href="/cost/faq">FAQ</a></li>-->
@@ -127,6 +134,9 @@
 {{/if}}
 {{#if settingsPage}}
     <script src="/javascripts/cost/settings-page.js"></script>
+{{/if}}
+{{#if dailyReportPage}}
+    <script src="/javascripts/cost/dailyReport-page.js"></script>
 {{/if}}
 
 </body>

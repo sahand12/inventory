@@ -160,6 +160,7 @@ exports = module.exports = function (express, app, passport) {
     app.get('/cost/categories', ensureAuthenticated, costHandler.showCategoriesPage);
     app.get('/cost/reports', ensureAuthenticated, costHandler.showReportsPage);
     app.get('/cost/settings', ensureAuthenticated, costHandler.showSettingsPage);
+    app.get('/cost/daily-report', ensureAuthenticated, costHandler.showDailyReportPage);
 
     var CostApiHandler = require('./controllers/cost/api/costApiHandler'),
         costApiHandler = new CostApiHandler(app);
@@ -222,7 +223,6 @@ exports = module.exports = function (express, app, passport) {
     app.get('/cost/api/admin/expenses/between', ensureCostAdmin, costAdminApiHandler.getAllExpensesBetweenTwoDates);
     app.get('/cost/api/admin/expenses/categories/:name', ensureCostAdmin, costAdminApiHandler.getAllExpensesForACategory);
     app.get('/cost/api/admin/expenses/user/:id', ensureCostAdmin, costAdminApiHandler.getAllExpensesForAUser);
-    app.get('/cost/api/admin/daily-reports', ensureCostAdmin, costAdminApiHandler.getAllDailyReports);
 
     /*
      * ------------------------------------
@@ -232,6 +232,6 @@ exports = module.exports = function (express, app, passport) {
     var DailyReportApiHandler = require('./controllers/cost/api/dailyReportApiHandler');
     var dailyReportApiHandler = new DailyReportApiHandler(app);
 
-    //app.get('/cost/api/')
+    app.post('/cost/api/daily-reports', ensureAuthenticated, dailyReportApiHandler.createNewDailyReport);
 
 };
