@@ -9,7 +9,7 @@ exports = module.exports = function (app, mongoose) {
         title: { type: String },
         date: { type: Date, default: Date.now },
         body: { type: String },
-        seen: { type: Boolean, default: false },
+        seen: { type: Boolean, default: false }
     });
 
     DailyReportSchema.index({ user: 1 }, { background: true });
