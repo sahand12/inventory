@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f15174e-ed4e-4874-b2fe-4736a9113461" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/cost.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/cost.helpers.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.helpers.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/cost.helpers.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.helpers.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/dailyReport-page.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/dailyReport-page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/cost/dailyReport-page.js" afterPath="$PROJECT_DIR$/public/javascripts/cost/dailyReport-page.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/dailyReport-page.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/dailyReport-page.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/cost/api/dailyReportApiHandler.js" afterPath="$PROJECT_DIR$/controllers/cost/api/dailyReportApiHandler.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/cost/dailyReports-page.handlebars" afterPath="$PROJECT_DIR$/views/cost/dailyReports-page.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.js" afterPath="$PROJECT_DIR$/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="basicAuth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,21 +53,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dailyReport-page.less" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dailyReport-page.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/cost/dailyReport-page.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3982222">
+            <state vertical-scroll-proportion="-35.689655">
               <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dailyReports-page.handlebars" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dailyReports-page.handlebars" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/cost/dailyReports-page.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.7586207">
-              <caret line="35" column="53" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.41319445">
+              <caret line="35" column="60" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
               <folding>
                 <element signature="e#80#106#0#HTML" expanded="true" />
               </folding>
@@ -150,8 +140,8 @@
         <option value="$PROJECT_DIR$/controllers/cost/api/dailyReportApiHandler.js" />
         <option value="$PROJECT_DIR$/views/partials/cost/templates/dailyReport-table.handlebars" />
         <option value="$PROJECT_DIR$/public/javascripts/cost/dailyReport-page.js" />
-        <option value="$PROJECT_DIR$/views/cost/dailyReports-page.handlebars" />
         <option value="$PROJECT_DIR$/public/stylesheets/cost/dailyReport-page.less" />
+        <option value="$PROJECT_DIR$/views/cost/dailyReports-page.handlebars" />
       </list>
     </option>
   </component>
@@ -988,14 +978,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/cost/api/dailyReportApiHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="72" column="14" selection-start-line="72" selection-start-column="14" selection-end-line="72" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/cost/dailyReport-page.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1004,21 +986,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/cost/dailyReports-page.handlebars">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/cost/dailyReport-page.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.7586207">
-          <caret line="35" column="53" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
-          <folding>
-            <element signature="e#80#106#0#HTML" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-35.689655">
+          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/cost/dailyReport-page.less">
+    <entry file="file://$PROJECT_DIR$/controllers/cost/api/dailyReportApiHandler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3982222">
-          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="14" selection-start-line="72" selection-start-column="14" selection-end-line="72" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/cost/dailyReports-page.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41319445">
+          <caret line="35" column="60" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
+          <folding>
+            <element signature="e#80#106#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
