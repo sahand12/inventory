@@ -406,6 +406,17 @@ body {
   top: 50px;
   right: 20px;
 }
+.vgn-simple-table {
+  border-collapse: collapse;
+}
+.vgn-simple-table td:first-child {
+  width: 4px;
+  padding: 0;
+  vertical-align: middle;
+}
+.vgn-simple-table tr {
+  padding: 20px;
+}
 .cost-expenses-list {
   padding-top: 20px;
 }
@@ -783,4 +794,37 @@ input#end {
 #dailyReportSuccessMsg,
 #dailyReportFailureMsg {
   display: none;
+  margin-top: 20px;
+}
+#dailyReportTable {
+  margin-top: 20px;
+  background-color: #f6f6f6;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#dailyReportTable th {
+  color: #3eb39e;
+  font-size: 16px;
+  text-align: left;
+}
+#dailyReportTable td:first-child {
+  width: 5% !important;
+  max-width: 6px !important;
+  border: none;
+  border-bottom: 1px solid #eee;
+  padding: 0;
+  border-collapse: collapse;
+  font-size: 2px;
+}
+#dailyReportTable td:nth-child(2) {
+  width: 55%;
+}
+#dailyReportTable td:nth-child(3) {
+  width: 40%;
+}
+#dailyReportTable td {
+  padding: 20px 10px;
+}
+.recent-daily-reports {
+  margin-top: 5px;
 }

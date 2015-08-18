@@ -7,6 +7,7 @@ $(function () {
      */
     app.addListener('page.load', buildDailyReportsTable);
     app.addListener('dailyReportFormSubmit', makeDailyReportFormAjaxReq);
+    app.addListener('dailyReportFormSuccess', buildDailyReportsTable);
     app.addListener('dailyReportFormClientError', showDailyReportFormClientErrors);
 
 
@@ -20,6 +21,18 @@ $(function () {
     var $titleError = $('#dailyReportTitle').siblings('p');
     var $bodyError = $('#dailyReportBody').siblings('p');
     var $dailyReportAjaxSpinner = $('.dailyReport-form-ajax-spinner');
+    var $dailyReportTableBody = $('#dailyReportTable').find('tbody');
+    var $dailyReportTableAjaxSpinner = $('.dailyReport-table-ajax-spinner');
+    var dailyReportTableTemplate = $('#dailyReportTableTemplate').text();
+
+
+    /*
+     * ------------------------------
+     *      FIRE LOAD EVENT
+     * ------------------------------
+     */
+    app.emit('page.load');
+
 
 
     /*
@@ -40,7 +53,40 @@ $(function () {
      * --------------------------------
      */
     function buildDailyReportsTable () {
+        var userId = $dailyReportTableBody.attr('data-user-id');
+        $.ajax({
+            url: '/cost/api/user/' + userId + '/daily-reports',
+            method: 'get',
+            beforeSend: dailyReportTableAjaxInProgress
+        }).done(function (response) {
+            dailyReportTableAjaxEnded(response);
+        });
+    }
 
+    function dailyReportTableAjaxInProgress () {
+        $dailyReportTableAjaxSpinner.show();
+    }
+
+    function populateDailyReportTable(data) {
+        var html = [];
+        for (var i = 0, len = data.length; i < len; i++) {
+            var temp = dailyReportTableTemplate;
+            var current= data[i];
+            temp = temp.replace('[[color]]', app.helpers.makeRandomColor().color)
+                .replace('[[date]]', app.helpers.formatDate(current.date))
+                .replace('[[title]]', current.title)
+                .replace('[[id]]', current._id);
+            html.push(temp);
+        }
+        $dailyReportTableBody.html(html.join(""));
+    }
+
+    function dailyReportTableAjaxEnded (response) {
+        console.log(response);
+        $dailyReportTableAjaxSpinner.hide();
+        if (response.success) {
+            populateDailyReportTable(response.data);
+        }
     }
 
     /*
@@ -101,6 +147,9 @@ $(function () {
 
             // clear the form
             $dailyReportForm.find('input, textarea').val("");
+
+            // emit success event
+            app.emit('dailyReportFormSuccess');
         }, 500);
     }
 

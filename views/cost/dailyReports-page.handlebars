@@ -2,7 +2,7 @@
     <h1 class="text-uppercase cost-helper-header"><span style="background: white;">Daily Report</span></h1>
 </div><!-- /.col-xs-12 -->
 
-<div class="col-sm-8">
+<div class="col-md-8">
 
 
     <div id="dailyReportSuccessMsg" class="alert alert-success">Oh great! Your report was successfully sent.</div>
@@ -32,6 +32,19 @@
 
 </div><!-- /.col-sm-8 -->
 
-<div class="col-sm-4">
+<div class="col-md-4">
+    <h2 class="secondary-heading recent-daily-reports">Recent Daily Reports</h2>
+    <table class="table" id="dailyReportTable">
+        <tbody data-user-id="{{user._id}}"></tbody>
+    </table>
 
+    <!-- Ajax animation spinner -->
+    <div class="col-xs-12 dailyReport-table-ajax-spinner">
+        <p class="text-center">
+            <img src="/images/spinner-gray.gif" alt="loading ..."/><br/>
+            <!--loading-->
+        </p>
+    </div><!-- /.settings-form-ajax-spinner -->
 </div><!-- /.col-sm-4 -->
+
+{{> cost/templates/dailyReport-table}}

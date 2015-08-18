@@ -222,7 +222,7 @@ exports = module.exports = function (express, app, passport) {
     app.get('/cost/api/admin/expenses/total', ensureCostAdmin, costAdminApiHandler.getTotalExpensesAmount);
     app.get('/cost/api/admin/expenses/between', ensureCostAdmin, costAdminApiHandler.getAllExpensesBetweenTwoDates);
     app.get('/cost/api/admin/expenses/categories/:name', ensureCostAdmin, costAdminApiHandler.getAllExpensesForACategory);
-    app.get('/cost/api/admin/expenses/user/:id', ensureCostAdmin, costAdminApiHandler.getAllExpensesForAUser);
+
 
     /*
      * ------------------------------------
@@ -232,6 +232,9 @@ exports = module.exports = function (express, app, passport) {
     var DailyReportApiHandler = require('./controllers/cost/api/dailyReportApiHandler');
     var dailyReportApiHandler = new DailyReportApiHandler(app);
 
+    app.get('/cost/api/daily-reports/', ensureCostAdmin, dailyReportApiHandler.getAllDailyReports);
+    app.get('/cost/api/user/:userId/daily-reports', ensureCostAdmin, dailyReportApiHandler.getAllDailyReportsForAUser);
     app.post('/cost/api/daily-reports', ensureAuthenticated, dailyReportApiHandler.createNewDailyReport);
+    app.get('/cost/api/daily-reports/date/:dateTime', ensureCostAdmin, dailyReportApiHandler.getAllDailyReportsForADay);
 
 };

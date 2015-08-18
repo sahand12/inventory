@@ -169,3 +169,14 @@
   top: 50px;
   right: 20px;
 }
+.vgn-simple-table {
+  border-collapse: collapse;
+}
+.vgn-simple-table td:first-child {
+  width: 4px;
+  padding: 0;
+  vertical-align: middle;
+}
+.vgn-simple-table tr {
+  padding: 20px;
+}
