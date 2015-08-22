@@ -5,7 +5,7 @@
 exports = module.exports = function (app, mongoose) {
 
     var DailyReportSchema = new mongoose.Schema({
-        user: { type: mongoose.Schema.Types.ObjectId, ref: 'user' },
+        user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
         title: { type: String },
         date: { type: Date, default: Date.now },
         body: { type: String },

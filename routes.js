@@ -162,6 +162,13 @@ exports = module.exports = function (express, app, passport) {
     app.get('/cost/settings', ensureAuthenticated, costHandler.showSettingsPage);
     app.get('/cost/daily-report', ensureAuthenticated, costHandler.showDailyReportPage);
 
+    // Admin pages
+    app.get('/cost/admin/dashboard', ensureCostAdmin, costHandler.showAdminDashboardPage);
+    app.get('/cost/admin/expenses', ensureCostAdmin, costHandler.showAdminExpensesPage);
+    app.get('/cost/admin/categories', ensureCostAdmin, costHandler.showAdminCategoriesPage);
+    app.get('/cost/admin/daily-reports', ensureCostAdmin, costHandler.showAdminDailyReportsPage);
+    app.get('/cost/admin/users', ensureCostAdmin, costHandler.showUsersPage);
+
     var CostApiHandler = require('./controllers/cost/api/costApiHandler'),
         costApiHandler = new CostApiHandler(app);
     app.get('/cost/api/categories', ensureAuthenticated, costApiHandler.findAllCategories);
@@ -210,18 +217,30 @@ exports = module.exports = function (express, app, passport) {
 
     /*
      * -------------------------------
-     *     ADMIN ROUTES
+     *     ADMIN API ROUTES
      * -------------------------------
      */
     var CostAdminApiHandler = require('./controllers/cost/api/costAdminApiHandler');
     var costAdminApiHandler = new CostAdminApiHandler(app);
 
+    // users routes
     app.get('/cost/api/admin/users', ensureCostAdmin, costAdminApiHandler.getAllUsers);
     app.get('/cost/api/admin/users/:id', ensureCostAdmin, costAdminApiHandler.getUserById);
+    app.get('/cost/api/admin/users/:userId/expenses', ensureCostAdmin, costAdminApiHandler.getExpensesForAUser);
+
+    // expenses routes
     app.get('/cost/api/admin/expenses', ensureCostAdmin, costAdminApiHandler.getAllExpenses);
     app.get('/cost/api/admin/expenses/total', ensureCostAdmin, costAdminApiHandler.getTotalExpensesAmount);
     app.get('/cost/api/admin/expenses/between', ensureCostAdmin, costAdminApiHandler.getAllExpensesBetweenTwoDates);
+    app.get('/cost/api/admin/expenses/categories', ensureCostAdmin, costAdminApiHandler.getAllExpensesGroupedByCategories);
+
+    // categories routes
     app.get('/cost/api/admin/expenses/categories/:name', ensureCostAdmin, costAdminApiHandler.getAllExpensesForACategory);
+    app.get('/cost/api/admin/categories', ensureCostAdmin, costAdminApiHandler.getAllCategories);
+    app.get('/cost/api/admin/categories/:id/expenses', ensureCostAdmin, costAdminApiHandler.getAllExpensesForACategory);
+
+    // daily reports routes
+    app.get('/cost/api/admin/daily-reports', ensureCostAdmin, costAdminApiHandler.getAllDailyReports);
 
 
     /*

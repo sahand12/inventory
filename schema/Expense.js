@@ -22,7 +22,7 @@ exports = module.exports = function (app, mongoose) {
     ExpenseSchema.statics.findLatestByDays = function (days, done) {
         var startDate = Date.now() - days * 1000 * 60 * 60 * 24;
         var conditions = {
-            date: { $gt: startDate }
+            date: { $gte: startDate }
         };
         this.find(conditions)
             .populate('user', 'name')

@@ -1,5 +1,4 @@
-var express = require('express'),
-    path = require('path'),
+var path = require('path'),
     favicon = require('serve-favicon'),
     logger = require('morgan'),
     compression = require('compression'),
@@ -15,6 +14,7 @@ var express = require('express'),
     http = require('http'),
     csurf = require('csurf'),
     helmet = require('helmet'),
+    express = require('express')
     passport = require('passport');
 
 // my own modules

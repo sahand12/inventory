@@ -194,6 +194,77 @@ var CostHandler = function CostHandler (app) {
         return res.render('cost/dailyReports-page', data);
     };
 
+
+    /*
+     * ------------------------------------
+     *       ADMIN PAGES
+     * ------------------------------------
+     */
+    // GET     /cost/admin/dashboard
+    this.showAdminDashboardPage = function (req, res, next) {
+        var data = {
+            layout: 'cost.dashboard.handlebars',
+            user: req.user,
+            title: 'Admin Dashboard',
+            AdminDashboardPage: true,
+            adminPages: true,
+            costAdmin: (req.user.role === 'costAdmin')
+        };
+        return res.render('cost/admin/dashboard-page', data);
+    };
+
+    // GET     /cost/admin/expenses
+    this.showAdminExpensesPage = function (req, res, next) {
+        var data = {
+            layout: 'cost.dashboard.handlebars',
+            user: req.title,
+            title: 'Admin | Expenses',
+            adminPages: true,
+            adminExpensesPage: true,
+            costAdmin: (req.user.role === 'costAdmin')
+        };
+        return res.render('cost/admin/expenses-page', data);
+    };
+
+    // GET    /cost/admin/categories
+    this.showAdminCategoriesPage = function (req, res, next) {
+        var data = {
+            layout: 'cost.dashboard.handlebars',
+            user: req.user,
+            title: 'Admin | Categories',
+            adminPages: true,
+            adminCategoriesPage: true,
+            costAdmin: (req.user.role === 'costAdmin')
+        };
+        return res.render('cost/admin/categories-page', data);
+    };
+
+    // GET     /cost/admin/daily-reports
+    this.showAdminDailyReportsPage = function (req, res, next) {
+        var data = {
+            layout: 'cost.dashboard.handlebars',
+            user: req.user,
+            title: 'Admin | Daily Reports',
+            adminPages: true,
+            adminDailyReportsPage: true,
+            costAdmin: (req.user.role === 'costAdmin')
+        };
+        return res.render('cost/admin/dailyReports-page', data);
+    };
+
+    // GET     /cost/admin/users
+    this.showUsersPage = function (req, res, next) {
+        var data = {
+            layout: 'cost.dashboard.handlebars',
+            user: req.user,
+            title: 'Admin | Users',
+            adminPages: true,
+            adminUsersPage: true,
+            costAdmin: (req.user.role === 'costAdmin')
+        };
+        return res.render('cost/admin/users-page', data);
+    };
+
 };
 
 
