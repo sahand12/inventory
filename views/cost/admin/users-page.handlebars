@@ -1,0 +1,39 @@
+<div class="col-md-12 admin-users-list">
+    <h1 class="cost-helper-header text-uppercase"><span style="background: white;">users list</span></h1>
+
+    <!--<form action="/cost/api/admin/users/search" class="admin-users-search" method="get">-->
+        <!--<div class="input-group">-->
+            <!--<span class="input-group-btn">-->
+                <!--<button class="btn btn-cost-search" type="submit">-->
+                    <!--<span class="fa fa-search"></span>-->
+                <!--</button>-->
+                <!--<input type="search" class="form-control cost-search-input" id="usersSearch" placeholder="Search Users"/>-->
+            <!--</span>-->
+        <!--</div>-->
+    <!--</form>-->
+
+    <table class="table users-table vgn-table" id="usersTable">
+        <thead class="vgn-table-thead">
+            <tr>
+                <th></th>
+                <th class="text-uppercase">first name</th>
+                <th class="text-uppercase">last name</th>
+                <th class="text-uppercase">Email</th>
+                <th class="text-uppercase">cellphone</th>
+                <th class="text-uppercase">home phone</th>
+                <th class="text-uppercase">total expenses amount</th>
+            </tr>
+        </thead>
+        <tbody class="vgn-table-tbody"></tbody>
+    </table>
+
+    <!-- Ajax animation spinner -->
+    <div class="col-xs-12 users-table-ajax-spinner" style="display: none;">
+        <p class="text-center">
+            <img src="/images/spinner.gif" alt="loading ..."/><br/>
+            <!--loading-->
+        </p>
+    </div>
+</div>
+
+{{> cost/templates/users-table}}

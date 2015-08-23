@@ -53,7 +53,7 @@ var costAdminApiHandler = function (app) {
      */
      // GET    /cost/api/admin/users
     this.getAllUsers = function (req, res, next) {
-        var keys = { email: 1, role: 1, name: 1, 'profile.birthday': 1, 'profile.cellphone': 1 };
+        var keys = { email: 1, role: 1, name: 1, 'profile.birthday': 1, 'profile.cellphone': 1, 'profile.homeAddress.tel': 1 };
         Users.find({}, keys).
             sort({ 'name.last': 1 })
             .exec(function (err, users) {
@@ -90,6 +90,18 @@ var costAdminApiHandler = function (app) {
             .exec(function (err, docs) {
                 return __sendResponse(res, err, docs);
             });
+    };
+
+    // GET     /cost/api/admin/users/total-expenses
+    this.getTotalExpensesForEachUser = function (req, res, next) {
+        Expenses.aggregate([{
+            $group: {
+                _id: "$user",
+                total: { $sum: "$amount" }
+            }
+        }], function (err, docs) {
+            return __sendResponse(res, err, docs);
+        });
     };
 
 
@@ -167,8 +179,6 @@ var costAdminApiHandler = function (app) {
             return __sendResponse(res, err, docs);
         })
     };
-
-    // GET     /cost/api/admin/expenses/cate
 
 
     /*

@@ -1,0 +1,9 @@
+.users-table {
+  margin-top: 30px;
+}
+.users-table tbody tr:nth-child(n+1):hover {
+  background-color: #f6f6f6;
+}
+.users-table tbody tr:nth-child(n+1) td:last-child {
+  color: red;
+}

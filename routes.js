@@ -225,6 +225,7 @@ exports = module.exports = function (express, app, passport) {
 
     // users routes
     app.get('/cost/api/admin/users', ensureCostAdmin, costAdminApiHandler.getAllUsers);
+    app.get('/cost/api/admin/users/total-expenses', ensureCostAdmin, costAdminApiHandler.getTotalExpensesForEachUser);
     app.get('/cost/api/admin/users/:id', ensureCostAdmin, costAdminApiHandler.getUserById);
     app.get('/cost/api/admin/users/:userId/expenses', ensureCostAdmin, costAdminApiHandler.getExpensesForAUser);
 
