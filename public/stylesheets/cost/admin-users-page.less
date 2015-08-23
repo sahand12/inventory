@@ -5,6 +5,10 @@
 
 
   tbody tr:nth-child(n+1) {
+    td {
+      letter-spacing: 1px;
+    }
+
     &:hover {
       background-color: #f6f6f6;
     }
@@ -13,4 +17,28 @@
       color: red;
     }
   }
+}
+
+.profile-header {
+  margin-top: 30px;
+}
+
+.profile-table {
+  tr {
+    border: 1px solid #eee;
+    letter-spacing: 1px;
+
+    th {
+      padding: 20px;
+    }
+
+    th:first-child {
+      background-color: @top-nav-background-color;
+      color: white;
+    }
+  }
+}
+
+.user-expenses-table {
+  margin-top: 20px;
 }

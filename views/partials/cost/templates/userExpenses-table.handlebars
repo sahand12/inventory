@@ -1,0 +1,17 @@
+<!-- color, id, date, title, categoryName, amount -->
+<script type="text/vgn-template" id="expensesTableTemplate">
+    <tr>
+        <td class="category-color" style="background-color: [[color]]">
+            <input type="hidden" class="docId" value="[[id]]"/>
+        </td>
+        <td class="text-center">
+            <div class="description-popover" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-content="[[description]]">
+                <span class="fa fa-file-text-o text-center"></span>
+            </div>
+        </td>
+        <td>[[date]]</td>
+        <td>[[title]]</td>
+        <td class="text-capitalize">[[categoryName]]</td>
+        <td class='expense-table-amount'>[[amount]] &#65020;</td>
+    </tr>
+</script>

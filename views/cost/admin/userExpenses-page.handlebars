@@ -1,0 +1,47 @@
+<div class="col-sm-12 user-expenses-list">
+    <h1 class="cost-helper-header text-uppercase"><span style="background: white;">user Expenses</span></h1>
+
+    <div class="row">
+        <div class="col-sm-6 col-md-4 profile-header">
+            <table class="profile-table">
+                <tr>
+                    <th>Name</th>
+                    <th class="text-capitalize">{{user.name.first}} {{user.name.last}}</th>
+                </tr>
+            </table>
+        </div>
+        <div class="col-sm-6 col-md-4 profile-header">
+            <table class="profile-table">
+                <tr>
+                    <th>Email</th>
+                    <th>{{user.email}}</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <table class="table user-expenses-table vgn-table" id="userExpensesTable">
+        <thead class="vgn-table-thead">
+            <tr>
+                <th></th>
+                <th></th>
+                <th class="text-uppercase">date</th>
+                <th class="text-uppercase">Title</th>
+                <th class="text-uppercase">category</th>
+                <th class="text-uppercase">amount</th>
+            </tr>
+        </thead>
+        <tbody class="vgn-table-tbody" data-user-id="{{user._id}}"></tbody>
+    </table>
+
+    <!-- Ajax animation spinner -->
+    <div class="col-xs-12 users-table-ajax-spinner" style="display: none;">
+        <p class="text-center">
+            <img src="/images/spinner.gif" alt="loading ..."/><br/>
+            <!--loading-->
+        </p>
+    </div>
+</div>
+
+{{> cost/templates/userExpenses-table}}

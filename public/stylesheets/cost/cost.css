@@ -840,9 +840,29 @@ input#end {
 .users-table {
   margin-top: 30px;
 }
+.users-table tbody tr:nth-child(n+1) td {
+  letter-spacing: 1px;
+}
 .users-table tbody tr:nth-child(n+1):hover {
   background-color: #f6f6f6;
 }
 .users-table tbody tr:nth-child(n+1) td:last-child {
   color: red;
+}
+.profile-header {
+  margin-top: 30px;
+}
+.profile-table tr {
+  border: 1px solid #eee;
+  letter-spacing: 1px;
+}
+.profile-table tr th {
+  padding: 20px;
+}
+.profile-table tr th:first-child {
+  background-color: #9bd5cb;
+  color: white;
+}
+.user-expenses-table {
+  margin-top: 20px;
 }

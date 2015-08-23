@@ -265,6 +265,19 @@ var CostHandler = function CostHandler (app) {
         return res.render('cost/admin/users-page', data);
     };
 
+    // GET     /cost/admin/users/:userId/expenses
+    this.showUserExpensesPage = function (req, res, next) {
+        var data = {
+            layout: 'cost.dashboard.handlebars',
+            user: req.user,
+            title: 'Admin | User Expenses',
+            adminPages: true,
+            adminUserExpensesPage: true,
+            costAdmin: (req.user.role == 'costAdmin')
+        };
+        return res.render('cost/admin/userExpenses-page', data);
+    };
+
 };
 
 

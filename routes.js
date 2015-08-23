@@ -168,6 +168,7 @@ exports = module.exports = function (express, app, passport) {
     app.get('/cost/admin/categories', ensureCostAdmin, costHandler.showAdminCategoriesPage);
     app.get('/cost/admin/daily-reports', ensureCostAdmin, costHandler.showAdminDailyReportsPage);
     app.get('/cost/admin/users', ensureCostAdmin, costHandler.showUsersPage);
+    app.get('/cost/admin/users/:userId/expenses', ensureCostAdmin, costHandler.showUserExpensesPage);
 
     var CostApiHandler = require('./controllers/cost/api/costApiHandler'),
         costApiHandler = new CostApiHandler(app);
