@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f15174e-ed4e-4874-b2fe-4736a9113461" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/partials/cost/templates/dailyReport-table.handlebars" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/cost.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars" afterPath="$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/cost.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/cost/api/costAdminApiHandler.js" afterPath="$PROJECT_DIR$/controllers/cost/api/costAdminApiHandler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/cost/costHandler.js" afterPath="$PROJECT_DIR$/controllers/cost/costHandler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/cost/admin/dailyReports-page.handlebars" afterPath="$PROJECT_DIR$/views/cost/admin/dailyReports-page.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.js" afterPath="$PROJECT_DIR$/routes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/partials/cost/templates/dailyReport-table.handlebars" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/cost/admin/dailyReports-page.js" afterPath="$PROJECT_DIR$/public/javascripts/cost/admin/dailyReports-page.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/cost/templates/dailyReports-table.handlebars" afterPath="$PROJECT_DIR$/views/partials/cost/templates/dailyReports-table.handlebars" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="basicAuth.iws" />
@@ -30,20 +25,20 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="dailyReports-table.handlebars" pinned="false" current-in-tab="false">
+            <file leaf-file-name="dailyReports-table.handlebars" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/views/partials/cost/templates/dailyReports-table.handlebars">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="-8.689655">
+                  <state vertical-scroll-proportion="0.24305555">
                     <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
                     <folding />
                   </state>
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="dailyReports-page.handlebars" pinned="false" current-in-tab="true">
+            <file leaf-file-name="dailyReports-page.handlebars" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/views/cost/admin/dailyReports-page.handlebars">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.21875">
+                  <state vertical-scroll-proportion="-8.689655">
                     <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
                     <folding />
                   </state>
@@ -96,8 +91,8 @@
       <file leaf-file-name="dailyReports-page.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/dailyReports-page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7599661">
-              <caret line="74" column="70" selection-start-line="74" selection-start-column="70" selection-end-line="74" selection-end-column="70" />
+            <state vertical-scroll-proportion="0.64122134">
+              <caret line="74" column="69" selection-start-line="74" selection-start-column="69" selection-end-line="74" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -187,8 +182,8 @@
         <option value="$PROJECT_DIR$/public/stylesheets/cost/admin-dailyReports.less" />
         <option value="$PROJECT_DIR$/public/javascripts/cost/admin/dailyReports.js" />
         <option value="$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars" />
-        <option value="$PROJECT_DIR$/views/partials/cost/templates/dailyReports-table.handlebars" />
         <option value="$PROJECT_DIR$/views/cost/admin/dailyReports-page.handlebars" />
+        <option value="$PROJECT_DIR$/views/partials/cost/templates/dailyReports-table.handlebars" />
         <option value="$PROJECT_DIR$/public/javascripts/cost/admin/dailyReports-page.js" />
       </list>
     </option>
@@ -613,7 +608,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="find&#9;ACTION&#9;FindModal&#10;use soft&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;use sof&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;use softwrap&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;use so&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;use &#9;ACTION&#9;EditorToggleUseSoftWraps&#10;soft wrap&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;soft&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;sof&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;local histor&#9;ACTION&#9;LocalHistory&#10;soft w&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;tab size&#9;null&#9;null&#10;plugin&#9;ACTION&#9;null&#10;less &#9;null&#9;null&#10;wrap&#9;ACTION&#9;EditorToggleUseSoftWraps" />
+    <property name="SearchEverywhereHistoryKey" value="local history&#9;ACTION&#9;LocalHistory&#10;find&#9;ACTION&#9;FindModal&#10;use soft&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;use sof&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;use softwrap&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;use so&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;use &#9;ACTION&#9;EditorToggleUseSoftWraps&#10;soft wrap&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;soft&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;sof&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;local histor&#9;ACTION&#9;LocalHistory&#10;soft w&#9;ACTION&#9;EditorToggleUseSoftWraps&#10;tab size&#9;null&#9;null&#10;plugin&#9;ACTION&#9;null&#10;less &#9;null&#9;null&#10;wrap&#9;ACTION&#9;EditorToggleUseSoftWraps" />
     <property name="list.type.of.created.stylesheet" value="Less" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="jsx.switch.disabled" value="true" />
@@ -1122,14 +1117,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/cost/templates/dailyReports-table.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.689655">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/schema/DailyReport.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1140,16 +1127,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/cost/admin/dailyReports-page.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21875">
+        <state vertical-scroll-proportion="-8.689655">
           <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/cost/templates/dailyReports-table.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24305555">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/dailyReports-page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7599661">
-          <caret line="74" column="70" selection-start-line="74" selection-start-column="70" selection-end-line="74" selection-end-column="70" />
+        <state vertical-scroll-proportion="0.64122134">
+          <caret line="74" column="69" selection-start-line="74" selection-start-column="69" selection-end-line="74" selection-end-column="69" />
           <folding />
         </state>
       </provider>
