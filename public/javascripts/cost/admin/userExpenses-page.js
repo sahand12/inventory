@@ -16,6 +16,7 @@ $(function () {
     var rowTemplate = $('#expensesTableTemplate').html();
     var $userExpensesTableBody = $('.user-expenses-table').find('tbody');
 
+    var categoryColors = {};
 
     /*
      * ---------------------------------------------
@@ -56,9 +57,16 @@ $(function () {
     }
 
     function buildSingleExpense (data) {
+        var css;
+        if (categoryColors[data.category.name]) {
+            css = categoryColors[data.category.name];
+        }
+        else {
+            css = categoryColors[data.category.name] = app.helpers.makeRandomColor();
+        }
         var html = rowTemplate.replace('[[date]]', app.helpers.formatDate(data.date))
             .replace('[[description]]', data.description)
-            .replace('[[color]]', app.helpers.makeRandomColor().color)
+            .replace('[[color]]', css.color)
             .replace('[[title]]', data.title)
             .replace('[[categoryName]]', data.category.name)
             .replace('[[amount]]', app.helpers.formatAmount(data.amount));

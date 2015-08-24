@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f15174e-ed4e-4874-b2fe-4736a9113461" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/admin-users-page.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/admin-users-page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/admin-users-page.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/admin-users-page.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/cost-expenses-page.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost-expenses-page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/cost-expenses-page.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost-expenses-page.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/cost.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/cost.helpers.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.helpers.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/cost.helpers.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.helpers.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/cost/api/costAdminApiHandler.js" afterPath="$PROJECT_DIR$/controllers/cost/api/costAdminApiHandler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/cost/costHandler.js" afterPath="$PROJECT_DIR$/controllers/cost/costHandler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/cost/admin/userExpenses-page.handlebars" afterPath="$PROJECT_DIR$/views/cost/admin/userExpenses-page.handlebars" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/cost/admin/userExpenses-page.js" afterPath="$PROJECT_DIR$/public/javascripts/cost/admin/userExpenses-page.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/cost/admin/users-page.handlebars" afterPath="$PROJECT_DIR$/views/cost/admin/users-page.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/cost/templates/users-table.handlebars" afterPath="$PROJECT_DIR$/views/partials/cost/templates/users-table.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="basicAuth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -81,10 +68,10 @@
       <file leaf-file-name="userExpenses-page.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/userExpenses-page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43002546">
-              <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.56997454">
+              <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
               <folding>
-                <marker date="1440400254000" expanded="true" signature="1559:1579" placeholder="..." />
+                <marker date="1440400796000" expanded="true" signature="1588:1608" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -1165,10 +1152,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/userExpenses-page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43002546">
-          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.56997454">
+          <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
           <folding>
-            <marker date="1440400254000" expanded="true" signature="1559:1579" placeholder="..." />
+            <marker date="1440400796000" expanded="true" signature="1588:1608" placeholder="..." />
           </folding>
         </state>
       </provider>
