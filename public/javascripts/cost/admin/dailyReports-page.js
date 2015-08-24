@@ -48,7 +48,6 @@ $(function () {
     }
 
     function dailyReportsTableAjaxEnded (response) {
-        console.log(response);
         // hide the ajax spinner
         $dailyReportsTableAjaxSpinner.hide();
 
@@ -62,12 +61,10 @@ $(function () {
         for (var i = 0, len = data.length; i < len; i++) {
             html.push(buildDailyReportsTableRow(data[i]));
         }
-        console.log(html.join(""));
         $adminDailyReportsTableBody.html( html.join("") );
     }
 
     function buildDailyReportsTableRow (data) {
-        console.log(data);
         var html = reportsTableRowTemplate.replace('[[date]]', app.helpers.formatDate(data.date))
             .replace('[[title]]', data.title)
             .replace('[[firstName]]', (data.user && data.user.name.first) || "")
