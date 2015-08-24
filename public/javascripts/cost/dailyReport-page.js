@@ -55,7 +55,7 @@ $(function () {
     function buildDailyReportsTable () {
         var userId = $dailyReportTableBody.attr('data-user-id');
         $.ajax({
-            url: '/cost/api/user/' + userId + '/daily-reports',
+            url: '/cost/api/daily-reports?count=5',
             method: 'get',
             beforeSend: dailyReportTableAjaxInProgress
         }).done(function (response) {

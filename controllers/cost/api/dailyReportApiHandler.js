@@ -28,13 +28,15 @@ var DailyReportApiHandler = function (app) {
 
 
     /*
-     * GET    /cost/api/admin/daily-reports
+     * GET    /cost/api/daily-reports?count=..
      */
     this.getAllDailyReports = function (req, res, next) {
-        var query = {};
+        var count = req.query.count || 100;
+        var query = { user: req.user._id };
         var filter = {};
         DailyReports.find(query)
             .sort({ date: -1 })
+            .limit(count)
             .exec(function (err, docs) {
                 __sendResponse(res, err, docs);
             });

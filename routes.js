@@ -254,9 +254,9 @@ exports = module.exports = function (express, app, passport) {
     var DailyReportApiHandler = require('./controllers/cost/api/dailyReportApiHandler');
     var dailyReportApiHandler = new DailyReportApiHandler(app);
 
-    app.get('/cost/api/daily-reports/', ensureCostAdmin, dailyReportApiHandler.getAllDailyReports);
-    app.get('/cost/api/user/:userId/daily-reports', ensureCostAdmin, dailyReportApiHandler.getAllDailyReportsForAUser);
+    app.get('/cost/api/daily-reports/', ensureAuthenticated, dailyReportApiHandler.getAllDailyReports);
+    //app.get('/cost/api/user/:userId/daily-reports', ensureCostAdmin, dailyReportApiHandler.getAllDailyReportsForAUser);
     app.post('/cost/api/daily-reports', ensureAuthenticated, dailyReportApiHandler.createNewDailyReport);
-    app.get('/cost/api/daily-reports/date/:dateTime', ensureCostAdmin, dailyReportApiHandler.getAllDailyReportsForADay);
+    app.get('/cost/api/daily-reports/date/:dateTime', ensureAuthenticated, dailyReportApiHandler.getAllDailyReportsForADay);
 
 };
