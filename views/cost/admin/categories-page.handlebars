@@ -1,0 +1,76 @@
+{{!--  views/cost/admin/categories-page.handlebars --}}
+<div class="col-sm-8 admin-categories-list">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1 class="cost-helper-header text-uppercase"><span style="background: white;">categories</span></h1>
+
+            <section class="row vgn-date-picker">
+                <form class="form-inline">
+                    <div class="form-group col-md-4 col-xs-6">
+                        <label for="categoryStartDate">Start: </label><br/>
+                        <input type="date" name="categoryStartDate" id="categoryStartDate" class="form-control" value="{{date.lastMonth}}"/>
+                    </div>
+                    <div class="form-group col-md-4 col-xs-6">
+                        <label for="categoryEndDate">End: </label><br/>
+                        <input type="date" name="categoryEndDate" id="categoryEndDate" class="form-control" value="{{date.today}}"/>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <br/>
+                        <button class="vgn-date-picker-button btn vgn-btn-green btn-block">Search</button>
+                    </div>
+                </form>
+            </section>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <table class="table vgn-table" id="adminCategoriesTable">
+                        <thead class="vgn-table-thead">
+                            <tr>
+                                <th></th>
+                                <th class="text-uppercase">category name <span class="fa fa-chevron-down"></span></th>
+                                <th class="text-uppercase">amount</th>
+                            </tr>
+                        </thead>
+                        <tbody class="vgn-table-tbody"></tbody>
+                    </table>
+                </div><!-- /.col-xs-12 -->
+            </div><!-- /.row -->
+
+            <!-- Ajax animation spinner -->
+            <div class="col-xs-12 admin-categories-table-ajax-spinner" style="display: none;">
+                <p class="text-center">
+                    <img src="/images/spinner.gif" alt="loading ..."/><br/>
+                    <!--loading-->
+                </p>
+            </div><!-- /.admin-categories-table-ajax-spinner -->
+
+        </div><!-- /.col-xs-12 -->
+
+        <div class="col-xs-12">
+            <h1 class="h1 text-uppercase cost-helper-header"><span style="background: white;">categories Chart</span></h1>
+
+            <!-- Ajax animation spinner -->
+            <div class="col-xs-12 admin-categories-table-ajax-spinner" style="display: none;">
+                <p class="text-center">
+                    <img src="/images/spinner.gif" alt="loading ..."/><br/>
+                    <!--loading-->
+                </p>
+            </div><!-- /.admin-categories-table-ajax-spinner -->
+
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1" id="adminCategoriesBarChartContainer">
+
+                </div><!-- /.col-xs-10 -->
+            </div><!-- /.row -->
+
+        </div><!-- /.col-xs-12 -->
+
+    </div><!-- /.row -->
+</div><!-- /.admin-categories-list -->
+
+<div class="col-sm-4 admin-create-category">
+    <!--<h1 class="text-center text-capitalize secondary-heading">Create a Category</h1>-->
+    {{> cost/forms/create-category}}
+</div>
+
+{{> cost/templates/categories-table}}

@@ -193,9 +193,29 @@ var costAdminApiHandler = function (app) {
         });
     };
 
+    // GET    /cost/api/admin/categories/expenses?start=..&end=..
+    this.getAllExpensesForEachCategory = function (req, res, next) {
+        var start = req.query.start || Date.now() - 1000 * 3600 * 24 * 31;
+        var end = req.query.end || Date.now();
+
+        Expenses.aggregate([
+            {
+                $match: { date: { $gte: new Date(start), $lte: new Date(end) } }
+            },
+            {
+                $group: {
+                    _id: '$category.name',
+                    total: {$sum: '$amount'}
+                }
+            }
+        ], function (err, docs) {
+            return __sendResponse(res, err, docs);
+        });
+    };
+
     // GET    /cost/api/admin/categories/:id/expenses
     this.getAllExpensesForACategory = function (req, res, next) {
-        var count = req.query.count || 20;
+        var count = req.query.count || 100;
         var keys = { title: 1, date: 1, description: 1, amount: 1, 'category.name': 1 };
         var categoryId = req.params.id;
         if (!objectId.isValid(categoryId)) {
