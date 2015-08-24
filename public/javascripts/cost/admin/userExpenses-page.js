@@ -15,6 +15,7 @@ $(function () {
      */
     var rowTemplate = $('#expensesTableTemplate').html();
     var $userExpensesTableBody = $('.user-expenses-table').find('tbody');
+    var $userExpensesTableAjaxSpinner = $('.user-expenses-table-ajax-spinner');
 
     var categoryColors = {};
 
@@ -74,11 +75,13 @@ $(function () {
     }
 
     function userExpensesTableAjaxInProgress () {
-
+        $userExpensesTableAjaxSpinner.show();
     }
 
     function userExpensesTableAjaxEnded (response) {
-        console.log(response);
+        // hide the spinner
+        $userExpensesTableAjaxSpinner.hide();
+
         if (response.success) {
             populateUserExpensesTable(response.data);
             var totalExpenses = computeTotalAmount(response.data);

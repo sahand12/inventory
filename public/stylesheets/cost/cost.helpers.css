@@ -107,6 +107,7 @@
 }
 .vgn-table {
   border: 0;
+  letter-spacing: 1px;
 }
 .vgn-table .vgn-table-thead {
   color: #9bd5cb;
@@ -135,6 +136,7 @@
   border-top: none;
   padding: 20px 15px;
   vertical-align: middle;
+  letter-spacing: 1px;
 }
 .vgn-table .vgn-table-tbody tr td:first-child {
   padding: 0;
