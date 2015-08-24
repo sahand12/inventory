@@ -252,6 +252,26 @@ var CostHandler = function CostHandler (app) {
         return res.render('cost/admin/dailyReports-page', data);
     };
 
+    // GET     /cost/admin/users/:userId/daily-reports
+    this.showAdminDailyReportsForAUserPage = function (req, res, next) {
+        var data = {
+            layout: 'cost.dashboard.handlebars',
+            user: req.user,
+            adminPages: true,
+            adminUserDailyReportsPage: true,
+            costAdmin: (req.user.role === 'costAdmin')
+        };
+
+        req.app.db.models.User.findOne({ _id: req.params.userId }).exec(function (err, user) {
+            if (err) {
+                return next(err);
+            }
+            data.title = "Admin | " + user.name.first + " " + user.name.last + " Daily Reports";
+            data.reportsOwner = user;
+            return res.render('cost/admin/userDailyReports-page', data);
+        });
+    };
+
     // GET     /cost/admin/users
     this.showUsersPage = function (req, res, next) {
         var data = {

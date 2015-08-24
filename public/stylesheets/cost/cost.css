@@ -882,3 +882,6 @@ input#end {
   background-color: #f6f6f6;
   color: #555;
 }
+.admin-daily-reports-table {
+  margin-top: 30px;
+}

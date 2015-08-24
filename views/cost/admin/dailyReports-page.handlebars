@@ -1,0 +1,27 @@
+<div class="col-md-12 admin-daily-reports">
+    <h1 class="cost-helper-header text-uppercase"><span style="background: white;">Daily Reports List</span></h1>
+
+    <table class="table admin-daily-reports-table vgn-table" id="adminDailyReportsTable">
+        <thead class="vgn-table-thead">
+            <tr>
+                <th></th>
+                <th></th>
+                <th class="text-uppercase">date <span class="glyphicon glyphicon-menu-down"></span></th>
+                <th class="text-uppercase">Title</th>
+                <th class="text-uppercase">name</th>
+                <th class="text-uppercase">Report text</th>
+            </tr>
+        </thead>
+        <tbody class="vgn-table-tbody"></tbody>
+    </table>
+
+    <!-- Ajax animation spinner -->
+    <div class="col-xs-12 admin-dailyReports-table-ajax-spinner" style="display: none;">
+        <p class="text-center">
+            <img src="/images/spinner.gif" alt="loading ..."/><br/>
+            <!--loading-->
+        </p>
+    </div>
+</div>
+
+{{> cost/templates/dailyReports-table}}

@@ -230,6 +230,18 @@ var costAdminApiHandler = function (app) {
             });
     };
 
+    // GET     /cost/api/admin/users/:userId/daily-reports
+    this.getAllDailyReportsForAUser = function (req, res, next) {
+        var count = req.query.count || 100;
+        var userId = req.params.userId;
+        DailyReports.find({ user: userId })
+            .sort({ date: -1 })
+            .limit(count)
+            .exec(function (err, docs) {
+                return __sendResponse(res, err, docs);
+            });
+    };
+
 };
 
 exports = module.exports = costAdminApiHandler;
