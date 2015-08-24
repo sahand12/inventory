@@ -139,8 +139,6 @@
 }
 .description-popover {
   cursor: pointer;
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 .description-popover:hover,
 .description-popover:focus,

@@ -11,6 +11,10 @@
 
     &:hover {
       background-color: #f6f6f6;
+
+      .user-expenses-anchor a {
+        background-color: white;
+      }
     }
 
     td:last-child {
@@ -28,7 +32,7 @@
     border: 1px solid #eee;
     letter-spacing: 1px;
 
-    th {
+    th, td {
       padding: 20px;
     }
 
@@ -41,4 +45,18 @@
 
 .user-expenses-table {
   margin-top: 20px;
+}
+
+.user-expenses-anchor {
+  padding: 20px;
+
+  a,
+  a:hover,
+  a:visited,
+  a:active {
+    padding: 10px;
+    border-radius: 40px;
+    background-color: #f6f6f6;
+    color: #555;
+  }
 }

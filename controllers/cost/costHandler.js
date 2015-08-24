@@ -275,7 +275,13 @@ var CostHandler = function CostHandler (app) {
             adminUserExpensesPage: true,
             costAdmin: (req.user.role == 'costAdmin')
         };
-        return res.render('cost/admin/userExpenses-page', data);
+        req.app.db.models.User.findOne({ _id: req.params.userId }).exec(function (err, user) {
+            if (err) {
+                return next();
+            }
+            data.expensesOwner = user;
+            return res.render('cost/admin/userExpenses-page', data);
+        });
     };
 
 };

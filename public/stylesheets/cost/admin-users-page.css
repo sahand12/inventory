@@ -7,6 +7,9 @@
 .users-table tbody tr:nth-child(n+1):hover {
   background-color: #f6f6f6;
 }
+.users-table tbody tr:nth-child(n+1):hover .user-expenses-anchor a {
+  background-color: white;
+}
 .users-table tbody tr:nth-child(n+1) td:last-child {
   color: red;
 }
@@ -17,7 +20,8 @@
   border: 1px solid #eee;
   letter-spacing: 1px;
 }
-.profile-table tr th {
+.profile-table tr th,
+.profile-table tr td {
   padding: 20px;
 }
 .profile-table tr th:first-child {
@@ -26,4 +30,16 @@
 }
 .user-expenses-table {
   margin-top: 20px;
+}
+.user-expenses-anchor {
+  padding: 20px;
+}
+.user-expenses-anchor a,
+.user-expenses-anchor a:hover,
+.user-expenses-anchor a:visited,
+.user-expenses-anchor a:active {
+  padding: 10px;
+  border-radius: 40px;
+  background-color: #f6f6f6;
+  color: #555;
 }

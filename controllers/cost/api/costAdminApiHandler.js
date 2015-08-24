@@ -83,7 +83,7 @@ var costAdminApiHandler = function (app) {
         }
 
         var query = { user: userId };
-        var count = req.query.count || 10;
+        var count = req.query.count || 100;
         Expenses.find(query, keys)
             .sort({ date: -1 })
             .limit(count)

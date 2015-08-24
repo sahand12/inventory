@@ -6,7 +6,7 @@
             <table class="profile-table">
                 <tr>
                     <th>Name</th>
-                    <th class="text-capitalize">{{user.name.first}} {{user.name.last}}</th>
+                    <td class="text-capitalize">{{expensesOwner.name.first}} {{expensesOwner.name.last}}</td>
                 </tr>
             </table>
         </div>
@@ -14,7 +14,15 @@
             <table class="profile-table">
                 <tr>
                     <th>Email</th>
-                    <th>{{user.email}}</th>
+                    <td>{{expensesOwner.email}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-sm-6 col-md-4 profile-header">
+            <table class="profile-table">
+                <tr>
+                    <th>Total Amount</th>
+                    <td class="user-expenses-total-amount"></td>
                 </tr>
             </table>
         </div>
@@ -26,13 +34,13 @@
             <tr>
                 <th></th>
                 <th></th>
-                <th class="text-uppercase">date</th>
+                <th class="text-uppercase">date  <span class="glyphicon glyphicon-menu-down"></span></th>
                 <th class="text-uppercase">Title</th>
                 <th class="text-uppercase">category</th>
                 <th class="text-uppercase">amount</th>
             </tr>
         </thead>
-        <tbody class="vgn-table-tbody" data-user-id="{{user._id}}"></tbody>
+        <tbody class="vgn-table-tbody" data-expenses-owner-id="{{expensesOwner._id}}"></tbody>
     </table>
 
     <!-- Ajax animation spinner -->
