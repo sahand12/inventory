@@ -61,14 +61,15 @@ $(function () {
         $categoriesTableAjaxSpinner.hide();
 
         if (response.success) {
-            populateAdminCategoriesTable (response.data);
+            populateAdminCategoriesTable(response.data);
+            buildAdminCategoryBarChart(response.data);
         }
     }
 
     function populateAdminCategoriesTable (data) {
         var html = [];
         for (var i = 0, len = data.length; i < len; i++) {
-            html.push( buildAdminCategoryTableRow(data[i]));
+            html.push( buildAdminCategoryTableRow(data[i]) );
         }
         $adminCategoriesTableBody.html(html.join(""));
     }
@@ -80,4 +81,50 @@ $(function () {
             .replace('[[name]]', data._id.name);
         return html;
     }
+
+
+
+    /*
+     * ----------------------------
+     *      CATEGORIES BAR CHART
+     * ----------------------------
+     */
+    function buildAdminCategoryBarChart (data) {
+        var canvas = $('<canvas class="barChart" id="barChart"></canvas>');
+        var context = canvas.get(0).getContext('2d');
+        $barChartContainer.html(canvas);
+
+        var barData = {};
+        barData.labels = [];
+        barData.datasets = [{
+            label: 'Category Amount',
+            fillColor: "rgb(155, 213, 203)",
+            strokeColor: "rgba(155, 213, 203, 0.8)",
+            highlightFill: "rgba(155, 213, 203, 0.75)",
+            highlightStroke: "rgba(155, 213, 203, 1)"
+        }];
+        var catData = barData.datasets[0].data = [];
+        //console.log(barData.datasets[0]);
+        for (var i = 0, len = data.length; i < len; i++) {
+            var current = data[i];
+            barData.labels.push(current._id.name);
+            catData.push(current.total);
+        }
+        //console.log(barData);
+        new Chart(context).Bar(barData, { responsive: true, barValueSpacing: 20 });
+    }
+
+
+    /*
+     * ----------------------------
+     *     DATE PICKER FORM
+     * ----------------------------
+     */
+    $datePickerBtn.on('click', handleDatePickerBtnClick);
+
+    function handleDatePickerBtnClick (e) {
+        e.preventDefault();
+        app.emitEvent('search.button.click');
+    }
 });
+
