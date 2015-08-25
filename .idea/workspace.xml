@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f15174e-ed4e-4874-b2fe-4736a9113461" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/cost/admin/userDailyReports-page.handlebars" afterPath="$PROJECT_DIR$/views/cost/admin/userDailyReports-page.handlebars" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/cost/app.js" afterPath="$PROJECT_DIR$/public/javascripts/cost/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/cost/admin/categories-page.handlebars" afterPath="$PROJECT_DIR$/views/cost/admin/categories-page.handlebars" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/cost/admin/categories-page.js" afterPath="$PROJECT_DIR$/public/javascripts/cost/admin/categories-page.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/cost/templates/categories-table.handlebars" afterPath="$PROJECT_DIR$/views/partials/cost/templates/categories-table.handlebars" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars" afterPath="$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/cost/api/costAdminApiHandler.js" afterPath="$PROJECT_DIR$/controllers/cost/api/costAdminApiHandler.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/cost/costHandler.js" afterPath="$PROJECT_DIR$/controllers/cost/costHandler.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/cost/templates/dailyReports-table.handlebars" afterPath="$PROJECT_DIR$/views/partials/cost/templates/dailyReports-table.handlebars" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.js" afterPath="$PROJECT_DIR$/routes.js" />
     </list>
     <ignored path="basicAuth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,10 +40,10 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="dailyReports-page.js" pinned="false" current-in-tab="true">
+            <file leaf-file-name="dailyReports-page.js" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/dailyReports-page.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="-0.26123834">
+                  <state vertical-scroll-proportion="0.0">
                     <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
                     <folding />
                   </state>
@@ -45,9 +53,60 @@
             <file leaf-file-name="dailyReports-table.handlebars" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/views/partials/cost/templates/dailyReports-table.handlebars">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="-9.655172">
-                    <caret line="10" column="115" selection-start-line="10" selection-start-column="115" selection-end-line="10" selection-end-column="115" />
+                  <state vertical-scroll-proportion="-3.862069">
+                    <caret line="4" column="68" selection-start-line="4" selection-start-column="68" selection-end-line="4" selection-end-column="68" />
                     <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="categories-page.handlebars" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/views/cost/admin/categories-page.handlebars">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="1.8991305">
+                    <caret line="75" column="48" selection-start-line="75" selection-start-column="48" selection-end-line="75" selection-end-column="48" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="categories-table.handlebars" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/views/partials/cost/templates/categories-table.handlebars">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="-2.8965516">
+                    <caret line="3" column="88" selection-start-line="3" selection-start-column="88" selection-end-line="3" selection-end-column="88" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+    <window id="2">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="costApiHandler.js" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/controllers/cost/api/costApiHandler.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.0">
+                    <caret line="325" column="24" selection-start-line="325" selection-start-column="20" selection-end-line="325" selection-end-column="24" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="categories-page.js" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/public/javascripts/cost/categories-page.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="-1.0449533">
+                    <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                    <folding>
+                      <marker date="1437638811000" expanded="true" signature="2619:2637" placeholder="..." />
+                      <marker date="1437638811000" expanded="true" signature="2752:2762" placeholder="..." />
+                    </folding>
                   </state>
                 </provider>
               </entry>
@@ -63,11 +122,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="admin-dailyReports.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/stylesheets/cost/admin-dailyReports.less">
+      <file leaf-file-name="categories-page.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/categories-page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.689655">
-              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="77" column="107" selection-start-line="77" selection-start-column="107" selection-end-line="77" selection-end-column="107" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cost.dashboard.handlebars" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-24.0">
+              <caret line="174" column="29" selection-start-line="174" selection-start-column="29" selection-end-line="174" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -77,7 +146,17 @@
         <entry file="file://$PROJECT_DIR$/routes.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="171" column="110" selection-start-line="171" selection-start-column="110" selection-end-line="171" selection-end-column="110" />
+              <caret line="241" column="117" selection-start-line="241" selection-start-column="88" selection-end-line="241" selection-end-column="117" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="costAdminApiHandler.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controllers/cost/api/costAdminApiHandler.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33248517">
+              <caret line="210" column="42" selection-start-line="210" selection-start-column="42" selection-end-line="210" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -87,30 +166,17 @@
         <entry file="file://$PROJECT_DIR$/controllers/cost/costHandler.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="319" column="53" selection-start-line="319" selection-start-column="53" selection-end-line="319" selection-end-column="53" />
+              <caret line="240" column="55" selection-start-line="240" selection-start-column="55" selection-end-line="240" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userDailyReports-page.handlebars" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/cost/admin/userDailyReports-page.handlebars">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41391304">
-              <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-              <folding>
-                <element signature="e#105#137#0#HTML" expanded="true" />
-                <element signature="e#1457#1479#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="userDailyReports-page.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/userDailyReports-page.js">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/cost/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="85" selection-start-line="17" selection-start-column="85" selection-end-line="17" selection-end-column="85" />
+              <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -140,7 +206,6 @@
         <option value="$PROJECT_DIR$/views/cost/expenses.handlebars" />
         <option value="$PROJECT_DIR$/views/partials/cost/templates/expenses-table.handlebars" />
         <option value="$PROJECT_DIR$/public/javascripts/cost/expenses-page.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/cost/app.js" />
         <option value="$PROJECT_DIR$/public/javascripts/cost/total-expenses.js" />
         <option value="$PROJECT_DIR$/schema/plugins/pagedFind.js" />
         <option value="$PROJECT_DIR$/controllers/cost/api/costApiHandler.js" />
@@ -170,19 +235,20 @@
         <option value="$PROJECT_DIR$/public/stylesheets/cost/cost.less" />
         <option value="$PROJECT_DIR$/views/partials/cost/forms/create-category.handlebars" />
         <option value="$PROJECT_DIR$/public/stylesheets/cost/admin-categories-page.less" />
-        <option value="$PROJECT_DIR$/views/partials/cost/templates/categories-table.handlebars" />
-        <option value="$PROJECT_DIR$/views/cost/admin/categories-page.handlebars" />
-        <option value="$PROJECT_DIR$/public/javascripts/cost/admin/categories-page.js" />
-        <option value="$PROJECT_DIR$/controllers/cost/api/costAdminApiHandler.js" />
-        <option value="$PROJECT_DIR$/views/partials/cost/templates/dailyReports-table.handlebars" />
         <option value="$PROJECT_DIR$/public/stylesheets/cost/admin-dailyReports.less" />
-        <option value="$PROJECT_DIR$/routes.js" />
-        <option value="$PROJECT_DIR$/controllers/cost/costHandler.js" />
         <option value="$PROJECT_DIR$/public/javascripts/cost/admin/dailyReports-page.js" />
-        <option value="$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars" />
         <option value="$PROJECT_DIR$/views/partials/cost/templates/userDailyReports-table.handlebars" />
         <option value="$PROJECT_DIR$/public/javascripts/cost/admin/userDailyReports-page.js" />
         <option value="$PROJECT_DIR$/views/cost/admin/userDailyReports-page.handlebars" />
+        <option value="$PROJECT_DIR$/views/partials/cost/templates/dailyReports-table.handlebars" />
+        <option value="$PROJECT_DIR$/routes.js" />
+        <option value="$PROJECT_DIR$/views/cost/admin/categories-page.handlebars" />
+        <option value="$PROJECT_DIR$/views/partials/cost/templates/categories-table.handlebars" />
+        <option value="$PROJECT_DIR$/controllers/cost/costHandler.js" />
+        <option value="$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars" />
+        <option value="$PROJECT_DIR$/public/javascripts/cost/app.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/cost/admin/categories-page.js" />
+        <option value="$PROJECT_DIR$/controllers/cost/api/costAdminApiHandler.js" />
       </list>
     </option>
   </component>
@@ -200,7 +266,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1213" />
+    <option name="width" value="1331" />
     <option name="height" value="1299" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -719,7 +785,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1213" height="1299" extended-state="0" />
+    <frame x="0" y="23" width="1331" height="1299" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -727,7 +793,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32863072" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2181208" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19847329" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34962717" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -780,14 +846,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/cost/dailyReport-page.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/cost/dailyReports-page.handlebars">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.65565217">
@@ -830,14 +888,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schema/ExpenseCategory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73621714">
-          <caret line="31" column="15" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
           <folding />
         </state>
       </provider>
@@ -948,6 +998,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="52" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -996,33 +1047,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/categories-page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/categories-page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1437638811000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1437638811000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/cost/api/costApiHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/userExpenses-page.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1049,34 +1073,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/cost/api/costAdminApiHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21374045">
-          <caret line="192" column="11" selection-start-line="192" selection-start-column="11" selection-end-line="192" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/cost/admin/categories-page.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70608693">
-          <caret line="75" column="37" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/cost/admin-categories-page.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31652173">
           <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/cost/templates/categories-table.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09739131">
-          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -1089,30 +1089,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="171" column="110" selection-start-line="171" selection-start-column="110" selection-end-line="171" selection-end-column="110" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/cost/admin/dailyReports-page.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.37931">
-          <caret line="18" column="11" selection-start-line="17" selection-start-column="4" selection-end-line="23" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/cost/templates/dailyReports-table.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.655172">
-          <caret line="10" column="115" selection-start-line="10" selection-start-column="115" selection-end-line="10" selection-end-column="115" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/partials/cost/templates/userExpenses-table.handlebars">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43826088">
@@ -1121,34 +1097,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/cost/admin-dailyReports.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.689655">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/dailyReports-page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.26123834">
-          <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/cost/costHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="319" column="53" selection-start-line="319" selection-start-column="53" selection-end-line="319" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.80347824">
-          <caret line="171" column="65" selection-start-line="171" selection-start-column="65" selection-end-line="171" selection-end-column="65" />
+          <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
           <folding />
         </state>
       </provider>
@@ -1169,22 +1121,137 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/userDailyReports-page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="85" selection-start-line="17" selection-start-column="85" selection-end-line="17" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/cost/admin/userDailyReports-page.handlebars">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41391304">
           <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
           <folding>
-            <element signature="e#105#137#0#HTML" expanded="true" />
-            <element signature="e#1457#1479#0#HTML" expanded="true" />
+            <element signature="e#105#137#0#HTML" expanded="false" />
+            <element signature="e#1457#1479#0#HTML" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/cost/admin/dailyReports-page.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.37931">
+          <caret line="18" column="11" selection-start-line="17" selection-start-column="4" selection-end-line="23" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/cost/templates/dailyReports-table.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.862069">
+          <caret line="4" column="68" selection-start-line="4" selection-start-column="68" selection-end-line="4" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/cost/api/costApiHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="325" column="24" selection-start-line="325" selection-start-column="20" selection-end-line="325" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schema/ExpenseCategory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.73621714">
+          <caret line="31" column="15" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/userDailyReports-page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40373197">
+          <caret line="17" column="85" selection-start-line="17" selection-start-column="85" selection-end-line="17" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/cost/admin-dailyReports.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21913044">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/categories-page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.0449533">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1437638811000" expanded="true" signature="2619:2637" placeholder="..." />
+            <marker date="1437638811000" expanded="true" signature="2752:2762" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/cost/templates/categories-table.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.8965516">
+          <caret line="3" column="88" selection-start-line="3" selection-start-column="88" selection-end-line="3" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/cost/admin/categories-page.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.8991305">
+          <caret line="75" column="48" selection-start-line="75" selection-start-column="48" selection-end-line="75" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="241" column="117" selection-start-line="241" selection-start-column="88" selection-end-line="241" selection-end-column="117" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/cost/costHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="240" column="55" selection-start-line="240" selection-start-column="55" selection-end-line="240" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-24.0">
+          <caret line="174" column="29" selection-start-line="174" selection-start-column="29" selection-end-line="174" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/categories-page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="77" column="107" selection-start-line="77" selection-start-column="107" selection-end-line="77" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/cost/api/costAdminApiHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33248517">
+          <caret line="210" column="42" selection-start-line="210" selection-start-column="42" selection-end-line="210" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>

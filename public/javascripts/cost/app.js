@@ -9,6 +9,8 @@ var app = new EventEmitter();
 app.helpers = {};
 app.helpers.months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
+app.helpers.currencySymbol = "&#65020;";
+
 app.helpers.formatDate = function formatDate (date) {
     date = new Date(date);
     var year = date.getFullYear(),

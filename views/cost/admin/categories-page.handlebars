@@ -71,6 +71,14 @@
 <div class="col-sm-4 admin-create-category">
     <!--<h1 class="text-center text-capitalize secondary-heading">Create a Category</h1>-->
     {{> cost/forms/create-category}}
+
+    <!-- Ajax animation spinner -->
+    <div class="col-xs-12 admin-createCategories-ajax-spinner" style="display: none;">
+        <p class="text-center">
+            <img src="/images/spinner-gray.gif" alt="loading ..."/><br/>
+            <!--loading-->
+        </p>
+    </div><!-- /.admin-categories-table-ajax-spinner -->
 </div>
 
 {{> cost/templates/categories-table}}

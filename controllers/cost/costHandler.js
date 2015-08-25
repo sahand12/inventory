@@ -3,6 +3,10 @@
  */
 "use strict";
 
+function formatDateForInput (date) {
+    return new Date(date).toISOString().substring(0, 10);
+}
+
 var CostHandler = function CostHandler (app) {
 
     /*
@@ -234,7 +238,11 @@ var CostHandler = function CostHandler (app) {
             title: 'Admin | Categories',
             adminPages: true,
             adminCategoriesPage: true,
-            costAdmin: (req.user.role === 'costAdmin')
+            costAdmin: (req.user.role === 'costAdmin'),
+            date: {
+                today: formatDateForInput(Date.now()),
+                lastMonth: formatDateForInput(Date.now() - 1000 * 3600 * 24 * 30)
+            }
         };
         return res.render('cost/admin/categories-page', data);
     };

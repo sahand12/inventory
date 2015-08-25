@@ -240,6 +240,7 @@ exports = module.exports = function (express, app, passport) {
 
     // categories routes
     app.get('/cost/api/admin/categories/expenses', ensureCostAdmin, costAdminApiHandler.getAllExpensesForEachCategory);
+    app.post('/cost/api/admin/categories', ensureCostAdmin, costAdminApiHandler.createNewCategory);
    // app.get('/cost/api/admin/expenses/categories/:name', ensureCostAdmin, costAdminApiHandler.getAllExpensesForACategory);
     app.get('/cost/api/admin/categories', ensureCostAdmin, costAdminApiHandler.getAllCategories);
     app.get('/cost/api/admin/categories/:id/expenses', ensureCostAdmin, costAdminApiHandler.getAllExpensesForACategory);

@@ -197,15 +197,24 @@ var costAdminApiHandler = function (app) {
     this.getAllExpensesForEachCategory = function (req, res, next) {
         var start = req.query.start || Date.now() - 1000 * 3600 * 24 * 31;
         var end = req.query.end || Date.now();
+        console.log(start, end);
+        start = new Date(start);
+        end = new Date(end);
+        console.log(start, end);
 
         Expenses.aggregate([
             {
-                $match: { date: { $gte: new Date(start), $lte: new Date(end) } }
+                $match: { date: { $gte: start, $lte: end } }
             },
             {
                 $group: {
-                    _id: '$category.name',
+                    _id: { id: '$category.id', name: '$category.name' },
                     total: {$sum: '$amount'}
+                }
+            },
+            {
+                $sort: {
+                    total: -1
                 }
             }
         ], function (err, docs) {
@@ -230,6 +239,57 @@ var costAdminApiHandler = function (app) {
             .exec(function (err, docs) {
                 return __sendResponse(res, err, docs);
             });
+    };
+
+    // POST     /cost/api/admin/categories
+    this.createNewCategory = function (req, res, next) {
+        var workflow = req.utility.workflow(req, res);
+
+        workflow.on('validate', function () {
+            req.checkBody('categoryName', 'Name field is required').notEmpty();
+
+            var errors = req.validationErrors(true);
+            if (errors) {
+                return res.send({
+                    success: false,
+                    validationErrors: errors
+                });
+            }
+            workflow.emit('checkDuplicateCategoryName', req.body.categoryName.toLowerCase().trim());
+        });
+
+        workflow.on('checkDuplicateCategoryName', function (categoryName) {
+            ExpenseCategory.findOne({ name: categoryName }, function (err, doc) {
+                if (err) {
+                    console.log(err);
+                    return res.json({
+                        success: false,
+                        error: { msg: 'database error'}
+                    })
+                }
+                if (doc) {
+                    return res.json({
+                        success: false,
+                        validationErrors: {
+                            'categoryName': { param: 'categoryName', value: categoryName, msg: "The `" + categoryName + "` already exists in the system." }
+                        }
+                    });
+                }
+                workflow.emit('createNewCategory', categoryName);
+            });
+        });
+
+        workflow.on('createNewCategory', function (name) {
+            var fieldsToSet = {
+                name: name,
+                user: req.user._id
+            };
+            ExpenseCategory.create(fieldsToSet, function (err, doc) {
+                return __sendResponse(res, err, doc);
+            });
+        });
+
+        workflow.emit('validate');
     };
 
 
