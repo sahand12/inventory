@@ -137,7 +137,7 @@ $(function () {
             catData.push(current.total);
         }
         //console.log(barData);
-        new Chart(context).Bar(barData, { responsive: true, barValueSpacing: 20 });
+        new Chart(context).Bar(barData, { responsive: true, barValueSpacing: 10 });
     }
 
 

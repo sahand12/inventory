@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f15174e-ed4e-4874-b2fe-4736a9113461" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/admin-categories-page.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/admin-categories-page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/admin-categories-page.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/admin-categories-page.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/cost/admin/categories-page.handlebars" afterPath="$PROJECT_DIR$/views/cost/admin/categories-page.handlebars" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/cost/admin/categories-page.js" afterPath="$PROJECT_DIR$/public/javascripts/cost/admin/categories-page.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/cost.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/cost/api/costAdminApiHandler.js" afterPath="$PROJECT_DIR$/controllers/cost/api/costAdminApiHandler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/cost/forms/create-category.handlebars" afterPath="$PROJECT_DIR$/views/partials/cost/forms/create-category.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="basicAuth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,8 +69,8 @@
       <file leaf-file-name="categories-page.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/categories-page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7599661">
-              <caret line="215" column="12" selection-start-line="215" selection-start-column="12" selection-end-line="215" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.28498727">
+              <caret line="139" column="78" selection-start-line="139" selection-start-column="78" selection-end-line="139" selection-end-column="78" />
               <folding />
             </state>
           </provider>
@@ -1171,8 +1164,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/categories-page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7599661">
-          <caret line="215" column="12" selection-start-line="215" selection-start-column="12" selection-end-line="215" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.28498727">
+          <caret line="139" column="78" selection-start-line="139" selection-start-column="78" selection-end-line="139" selection-end-column="78" />
           <folding />
         </state>
       </provider>
