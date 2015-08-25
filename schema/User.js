@@ -10,8 +10,8 @@ exports = module.exports = function (app, mongoose) {
         password: String,
         role: String,
         name: {
-            first: { type: String, default: '' },
-            last: { type: String, default: '' }
+            first: { type: String, default: '', lowercase: true, trim: true },
+            last: { type: String, default: '', lowercase: true, trim: true }
         },
 
         profile: {
