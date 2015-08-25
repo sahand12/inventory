@@ -885,6 +885,12 @@ input#end {
 .admin-daily-reports-table {
   margin-top: 30px;
 }
+.admin-daily-reports-table a {
+  color: inherit;
+}
+.admin-daily-reports-table a:hover {
+  color: #0089db;
+}
 .vgn-date-picker {
   margin-top: 20px;
   margin-bottom: 20px;

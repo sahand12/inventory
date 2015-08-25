@@ -1,0 +1,26 @@
+<div class="col-md-12 admin-user-daily-reports">
+    <h1 class="cost-helper-header text-uppercase"><span style="background-color: white;">User Daily Reports List</span></h1>
+
+    <table class="table vgn-table admin-daily-reports-table" id="adminUserDailyReportsTable">
+        <thead class="vgn-table-thead">
+             <tr>
+                 <th></th>
+                 <th></th>
+                 <th class="text-uppercase">date <span class="glyphicon glyphicon-menu-down"></span></th>
+                 <th class="text-uppercase">Title</th>
+                 <th class="text-uppercase">Report text</th>
+             </tr>
+        </thead>
+        <tbody class="vgn-table-tbody" data-user-id="{{reportsOwner._id}}"></tbody>
+    </table>
+
+    <!-- Ajax animation spinner -->
+    <div class="col-xs-12 admin-userDailyReports-table-ajax-spinner" style="display: none;">
+        <p class="text-center">
+            <img src="/images/spinner.gif" alt="loading ..."/><br/>
+            <!--loading-->
+        </p>
+    </div>
+</div>
+
+{{> cost/templates/userDailyReports-table}}

@@ -297,12 +297,31 @@ var CostHandler = function CostHandler (app) {
         };
         req.app.db.models.User.findOne({ _id: req.params.userId }).exec(function (err, user) {
             if (err) {
-                return next();
+                return next(err);
             }
             data.expensesOwner = user;
             return res.render('cost/admin/userExpenses-page', data);
         });
     };
+
+    // GET     /cost/admin/users/:userId/daily-reports
+    this.showUserDailyReportsPage = function (req, res, next) {
+        var data = {
+            layout: 'cost.dashboard.handlebars',
+            user: req.user,
+            adminPages: true,
+            adminUserDailyReportsPage: true,
+            costAdmin: (req.user.role === 'costAdmin')
+        };
+        req.app.db.models.User.findOne({ _id: req.params.userId }).exec(function (err, user) {
+            if (err) {
+                return next(err);
+            }
+            data.title = "Admin | " + user.name.first + " " + user.name.last + " | Daily Reports";
+            data.reportsOwner = user;
+            return res.render('cost/admin/userDailyReports-page', data);
+        });
+    }
 
 };
 

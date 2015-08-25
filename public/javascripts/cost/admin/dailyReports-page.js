@@ -36,7 +36,7 @@ $(function () {
         $.ajax({
             url: '/cost/api/admin/daily-reports',
             method: 'get',
-            beforeSend: dailyReportsTableAjaxInProgress()
+            beforeSend: dailyReportsTableAjaxInProgress
         }).done(function (response) {
             dailyReportsTableAjaxEnded(response);
         });
@@ -69,6 +69,7 @@ $(function () {
             .replace('[[title]]', data.title)
             .replace('[[firstName]]', (data.user && data.user.name.first) || "")
             .replace('[[lastName]]', (data.user && data.user.name.last) || "")
+            .replace('[[userId]]', (data.user && data.user._id) || "")
             .replace('[[color]]', app.helpers.makeRandomColor().color)
             .replace('[[body]]', data.body);
         return html;
