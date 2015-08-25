@@ -12,6 +12,25 @@ $(function () {
 
 
     /*
+     * ----------------------------
+     *      HELPER FUNCTIONS
+     * ----------------------------
+     */
+    function shuffle (array) {
+        var counter = array.length;
+        var temp;
+        var index;
+        while (counter > 0) {
+            index = Math.floor(Math.random() * counter);
+            counter--;
+            temp = array[counter];
+            array[counter] = array[index];
+            array[index] = temp;
+        }
+        return array;
+    }
+
+    /*
      * --------------------------
      *     GLOBAL VARIABLES
      * --------------------------
@@ -22,10 +41,12 @@ $(function () {
     var $datePickerBtn = $('.vgn-date-picker-button');
     var $barChartContainer = $('#adminCategoriesBarChartContainer');
     var $categoriesTableAjaxSpinner = $('.admin-categories-table-ajax-spinner');
-    var $createCategoryAjaxSpinner = $('.admin-createCategories-aja-spinner');
+    var $createCategoryBtn = $('#createCategoryBtn');
+    var $createCategoryAjaxSpinner = $('.admin-createCategory-ajax-spinner');
     var $startDateSummary = $('.start-date-summary');
     var $endDateSummary = $('.end-date-summary');
     var $totalAmountSummary = $('.total-amount-summary');
+    var $createCategoryErrorItem = $('#createCategoryForm').find('.cost-form-error-item');
 
     var adminCategoriesTableRowTemplate = $('#adminCategoriesTableTemplate').html();
     var categoryColors = {};
@@ -109,6 +130,7 @@ $(function () {
         }];
         var catData = barData.datasets[0].data = [];
         //console.log(barData.datasets[0]);
+        //var shuffledData = shuffle(data);
         for (var i = 0, len = data.length; i < len; i++) {
             var current = data[i];
             barData.labels.push(current._id.name);
@@ -147,5 +169,55 @@ $(function () {
         e.preventDefault();
         app.emitEvent('search.button.click');
     }
+
+    /*
+     * -------------------------
+     *      CREATE CATEGORY HANDLER
+     * -------------------------
+     */
+    $createCategoryBtn.on('click', function (e) {
+        e.preventDefault();
+        var data = { categoryName: $('#categoryName').val().trim() };
+        $.ajax({
+            url: '/cost/api/admin/categories',
+            method: 'post',
+            beforeSend: createCategoryAjaxInProgress,
+            data: data
+        }).done(function (response) {
+            createCategoryAjaxEnded(response);
+        });
+    });
+
+    function createCategoryAjaxInProgress () {
+        $createCategoryAjaxSpinner.show();
+
+        $createCategoryErrorItem.html("").closest('form-group').removeClass('has-error');
+    }
+
+    function createCategoryAjaxEnded (response) {
+        $createCategoryAjaxSpinner.hide();
+
+        console.log(response);
+        if (response.success) {
+            $('#categoryName').val("");
+            showSuccessFlashMsg($('#createCategoryForm'), 'Oh Great! successfully created `' + response.data.name + '` category!');
+        }
+        else {
+            var msg = response.validationErrors.categoryName.msg;
+            $createCategoryErrorItem.html("&bull; " + msg)
+                .closest('.form-group').addClass('has-error');
+        }
+    }
+
+    function showSuccessFlashMsg ($container, msg) {
+        var $msg = $('<div class="alert alert-success" role="alert">' + msg + '</div>');
+        setTimeout(function () {
+            console.log($msg);
+            ;
+            $msg.remove();
+            console.log($container.html());
+        }, 2000);
+    }
+
 });
 

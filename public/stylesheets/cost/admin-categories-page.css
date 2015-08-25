@@ -6,12 +6,19 @@
   background: #f6f6f6;
   padding-bottom: 20px;
 }
+.admin-create-category .has-error input {
+  border-color: red;
+}
 #adminCategoriesBarChartContainer {
   margin-top: 20px;
+  margin-bottom: 50px;
 }
 .admin-category-info-section .profile-header .profile-table th {
   background-color: #3eb39e;
 }
 .total-amount-summary {
   color: red;
+}
+.admin-createCategory-ajax-spinner {
+  margin-top: 20px;
 }

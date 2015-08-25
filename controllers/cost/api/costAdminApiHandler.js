@@ -243,7 +243,7 @@ var costAdminApiHandler = function (app) {
 
     // POST     /cost/api/admin/categories
     this.createNewCategory = function (req, res, next) {
-        var workflow = req.utility.workflow(req, res);
+        var workflow = req.app.utility.workflow(req, res);
 
         workflow.on('validate', function () {
             req.checkBody('categoryName', 'Name field is required').notEmpty();
