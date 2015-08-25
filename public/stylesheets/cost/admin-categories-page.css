@@ -9,3 +9,9 @@
 #adminCategoriesBarChartContainer {
   margin-top: 20px;
 }
+.admin-category-info-section .profile-header .profile-table th {
+  background-color: #3eb39e;
+}
+.total-amount-summary {
+  color: red;
+}

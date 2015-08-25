@@ -8,6 +8,7 @@ $(function () {
     app.addListener('page.load', buildAdminCategoriesTable);
     app.addListener('search.button.click', buildAdminCategoriesTable);
     app.addListener('expense.form.submit.success', buildAdminCategoriesTable);
+    app.addListener('category.response.success', buildSummaryTable);
 
 
     /*
@@ -22,6 +23,9 @@ $(function () {
     var $barChartContainer = $('#adminCategoriesBarChartContainer');
     var $categoriesTableAjaxSpinner = $('.admin-categories-table-ajax-spinner');
     var $createCategoryAjaxSpinner = $('.admin-createCategories-aja-spinner');
+    var $startDateSummary = $('.start-date-summary');
+    var $endDateSummary = $('.end-date-summary');
+    var $totalAmountSummary = $('.total-amount-summary');
 
     var adminCategoriesTableRowTemplate = $('#adminCategoriesTableTemplate').html();
     var categoryColors = {};
@@ -63,6 +67,7 @@ $(function () {
         if (response.success) {
             populateAdminCategoriesTable(response.data);
             buildAdminCategoryBarChart(response.data);
+            app.emit('category.response.success', response.data);
         }
     }
 
@@ -81,7 +86,6 @@ $(function () {
             .replace('[[name]]', data._id.name);
         return html;
     }
-
 
 
     /*
@@ -112,6 +116,23 @@ $(function () {
         }
         //console.log(barData);
         new Chart(context).Bar(barData, { responsive: true, barValueSpacing: 20 });
+    }
+
+
+    /*
+     * -------------------------------
+     *     BUILD SUMMARY TABLE
+     * -------------------------------
+     */
+    function buildSummaryTable (data) {
+        console.log($startInput.val(), $endInput.val());
+        $startDateSummary.html(app.helpers.formatDate($startInput.val()));
+        $endDateSummary.html(app.helpers.formatDate($endInput.val()));
+        var total = 0;
+        for (var i = 0, len = data.length; i < len; i++) {
+            total += data[i].total;
+        }
+        $totalAmountSummary.html(app.helpers.formatAmount(total) + " " + app.helpers.currencySymbol);
     }
 
 

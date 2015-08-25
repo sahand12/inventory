@@ -68,17 +68,49 @@
     </div><!-- /.row -->
 </div><!-- /.admin-categories-list -->
 
-<div class="col-sm-4 admin-create-category">
-    <!--<h1 class="text-center text-capitalize secondary-heading">Create a Category</h1>-->
-    {{> cost/forms/create-category}}
+<div class="col-sm-4">
+    <div class="col-xs-12 admin-create-category">
+        <!--<h1 class="text-center text-capitalize secondary-heading">Create a Category</h1>-->
+        {{> cost/forms/create-category}}
 
-    <!-- Ajax animation spinner -->
-    <div class="col-xs-12 admin-createCategories-ajax-spinner" style="display: none;">
-        <p class="text-center">
-            <img src="/images/spinner-gray.gif" alt="loading ..."/><br/>
-            <!--loading-->
-        </p>
-    </div><!-- /.admin-categories-table-ajax-spinner -->
+        <!-- Ajax animation spinner -->
+        <div class="col-xs-12 admin-createCategories-ajax-spinner" style="display: none;">
+            <p class="text-center">
+                <img src="/images/spinner-gray.gif" alt="loading ..."/><br/>
+                <!--loading-->
+            </p>
+        </div><!-- /.admin-categories-table-ajax-spinner -->
+    </div>
+
+    <div class="col-xs-12 admin-category-info-section">
+        <div class="row">
+            <div class="col-xs-12 profile-header">
+                <table class="profile-table">
+                    <tr>
+                        <th>Start Date&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                        <td class="start-date-summary"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-xs-12 profile-header">
+                <table class="profile-table">
+                    <tr>
+                        <th>End Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                        <td class="end-date-summary"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-xs-12 profile-header">
+                <table class="profile-table">
+                    <tr>
+                        <th>Total Amount</th>
+                        <td class="total-amount-summary"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 {{> cost/templates/categories-table}}
