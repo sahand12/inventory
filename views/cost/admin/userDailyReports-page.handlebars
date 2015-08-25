@@ -1,6 +1,25 @@
 <div class="col-md-12 admin-user-daily-reports">
     <h1 class="cost-helper-header text-uppercase"><span style="background-color: white;">User Daily Reports List</span></h1>
 
+    <div class="row">
+        <div class="col-sm-6 col-md-4 profile-header">
+            <table class="profile-table">
+                <tr>
+                    <th>Name</th>
+                    <td class="text-capitalize">{{reportsOwner.name.first}} {{reportsOwner.name.last}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-sm-6 col-md-4 profile-header">
+            <table class="profile-table">
+                <tr>
+                    <th>Email</th>
+                    <td>{{reportsOwner.email}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
     <table class="table vgn-table admin-daily-reports-table" id="adminUserDailyReportsTable">
         <thead class="vgn-table-thead">
              <tr>
