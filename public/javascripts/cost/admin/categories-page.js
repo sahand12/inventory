@@ -47,6 +47,7 @@ $(function () {
     var $endDateSummary = $('.end-date-summary');
     var $totalAmountSummary = $('.total-amount-summary');
     var $createCategoryErrorItem = $('#createCategoryForm').find('.cost-form-error-item');
+    var $summaryInfoTable = $('.admin-category-info-section');
 
     var adminCategoriesTableRowTemplate = $('#adminCategoriesTableTemplate').html();
     var categoryColors = {};
@@ -79,11 +80,13 @@ $(function () {
 
     function adminCategoriesTableAjaxInProgress () {
         $categoriesTableAjaxSpinner.show();
+        $summaryInfoTable.hide();
     }
 
     function adminCategoriesTableAjaxEnded (response) {
         console.log(response);
         $categoriesTableAjaxSpinner.hide();
+        $summaryInfoTable.show();
 
         if (response.success) {
             populateAdminCategoriesTable(response.data);
