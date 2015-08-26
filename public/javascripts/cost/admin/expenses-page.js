@@ -18,7 +18,7 @@ $(function () {
      *     GLOBAL VARIABLES
      * --------------------------
      */
-    var $adminExpensesTableBody = $('#adminExpensesTable');
+    var $adminExpensesTableBody = $('#adminExpensesTable').find('tbody');
     var $adminExpensesTableAjaxSpinner = $('.admin-all-expenses-table-ajax-spinner');
     var totalPieChartCtx = $('#totalExpensesPieChart')[0].getContext('2d');
     var $totalExpensesWidget = $('.total-expenses-widget');
