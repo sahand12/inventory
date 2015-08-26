@@ -22,3 +22,9 @@
 .admin-createCategory-ajax-spinner {
   margin-top: 20px;
 }
+.admin-single-category-info-section .profile-table th {
+  background-color: #3eb39e;
+}
+.admin-single-category-list .vgn-table {
+  margin-top: 30px;
+}

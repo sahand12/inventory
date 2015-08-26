@@ -51,20 +51,18 @@ $(function () {
     }
 
     function usersTableAjaxEnded (response) {
-        setTimeout(function () {
-            // first hide the ajax spinner
-            $usersTableAjaxSpinner.hide();
+        // first hide the ajax spinner
+        $usersTableAjaxSpinner.hide();
 
-            if (response.success) {
-                populateUsersTable(response.data);
-                app.users = response.data;
-            }
-        }, 1000);
+        if (response.success) {
+            populateUsersTable(response.data);
+            app.users = response.data;
+        }
     }
 
     function populateUsersTable (data) {
         for (var i = 0, len = data.length; i < len; i++) {
-            var userRow = renderSingleUser(data[i])
+            var userRow = renderSingleUser(data[i]);
             $usersTableBody.append(userRow);
         }
 

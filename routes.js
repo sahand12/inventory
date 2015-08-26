@@ -170,6 +170,7 @@ exports = module.exports = function (express, app, passport) {
     app.get('/cost/admin/users', ensureCostAdmin, costHandler.showUsersPage);
     app.get('/cost/admin/users/:userId/expenses', ensureCostAdmin, costHandler.showUserExpensesPage);
     app.get('/cost/admin/users/:userId/daily-reports', ensureCostAdmin, costHandler.showUserDailyReportsPage);
+    app.get('/cost/admin/categories/:categoryName', ensureCostAdmin, costHandler.showSingleCategoryPage);
 
     var CostApiHandler = require('./controllers/cost/api/costApiHandler'),
         costApiHandler = new CostApiHandler(app);
@@ -243,7 +244,7 @@ exports = module.exports = function (express, app, passport) {
     app.post('/cost/api/admin/categories', ensureCostAdmin, costAdminApiHandler.createNewCategory);
    // app.get('/cost/api/admin/expenses/categories/:name', ensureCostAdmin, costAdminApiHandler.getAllExpensesForACategory);
     app.get('/cost/api/admin/categories', ensureCostAdmin, costAdminApiHandler.getAllCategories);
-    app.get('/cost/api/admin/categories/:id/expenses', ensureCostAdmin, costAdminApiHandler.getAllExpensesForACategory);
+    app.get('/cost/api/admin/categories/:categoryName/expenses', ensureCostAdmin, costAdminApiHandler.getAllExpensesForACategory);
 
     // daily reports routes
     app.get('/cost/api/admin/daily-reports', ensureCostAdmin, costAdminApiHandler.getAllDailyReports);

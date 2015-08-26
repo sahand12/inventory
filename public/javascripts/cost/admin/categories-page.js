@@ -104,7 +104,7 @@ $(function () {
         var html = adminCategoriesTableRowTemplate.replace('[[color]]', app.helpers.makeRandomColor().color)
             .replace('[[amount]]', app.helpers.formatAmount(data.total) + " " + app.helpers.currencySymbol)
             .replace('[[id]]', data._id.id)
-            .replace('[[name]]', data._id.name);
+            .replace(/\[\[name\]\]/g, data._id.name);
         return html;
     }
 
@@ -190,7 +190,6 @@ $(function () {
 
     function createCategoryAjaxInProgress () {
         $createCategoryAjaxSpinner.show();
-
         $createCategoryErrorItem.html("").closest('form-group').removeClass('has-error');
     }
 
@@ -200,7 +199,7 @@ $(function () {
         console.log(response);
         if (response.success) {
             $('#categoryName').val("");
-            showSuccessFlashMsg($('#createCategoryForm'), 'Oh Great! successfully created `' + response.data.name + '` category!');
+            showSuccessFlashMsg($('.admin-create-category'), response.data.name + ' category has been created.');
         }
         else {
             var msg = response.validationErrors.categoryName.msg;
@@ -210,13 +209,12 @@ $(function () {
     }
 
     function showSuccessFlashMsg ($container, msg) {
-        var $msg = $('<div class="alert alert-success" role="alert">' + msg + '</div>');
+        var $msg = $('<div class="alert alert-success" role="alert" style="margin-top: 20px;">' + msg + '</div>');
+        $container.append($msg);
         setTimeout(function () {
-            console.log($msg);
-            ;
+            $msg.fadeOut();
             $msg.remove();
-            console.log($container.html());
-        }, 2000);
+        }, 7000);
     }
 
 });

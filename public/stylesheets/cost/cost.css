@@ -425,6 +425,9 @@ body {
 .vgn-simple-table tr {
   padding: 20px;
 }
+.label-description {
+  color: #999;
+}
 .cost-expenses-list {
   padding-top: 20px;
 }
@@ -854,6 +857,8 @@ input#end {
 }
 .profile-header {
   margin-top: 30px;
+  padding: 10px;
+  background: #f6f6f6;
 }
 .profile-table tr {
   border: 1px solid #eee;
@@ -863,7 +868,7 @@ input#end {
 .profile-table tr td {
   padding: 20px;
 }
-.profile-table tr th:first-child {
+.profile-table tr th {
   background-color: #9bd5cb;
   color: white;
 }
@@ -914,4 +919,10 @@ input#end {
 }
 .admin-createCategory-ajax-spinner {
   margin-top: 20px;
+}
+.admin-single-category-info-section .profile-table th {
+  background-color: #3eb39e;
+}
+.admin-single-category-list .vgn-table {
+  margin-top: 30px;
 }

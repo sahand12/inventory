@@ -1,7 +1,12 @@
 <script type="text/vgn-template" id="adminCategoriesTableTemplate">
     <tr>
         <td style="background-color: [[color]]"></td>
-        <td class='text-capitalize'><a href="/cost/admin/categories/[[id]]">[[name]]</a></td>
+        <td class="text-center">
+            <div class="description-popover">
+                <a href="/cost/admin/categories/[[name]]"><span class="fa fa-file-text-o"></span></a>
+            </div>
+        </td>
+        <td class='text-capitalize'>[[name]]</td>
         <td style="color: red;">[[amount]]</td>
     </tr>
 </script>

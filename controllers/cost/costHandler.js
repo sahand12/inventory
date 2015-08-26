@@ -329,6 +329,24 @@ var CostHandler = function CostHandler (app) {
             data.reportsOwner = user;
             return res.render('cost/admin/userDailyReports-page', data);
         });
+    };
+
+    // GET     /cost/admin/categories/:categoryId
+    this.showSingleCategoryPage = function (req, res, next) {
+        var data = {
+            layout: 'cost.dashboard.handlebars',
+            user: req.user,
+            title: "Admin | " + req.params.categoryName + " Expenses",
+            adminPages: true,
+            adminSingleCategoryPage: true,
+            costAdmin: (req.user.role === 'costAdmin'),
+            categoryName: req.params.categoryName,
+            date: {
+                today: formatDateForInput(Date.now()),
+                lastMonth: formatDateForInput(Date.now() - 1000 * 3600 * 24 * 30)
+            }
+        };
+        return res.render('cost/admin/singleCategory-page', data);
     }
 
 };

@@ -197,10 +197,8 @@ var costAdminApiHandler = function (app) {
     this.getAllExpensesForEachCategory = function (req, res, next) {
         var start = req.query.start || Date.now() - 1000 * 3600 * 24 * 31;
         var end = req.query.end || Date.now();
-        console.log(start, end);
         start = new Date(start);
         end = new Date(end);
-        console.log(start, end);
 
         Expenses.aggregate([
             {
@@ -222,17 +220,19 @@ var costAdminApiHandler = function (app) {
         });
     };
 
-    // GET    /cost/api/admin/categories/:id/expenses
+    // GET    /cost/api/admin/categories/:categoryName/expenses?start=..&end=..
     this.getAllExpensesForACategory = function (req, res, next) {
         var count = req.query.count || 100;
-        var keys = { title: 1, date: 1, description: 1, amount: 1, 'category.name': 1 };
-        var categoryId = req.params.id;
-        if (!objectId.isValid(categoryId)) {
-            return __sendResponse(res, true, null, 'Invalid category id');
-        }
+        var keys = { title: 1, date: 1, description: 1, amount: 1, 'category.name': 1, user: 1 };
+        var categoryName = req.params.categoryName && req.params.categoryName.toLowerCase();
 
-        var query = { 'category.id': categoryId };
-        Expenses.find(query, keys)
+        var start = req.query.start || Date.now() - 1000 * 3600 * 24 * 31;
+        var end = req.query.end || Date.now();
+        start = new Date(start);
+        end = new Date(end);
+
+        var query = { 'category.name': categoryName, date: { $gte: start, $lte: end } };
+        Expenses.find(query)
             .populate('user', 'name')
             .sort({ date: -1 })
             .limit(count)

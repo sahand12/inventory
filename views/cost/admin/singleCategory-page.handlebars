@@ -1,0 +1,83 @@
+{{!-- views/cost/admin/singleCategory-page.handlebars --}}
+<div class="col-sm-8 admin-single-category-list">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1 class="cost-helper-header text-uppercase"><span style="background: white;">Single Category Expenses</span></h1>
+
+            <section class="row vgn-date-picker">
+                <form class="form-inline">
+                    <div class="form-group col-md-4 col-xs-6">
+                        <label for="categoryStartDate">Start: <span class="label-description">(dd/mm/yyyy)</span></label><br/>
+                        <input type="date" name="categoryStartDate" id="categoryStartDate" class="form-control" value="{{date.lastMonth}}"/>
+                    </div>
+                    <div class="form-group col-md-4 col-xs-6">
+                        <label for="categoryEndDate">End: <span class="label-description">(dd/mm/yyyy)</span></label><br/>
+                        <input type="date" name="categoryEndDate" id="categoryEndDate" class="form-control" value="{{date.today}}"/>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <br/>
+                        <button class="vgn-date-picker-button btn vgn-btn-green btn-block">Search</button>
+                    </div>
+                </form>
+            </section><!-- /.vgn-date-picker -->
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <table class="table vgn-table" id="adminSingleCategoryTable">
+                        <thead class="vgn-table-thead">
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th class="text-uppercase">date <span class="glyphicon glyphicon-menu-down"></span></th>
+                                <th class="text-uppercase">title</th>
+                                <th class="text-uppercase">user name</th>
+                                <th class="text-uppercase">amount</th>
+                            </tr>
+                        </thead>
+                        <tbody class="vgn-table-tbody" data-category-name="{{categoryName}}"></tbody>
+                    </table>
+
+                    <!-- Ajax animation spinner -->
+                    <div class="col-xs-12 admin-categoryExpenses-table-ajax-spinner" style="display: none;">
+                        <p class="text-center">
+                            <img src="/images/spinner.gif" alt="loading ..."/><br/>
+                            <!--loading-->
+                        </p>
+                    </div><!-- /.admin-categories-table-ajax-spinner -->
+
+                </div><!-- /.col-xs-12 -->
+            </div><!-- /.row -->
+
+        </div><!-- /.col-xs-12 -->
+    </div><!-- /.row -->
+</div><!-- ./admin-single-category-list -->
+
+<div class="col-sm-4">
+    <div class="col-xs-12 admin-single-category-info-section">
+        <div class="row">
+            <div class="col-xs-12 profile-header">
+                <table class="profile-table">
+                    <tr>
+                        <th>Category&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                        <td class="categoryName-summary">{{categoryName}}</td>
+                    </tr>
+                    <tr>
+                        <th>Start Date&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                        <td class="start-date-summary"></td>
+                    </tr>
+                    <tr>
+                        <th>End Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                        <td class="end-date-summary"></td>
+                    </tr>
+                    <tr>
+                        <th>Total Amount</th>
+                        <td class="total-amount-summary"></td>
+                    </tr>
+                </table>
+            </div><!-- /.profile-header -->
+
+        </div><!-- /.row -->
+    </div><!-- /.admin-single-category-info-section -->
+</div><!-- /.col-sm-4 -->
+
+{{> cost/templates/categoryExpenses-table}}

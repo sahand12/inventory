@@ -27,6 +27,7 @@
                         <thead class="vgn-table-thead">
                             <tr>
                                 <th></th>
+                                <th></th>
                                 <th class="text-uppercase">category name</th>
                                 <th class="text-uppercase">amount <span class="fa fa-chevron-down"></span></th>
                             </tr>
@@ -90,27 +91,28 @@
                         <th>Start Date&nbsp;&nbsp;&nbsp;&nbsp;</th>
                         <td class="start-date-summary"></td>
                     </tr>
-                </table>
-            </div>
-            <div class="col-xs-12 profile-header">
-                <table class="profile-table">
                     <tr>
                         <th>End Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                         <td class="end-date-summary"></td>
                     </tr>
-                </table>
-            </div>
-            <div class="col-xs-12 profile-header">
-                <table class="profile-table">
                     <tr>
                         <th>Total Amount</th>
                         <td class="total-amount-summary"></td>
                     </tr>
                 </table>
-            </div>
-        </div>
-    </div>
+            </div><!-- /.profile-header -->
+        </div><!-- /.row -->
 
-</div>
+        <!-- Ajax animation spinner -->
+        <div class="col-xs-12 category-info-section-ajax-spinner" style="display: none;">
+            <p class="text-center">
+                <img src="/images/spinner-gray.gif" alt="loading ..."/><br/>
+                <!--loading-->
+            </p>
+        </div><!-- /.admin-categories-table-ajax-spinner -->
+
+    </div><!-- /.admin-category-info-section -->
+
+</div><!-- /.col-sm-4 -->
 
 {{> cost/templates/categories-table}}
