@@ -1,3 +1,4 @@
+// public/javscripts/cost/expenses-page.js
 $(function () {
 
     /*

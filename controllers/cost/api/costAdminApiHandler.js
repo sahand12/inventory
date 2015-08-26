@@ -112,18 +112,29 @@ var costAdminApiHandler = function (app) {
      */
      // GET    /cost/api/admin/expenses
     this.getAllExpenses = function (req, res, next) {
-        var keys = {};
-        var limit = (req.query.limit && (parseInt(req.query.limit) > 0)) ? req.query.limit : 50;
-        var skip = (req.query.skip && (parseInt(req.query.skip) > 0)) ? req.query.skip : 0;
+        var options = {
+            keys: {
+                amount: 1,
+                'category.name': 1,
+                date: 1,
+                description: 1,
+                title: 1,
+                user: 1
+            },
+            page: (parseInt(req.query.page) || 1),
+            sort: {
+                date: -1
+            },
+            limit: req.query.limit || 20,
+            populate: {
+                tableName: 'user',
+                tableField: 'name'
+            }
+        };
 
-        Expenses.find()
-            .populate('user', 'name')
-            .skip(skip)
-            .limit(limit)
-            .sort({ 'createdAt': -1 })
-            .exec(function (err, docs) {
-                return __sendResponse(res, err, docs);
-            });
+        Expenses.pagedFind(options, function (err, docs) {
+            return __sendResponse(res, err, docs);
+        });
     };
 
      // GET     /cost/api/admin/expenses/between ? start=..&end=...

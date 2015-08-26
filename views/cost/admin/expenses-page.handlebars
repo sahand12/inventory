@@ -1,0 +1,64 @@
+<!-- views/cost/admin/expenses-page.handlebars -->
+<div class="col-md-8 cost-expenses-list">
+    <h1 class="cost-helper-header text-uppercase"><span style="background: white;">All Users Expenses</span></h1>
+
+    <form action="/cost/api/expenses/search" class="search-expenses-form" method="get">
+        <div class="input-group">
+            <span class="input-group-btn">
+                <button class="btn btn-cost-search" type="submit"><span class="fa fa-search"></span></button>
+            </span>
+            <input id="expenseSearchInput" class="form-control cost-search-input" type="search" placeholder="Search Expenses"/>
+        </div><!-- input-group -->
+    </form>
+
+    <table class="table vgn-table" id="adminExpensesTable">
+        <thead class="vgn-table-thead">
+            <tr>
+                <th></th>
+                <th></th>
+                <th class="text-uppercase">date <span class="glyphicon glyphicon-menu-down"></span></th>
+                <th class="text-uppercase">Title</th>
+                <th class="text-uppercase">username</th>
+                <th class="text-uppercase">category</th>
+                <th class="text-uppercase">amount</th>
+            </tr>
+        </thead>
+        <tbody class="vgn-table-tbody"></tbody>
+    </table><!-- /#adminAllExpensesTable -->
+
+    <!-- Ajax animation spinner -->
+    <div class="col-xs-12 admin-all-expenses-table-ajax-spinner" style="display: none;">
+        <p class="text-center">
+            <img src="/images/spinner.gif" alt="loading ..."/><br/>
+            <!--loading-->
+        </p>
+    </div><!-- admin-all-expenses-table-ajax-spinner -->
+
+    <div id="paginationContainer"></div>
+</div><!-- /.cost-expenses-list -->
+
+<div class="col-md-4 cost-total-expenses" id="adminTotalExpenses">
+    <h1 class="text-center secondary-heading text-capitalize">Total expenses</h1>
+    <div class="row total-expenses-widget">
+        <div class="col-xs-12 cost-expenses-total-amount">
+            <p class="text-center" id="totalExpensesAmount"></p>
+        </div>
+        <div class="col-xs-12">
+            <canvas id="totalExpensesPieChart"></canvas>
+        </div>
+        <div class="col-xs-12">
+            <div class="total-pie-chart-stats" id="totalPieChartStats"></div>
+        </div>
+    </div><!-- /.total-expenses-widget -->
+
+    <!-- Ajax animation spinner -->
+    <div class="col-xs-12 admin-total-expenses-ajax-spinner" style="display: none; padding: 20px 0;">
+        <p class="text-center">
+            <img src="/images/spinner-gray.gif" alt="loading ..."/><br/>
+            <!--loading-->
+        </p>
+    </div>
+</div><!-- /.cost-total-expenses -->
+
+{{> cost/templates/adminExpenses-table}}
+{{> cost/templates

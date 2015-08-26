@@ -1,0 +1,19 @@
+{{!-- /views/partials/cost/templates/pagination.handlebars --}}
+<script type="text/vgn-template" id="paginationBody">
+    <nav class="text-center">
+        <ul class="pagination">
+            <li data-page="[[prev]]" [[leftDisabled]]>
+                <a href="#" aria-label="Previous"><span><span aria-hidden="true">&laquo;</span></span></a>
+            </li>
+            <li data-page="[[next]]" [[rightDisabled]]>
+                <a href="#" aria-label="Next"><span><span aria-hidden="true">&raquo;</span></span></a>
+            </li>
+        </ul>
+    </nav>
+</script>
+
+<script type="text/vgn-template" id="paginationItem">
+    <li data-page="[[index]]">
+        <a href="#">[[index]]</a>
+    </li>
+</script>

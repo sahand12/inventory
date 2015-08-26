@@ -351,6 +351,7 @@ body {
 .vgn-table {
   border: 0;
   letter-spacing: 1px;
+  margin-top: 30px;
 }
 .vgn-table .vgn-table-thead {
   color: #9bd5cb;
