@@ -79,6 +79,15 @@ $(function () {
             html.push( buildCategoryExpensesTableRow(data[i]) );
         }
         $categoryExpensesTableBody.html(html.join(""));
+
+        //
+        $('[data-toggle=popover]').popover({
+            placement: 'auto bottom',
+            template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title" style="letter-spacing: 1px;"></h3><div class="popover-content"></div></div>',
+            title: 'Expense Description',
+            content: 'No description',
+            trigger: 'hover click'
+        });
     }
 
     function buildCategoryExpensesTableRow (data) {
