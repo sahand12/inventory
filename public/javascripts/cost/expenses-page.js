@@ -152,7 +152,6 @@ $(function () {
         }
         paginationHtml += "<li data-page='" + pagesData.next + "' " + (rightDisabled ? "class='disabled'": "") + "><a href='#' aria-label='Next'><span><span aria-hidden='true'>&raquo;</span></span></a></li>" + "</ul></nav>";
 
-
         $paginationContainer.html(paginationHtml);
 
     }
@@ -177,7 +176,6 @@ $(function () {
             // remove pagination from dom
             $('.pagination').remove();
         }
-
     });
 
 
@@ -227,7 +225,7 @@ $(function () {
     }
 
 
-    /**
+    /*
      * ------------------------------------------------
      *     UPDATE / DELETE MODAL FORM POPULATION
      * ------------------------------------------------
@@ -260,7 +258,7 @@ $(function () {
         $editExpenseForm.find('#editInputDescription').html(activeDoc.description);
     }
 
-    /**
+    /*
      * ------------------------------------------------
      *     UPDATE BUTTON ON EDIT EXPENSE FORM
      * ------------------------------------------------
@@ -353,7 +351,7 @@ $(function () {
         };
     }
 
-    /**
+    /*
      * ------------------------------------------------
      *     DELETE BUTTON ON EDIT EXPENSE FORM
      * ------------------------------------------------
@@ -407,13 +405,4 @@ $(function () {
     function showDeleteErrorsFromServer(response) {
         //console.log(response);
     }
-
-
-    /*
-     * --------------------------
-     *     SHOW DESCRIPTION ON CLICK USING A POPOVER
-     * -------------------------
-     */
-
-
 });

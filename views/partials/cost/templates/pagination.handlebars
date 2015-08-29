@@ -2,7 +2,7 @@
 <script type="text/vgn-template" id="paginationBody">
     <nav class="text-center">
         <ul class="pagination">
-            <li data-page="[[prev]]" [[leftDisabled]]>
+            <li data-page="[[prev]]" [[leftDisabled]] id="paginationPrevBtn">
                 <a href="#" aria-label="Previous"><span><span aria-hidden="true">&laquo;</span></span></a>
             </li>
             <li data-page="[[next]]" [[rightDisabled]]>
@@ -13,7 +13,7 @@
 </script>
 
 <script type="text/vgn-template" id="paginationItem">
-    <li data-page="[[index]]">
+    <li data-page="[[index]]" [[current]] [[disabled]]>
         <a href="#">[[index]]</a>
     </li>
 </script>

@@ -204,6 +204,25 @@ var costAdminApiHandler = function (app) {
         });
     };
 
+    // GET     /cost/api/admin/categories/expenses/total
+    this.getTotalByCategory = function (req, res, next) {
+        Expenses.aggregate([
+            {
+                $group: {
+                    _id: { id: '$category.id', name: '$category.name' },
+                    total: { $sum: '$amount' }
+                }
+            },
+            {
+                $sort: {
+                    total: -1
+                }
+            }
+        ], function (err, docs) {
+            return __sendResponse(res, err, docs);
+        });
+    };
+
     // GET    /cost/api/admin/categories/expenses?start=..&end=..
     this.getAllExpensesForEachCategory = function (req, res, next) {
         var start = req.query.start || Date.now() - 1000 * 3600 * 24 * 31;

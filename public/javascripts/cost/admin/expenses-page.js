@@ -26,7 +26,7 @@ $(function () {
     var $totalExpensesAjaxSpinner = $('.admin-total-expenses-ajax-spinner');
     var $totalExpensesAmount = $('#totalExpensesAmount');
     var $paginationContainer = $('#paginationContainer');
-    var paginationBodyTemplate = $('#paginatinBody').html();
+    var paginationBodyTemplate = $('#paginationBody').html();
     var paginationItemTemplate = $('#paginationItem').html();
 
     var adminExpensesTableTemplate = $('#adminExpensesTableTemplate').html();
@@ -62,10 +62,12 @@ $(function () {
         app.pageNumber = undefined;
         $.ajax({
             method: 'get',
-            url: '/cost/api/admin/expenses?page=' + page,
+            url: '/cost/api/admin/expenses?limit=10&page=' + page,
             beforeSend: adminExpensesTableAjaxInProgress
         }).done(function (response) {
-            adminExpensesTableAjaxEnded(response);
+            setTimeout(function () {
+                adminExpensesTableAjaxEnded(response);
+            }, 1000);
         });
     }
 
@@ -135,22 +137,144 @@ $(function () {
 
     function buildPagination (pagesData) {
         if (pagesData.total <= 1) return;
-        var leftDisabled = (pagesData.hasPrev ? "" : "disabled");
-        var rightDisabled = (pagesData.hasNext ? "" : "disabled");
+
+        var paginationBodyHtml = buildPaginationBody(pagesData);
+        var paginationItemsHtml = buildPaginationItems(pagesData);
+        var $paginationBodyHtml = $(paginationBodyHtml);
+        var $paginationItemsHtml = $(paginationItemsHtml);
+
+        $paginationBodyHtml.find('#paginationPrevBtn').after($paginationItemsHtml);
+        $paginationContainer.html($paginationBodyHtml);
+    }
+
+    function buildPaginationBody (pagesData) {
+        var leftDisabled = (pagesData.hasPrev ? "" : "class='disabled'");
+        var rightDisabled = (pagesData.hasNext ? "" : "class='disabled'");
         var paginationHtml = paginationBodyTemplate.replace('[[prev]]', pagesData.prev)
             .replace('[[leftDisabled]]', leftDisabled)
             .replace('[[rightDisabled]]', rightDisabled)
             .replace('[[next]]', pagesData.next);
-        console.log(paginationHtml);
+        return paginationHtml;
     }
+
+    function buildPaginationItems (pagesData) {
+        var html = [];
+        var pagePattern = /\[\[index]]/g;
+        var curPattern = '[[current]]';
+        var disablePattern = '[[disabled]]';
+        console.log(pagesData);
+        if (pagesData.total < 5) {
+            for (var i = 1, len = pagesData.total; i <= len; i++) {
+                var temp = paginationItemTemplate.replace(pagePattern, i);
+                 temp = i === pagesData.current ?
+                     temp.replace('[[current]]', 'class="active"') :
+                     temp.replace('[[current]]', "");
+                html.push(temp);
+            }
+            return html.join("");
+        }
+        else {
+            var first, last;
+            var current = "";
+            var next = "";
+            var nextNext = "";
+            var prev = "";
+            var prevPrev = "";
+
+            first = paginationItemTemplate.replace(pagePattern, 1).replace(disablePattern, "");
+            first = addActiveClass(first, pagesData.current, 1);
+
+            last = paginationItemTemplate.replace(pagePattern, pagesData.total).replace(disablePattern, "");
+            last = addActiveClass(last, pagesData.current, pagesData.total);
+
+            if (pagesData.current !== 1 && pagesData.current !== pagesData.total) {
+                current = paginationItemTemplate.replace(pagePattern, pagesData.current)
+                    .replace(curPattern, 'class="active"');
+            }
+            if (pagesData.hasNext && pagesData.next !== pagesData.total) {
+                next = paginationItemTemplate.replace(pagePattern, pagesData.next)
+                    .replace(curPattern, "").replace(disablePattern, "");
+                if (pagesData.next !== (pagesData.total - 1) ) {
+                    nextNext = paginationItemTemplate.replace(pagePattern, '...')
+                        .replace(curPattern, "")
+                        .replace(disablePattern, "class='disabled'");
+                }
+            }
+            if (pagesData.hasPrev && pagesData.prev !== 1) {
+                prev = paginationItemTemplate.replace(pagePattern, pagesData.prev).replace(curPattern, "");
+                if (pagesData.prev !== 2) {
+                     prevPrev = paginationItemTemplate.replace(pagePattern, "...")
+                         .replace(curPattern, "")
+                         .replace(disablePattern, "class='disabled'");
+                }
+            }
+            html.push(first, prevPrev, prev, current, next, nextNext, last);
+            return html.join("");
+        }
+    }
+
+    function addActiveClass (template, current, index) {
+        var temp = index === current ?
+            template.replace('[[current]]', 'class="active"') :
+            template.replace('[[current]]', "");
+        return temp;
+    }
+
+
+    /*
+     * ------------------------------
+     *     PAGINATION CLICK EVENTS
+     * ------------------------------
+     */
+    $paginationContainer.on('click', function (e) {
+        e.preventDefault();
+
+        var $target = $(e.target.closest('li'));
+        if (!$target.hasClass('active') && !$target.hasClass('disabled')) {
+            app.pageNumber = $target.attr('data-page');
+            app.emit('expense.pagination');
+
+            // Remove pagination from dom
+            $('.pagination').remove();
+        }
+    });
 
     /*
      * --------------------------
-     *      TOTAL PIE CHART
+     *      TOTAL EXPENSE PIE CHART
      * --------------------------
      */
     function buildAdminTotalExpensesPieChart() {
+        // Get the data form the server for total expenses
+        $.ajax({
+            method: 'get',
+            url: '/cost/api/admin/expenses/total',
+            beforeSend: adminTotalExpensesPieChartAjaxInProgress
+        }).done(function (response) {
+            setTimeout(function () {
+                adminTotalExpensesPieChartAjaxEnded(response);
+            }, 1000);
+        });
+    }
 
+    function adminTotalExpensesPieChartAjaxInProgress () {
+        // show the ajax spinner
+        $totalExpensesAjaxSpinner.show();
+        $totalExpensesWidget.hide();
+    }
+
+    function adminTotalExpensesPieChartAjaxEnded (response) {
+        console.log(response);
+        // hide the ajax spinner
+        $totalExpensesAjaxSpinner.hide();
+        $totalExpensesWidget.show();
+        populateTotalExpensesPieChart(response, categoryColors);
+    }
+
+    function populateTotalExpensesPieChart (response, categoryColors) {
+        app.expensesPageData.categories = Object.keys(response.data);
+        var sortedData = app.helpers.sortPieChartAjaxResponseByAmount(response.data);
+        var totalExpensesAmount = app.helpers.caculateTotalExpenses
     }
 
 });
