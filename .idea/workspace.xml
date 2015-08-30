@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f15174e-ed4e-4874-b2fe-4736a9113461" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/admin-expenses-page.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/admin-expenses-page.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/admin-expenses-page.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/admin-expenses-page.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/cost.css" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/cost.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/cost.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars" afterPath="$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/cost/admin/expenses-page.handlebars" afterPath="$PROJECT_DIR$/views/cost/admin/expenses-page.handlebars" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/cost/admin/expenses-page.js" afterPath="$PROJECT_DIR$/public/javascripts/cost/admin/expenses-page.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -91,13 +89,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="expenses-page.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="expenses-page.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/expenses-page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3562341">
-              <caret line="15" column="84" selection-start-line="15" selection-start-column="84" selection-end-line="15" selection-end-column="84" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
               <folding>
-                <marker date="1440923201000" expanded="true" signature="4076:4096" placeholder="..." />
+                <marker date="1440923492000" expanded="true" signature="4081:4101" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -106,8 +104,18 @@
       <file leaf-file-name="admin-expenses-page.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/cost/admin-expenses-page.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.689655">
-              <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+            <state vertical-scroll-proportion="-10.620689">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cost.dashboard.handlebars" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.43826088">
+              <caret line="49" column="52" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -116,8 +124,8 @@
       <file leaf-file-name="expenses-page.handlebars" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/cost/admin/expenses-page.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-46.344826">
-              <caret line="48" column="71" selection-start-line="48" selection-start-column="71" selection-end-line="48" selection-end-column="71" />
+            <state vertical-scroll-proportion="-16.413794">
+              <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -189,7 +197,6 @@
         <option value="$PROJECT_DIR$/views/partials/cost/templates/categoryExpenses-table.handlebars" />
         <option value="$PROJECT_DIR$/public/javascripts/cost/admin/categories-page.js" />
         <option value="$PROJECT_DIR$/views/partials/cost/templates/adminExpenses-table.handlebars" />
-        <option value="$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars" />
         <option value="$PROJECT_DIR$/public/stylesheets/cost/cost.helpers.less" />
         <option value="$PROJECT_DIR$/schema/plugins/pagedFind.js" />
         <option value="$PROJECT_DIR$/views/partials/cost/templates/pagination.handlebars" />
@@ -198,8 +205,9 @@
         <option value="$PROJECT_DIR$/routes.js" />
         <option value="$PROJECT_DIR$/public/stylesheets/cost/cost.less" />
         <option value="$PROJECT_DIR$/views/cost/admin/expenses-page.handlebars" />
-        <option value="$PROJECT_DIR$/public/stylesheets/cost/admin-expenses-page.less" />
         <option value="$PROJECT_DIR$/public/javascripts/cost/admin/expenses-page.js" />
+        <option value="$PROJECT_DIR$/public/stylesheets/cost/admin-expenses-page.less" />
+        <option value="$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars" />
       </list>
     </option>
   </component>
@@ -1125,14 +1133,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.448276">
-          <caret line="177" column="57" selection-start-line="177" selection-start-column="57" selection-end-line="177" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/cost/expenses.handlebars">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-21.241379">
@@ -1188,26 +1188,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/cost/admin-expenses-page.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.689655">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/cost/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="124" column="22" selection-start-line="123" selection-start-column="16" selection-end-line="126" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/cost/admin/expenses-page.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-46.344826">
-          <caret line="48" column="71" selection-start-line="48" selection-start-column="71" selection-end-line="48" selection-end-column="71" />
           <folding />
         </state>
       </provider>
@@ -1232,11 +1216,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/expenses-page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3562341">
-          <caret line="15" column="84" selection-start-line="15" selection-start-column="84" selection-end-line="15" selection-end-column="84" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
           <folding>
-            <marker date="1440923201000" expanded="true" signature="4076:4096" placeholder="..." />
+            <marker date="1440923492000" expanded="true" signature="4081:4101" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/cost/admin/expenses-page.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.413794">
+          <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/cost/admin-expenses-page.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.620689">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43826088">
+          <caret line="49" column="52" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>

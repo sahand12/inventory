@@ -25,7 +25,7 @@ $(function () {
     var $adminExpensesTableAjaxSpinner = $('.admin-all-expenses-table-ajax-spinner');
     var totalPieChartCtx = $('#adminTotalExpensesPieChart')[0].getContext('2d');
     var $totalExpensesWidget = $('.total-expenses-widget');
-    var $totalPieChartStats = $('#totalPieChartStats');
+    var $totalPieChartStats = $('#adminTotalPieChartStats');
     var $totalExpensesAjaxSpinner = $('.admin-total-expenses-ajax-spinner');
     var $totalExpensesAmount = $('#totalExpensesAmount');
     var $paginationContainer = $('#paginationContainer');
