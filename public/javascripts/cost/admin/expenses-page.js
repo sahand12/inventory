@@ -12,6 +12,9 @@ $(function () {
     app.addListener('expense.form.submit.success', buildAdminTotalExpensesPieChart);
     app.addListener('expense.pagination', buildAdminExpensesTable);
 
+    app.addListener('expense.form.submit.success', buildAdminExpensesTable);
+    app.addListener('expense.form.submit.success', buildAdminTotalExpensesPieChart);
+
 
     /*
      * --------------------------
@@ -20,9 +23,9 @@ $(function () {
      */
     var $adminExpensesTableBody = $('#adminExpensesTable').find('tbody');
     var $adminExpensesTableAjaxSpinner = $('.admin-all-expenses-table-ajax-spinner');
-    var totalPieChartCtx = $('#totalExpensesPieChart')[0].getContext('2d');
+    var totalPieChartCtx = $('#adminTotalExpensesPieChart')[0].getContext('2d');
     var $totalExpensesWidget = $('.total-expenses-widget');
-    var $totalPieChartStats = $('#totalPieCharStats');
+    var $totalPieChartStats = $('#totalPieChartStats');
     var $totalExpensesAjaxSpinner = $('.admin-total-expenses-ajax-spinner');
     var $totalExpensesAmount = $('#totalExpensesAmount');
     var $paginationContainer = $('#paginationContainer');
@@ -248,7 +251,7 @@ $(function () {
         // Get the data form the server for total expenses
         $.ajax({
             method: 'get',
-            url: '/cost/api/admin/expenses/total',
+            url: '/cost/api/admin/categories/expenses/total',
             beforeSend: adminTotalExpensesPieChartAjaxInProgress
         }).done(function (response) {
             setTimeout(function () {
@@ -268,13 +271,55 @@ $(function () {
         // hide the ajax spinner
         $totalExpensesAjaxSpinner.hide();
         $totalExpensesWidget.show();
-        populateTotalExpensesPieChart(response, categoryColors);
+        var pieData = populateTotalExpensesPieChart(response, categoryColors);
+        showAdminPieChartStats(pieData);
     }
 
     function populateTotalExpensesPieChart (response, categoryColors) {
-        app.expensesPageData.categories = Object.keys(response.data);
-        var sortedData = app.helpers.sortPieChartAjaxResponseByAmount(response.data);
-        var totalExpensesAmount = app.helpers.caculateTotalExpenses
+        console.log('pie chart', response);
+        var pieData = [];
+        app.adminExpensesPageData.total = 0;
+        for (var i = 0, len = response.data.length; i < len; i++) {
+            var current = response.data[i];
+            if (!categoryColors[current._id.name]) {
+                var css = app.helpers.makeRandomColor();
+                categoryColors[current._id.name] = { color: css.color, highlight: css.highligh }
+            }
+            pieData.push({
+                value: current.total,
+                label: current._id.name,
+                color: categoryColors[current._id.name].color,
+                highlight: categoryColors[current._id.name].highlight
+            });
+            app.adminExpensesPageData.total += current.total;
+        }
+        new Chart(totalPieChartCtx).Pie(pieData, { responsive: true, segmentShowStroke: false });
+        $totalExpensesAmount.html(app.helpers.formatAmount( app.adminExpensesPageData.total) + " " + app.helpers.currencySymbol);
+
+        return pieData;
+    }
+
+    function showAdminPieChartStats (data) {
+        app.adminExpensesPageData.statsData = [];
+        for (var i = 0, len = data.length; i < len; i++) {
+            var current = data[i];
+            app.adminExpensesPageData.statsData.push({
+                name: current.label,
+                color: categoryColors[current.label].color,
+                percent: ( 100 * (current.value / app.adminExpensesPageData.total ) ).toFixed(2)
+            });
+        }
+
+        $totalPieChartStats.empty();
+        var html = "";
+        for (i = 0; i < len; i++) {
+            current = app.adminExpensesPageData.statsData[i];
+            html += "<div class='pie-chart-stat-item'>" +
+            "<span class='square-block pull-left' style='background: " + current.color + "'></span>" +
+            "<p class='pull-left text-capitalize'><strong>" + current.name + "</strong> &nbsp;" + current.percent + "%</p>" +
+            "</div>";
+        }
+        $totalPieChartStats.html(html);
     }
 
 });

@@ -927,3 +927,6 @@ input#end {
 .admin-single-category-list .vgn-table {
   margin-top: 30px;
 }
+#adminTotalExpensesPieChart {
+  margin-top: 20px;
+}
