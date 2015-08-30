@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f15174e-ed4e-4874-b2fe-4736a9113461" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/cost/admin-expenses-page.less" afterPath="$PROJECT_DIR$/public/stylesheets/cost/admin-expenses-page.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars" afterPath="$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/cost/admin/expenses-page.handlebars" afterPath="$PROJECT_DIR$/views/cost/admin/expenses-page.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/cost/admin/expenses-page.js" afterPath="$PROJECT_DIR$/public/javascripts/cost/admin/expenses-page.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
     </list>
     <ignored path="basicAuth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -111,11 +107,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cost.dashboard.handlebars" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cost.dashboard.handlebars" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43826088">
-              <caret line="49" column="52" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.9655172">
+              <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33248517">
+              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -161,7 +167,6 @@
         <option value="$PROJECT_DIR$/views/partials/cost/templates/dailyReport-table.handlebars" />
         <option value="$PROJECT_DIR$/public/stylesheets/cost/dailyReport-page.less" />
         <option value="$PROJECT_DIR$/views/cost/dailyReports-page.handlebars" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/schema/DailyReport.js" />
         <option value="$PROJECT_DIR$/public/stylesheets/cost/admin-pages.less" />
         <option value="$PROJECT_DIR$/public/stylesheets/cost/cost.dashboard.less" />
@@ -208,6 +213,7 @@
         <option value="$PROJECT_DIR$/public/javascripts/cost/admin/expenses-page.js" />
         <option value="$PROJECT_DIR$/public/stylesheets/cost/admin-expenses-page.less" />
         <option value="$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars" />
+        <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
   </component>
@@ -225,7 +231,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1322" />
+    <option name="width" value="1273" />
     <option name="height" value="1299" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -780,7 +786,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1322" height="1299" extended-state="0" />
+    <frame x="0" y="23" width="1273" height="1299" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -788,7 +794,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32863072" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24961832" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19984627" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20766774" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34962717" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -841,14 +847,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/cost/cost-expenses-page.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42173913">
-          <caret line="178" column="4" selection-start-line="178" selection-start-column="4" selection-end-line="178" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/cost/cost.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5104167">
@@ -1242,8 +1240,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/layouts/cost.dashboard.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43826088">
-          <caret line="49" column="52" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.9655172">
+          <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33248517">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
           <folding />
         </state>
       </provider>

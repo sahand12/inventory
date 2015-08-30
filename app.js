@@ -14,7 +14,7 @@ var path = require('path'),
     http = require('http'),
     csurf = require('csurf'),
     helmet = require('helmet'),
-    express = require('express')
+    express = require('express'),
     passport = require('passport');
 
 // my own modules
