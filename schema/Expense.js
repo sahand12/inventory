@@ -174,6 +174,13 @@ console.log(options, query);
     ExpenseSchema.plugin(QueryTimePlugin);
     ExpenseSchema.plugin(PagedFindPlugin);
 
+    ExpenseSchema.index({ user: 1 });
+    ExpenseSchema.index({ title: 1 });
+    ExpenseSchema.index({ data: 1 });
+    ExpenseSchema.index({ 'category.id': 1 });
+    ExpenseSchema.index({ 'category.name': 1 });
+    ExpenseSchema.set('autoIndex', false);
+
     app.db.model('Expense', ExpenseSchema);
 };
 
