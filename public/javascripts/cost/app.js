@@ -188,8 +188,95 @@ Chart.defaults.global.tooltipTitleFontFamily = "courier, 'Helvetica Neue', Helve
 Chart.defaults.global.segmentStrokeWidth = 1;
 
 
-/**
+/*
  * --------------------------------------
- *      HANDLEBARS HELPERS
+ *      PAGINATION
  * --------------------------------------
 */
+app.helpers.buildPagination = function buildPagination (options) {
+    console.log(options);
+    if (options.pagesData.total <= 1) return;
+
+    var paginationBodyHtml = buildPaginationBody(options);
+    var paginationItemsHtml = buildPaginationItems(options);
+    var $paginationBodyHtml = $(paginationBodyHtml);
+    var $paginationItemsHtml = $(paginationItemsHtml);
+
+    $paginationBodyHtml.find('#paginationPrevBtn').after($paginationItemsHtml);
+    return $paginationBodyHtml;
+};
+
+function buildPaginationBody (options) {
+    var leftDisabled = (options.pagesData.hasPrev ? "" : "class='disabled'");
+    var rightDisabled = (options.pagesData.hasNext ? "" : "class='disabled'");
+    var paginationHtml = options.bodyTmpl.replace('[[prev]]', options.pagesData.prev)
+        .replace('[[leftDisabled]]', leftDisabled)
+        .replace('[[rightDisabled]]', rightDisabled)
+        .replace('[[next]]', options.pagesData.next);
+    return paginationHtml;
+}
+
+function buildPaginationItems (options) {
+    var html = [];
+    var pagesData = options.pagesData;
+    var paginationItemTemplate = options.itemTmpl;
+    var pagePattern = /\[\[index]]/g;
+    var curPattern = '[[current]]';
+    var disablePattern = '[[disabled]]';
+    console.log(pagesData);
+    if (pagesData.total < 5) {
+        for (var i = 1, len = pagesData.total; i <= len; i++) {
+            var temp = paginationItemTemplate.replace(pagePattern, i);
+            temp = i === pagesData.current ?
+                temp.replace('[[current]]', 'class="active"') :
+                temp.replace('[[current]]', "");
+            html.push(temp);
+        }
+        return html.join("");
+    }
+    else {
+        var first, last;
+        var current = "";
+        var next = "";
+        var nextNext = "";
+        var prev = "";
+        var prevPrev = "";
+
+        first = paginationItemTemplate.replace(pagePattern, 1).replace(disablePattern, "");
+        first = addActiveClass(first, pagesData.current, 1);
+
+        last = paginationItemTemplate.replace(pagePattern, pagesData.total).replace(disablePattern, "");
+        last = addActiveClass(last, pagesData.current, pagesData.total);
+
+        if (pagesData.current !== 1 && pagesData.current !== pagesData.total) {
+            current = paginationItemTemplate.replace(pagePattern, pagesData.current)
+                .replace(curPattern, 'class="active"');
+        }
+        if (pagesData.hasNext && pagesData.next !== pagesData.total) {
+            next = paginationItemTemplate.replace(pagePattern, pagesData.next)
+                .replace(curPattern, "").replace(disablePattern, "");
+            if (pagesData.next !== (pagesData.total - 1) ) {
+                nextNext = paginationItemTemplate.replace(pagePattern, '...')
+                    .replace(curPattern, "")
+                    .replace(disablePattern, "class='disabled'");
+            }
+        }
+        if (pagesData.hasPrev && pagesData.prev !== 1) {
+            prev = paginationItemTemplate.replace(pagePattern, pagesData.prev).replace(curPattern, "");
+            if (pagesData.prev !== 2) {
+                prevPrev = paginationItemTemplate.replace(pagePattern, "...")
+                    .replace(curPattern, "")
+                    .replace(disablePattern, "class='disabled'");
+            }
+        }
+        html.push(first, prevPrev, prev, current, next, nextNext, last);
+        return html.join("");
+    }
+}
+
+function addActiveClass (template, current, index) {
+    var temp = index === current ?
+        template.replace('[[current]]', 'class="active"') :
+        template.replace('[[current]]', "");
+    return temp;
+}

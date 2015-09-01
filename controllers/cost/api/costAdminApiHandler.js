@@ -74,22 +74,38 @@ var costAdminApiHandler = function (app) {
         });
     };
 
-    // GET    /cost/api/admin/users/:userId/expenses?count=...
+    // GET    /cost/api/admin/users/:userId/expenses
     this.getExpensesForAUser = function (req, res, next) {
-        var keys = { title: 1, date: 1, description: 1, amount: 1, 'category.name': 1 };
         var userId = req.params.userId;
         if (!objectId.isValid(userId)) {
             return __sendResponse(res, true, null, 'Invalid user id');
         }
+        var options = {
+            filters: {
+                user: userId
+            },
+            keys: {
+                amount: 1,
+                'category.name': 1,
+                date: 1,
+                description: 1,
+                title: 1,
+                user: 1
+            },
+            page: (parseInt(req.query.page) || 1),
+            sort: {
+                date: -1
+            },
+            limit: req.query.limit || 10,
+            populate: {
+                tableName: 'user',
+                tableField: 'name'
+            }
+        };
 
-        var query = { user: userId };
-        var count = req.query.count || 100;
-        Expenses.find(query, keys)
-            .sort({ date: -1 })
-            .limit(count)
-            .exec(function (err, docs) {
-                return __sendResponse(res, err, docs);
-            });
+        Expenses.pagedFind(options, function (err, docs) {
+            return __sendResponse(res, err, docs);
+        });
     };
 
     // GET     /cost/api/admin/users/total-expenses

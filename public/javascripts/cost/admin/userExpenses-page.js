@@ -6,6 +6,7 @@ $(function () {
      * -------------------------------
      */
     app.addListener('page.load', buildUserExpensesTable);
+    app.addListener('expense.pagination', buildUserExpensesTable);
 
 
     /*
@@ -16,6 +17,9 @@ $(function () {
     var rowTemplate = $('#expensesTableTemplate').html();
     var $userExpensesTableBody = $('.user-expenses-table').find('tbody');
     var $userExpensesTableAjaxSpinner = $('.user-expenses-table-ajax-spinner');
+    var $paginationContainer = $('#paginationContainer');
+    var paginationBodyTemplate = $('#paginationBody').html();
+    var paginationItemTemplate = $('#paginationItem').html();
 
     var categoryColors = {};
 
@@ -29,13 +33,17 @@ $(function () {
 
     /*
      * ---------------------------------------------
-     *     EXPENSE TABLE
+     *     SPECIFIC USER EXPENSE TABLE
      * ---------------------------------------------
      */
     function buildUserExpensesTable () {
+        var page = app.pageNumber || 1;
         var userId = $userExpensesTableBody.attr('data-expenses-owner-id');
+
+        // Reset app.pageNumber
+        app.pageNumber = undefined;
         $.ajax({
-            url: '/cost/api/admin/users/' + userId + '/expenses',
+            url: '/cost/api/admin/users/' + userId + '/expenses?page=' + page,
             method: 'get',
             beforeSend: userExpensesTableAjaxInProgress
         }).done(function (response) {
@@ -75,7 +83,14 @@ $(function () {
     }
 
     function userExpensesTableAjaxInProgress () {
+        // show the spinner
         $userExpensesTableAjaxSpinner.show();
+
+        // Remove Pagination
+        $paginationContainer.html("");
+
+        // empty the table <tbody>
+        $userExpensesTableBody.html("");
     }
 
     function userExpensesTableAjaxEnded (response) {
@@ -83,9 +98,16 @@ $(function () {
         $userExpensesTableAjaxSpinner.hide();
 
         if (response.success) {
-            populateUserExpensesTable(response.data);
-            var totalExpenses = computeTotalAmount(response.data);
+            console.log(response);
+            populateUserExpensesTable(response.data.data);
+            var totalExpenses = computeTotalAmount(response.data.data);
             populateTotalExpenses(totalExpenses);
+            var $pagination = app.helpers.buildPagination({
+                pagesData: response.data.pages,
+                bodyTmpl: paginationBodyTemplate,
+                itemTmpl: paginationItemTemplate
+            });
+            $paginationContainer.html($pagination);
         }
     }
 
@@ -100,4 +122,22 @@ $(function () {
     function populateTotalExpenses (total) {
         $('.user-expenses-total-amount').html(app.helpers.formatAmount(total) + " &#65020;").css({ color: 'red' });
     }
+
+    /*
+     * -------------------------------
+     *     PAGINATION CLICK EVENTS
+     * -------------------------------
+     */
+    $paginationContainer.on('click', function (e) {
+        e.preventDefault();
+
+        var $target = $(e.target.closest('li'));
+        if (!$target.hasClass('active') && !$target.hasClass('disabled')) {
+            app.pageNumber = $target.attr('data-page');
+            app.emit('expense.pagination');
+
+            // Remove pagination from dom
+            $('.pagination').remove();
+        }
+    })
 });
