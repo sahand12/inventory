@@ -129,13 +129,14 @@ $(function () {
 
     function buildAdminExpensesTableRow (data) {
         if (!data.user) {
-            data.user = { name: { first: "", last: "" } };
+            data.user = { name: { first: "", last: "" }, _id: "" };
         }
         var html = adminExpensesTableTemplate.replace('[[color]]', categoryColors[data.category.name].color)
             .replace('[[id]]', data._id)
             .replace('[[description]]', data.description)
             .replace('[[date]]', app.helpers.formatDate(data.date))
             .replace('[[title]]', data.title)
+            .replace('[[userId]]', data.user._id)
             .replace('[[username]]', data.user.name.first + " " + data.user.name.last)
             .replace('[[categoryName]]', data.category.name)
             .replace('[[amount]]', app.helpers.formatAmount(data.amount) + " " + app.helpers.currencySymbol);

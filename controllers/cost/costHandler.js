@@ -221,7 +221,7 @@ var CostHandler = function CostHandler (app) {
     this.showAdminExpensesPage = function (req, res, next) {
         var data = {
             layout: 'cost.dashboard.handlebars',
-            user: req.title,
+            user: req.user,
             title: 'Admin | Expenses',
             adminPages: true,
             adminExpensesPage: true,
