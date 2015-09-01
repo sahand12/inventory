@@ -2,12 +2,12 @@
 <div class="col-md-8 cost-expenses-list">
     <h1 class="cost-helper-header text-uppercase"><span style="background: white;">All Users Expenses</span></h1>
 
-    <form action="/cost/api/expenses/search" class="search-expenses-form" method="get">
+    <form class="search-expenses-form" method="get">
         <div class="input-group">
             <span class="input-group-btn">
                 <button class="btn btn-cost-search" type="submit"><span class="fa fa-search"></span></button>
             </span>
-            <input id="expenseSearchInput" class="form-control cost-search-input" type="search" placeholder="Search Expenses"/>
+            <input id="expenseSearchInput" name="expenseSearchInput" class="form-control cost-search-input" type="search" placeholder="Search Expenses"/>
         </div><!-- input-group -->
     </form>
 

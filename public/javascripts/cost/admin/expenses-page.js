@@ -11,6 +11,7 @@ $(function () {
     app.addListener('expense.form.submit.success', buildAdminExpensesTable);
     app.addListener('expense.form.submit.success', buildAdminTotalExpensesPieChart);
     app.addListener('expense.pagination', buildAdminExpensesTable);
+    app.addListener('expense.search.submit', buildAdminExpensesTable);
 
     app.addListener('expense.form.submit.success', buildAdminExpensesTable);
     app.addListener('expense.form.submit.success', buildAdminTotalExpensesPieChart);
@@ -31,6 +32,8 @@ $(function () {
     var $paginationContainer = $('#paginationContainer');
     var paginationBodyTemplate = $('#paginationBody').html();
     var paginationItemTemplate = $('#paginationItem').html();
+    var $expenseSearchForm = $('.search-expenses-form');
+    var $expenseSearchInput = $('#expenseSearchInput');
 
     var adminExpensesTableTemplate = $('#adminExpensesTableTemplate').html();
 
@@ -58,19 +61,20 @@ $(function () {
      *     ADMIN EXPENSES TABLE
      * ---------------------------
      */
-    function buildAdminExpensesTable () {
+    function buildAdminExpensesTable (searchQuery) {
         var page = app.pageNumber || 1;
+        if (searchQuery) {
+            var q = "&q=" + searchQuery;
+        }
 
         // Reset app.pageNumber
         app.pageNumber = undefined;
         $.ajax({
             method: 'get',
-            url: '/cost/api/admin/expenses?limit=10&page=' + page,
+            url: '/cost/api/admin/expenses?limit=10&page=' + page + (q || ""),
             beforeSend: adminExpensesTableAjaxInProgress
         }).done(function (response) {
-            setTimeout(function () {
-                adminExpensesTableAjaxEnded(response);
-            }, 1000);
+            adminExpensesTableAjaxEnded(response);
         });
     }
 
@@ -322,4 +326,14 @@ $(function () {
         $totalPieChartStats.html(html);
     }
 
+
+    /*
+     * ------------------------------
+     *     EXPENSE SEARCH FORM
+     * ------------------------------
+     */
+    $expenseSearchForm.on('submit', function (e) {
+        e.preventDefault();
+        app.emit('expense.search.submit', $expenseSearchInput.val().trim());
+    });
 });

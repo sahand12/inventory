@@ -132,6 +132,14 @@ var costAdminApiHandler = function (app) {
             }
         };
 
+        // If It has a search query
+        if (typeof req.query.q !== 'undefined') {
+            var queryPattern = new RegExp('^.*?' + req.query.q.trim() + ".*$", "i");
+            options.filters = {
+                $or: [{ title: queryPattern }, { description: queryPattern }]
+            }
+        }
+
         Expenses.pagedFind(options, function (err, docs) {
             return __sendResponse(res, err, docs);
         });
@@ -155,7 +163,6 @@ var costAdminApiHandler = function (app) {
     };
 
     // GET     /cost/api/admin/expenses/categories/:name
-
     this.getAllExpensesForACategory = function (req, res, next) {
         var categoryName = req.params.name || "";
         categoryName = categoryName.trim();
@@ -188,7 +195,7 @@ var costAdminApiHandler = function (app) {
             }
         ], function (err, docs) {
             return __sendResponse(res, err, docs);
-        })
+        });
     };
 
 
