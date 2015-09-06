@@ -353,26 +353,58 @@ var costAdminApiHandler = function (app) {
      */
     // GET     /cost/api/admin/daily-reports?count=...
     this.getAllDailyReports = function (req, res, next) {
-        var count = req.query.count || 20;
-        req.app.db.models.DailyReport.find()
-            .sort({ "date": -1 })
-            .limit(count)
-            .populate('user', 'name')
-            .exec(function (err, docs) {
-                return __sendResponse(res, err, docs);
-            });
+        var options = {
+            page: (parseInt(req.query.page) || 1),
+            sort: {
+                date: -1
+            },
+            limit: req.query.limit || 20,
+            populate: {
+                tableName: 'user',
+                tableField: 'name'
+            }
+        };
+
+        // If It has a search query
+        if (typeof req.query.q !== 'undefined') {
+            var queryPattern = new RegExp('^.*?' + req.query.q.trim() + ".*$", "i");
+            options.filters = {
+                $or: [{ title: queryPattern }, { description: queryPattern }]
+            }
+        }
+
+        DailyReports.pagedFind(options, function (err, docs) {
+            return __sendResponse(res, err, docs);
+        });
     };
 
     // GET     /cost/api/admin/users/:userId/daily-reports
     this.getAllDailyReportsForAUser = function (req, res, next) {
-        var count = req.query.count || 100;
         var userId = req.params.userId;
-        DailyReports.find({ user: userId })
-            .sort({ date: -1 })
-            .limit(count)
-            .exec(function (err, docs) {
-                return __sendResponse(res, err, docs);
-            });
+        if (!objectId.isValid(userId)) {
+            return __sendResponse(res, true, null, 'Invalid user id');
+        }
+        var options = {
+            keys: {
+                user: 1,
+                title: 1,
+                body: 1,
+                seen: 1,
+                date: 1
+            },
+            filters: {
+                user: userId
+            },
+            page: (parseInt(req.query.page) || 1),
+            sort: {
+                date: -1
+            },
+            limit: req.query.limit || 10
+        };
+
+        DailyReports.pagedFind(options, function (err, docs) {
+            return __sendResponse(res, err, docs);
+        });
     };
 
 };

@@ -194,7 +194,7 @@ Chart.defaults.global.segmentStrokeWidth = 1;
  * --------------------------------------
 */
 app.helpers.buildPagination = function buildPagination (options) {
-    console.log(options);
+    //console.log(options);
     if (options.pagesData.total <= 1) return;
 
     var paginationBodyHtml = buildPaginationBody(options);

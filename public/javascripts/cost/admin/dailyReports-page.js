@@ -6,6 +6,7 @@ $(function () {
      * -------------------------------
      */
     app.addListener('page.load', buildDailyReportsTable);
+    app.addListener('pagination', buildDailyReportsTable);
 
 
     /*
@@ -16,6 +17,10 @@ $(function () {
     var reportsTableRowTemplate = $('#dailyReportsTableRow').html();
     var $adminDailyReportsTableBody = $('#adminDailyReportsTable').find('tbody');
     var $dailyReportsTableAjaxSpinner = $('.admin-dailyReports-table-ajax-spinner');
+    var $paginationContainer = $('#paginationContainer');
+    var paginationBodyTemplate = $('#paginationBody').html();
+    var paginationItemTemplate = $('#paginationItem').html();
+
 
     var categoryColors = {};
 
@@ -33,11 +38,16 @@ $(function () {
      * ---------------------------------------------
      */
     function buildDailyReportsTable () {
+        var page = app.pageNumber || 1;
+
+        // Reset app.pageNumber
+        app.pageNumber = undefined;
         $.ajax({
-            url: '/cost/api/admin/daily-reports',
+            url: '/cost/api/admin/daily-reports?page=' + page + "&limit=10",
             method: 'get',
             beforeSend: dailyReportsTableAjaxInProgress
         }).done(function (response) {
+            console.log(response);
             dailyReportsTableAjaxEnded(response);
         });
     }
@@ -45,6 +55,12 @@ $(function () {
     function dailyReportsTableAjaxInProgress () {
         // show the ajax spinner
         $dailyReportsTableAjaxSpinner.show();
+
+        // Remove pagination
+        $paginationContainer.html("");
+
+        // empty the table body
+        $adminDailyReportsTableBody.html("");
     }
 
     function dailyReportsTableAjaxEnded (response) {
@@ -52,7 +68,13 @@ $(function () {
         $dailyReportsTableAjaxSpinner.hide();
 
         if (response.success) {
-            populateDailyReportsTable(response.data);
+            populateDailyReportsTable(response.data.data);
+            var $pagination = app.helpers.buildPagination({
+                pagesData: response.data.pages,
+                bodyTmpl: paginationBodyTemplate,
+                itemTmpl: paginationItemTemplate
+            });
+            $paginationContainer.html($pagination);
         }
     }
 
@@ -74,4 +96,21 @@ $(function () {
             .replace('[[body]]', data.body);
         return html;
     }
+
+
+    /*
+     * -------------------------
+     *     PAGINATION CLICK EVENTS
+     * -------------------------
+     */
+    $paginationContainer.on('click', function (e) {
+        e.preventDefault();
+        var $target = $(e.target.closest('li'));
+        if (!$target.hasClass('active') && !$target.hasClass('disabled')) {
+            app.pageNumber = $target.attr('data-page');
+            app.emit('pagination');
+            // Remove pagination from dom
+            $('.pagination').remove();
+        }
+    })
 });
