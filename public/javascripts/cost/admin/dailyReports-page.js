@@ -87,12 +87,24 @@ $(function () {
     }
 
     function buildDailyReportsTableRow (data) {
+        var css = "";
+        if (!data.user) {
+            css = app.helpers.makeRandomColor();
+        }
+        else {
+            if (categoryColors[data.user._id]) {
+                css = categoryColors[data.user._id]
+            }
+            else {
+                css = categoryColors[data.user._id] = app.helpers.makeRandomColor();
+            }
+        }
         var html = reportsTableRowTemplate.replace('[[date]]', app.helpers.formatDate(data.date))
             .replace('[[title]]', data.title)
             .replace('[[firstName]]', (data.user && data.user.name.first) || "")
             .replace('[[lastName]]', (data.user && data.user.name.last) || "")
             .replace('[[userId]]', (data.user && data.user._id) || "")
-            .replace('[[color]]', app.helpers.makeRandomColor().color)
+            .replace('[[color]]', css.color)
             .replace('[[body]]', data.body);
         return html;
     }

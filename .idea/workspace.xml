@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f15174e-ed4e-4874-b2fe-4736a9113461" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schema/DailyReport.js" afterPath="$PROJECT_DIR$/schema/DailyReport.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/cost/app.js" afterPath="$PROJECT_DIR$/public/javascripts/cost/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/cost/api/costAdminApiHandler.js" afterPath="$PROJECT_DIR$/controllers/cost/api/costAdminApiHandler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/cost/admin/dailyReports-page.handlebars" afterPath="$PROJECT_DIR$/views/cost/admin/dailyReports-page.handlebars" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/cost/admin/dailyReports-page.js" afterPath="$PROJECT_DIR$/public/javascripts/cost/admin/dailyReports-page.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/cost/admin/userDailyReports-page.handlebars" afterPath="$PROJECT_DIR$/views/cost/admin/userDailyReports-page.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/cost/admin/userDailyReports-page.js" afterPath="$PROJECT_DIR$/public/javascripts/cost/admin/userDailyReports-page.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="basicAuth.iws" />
@@ -29,10 +23,10 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="userExpenses-page.js" pinned="false" current-in-tab="false">
+            <file leaf-file-name="userExpenses-page.js" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/userExpenses-page.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0">
+                  <state vertical-scroll-proportion="-0.09499576">
                     <caret line="20" column="10" selection-start-line="19" selection-start-column="4" selection-end-line="22" selection-end-column="0" />
                     <folding>
                       <marker date="1441098729000" expanded="true" signature="2053:2073" placeholder="..." />
@@ -46,16 +40,6 @@
                 <provider selected="true" editor-type-id="text-editor">
                   <state vertical-scroll-proportion="-33.793102">
                     <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="dailyReports-page.js" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/dailyReports-page.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="-0.28498727">
-                    <caret line="70" column="56" selection-start-line="70" selection-start-column="56" selection-end-line="70" selection-end-column="56" />
                     <folding />
                   </state>
                 </provider>
@@ -96,11 +80,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userDailyReports-page.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dailyReports-page.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/dailyReports-page.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="106" column="44" selection-start-line="106" selection-start-column="44" selection-end-line="106" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DailyReport.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/schema/DailyReport.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.47417444">
+              <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userDailyReports-page.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/userDailyReports-page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6875529">
-              <caret line="105" column="51" selection-start-line="105" selection-start-column="51" selection-end-line="105" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="87" column="47" selection-start-line="87" selection-start-column="47" selection-end-line="87" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -191,10 +195,10 @@
         <option value="$PROJECT_DIR$/public/javascripts/cost/app.js" />
         <option value="$PROJECT_DIR$/views/cost/admin/dailyReports-page.handlebars" />
         <option value="$PROJECT_DIR$/schema/DailyReport.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/cost/admin/dailyReports-page.js" />
         <option value="$PROJECT_DIR$/controllers/cost/api/costAdminApiHandler.js" />
         <option value="$PROJECT_DIR$/views/cost/admin/userDailyReports-page.handlebars" />
         <option value="$PROJECT_DIR$/public/javascripts/cost/admin/userDailyReports-page.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/cost/admin/dailyReports-page.js" />
       </list>
     </option>
   </component>
@@ -1150,32 +1154,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/userExpenses-page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="10" selection-start-line="19" selection-start-column="4" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <marker date="1441098729000" expanded="true" signature="2053:2073" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schema/DailyReport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47417444">
-          <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/dailyReports-page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.28498727">
-          <caret line="70" column="56" selection-start-line="70" selection-start-column="56" selection-end-line="70" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/cost/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1208,8 +1186,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/userDailyReports-page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6875529">
-          <caret line="105" column="51" selection-start-line="105" selection-start-column="51" selection-end-line="105" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="87" column="47" selection-start-line="87" selection-start-column="47" selection-end-line="87" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/userExpenses-page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.09499576">
+          <caret line="20" column="10" selection-start-line="19" selection-start-column="4" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <marker date="1441098729000" expanded="true" signature="2053:2073" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/cost/admin/dailyReports-page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="106" column="44" selection-start-line="106" selection-start-column="44" selection-end-line="106" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schema/DailyReport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47417444">
+          <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
           <folding />
         </state>
       </provider>
